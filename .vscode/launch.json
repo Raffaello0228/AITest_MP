@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug media_plan_test_service.py (处理测试用例列表)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/media_plan_test_service.py",
+            "args": [
+                "--process-list", "testcase/brief.json",
+                "--api-url", "http://10.1.12.39:5000",
+                "--adtype-dict", "adtype_dict.xlsx",
+                "--output-dir", "test_results",
+                "--max-workers", "4",
+                "--timeout", "600"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "stopOnEntry": false
+        },
+        {
+            "name": "Debug media_plan_test_service.py (单线程处理测试用例列表)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/media_plan_test_service.py",
+            "args": [
+                "--process-list", "testcase/brief.json",
+                "--api-url", "http://10.1.12.39:5000",
+                "--adtype-dict", "adtype_dict.xlsx",
+                "--output-dir", "test_results/list_testcases_single",
+                "--max-workers", "1",
+                "--timeout", "600"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "stopOnEntry": false
+        }
+    ]
+}

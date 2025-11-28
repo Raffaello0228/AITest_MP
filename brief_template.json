@@ -1,0 +1,4779 @@
+{
+  "basicInfo": {
+    "isHistoryMp": 0,
+    "kpiInfo": [
+      {
+        "key": "Impression",
+        "val": "100000",
+        "priority": 1,
+        "completion": 1
+      },
+      {
+        "key": "Clicks",
+        "val": "100000",
+        "priority": 2,
+        "completion": 1
+      },
+      {
+        "key": "LinkClicks",
+        "val": "100000",
+        "priority": 3,
+        "completion": 0
+      },
+      {
+        "key": "VideoViews",
+        "val": "100000",
+        "priority": 4,
+        "completion": 0
+      },
+      {
+        "key": "Engagement",
+        "val": "100000",
+        "priority": 5,
+        "completion": 0
+      },
+      {
+        "key": "Followers",
+        "val": "100000",
+        "priority": 6,
+        "completion": 0
+      },
+      {
+        "key": "Like",
+        "val": "100000",
+        "priority": 7,
+        "completion": 0
+      },
+      {
+        "key": "Purchase",
+        "val": "100000",
+        "priority": 8,
+        "completion": 0
+      }
+    ],
+    "kpiInfoBudgetConfig": {
+      "rangeMatch": 80
+    },
+    "regionBudgetConfig": {
+      "consistentMatch": 1,
+      "rangeMatch": 10,
+      "budgetCompletionRule": 90,
+      "kpiCompletionRule": 80
+    },
+    "dimension": [
+      "corporation",
+      "competitor",
+      "category",
+      "ai"
+    ],
+    "usedHistoryMp": 0,
+    "moduleConfig": [
+      {
+        "moduleName": "kpiInfo",
+        "priority": 1
+      },
+      {
+        "moduleName": "regionBudget",
+        "priority": 2
+      },
+      {
+        "moduleName": "media",
+        "priority": 3
+      },
+      {
+        "moduleName": "marketingFunnel",
+        "priority": 4
+      },
+      {
+        "moduleName": "stage",
+        "priority": 5
+      },
+      {
+        "moduleName": "regionKPI",
+        "priority": 6
+      },
+      {
+        "moduleName": "mediaMarketingFunnelAdtype",
+        "priority": 7
+      }
+    ],
+    "mediaPlanName": "test_script",
+    "corporationId": "29887",
+    "currency": "USD",
+    "totalBudget": 10000000,
+    "regionBudget": [
+      {
+        "country": {
+          "code": "US",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 21.59,
+        "budgetAmount": 2159000,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "21590",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "Clicks",
+            "val": "21590",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "LinkClicks",
+            "val": "21590",
+            "completion": 0,
+            "priority": 3
+          },
+          {
+            "key": "VideoViews",
+            "val": "21590",
+            "completion": 0,
+            "priority": 4
+          },
+          {
+            "key": "Engagement",
+            "val": "21590",
+            "completion": 0,
+            "priority": 5
+          },
+          {
+            "key": "Followers",
+            "val": "21590",
+            "completion": 0,
+            "priority": 6
+          },
+          {
+            "key": "Like",
+            "val": "21590",
+            "completion": 0,
+            "priority": 7
+          },
+          {
+            "key": "Purchase",
+            "val": "21590",
+            "completion": 0,
+            "priority": 8
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "GB",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 21.66,
+        "budgetAmount": 2166000,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "21660",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "Clicks",
+            "val": "21660",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "LinkClicks",
+            "val": "21660",
+            "completion": 0,
+            "priority": 3
+          },
+          {
+            "key": "VideoViews",
+            "val": "21660",
+            "completion": 0,
+            "priority": 4
+          },
+          {
+            "key": "Engagement",
+            "val": "21660",
+            "completion": 0,
+            "priority": 5
+          },
+          {
+            "key": "Followers",
+            "val": "21660",
+            "completion": 0,
+            "priority": 6
+          },
+          {
+            "key": "Like",
+            "val": "21660",
+            "completion": 0,
+            "priority": 7
+          },
+          {
+            "key": "Purchase",
+            "val": "21660",
+            "completion": 0,
+            "priority": 8
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "FR",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 5.24,
+        "budgetAmount": 524000,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "5240",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "Clicks",
+            "val": "5240",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "LinkClicks",
+            "val": "5240",
+            "completion": 0,
+            "priority": 3
+          },
+          {
+            "key": "VideoViews",
+            "val": "5240",
+            "completion": 0,
+            "priority": 4
+          },
+          {
+            "key": "Engagement",
+            "val": "5240",
+            "completion": 0,
+            "priority": 5
+          },
+          {
+            "key": "Followers",
+            "val": "5240",
+            "completion": 0,
+            "priority": 6
+          },
+          {
+            "key": "Like",
+            "val": "5240",
+            "completion": 0,
+            "priority": 7
+          },
+          {
+            "key": "Purchase",
+            "val": "5240",
+            "completion": 0,
+            "priority": 8
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "DE",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 28.860000000000003,
+        "budgetAmount": 2886000,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "28860",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "Clicks",
+            "val": "28860",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "LinkClicks",
+            "val": "28860",
+            "completion": 0,
+            "priority": 3
+          },
+          {
+            "key": "VideoViews",
+            "val": "28860",
+            "completion": 0,
+            "priority": 4
+          },
+          {
+            "key": "Engagement",
+            "val": "28860",
+            "completion": 0,
+            "priority": 5
+          },
+          {
+            "key": "Followers",
+            "val": "28860",
+            "completion": 0,
+            "priority": 6
+          },
+          {
+            "key": "Like",
+            "val": "28860",
+            "completion": 0,
+            "priority": 7
+          },
+          {
+            "key": "Purchase",
+            "val": "28860",
+            "completion": 0,
+            "priority": 8
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "ME&NA",
+          "groupName": "RegionSimpleCode"
+        },
+        "budgetPercentage": 7.779999999999999,
+        "budgetAmount": 778000,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "7780",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "Clicks",
+            "val": "7780",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "LinkClicks",
+            "val": "7780",
+            "completion": 0,
+            "priority": 3
+          },
+          {
+            "key": "VideoViews",
+            "val": "7780",
+            "completion": 0,
+            "priority": 4
+          },
+          {
+            "key": "Engagement",
+            "val": "7780",
+            "completion": 0,
+            "priority": 5
+          },
+          {
+            "key": "Followers",
+            "val": "7780",
+            "completion": 0,
+            "priority": 6
+          },
+          {
+            "key": "Like",
+            "val": "7780",
+            "completion": 0,
+            "priority": 7
+          },
+          {
+            "key": "Purchase",
+            "val": "7780",
+            "completion": 0,
+            "priority": 8
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "LATAM",
+          "groupName": "RegionSimpleCode"
+        },
+        "budgetPercentage": 14.87,
+        "budgetAmount": 1487000,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "14870",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "Clicks",
+            "val": "14870",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "LinkClicks",
+            "val": "14870",
+            "completion": 0,
+            "priority": 3
+          },
+          {
+            "key": "VideoViews",
+            "val": "14870",
+            "completion": 0,
+            "priority": 4
+          },
+          {
+            "key": "Engagement",
+            "val": "14870",
+            "completion": 0,
+            "priority": 5
+          },
+          {
+            "key": "Followers",
+            "val": "14870",
+            "completion": 0,
+            "priority": 6
+          },
+          {
+            "key": "Like",
+            "val": "14870",
+            "completion": 0,
+            "priority": 7
+          },
+          {
+            "key": "Purchase",
+            "val": "14870",
+            "completion": 0,
+            "priority": 8
+          }
+        ],
+        "completion": 0
+      }
+    ],
+    "corporationName": "Trip.com Travel Singapore Pte. Ltd.",
+    "accountId": "6458679086,6462083221,1540268550,1574585101,1674247576",
+    "categoryLevel1Id": "1",
+    "categoryLevel2Id": "101",
+    "categoryLevel3Id": "3016",
+    "categoryLevel4Id": null,
+    "campaignId": null,
+    "competitorCorporationId": "294697,256233",
+    "uuid": "4808e3b7-df85-4249-8b59-d66cf0e5"
+  },
+  "briefMultiConfig": [
+    {
+      "country": {
+        "code": "US",
+        "groupName": "CountrySimpleCode"
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 20,
+          "budgetAmount": 431800,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB&IG"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 1079500,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Conversion",
+            "Traffic"
+          ],
+          "mediaPlatform": null
+        },
+        {
+          "name": "3th",
+          "budgetPercentage": 30,
+          "budgetAmount": 647700,
+          "dates": [
+            "20260301",
+            "20260331"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 215900
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 431800
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 30,
+          "budgetAmount": 647700
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 40,
+          "budgetAmount": 863600
+        }
+      ],
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 50,
+          "budgetAmount": 1079500,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 50,
+              "budgetAmount": 1079500
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 20,
+          "budgetAmount": 431800,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 215900
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 10,
+              "budgetAmount": 215900
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 647700,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 647700
+            }
+          ]
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 0
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      }
+    },
+    {
+      "country": {
+        "code": "GB",
+        "groupName": "CountrySimpleCode"
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 20,
+          "budgetAmount": 433200,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB&IG"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 1083000,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Conversion",
+            "Traffic"
+          ],
+          "mediaPlatform": null
+        },
+        {
+          "name": "3th",
+          "budgetPercentage": 30,
+          "budgetAmount": 649800,
+          "dates": [
+            "20260301",
+            "20260331"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 216600
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 433200
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 30,
+          "budgetAmount": 649800
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 40,
+          "budgetAmount": 866400
+        }
+      ],
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 50,
+          "budgetAmount": 1083000,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 50,
+              "budgetAmount": 1083000
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 20,
+          "budgetAmount": 433200,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 216600
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 10,
+              "budgetAmount": 216600
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 649800,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 649800
+            }
+          ]
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      }
+    },
+    {
+      "country": {
+        "code": "FR",
+        "groupName": "CountrySimpleCode"
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 20,
+          "budgetAmount": 104800,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB&IG"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 262000,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Conversion",
+            "Traffic"
+          ],
+          "mediaPlatform": null
+        },
+        {
+          "name": "3th",
+          "budgetPercentage": 30,
+          "budgetAmount": 157200,
+          "dates": [
+            "20260301",
+            "20260331"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 52400
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 104800
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 30,
+          "budgetAmount": 157200
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 40,
+          "budgetAmount": 209600
+        }
+      ],
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 50,
+          "budgetAmount": 262000,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 50,
+              "budgetAmount": 262000
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 20,
+          "budgetAmount": 104800,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 52400
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 10,
+              "budgetAmount": 52400
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 157200,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 157200
+            }
+          ]
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      }
+    },
+    {
+      "country": {
+        "code": "DE",
+        "groupName": "CountrySimpleCode"
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 20,
+          "budgetAmount": 577200,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB&IG"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 1443000,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Conversion",
+            "Traffic"
+          ],
+          "mediaPlatform": null
+        },
+        {
+          "name": "3th",
+          "budgetPercentage": 30,
+          "budgetAmount": 865800,
+          "dates": [
+            "20260301",
+            "20260331"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 288600
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 577200
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 30,
+          "budgetAmount": 865800
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 40,
+          "budgetAmount": 1154400
+        }
+      ],
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 50,
+          "budgetAmount": 1443000,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 50,
+              "budgetAmount": 1443000
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 20,
+          "budgetAmount": 577200,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 288600
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 10,
+              "budgetAmount": 288600
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 865800,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 865800
+            }
+          ]
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      }
+    },
+    {
+      "country": {
+        "code": "ME&NA",
+        "groupName": "RegionSimpleCode"
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 20,
+          "budgetAmount": 155600,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB&IG"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 389000,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Conversion",
+            "Traffic"
+          ],
+          "mediaPlatform": null
+        },
+        {
+          "name": "3th",
+          "budgetPercentage": 30,
+          "budgetAmount": 233400,
+          "dates": [
+            "20260301",
+            "20260331"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 77800
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 155600
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 30,
+          "budgetAmount": 233400
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 40,
+          "budgetAmount": 311200
+        }
+      ],
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 50,
+          "budgetAmount": 389000,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 50,
+              "budgetAmount": 389000
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 20,
+          "budgetAmount": 155600,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 77800
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 10,
+              "budgetAmount": 77800
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 233400,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 233400
+            }
+          ]
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      }
+    },
+    {
+      "country": {
+        "code": "LATAM",
+        "groupName": "RegionSimpleCode"
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "LinkClicks",
+                  "val": null,
+                  "priority": 3,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": null,
+                  "priority": 5,
+                  "completion": 0
+                },
+                {
+                  "key": "Followers",
+                  "val": null,
+                  "priority": 6,
+                  "completion": 0
+                },
+                {
+                  "key": "Like",
+                  "val": null,
+                  "priority": 7,
+                  "completion": 0
+                },
+                {
+                  "key": "Purchase",
+                  "val": null,
+                  "priority": 8,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 20,
+          "budgetAmount": 297400,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB&IG"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 743500,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Conversion",
+            "Traffic"
+          ],
+          "mediaPlatform": null
+        },
+        {
+          "name": "3th",
+          "budgetPercentage": 30,
+          "budgetAmount": 446100,
+          "dates": [
+            "20260301",
+            "20260331"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 148700
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 297400
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 30,
+          "budgetAmount": 446100
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 40,
+          "budgetAmount": 594800
+        }
+      ],
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 50,
+          "budgetAmount": 743500,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 50,
+              "budgetAmount": 743500
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 20,
+          "budgetAmount": 297400,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 148700
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 10,
+              "budgetAmount": 148700
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 446100,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 446100
+            }
+          ]
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      }
+    }
+  ]
+}

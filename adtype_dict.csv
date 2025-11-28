@@ -1,0 +1,38 @@
+Media,Platform,Marketing Funnel,Objective,Ad Type,Media Buy Type,Key Measurement
+Meta,FBIGFB&IG,Awareness,Awareness,R&F,reserved,CPM
+Meta,FBIGFB&IG,Awareness,Awareness,Reach,Auction,CPM
+Meta,FBIGFB&IG,Awareness,Awareness,Brand Awareness,Auction,CPM
+Meta,FBIGFB&IG,Consideration,Engagement,Event Response,Auction,CPE
+Meta,FBIGFB&IG,Consideration,Engagement,Post Engagement,Auction,CPE
+Meta,FBIGFB&IG,Consideration,Video Views,Video Views,Auction,CPV
+Meta,FBIGFB&IG,Consideration,Followers,Page Likes,Auction,CPEL
+Meta,FBIGFB&IG,Traffic,Traffic,Traffic,Auction,CPC
+Meta,FBIGFB&IG,Traffic,Traffic,Profile Visit,Auction,CPC
+Meta,FBIGFB&IG,Conversion,Conversion,Catalog Sales,Auction,CPP
+Meta,FBIGFB&IG,Conversion,Conversion,Conversion,Auction,CPP
+Google,GG,Awareness,Awareness,GDN(CPM),Auction,CPM
+Google,GG,Traffic,Traffic,GDN(CPC),Auction,CPC
+Google,GG,Traffic,Traffic,Search,Auction,CPC
+Google,GG,Traffic,Traffic,Demand Gen,Auction,CPC
+Google,GG,Conversion,Conversion,Performance Max,Auction,CPP
+Google,GG,Conversion,Conversion,Product Listing Ads(PLA),Auction,CPP
+Google,YTB,Awareness,Awareness,Masthead(CPM),reserved,CPM
+Google,YTB,Awareness,Awareness,Instant Reserved,reserved,CPM
+Google,YTB,Awareness,Awareness,VRC 2.0,Auction,CPM
+Google,YTB,Awareness,Awareness,Non-skippable,Auction,CPM
+Google,YTB,Awareness,Awareness,Video Ads Sequencing,Auction,CPM
+Google,YTB,Consideration,Video Views,VVC,Auction,CPV
+Google,YTB,Conversion,Conversion,Video Action Campaign,Auction,CPM
+Tiktok,TT,Awareness,Reach,TopView,reserved,CPM
+Tiktok,TT,Awareness,Reach,TopFeed(R&F),reserved,CPM
+Tiktok,TT,Awareness,Reach,StandardFeed£¨R&F£©,reserved,CPM
+Tiktok,TT,Awareness,Reach,Reach,Auction,CPM
+Tiktok,TT,Consideration,Video Views,CI to Live,Auction,CPV
+Tiktok,TT,Consideration,Video Views,Video Views,Auction,CPV
+Tiktok,TT,Consideration,Follower,CI Follows,Auction,CPF
+Tiktok,TT,Traffic,Traffic,Traffic,Auction,CPC
+Tiktok,TT,Conversion,Sales,Video Shopping Ads,Auction,CPP
+Tiktok,TT,Conversion,Sales,LIVE Shopping Ads,Auction,CPP
+Tiktok,TT,Conversion,Sales,Product Shopping Ads,Auction,CPP
+Tiktok,TT,Conversion,Sales,Website Conversion,Auction,CPP
+Tiktok,TT,Conversion,Sales,Catalog Sales,Auction,CPP
