@@ -1,7 +1,9 @@
 import json
 import uuid
+import importlib.util
 from collections import defaultdict
 from copy import deepcopy
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -478,6 +480,179 @@ def build_country_media_marketing_adtype(country_df: pd.DataFrame) -> list[dict]
     return result
 
 
+def load_testcase_template(template_path: str = "testcase_template.py"):
+    """
+    从 testcase_template.py 文件加载测试用例配置。
+
+    Args:
+        template_path: 测试用例模板文件路径
+
+    Returns:
+        测试用例字典，如果文件不存在或加载失败则返回 None
+    """
+    try:
+        spec = importlib.util.spec_from_file_location(
+            "testcase_template", template_path
+        )
+        if spec is None or spec.loader is None:
+            return None
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return getattr(module, "TEST_CASES", None)
+    except Exception as e:
+        print(f"警告：无法加载测试用例模板 {template_path}: {e}")
+        return None
+
+
+def apply_testcase_template_config(result: dict, case_config: dict) -> dict:
+    """
+    根据 testcase_template.py 格式的配置修改生成的JSON数据。
+
+    Args:
+        result: 生成的JSON数据
+        case_config: 测试用例配置字典（testcase_template.py 格式）
+
+    Returns:
+        修改后的JSON数据
+    """
+    result = deepcopy(result)
+    basic_info = result["basicInfo"]
+
+    # 1. 配置 KPI 优先级和 completion
+    kpi_info = basic_info.get("kpiInfo", [])
+    kpi_priority_list = case_config.get("kpi_priority_list", [])
+    kpi_must_achieve = case_config.get("kpi_must_achieve", False)
+
+    # 创建KPI优先级映射
+    kpi_priority_map = {}
+    for idx, kpi_key in enumerate(kpi_priority_list, 1):
+        kpi_priority_map[kpi_key] = idx
+
+    # 更新KPI配置
+    for kpi_item in kpi_info:
+        kpi_key = kpi_item["key"]
+        if kpi_key in kpi_priority_map:
+            kpi_item["priority"] = kpi_priority_map[kpi_key]
+            kpi_item["completion"] = 1 if kpi_must_achieve else 0
+        else:
+            # 不在优先级列表中的KPI，设置较低的优先级
+            kpi_item["priority"] = 999
+            kpi_item["completion"] = 0
+
+    # 2. 配置 kpiInfoBudgetConfig
+    kpi_target_rate = case_config.get("kpi_target_rate")
+    if kpi_target_rate is not None:
+        basic_info["kpiInfoBudgetConfig"] = {"rangeMatch": kpi_target_rate}
+    else:
+        basic_info["kpiInfoBudgetConfig"] = {}
+
+    # 3. 配置 regionBudgetConfig
+    region_match_type = case_config.get("region_match_type", "完全匹配")
+    region_budget_range_match = case_config.get("region_budget_range_match")
+    region_budget_must_achieve = case_config.get("region_budget_must_achieve", False)
+    region_budget_target_rate = case_config.get("region_budget_target_rate")
+    region_kpi_target_rate = case_config.get("region_kpi_target_rate")
+
+    region_config = {
+        "consistentMatch": 1 if region_match_type == "完全匹配" else 0,
+    }
+    if region_match_type == "完全匹配" and region_budget_range_match is not None:
+        region_config["rangeMatch"] = region_budget_range_match
+    if region_budget_must_achieve:
+        if region_budget_target_rate is not None:
+            region_config["budgetCompletionRule"] = region_budget_target_rate
+        if region_kpi_target_rate is not None:
+            region_config["kpiCompletionRule"] = region_kpi_target_rate
+    basic_info["regionBudgetConfig"] = region_config
+
+    # 4. 配置 moduleConfig 优先级
+    module_priority_list = case_config.get("module_priority_list", [])
+    module_config = basic_info.get("moduleConfig", [])
+    for module in module_config:
+        module_name = module.get("moduleName")
+        if module_name in module_priority_list:
+            module["priority"] = module_priority_list.index(module_name) + 1
+        else:
+            module["priority"] = 999
+
+    # 5. 更新 regionBudget 中每个国家的 KPI 优先级和 completion
+    for region in basic_info.get("regionBudget", []):
+        # 设置 region 的 completion（根据 region_budget_must_achieve）
+        region["completion"] = 1 if region_budget_must_achieve else 0
+
+        for region_kpi in region.get("kpiInfo", []):
+            kpi_key = region_kpi["key"]
+            if kpi_key in kpi_priority_map:
+                region_kpi["priority"] = kpi_priority_map[kpi_key]
+                region_kpi["completion"] = 1 if kpi_must_achieve else 0
+            else:
+                region_kpi["priority"] = 999
+                region_kpi["completion"] = 0
+
+    # 6. 配置每个国家的 briefMultiConfig
+    stage_match_type = case_config.get("stage_match_type", "完全匹配")
+    stage_range_match = case_config.get("stage_range_match")
+    marketingfunnel_match_type = case_config.get(
+        "marketingfunnel_match_type", "完全匹配"
+    )
+    marketingfunnel_range_match = case_config.get("marketingfunnel_range_match")
+    media_match_type = case_config.get("media_match_type", "完全匹配")
+    media_range_match = case_config.get("media_range_match")
+    allow_zero_budget = case_config.get("allow_zero_budget", False)
+    mediaMarketingFunnelAdtype_target_rate = case_config.get(
+        "mediaMarketingFunnelAdtype_target_rate"
+    )
+
+    for country_config in result.get("briefMultiConfig", []):
+        # 配置 stageBudgetConfig
+        stage_config = {
+            "consistentMatch": 1 if stage_match_type == "完全匹配" else 0,
+        }
+        if stage_match_type == "完全匹配" and stage_range_match is not None:
+            stage_config["rangeMatch"] = stage_range_match
+        country_config["stageBudgetConfig"] = stage_config
+
+        # 配置 marketingFunnelBudgetConfig
+        mf_config = {
+            "consistentMatch": 1 if marketingfunnel_match_type == "完全匹配" else 0,
+        }
+        if (
+            marketingfunnel_match_type == "完全匹配"
+            and marketingfunnel_range_match is not None
+        ):
+            mf_config["rangeMatch"] = marketingfunnel_range_match
+        country_config["marketingFunnelBudgetConfig"] = mf_config
+
+        # 配置 mediaBudgetConfig
+        media_config = {
+            "consistentMatch": 1 if media_match_type == "完全匹配" else 0,
+        }
+        if media_match_type == "完全匹配" and media_range_match is not None:
+            media_config["rangeMatch"] = media_range_match
+        country_config["mediaBudgetConfig"] = media_config
+
+        # 配置 mediaMarketingFunnelAdtypeBudgetConfig
+        mmfa_config = {}
+        if allow_zero_budget:
+            mmfa_config["precision"] = 1  # 允许为0
+        else:
+            mmfa_config["precision"] = 2  # 不允许为0
+        if mediaMarketingFunnelAdtype_target_rate is not None:
+            mmfa_config["rangeMatch"] = mediaMarketingFunnelAdtype_target_rate
+        country_config["mediaMarketingFunnelAdtypeBudgetConfig"] = mmfa_config
+
+        # 配置国家级别的 moduleConfig
+        country_module_config = country_config.get("moduleConfig", [])
+        for module in country_module_config:
+            module_name = module.get("moduleName")
+            if module_name in module_priority_list:
+                module["priority"] = module_priority_list.index(module_name) + 1
+            else:
+                module["priority"] = 999
+
+    return result
+
+
 def build_brief_multi_config(
     template_first_country: dict, df: pd.DataFrame
 ) -> list[dict]:
@@ -523,11 +698,27 @@ def convert(
     data_path: str = "data.csv",
     adtype_path: str = "adtype_dict.csv",
     template_path: str = "brief_template.json",
-    output_path: str = "brief_from_data.json",
+    output_path: str = "cases/brief_from_data.json",
     max_regions: int | None = None,
+    test_case_id: int | None = None,
+    use_testcase_template: bool = False,
+    testcase_template_path: str = "testcase_template.py",
 ) -> dict:
     """
     主入口：将 data.csv 转成符合 brief_template 结构的 JSON。
+
+    Args:
+        data_path: 数据CSV文件路径
+        adtype_path: adtype映射表CSV文件路径
+        template_path: 模板JSON文件路径
+        output_path: 输出JSON文件路径
+        max_regions: 最大区域数量限制
+        test_case_id: 测试用例编号，如果提供则应用测试用例配置
+        use_testcase_template: 是否使用 testcase_template.py 格式的测试用例
+        testcase_template_path: testcase_template.py 文件路径
+
+    Returns:
+        生成的JSON数据字典
     """
     # 读取模板
     with open(template_path, "r", encoding="utf-8") as f:
@@ -571,6 +762,138 @@ def convert(
     return result
 
 
+def batch_generate(
+    data_path: str = "data.csv",
+    adtype_path: str = "adtype_dict.csv",
+    template_path: str = "brief_template.json",
+    output_dir: str = "output",
+    max_regions: int | None = None,
+    testcase_template_path: str = "testcase_template.py",
+    test_case_ids: list[int] | None = None,
+) -> list[dict]:
+    """
+    批量生成多个测试用例的JSON文件。
+
+    Args:
+        data_path: 数据CSV文件路径
+        adtype_path: adtype映射表CSV文件路径
+        template_path: 模板JSON文件路径
+        output_dir: 输出目录
+        max_regions: 最大区域数量限制
+        testcase_template_path: testcase_template.py 文件路径
+        test_case_ids: 要生成的测试用例编号列表，如果为None则生成所有用例
+
+    Returns:
+        生成的JSON数据字典列表
+    """
+    # 加载测试用例模板
+    test_cases = load_testcase_template(testcase_template_path)
+    if test_cases is None:
+        raise ValueError(f"无法加载测试用例模板: {testcase_template_path}")
+
+    # 确定要生成的测试用例列表
+    if test_case_ids is None:
+        test_case_ids = sorted(test_cases.keys())
+
+    # 创建输出目录
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    results = []
+    for case_id in test_case_ids:
+        if case_id not in test_cases:
+            print(f"警告：跳过不存在的测试用例 {case_id}")
+            continue
+
+        print(f"正在生成测试用例 {case_id}...")
+        output_file = output_path / f"brief_case_{case_id}.json"
+
+        try:
+            result = convert(
+                data_path=data_path,
+                adtype_path=adtype_path,
+                template_path=template_path,
+                output_path=str(output_file),
+                max_regions=max_regions,
+                test_case_id=case_id,
+                use_testcase_template=True,
+                testcase_template_path=testcase_template_path,
+            )
+            results.append(result)
+            print(f"✓ 已生成测试用例 {case_id}: {output_file}")
+        except Exception as e:
+            print(f"✗ 生成测试用例 {case_id} 失败: {e}")
+
+    print(f"\n批量生成完成，共生成 {len(results)} 个文件")
+    return results
+
+
 if __name__ == "__main__":
-    # 如需在命令行控制区域数量，可在此传入 max_regions，例如：convert(max_regions=5)
-    convert(max_regions=5)
+    import sys
+
+    # 解析命令行参数
+    test_case_id = None
+    max_regions = 20
+    batch_mode = False
+    use_testcase_template = False
+    testcase_template_path = "testcase_template.py"
+
+    # 解析参数
+    i = 1
+    while i < len(sys.argv):
+        arg = sys.argv[i]
+        if arg == "--batch" or arg == "-b":
+            batch_mode = True
+            i += 1
+        elif arg == "--template" or arg == "-t":
+            use_testcase_template = True
+            if i + 1 < len(sys.argv):
+                testcase_template_path = sys.argv[i + 1]
+                i += 2
+            else:
+                i += 1
+        elif arg == "--max-regions" or arg == "-r":
+            if i + 1 < len(sys.argv):
+                try:
+                    max_regions = int(sys.argv[i + 1])
+                    i += 2
+                except ValueError:
+                    print(f"警告：无效的区域数量 '{sys.argv[i + 1]}'，使用默认值 20")
+                    i += 2
+            else:
+                i += 1
+        elif arg.startswith("-"):
+            print(f"未知参数: {arg}")
+            i += 1
+        else:
+            # 尝试解析为测试用例编号
+            try:
+                test_case_id = int(arg)
+                i += 1
+            except ValueError:
+                print(f"警告：无法解析参数 '{arg}'")
+                i += 1
+
+    # 批量生成模式
+    if batch_mode:
+        print("批量生成模式")
+        print(f"测试用例模板: {testcase_template_path}")
+        print(f"最大区域数: {max_regions}")
+
+        # 如果指定了测试用例编号，只生成指定的用例
+        test_case_ids = None
+        if test_case_id is not None:
+            test_case_ids = [test_case_id]
+            print(f"生成指定测试用例: {test_case_id}")
+        else:
+            print("生成所有测试用例")
+
+        try:
+            batch_generate(
+                max_regions=max_regions,
+                testcase_template_path=testcase_template_path,
+                test_case_ids=test_case_ids,
+            )
+        except Exception as e:
+            print(f"批量生成失败: {e}")
+            sys.exit(1)

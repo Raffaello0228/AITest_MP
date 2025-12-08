@@ -1,0 +1,4576 @@
+{
+  "basicInfo": {
+    "isHistoryMp": 0,
+    "kpiInfo": [
+      {
+        "key": "Impression",
+        "val": "10000",
+        "priority": 1,
+        "completion": 0
+      }
+    ],
+    "kpiInfoBudgetConfig": {
+      "rangeMatch": 80
+    },
+    "regionBudgetConfig": {
+      "consistentMatch": 0,
+      "rangeMatch": 10,
+      "budgetCompletionRule": 90,
+      "kpiCompletionRule": 80
+    },
+    "dimension": [
+      "corporation",
+      "competitor",
+      "category",
+      "ai"
+    ],
+    "usedHistoryMp": 0,
+    "moduleConfig": [
+      {
+        "moduleName": "kpiInfo",
+        "priority": 1
+      },
+      {
+        "moduleName": "regionBudget",
+        "priority": 2
+      },
+      {
+        "moduleName": "media",
+        "priority": 3
+      },
+      {
+        "moduleName": "marketingFunnel",
+        "priority": 4
+      },
+      {
+        "moduleName": "stage",
+        "priority": 5
+      },
+      {
+        "moduleName": "regionKPI",
+        "priority": 6
+      },
+      {
+        "moduleName": "mediaMarketingFunnelAdtype",
+        "priority": 7
+      }
+    ],
+    "mediaPlanName": "test_1205",
+    "corporationId": "29887",
+    "currency": "USD",
+    "totalBudget": 10000,
+    "regionBudget": [
+      {
+        "country": {
+          "code": "Fiji",
+          "groupName": "CountryFullName"
+        },
+        "budgetPercentage": 6.66,
+        "budgetAmount": 666,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "666",
+            "completion": 0,
+            "priority": 1
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "Australia",
+          "groupName": "CountryFullName"
+        },
+        "budgetPercentage": 11.51,
+        "budgetAmount": 1151,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "1151",
+            "completion": 0,
+            "priority": 1
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "HQ",
+          "groupName": "CustomSimpleCode",
+          "type": 1,
+          "regions": []
+        },
+        "budgetPercentage": 50,
+        "budgetAmount": 5000,
+        "completion": 1,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "priority": 1,
+            "val": "",
+            "completion": 0
+          }
+        ]
+      },
+      {
+        "country": {
+          "code": "France",
+          "groupName": "CountryFullName"
+        },
+        "budgetPercentage": 3.64,
+        "budgetAmount": 364,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "364",
+            "completion": 0,
+            "priority": 1
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "US",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 20.81,
+        "budgetAmount": 2081,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "2081",
+            "completion": 0,
+            "priority": 1
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "Western Europe",
+          "groupName": "RegionFullName"
+        },
+        "budgetPercentage": 7.38,
+        "budgetAmount": 738,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "738",
+            "completion": 0,
+            "priority": 1
+          }
+        ],
+        "completion": 0
+      }
+    ],
+    "corporationName": "Trip.com Travel Singapore Pte. Ltd.",
+    "accountId": "616224383292030,640985094329313,664969826293095,665629407627867",
+    "categoryLevel1Id": "1",
+    "categoryLevel2Id": "101",
+    "categoryLevel3Id": "3016",
+    "campaignId": null,
+    "competitorCorporationId": "280450",
+    "uuid": "21dbacf8-a9b7-4b62-bdf0-dac3f44a",
+    "parentBriefId": "4906919d-b510-4fa6-8ab4-5bd1e1bf",
+    "usedModified": 0,
+    "isModified": 0
+  },
+  "briefMultiConfig": [
+    {
+      "country": {
+        "code": "Fiji",
+        "groupName": "CountryFullName"
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 50,
+          "budgetAmount": 333,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness",
+            "Traffic",
+            "Consideration",
+            "Conversion"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB"
+            ],
+            [
+              "Meta",
+              "IG"
+            ],
+            [
+              "Meta",
+              "FB&IG"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ],
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Google",
+              "YTB"
+            ],
+            [
+              "TikTok",
+              "TT"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 333,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": []
+        }
+      ],
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20,
+        "priority": 3
+      },
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 67
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 20,
+          "budgetAmount": 133
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 133
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 50,
+          "budgetAmount": 333
+        }
+      ],
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15,
+        "priority": 4
+      },
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 40,
+          "budgetAmount": 268,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 67
+            },
+            {
+              "name": "FB",
+              "budgetPercentage": 10,
+              "budgetAmount": 67
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 67
+            },
+            {
+              "name": "平均值",
+              "budgetPercentage": 10,
+              "budgetAmount": 67
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 30,
+          "budgetAmount": 200,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 67
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 20,
+              "budgetAmount": 133
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 200,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 200
+            }
+          ]
+        }
+      ],
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5,
+        "priority": 2
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "平均值"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Masthead(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "GDN(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Search",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "StandardFeed（R&F）",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 85,
+        "priority": 5
+      }
+    },
+    {
+      "country": {
+        "code": "Australia",
+        "groupName": "CountryFullName"
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 50,
+          "budgetAmount": 576,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness",
+            "Traffic",
+            "Consideration",
+            "Conversion"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB"
+            ],
+            [
+              "Meta",
+              "IG"
+            ],
+            [
+              "Meta",
+              "FB&IG"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ],
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Google",
+              "YTB"
+            ],
+            [
+              "TikTok",
+              "TT"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 576,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": []
+        }
+      ],
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20,
+        "priority": 3
+      },
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 115
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 20,
+          "budgetAmount": 230
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 230
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 50,
+          "budgetAmount": 576
+        }
+      ],
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15,
+        "priority": 4
+      },
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 40,
+          "budgetAmount": 460,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 115
+            },
+            {
+              "name": "FB",
+              "budgetPercentage": 10,
+              "budgetAmount": 115
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 115
+            },
+            {
+              "name": "平均值",
+              "budgetPercentage": 10,
+              "budgetAmount": 115
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 30,
+          "budgetAmount": 345,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 115
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 20,
+              "budgetAmount": 230
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 345,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 345
+            }
+          ]
+        }
+      ],
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5,
+        "priority": 2
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "平均值"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Masthead(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "GDN(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Search",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "StandardFeed（R&F）",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 85,
+        "priority": 5
+      }
+    },
+    {
+      "country": {
+        "code": "HQ",
+        "groupName": "CustomSimpleCode",
+        "type": 1,
+        "regions": []
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 50,
+          "budgetAmount": 2500,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness",
+            "Traffic",
+            "Consideration",
+            "Conversion"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB"
+            ],
+            [
+              "Meta",
+              "IG"
+            ],
+            [
+              "Meta",
+              "FB&IG"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ],
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Google",
+              "YTB"
+            ],
+            [
+              "TikTok",
+              "TT"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 2500,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": []
+        }
+      ],
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20,
+        "priority": 3
+      },
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 500
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 20,
+          "budgetAmount": 1000
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 1000
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 50,
+          "budgetAmount": 2500
+        }
+      ],
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15,
+        "priority": 4
+      },
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 40,
+          "budgetAmount": 2000,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 500
+            },
+            {
+              "name": "FB",
+              "budgetPercentage": 10,
+              "budgetAmount": 500
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 500
+            },
+            {
+              "name": "平均值",
+              "budgetPercentage": 10,
+              "budgetAmount": 500
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 30,
+          "budgetAmount": 1500,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 500
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 20,
+              "budgetAmount": 1000
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 1500,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 1500
+            }
+          ]
+        }
+      ],
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5,
+        "priority": 2
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "平均值"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Masthead(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "GDN(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Search",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "StandardFeed（R&F）",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 85,
+        "priority": 5
+      }
+    },
+    {
+      "country": {
+        "code": "France",
+        "groupName": "CountryFullName"
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 50,
+          "budgetAmount": 182,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness",
+            "Traffic",
+            "Consideration",
+            "Conversion"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB"
+            ],
+            [
+              "Meta",
+              "IG"
+            ],
+            [
+              "Meta",
+              "FB&IG"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ],
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Google",
+              "YTB"
+            ],
+            [
+              "TikTok",
+              "TT"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 182,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": []
+        }
+      ],
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20,
+        "priority": 3
+      },
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 36
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 20,
+          "budgetAmount": 73
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 73
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 50,
+          "budgetAmount": 182
+        }
+      ],
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15,
+        "priority": 4
+      },
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 40,
+          "budgetAmount": 144,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 36
+            },
+            {
+              "name": "FB",
+              "budgetPercentage": 10,
+              "budgetAmount": 36
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 36
+            },
+            {
+              "name": "平均值",
+              "budgetPercentage": 10,
+              "budgetAmount": 36
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 30,
+          "budgetAmount": 109,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 36
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 20,
+              "budgetAmount": 73
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 109,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 109
+            }
+          ]
+        }
+      ],
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5,
+        "priority": 2
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "平均值"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Masthead(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "GDN(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Search",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "StandardFeed（R&F）",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 85,
+        "priority": 5
+      }
+    },
+    {
+      "country": {
+        "code": "US",
+        "groupName": "CountrySimpleCode"
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 50,
+          "budgetAmount": 1041,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness",
+            "Traffic",
+            "Consideration",
+            "Conversion"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB"
+            ],
+            [
+              "Meta",
+              "IG"
+            ],
+            [
+              "Meta",
+              "FB&IG"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ],
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Google",
+              "YTB"
+            ],
+            [
+              "TikTok",
+              "TT"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 1041,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": []
+        }
+      ],
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20,
+        "priority": 3
+      },
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 208
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 20,
+          "budgetAmount": 416
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 416
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 50,
+          "budgetAmount": 1041
+        }
+      ],
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15,
+        "priority": 4
+      },
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 40,
+          "budgetAmount": 832,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 208
+            },
+            {
+              "name": "FB",
+              "budgetPercentage": 10,
+              "budgetAmount": 208
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 208
+            },
+            {
+              "name": "平均值",
+              "budgetPercentage": 10,
+              "budgetAmount": 208
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 30,
+          "budgetAmount": 624,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 208
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 20,
+              "budgetAmount": 416
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 624,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 624
+            }
+          ]
+        }
+      ],
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5,
+        "priority": 2
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "平均值"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Masthead(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "GDN(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Search",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "StandardFeed（R&F）",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 85,
+        "priority": 5
+      }
+    },
+    {
+      "country": {
+        "code": "Western Europe",
+        "groupName": "RegionFullName"
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 50,
+          "budgetAmount": 369,
+          "dates": [
+            "20260101",
+            "20260131"
+          ],
+          "marketingFunnel": [
+            "Awareness",
+            "Traffic",
+            "Consideration",
+            "Conversion"
+          ],
+          "mediaPlatform": [
+            [
+              "Meta",
+              "FB"
+            ],
+            [
+              "Meta",
+              "IG"
+            ],
+            [
+              "Meta",
+              "FB&IG"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ],
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Google",
+              "YTB"
+            ],
+            [
+              "TikTok",
+              "TT"
+            ]
+          ]
+        },
+        {
+          "name": "2rd",
+          "budgetPercentage": 50,
+          "budgetAmount": 369,
+          "dates": [
+            "20260201",
+            "20260228"
+          ],
+          "marketingFunnel": [
+            "Consideration"
+          ],
+          "mediaPlatform": []
+        }
+      ],
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20,
+        "priority": 3
+      },
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 10,
+          "budgetAmount": 74
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 20,
+          "budgetAmount": 148
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 20,
+          "budgetAmount": 148
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 50,
+          "budgetAmount": 369
+        }
+      ],
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15,
+        "priority": 4
+      },
+      "media": [
+        {
+          "name": "Meta",
+          "budgetPercentage": 40,
+          "budgetAmount": 296,
+          "children": [
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 74
+            },
+            {
+              "name": "FB",
+              "budgetPercentage": 10,
+              "budgetAmount": 74
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 10,
+              "budgetAmount": 74
+            },
+            {
+              "name": "平均值",
+              "budgetPercentage": 10,
+              "budgetAmount": 74
+            }
+          ]
+        },
+        {
+          "name": "Google",
+          "budgetPercentage": 30,
+          "budgetAmount": 222,
+          "children": [
+            {
+              "name": "YTB",
+              "budgetPercentage": 10,
+              "budgetAmount": 74
+            },
+            {
+              "name": "GG",
+              "budgetPercentage": 20,
+              "budgetAmount": 148
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30,
+          "budgetAmount": 221,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30,
+              "budgetAmount": 221
+            }
+          ]
+        }
+      ],
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5,
+        "priority": 2
+      },
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "平均值"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Conversion",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Masthead(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Action Campaign",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "GDN(CPM)",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Search",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Performance Max",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "StandardFeed（R&F）",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Traffic",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "Video Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adTypeName": "LIVE Shopping Ads",
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 85,
+        "priority": 5
+      }
+    }
+  ]
+}

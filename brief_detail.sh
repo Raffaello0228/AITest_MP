@@ -1,0 +1,24 @@
+curl 'https://o-test-pu-gateway.meetsocial.cn/sino-adtech-mediaplan/mediaPlan/brief/multi-country/48213f32-a53f-4b2e-829d-68981714/brief-detail' \
+  -X 'POST' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7' \
+  -H 'content-length: 0' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  -b 'gr_user_id=2733715b-d046-4a06-aab9-d09189bf690c; _ga_GN26NTKK4M=GS1.1.1741336543.1.0.1741336543.0.0.0; _ga=GA1.1.1241745551.1741336543; _c_WBKFRo=2s91WU3zTVcTUtlIzdPdx3xeUVi8lC6QlUutN2FG; d8be869c3765fa62aee8120a4798385a=S-1f683bc7d30749cabb4dbd7178318b50; test-d8be869c3765fa62aee8120a4798385a=S-209960d422ba4e73a22612b03d0842e9; pre-d8be869c3765fa62aee8120a4798385a=S-2dc49d57d71b4e87ae63f0b5cd753740; 96ca14b024c8be7c_gr_last_sent_cs1=9de03bba73eeaf703a1fd99016baf847; 96ca14b024c8be7c_gr_session_id=40d2773d-bbd5-4da4-9f1e-0f98184c2c3f; 96ca14b024c8be7c_gr_last_sent_sid_with_cs1=40d2773d-bbd5-4da4-9f1e-0f98184c2c3f; 96ca14b024c8be7c_gr_session_id_sent_vst=40d2773d-bbd5-4da4-9f1e-0f98184c2c3f; 96ca14b024c8be7c_gr_cs1=9de03bba73eeaf703a1fd99016baf847' \
+  -H 'origin: https://test-op.meetsocial.cn' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://test-op.meetsocial.cn/' \
+  -H 'sec-ch-ua: "Chromium";v="142", "Microsoft Edge";v="142", "Not_A Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0' \
+  -H 'x-channel-access-token: undefined' \
+  -H 'x-channel-userid: undefined' \
+  -H 'x-sino-global-app-id: op' \
+  -H 'x-sino-global-device-token: SINO_FP_ALI_V0VCI3NoYOoTYxMGJmYWNoczRkNDFmNjgxYWViZTg0YjE2MDRlLWgtMTc2NTE4NzY3NDA3My05NTMxMmI5YWFlNTU0NTBhODQ3ZDc2NmY3NTg5OTg5MyNCZi9pZWI4NnhFeGFzMHg4VXgyYVdKeVlNb2tQZXZzMjdhenlwa0c5ejVUVTFKbTNjbUg1UVhDcTZBUzRmTy9aWGE2SmgrM0JsM3lRU2VQTlJQSXFlMU55TnhFT3Q4RFMxbU1rMlRKTzFaRGV1bnBJdkdlSk9DRDdGWTJ5UmZoazd5KzlWK0k2RUNucTFEWTJOazdYM0Z2WW8reE9PM1lETFlBa29BZEJSTXRLcnc4aVYvWHVuQlhRUHBIeldzc3FkMC9aeUpCbG55ejc5QnBoc2lJY0dkL01FRE9WbnIrREdPRVZUZ0kydmVna1NtNzZaaVhaNVJZQ01MejNQTy8rK0JncWhPU1JCRmhHMWdCYnJOK3ByQXExMFFvRHBHcmRvRkRmOWJGQVdYYXZVeGdpbU5aNkJKWnQ2UlY4Y21PVE5WZGRXanVoTFU5Z2ZYMFo1aG5vZ0ttR1dWbnA3b0UyNzJBUGJvS2VVVDBrVVp0NXZKcTZ2aFhYeUxxaFE2em5xUGZzMGJkaWQ3Y0tmekI0WkxSbWNEbGZXQklKVllMRVhZdWdpNVZuNDZXcnZYQ1E1RjJzeThHUVA0enNaWGVTZlhXRnc2RmxJMldxSkZscThrRFQxNi81dC82cC8rOWpXeHdpZEUvalhNYjVDV0ZFS1h1WjliVEdRMU1sRUlQd2ZYWjc0c1hLVXVDZ0paNGQ5K01Ld3VJcCtIMGtmT28xeHZUQnNBV043ZVRQd0xFb2tLdHplQXRvbEJpdVJQSDc1VmF1cy9nbUNKeG1KcERWU3FJS3RlY3Myd3JBRmkrUHRrd0d5ZlRmeUpzcVN0djloTlYvUDE4bWlOMEltT2g5MlhrektKd2UvajNjRFYzNiswbFdzZENBNW05SXFLSk82Sk4vdUhsMlVxdz0jODg2IzU1MWEwMDQ2NzM0MjA3NzIxOGM4NzU2NDNlOWRiMTBj' \
+  -H 'x-sino-global-userid: 2923' \
+  -H 'x-sino-jwt-token: eyJYLVNJTk8tVE9LRU4iOiJTLWQ1NzFlNzQ4ZjUzMTQ4OTlhNzZiNGY5MDQ3YTdkMWM1IiwiWC1TSU5PLUFQUC1JRCI6InNpbm8tb3AiLCJ0eXAiOiJKV1QiLCJYLVNJTk8tVE9LRU4tVFlQRSI6IlNTTyIsImFsZyI6IkhTMjU2In0.eyJ1c2VyTmFtZSI6InNpbW9uLnN1biIsImV4cCI6MTc2NTI3NDA3NiwidXNlcklkIjoyOTIzfQ.nOb_ncjHGd3gnthmMi-3DhXbFVnVPTxDwi3ekhHv2O8' \
+  -H 'x-sino-language: zh-CN'

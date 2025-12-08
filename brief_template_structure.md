@@ -25,20 +25,20 @@
 | key | String | 是 | KPI指标名称 | "Impression", "Clicks", "LinkClicks", "VideoViews", "Engagement", "Followers", "Like", "Purchase" |
 | val | String | 是 | KPI目标值 | "100000" |
 | priority | Number | 是 | 优先级（数字越小优先级越高） | 1 |
-| completion | Number | 是 | 完成状态（0=未完成，1=已完成） | 1 |
+| completion | Number | 是 | 必须达成（0=非必须达成，1=必须达成） | 1 |
 
 ### 1.2 kpiInfoBudgetConfig（KPI预算配置）
 | 字段 | 类型 | 必填 | 说明 | 示例值 |
 |------|------|------|------|--------|
-| rangeMatch | Number | 是 | 范围匹配度 | 80 |
+| rangeMatch | Number | 是 | KPI达成要求(当有KPI选择非必须达成时，那么结果数据中该KPI需要满足该达成率) | 80 |
 
 ### 1.3 regionBudgetConfig（区域预算配置）
 | 字段 | 类型 | 必填 | 说明 | 示例值 |
 |------|------|------|------|--------|
-| consistentMatch | Number | 是 | 一致性匹配度 | 1 |
-| rangeMatch | Number | 是 | 范围匹配度 | 10 |
-| budgetCompletionRule | Number | 是 | 预算完成规则阈值 | 90 |
-| kpiCompletionRule | Number | 是 | KPI完成规则阈值 | 80 |
+| consistentMatch | Number | 是 | 分配方式 | 1 :完全匹配，0 ：大小关系匹配|
+| rangeMatch | Number | 是 | 误差范围（当分配方式为完全匹配时，推广区域维度的预算的误差需小于该值） | 10 |
+| budgetCompletionRule | Number | 是 | 推广区域维度预算达成要求 | 90 |
+| kpiCompletionRule | Number | 是 | 推广区域维度KPI达成要求 | 80 |
 
 ### 1.4 dimension（维度数组）
 分析维度列表，用于数据筛选和分析。
@@ -85,7 +85,7 @@
 | budgetPercentage | Number | 是 | 预算百分比 | 21.59 |
 | budgetAmount | Number | 是 | 预算金额 | 2159000 |
 | kpiInfo | Array | 是 | 该区域的KPI信息数组 | 同1.1 kpiInfo结构 |
-| completion | Number | 是 | 完成状态（0=未完成，1=已完成） | 0 |
+| completion | Number | 是 | 必须达成（0=非必须达成，1=必须达成） | 0 |
 
 ---
 
@@ -118,8 +118,8 @@
 ### 2.4 stageBudgetConfig（阶段预算配置）
 | 字段 | 类型 | 必填 | 说明 | 示例值 |
 |------|------|------|------|--------|
-| consistentMatch | Number | 是 | 一致性匹配度 | 1 |
-| rangeMatch | Number | 是 | 范围匹配度 | 20 |
+| consistentMatch | Number | 是 | 分配方式 | 1 :完全匹配，0 ：大小关系匹配|
+| rangeMatch | Number | 是 | 误差范围 | 20 |
 
 ### 2.5 marketingFunnel（营销漏斗数组）
 营销漏斗配置。
@@ -134,8 +134,8 @@
 ### 2.6 marketingFunnelBudgetConfig（营销漏斗预算配置）
 | 字段 | 类型 | 必填 | 说明 | 示例值 |
 |------|------|------|------|--------|
-| consistentMatch | Number | 是 | 一致性匹配度 | 1 |
-| rangeMatch | Number | 是 | 范围匹配度 | 15 |
+| consistentMatch | Number | 是 | 分配方式 | 1 :完全匹配，0 ：大小关系匹配|
+| rangeMatch | Number | 是 | 误差范围 | 15 |
 
 ### 2.7 media（媒体数组）
 媒体平台配置，支持层级结构（父媒体-子平台）。
@@ -157,8 +157,8 @@
 ### 2.8 mediaBudgetConfig（媒体预算配置）
 | 字段 | 类型 | 必填 | 说明 | 示例值 |
 |------|------|------|------|--------|
-| consistentMatch | Number | 是 | 一致性匹配度 | 1 |
-| rangeMatch | Number | 是 | 范围匹配度 | 5 |
+| consistentMatch | Number | 是 | 分配方式 | 1 :完全匹配，0 ：大小关系匹配|
+| rangeMatch | Number | 是 | 误差范围 | 5 |
 
 ### 2.9 mediaMarketingFunnelAdtype（媒体-营销漏斗-广告类型配置数组）
 媒体、营销漏斗和广告类型的关联配置。
@@ -187,14 +187,170 @@
 ### 2.10 mediaMarketingFunnelAdtypeBudgetConfig（媒体-营销漏斗-广告类型预算配置）
 | 字段 | 类型 | 必填 | 说明 | 示例值 |
 |------|------|------|------|--------|
-| precision | Number | 是 | 精度（小数位数） | 2 |
-| rangeMatch | Number | 是 | 范围匹配度 | 80 |
+| precision | Number | 是 | 结果预算是否允许为0 | 2 |
+| rangeMatch | Number | 是 | adtype层级预算达成要求 | 80 |
 
 ---
 
-## 3. 数据说明
+## 3. 测试用例配置与JSON结构对应关系
 
-### 3.1 KPI指标类型
+本文档说明 `testcase.py` 中的测试用例配置项与 JSON 结构字段的对应关系。
+
+### 3.1 全局KPI配置
+
+| 测试用例配置项 | JSON路径 | 字段 | 说明 | 示例值 |
+|--------------|---------|------|------|--------|
+| `kpi_priority_list` | `basicInfo.kpiInfo[]` | `priority` | KPI优先级列表，数组顺序决定优先级（索引+1） | `["Impression", "VideoViews", "Engagement", ...]` → `priority: 1, 2, 3, ...` |
+| `kpi_must_achieve` | `basicInfo.kpiInfo[]` | `completion` | KPI是否必须达成（False=0, True=1） | `False` → `completion: 0` |
+| `kpi_target_rate` | `basicInfo.kpiInfoBudgetConfig` | `rangeMatch` | KPI达成要求（当有KPI选择非必须达成时，该KPI需要满足该达成率） | `80` → `rangeMatch: 80` |
+
+### 3.2 区域预算配置
+
+| 测试用例配置项 | JSON路径 | 字段 | 说明 | 示例值 |
+|--------------|---------|------|------|--------|
+| `region_match_type` | `basicInfo.regionBudgetConfig` | `consistentMatch` | 分配方式（"完全匹配"=1, "大小关系匹配"=0） | `"完全匹配"` → `consistentMatch: 1` |
+| `region_budget_range_match` | `basicInfo.regionBudgetConfig` | `rangeMatch` | 误差范围（当分配方式为完全匹配时，推广区域维度的预算的误差需小于该值） | `5` → `rangeMatch: 5` |
+| `region_budget_must_achieve` | `basicInfo.regionBudgetConfig` | `budgetCompletionRule`<br>`kpiCompletionRule` | 是否必须达成（False=不设置这两个字段，True=设置这两个字段） | `False` → 不设置这两个字段 |
+| `region_budget_target_rate` | `basicInfo.regionBudgetConfig` | `budgetCompletionRule` | 推广区域维度预算达成要求 | `90` → `budgetCompletionRule: 90` |
+| `region_kpi_target_rate` | `basicInfo.regionBudgetConfig` | `kpiCompletionRule` | 推广区域维度KPI达成要求 | `80` → `kpiCompletionRule: 80` |
+
+### 3.3 模块优先级配置
+
+| 测试用例配置项 | JSON路径 | 字段 | 说明 | 示例值 |
+|--------------|---------|------|------|--------|
+| `module_priority_list` | `basicInfo.moduleConfig[]`<br>`briefMultiConfig[].moduleConfig[]` | `moduleName`<br>`priority` | 模块优先级列表，数组顺序决定优先级（索引+1） | `["kpiInfo", "regionBudget", ...]` → `priority: 1, 2, ...` |
+
+### 3.4 阶段预算配置（国家级别）
+
+| 测试用例配置项 | JSON路径 | 字段 | 说明 | 示例值 |
+|--------------|---------|------|------|--------|
+| `stage_match_type` | `briefMultiConfig[].stageBudgetConfig` | `consistentMatch` | 分配方式（"完全匹配"=1, "大小关系匹配"=0） | `"完全匹配"` → `consistentMatch: 1` |
+| `stage_range_match` | `briefMultiConfig[].stageBudgetConfig` | `rangeMatch` | 误差范围 | `20` → `rangeMatch: 20` |
+
+### 3.5 营销漏斗预算配置（国家级别）
+
+| 测试用例配置项 | JSON路径 | 字段 | 说明 | 示例值 |
+|--------------|---------|------|------|--------|
+| `marketingfunnel_match_type` | `briefMultiConfig[].marketingFunnelBudgetConfig` | `consistentMatch` | 分配方式（"完全匹配"=1, "大小关系匹配"=0） | `"完全匹配"` → `consistentMatch: 1` |
+| `marketingfunnel_range_match` | `briefMultiConfig[].marketingFunnelBudgetConfig` | `rangeMatch` | 误差范围 | `15` → `rangeMatch: 15` |
+
+### 3.6 媒体预算配置（国家级别）
+
+| 测试用例配置项 | JSON路径 | 字段 | 说明 | 示例值 |
+|--------------|---------|------|------|--------|
+| `media_match_type` | `briefMultiConfig[].mediaBudgetConfig` | `consistentMatch` | 分配方式（"完全匹配"=1, "大小关系匹配"=0） | `"完全匹配"` → `consistentMatch: 1` |
+| `media_range_match` | `briefMultiConfig[].mediaBudgetConfig` | `rangeMatch` | 误差范围 | `5` → `rangeMatch: 5` |
+
+### 3.7 媒体-营销漏斗-广告类型预算配置（国家级别）
+
+| 测试用例配置项 | JSON路径 | 字段 | 说明 | 示例值 |
+|--------------|---------|------|------|--------|
+| `allow_zero_budget` | `briefMultiConfig[].mediaMarketingFunnelAdtypeBudgetConfig` | `precision` | 结果预算是否允许为0（False=2, True=1） | `False` → `precision: 2` |
+| `mediaMarketingFunnelAdtype_target_rate` | `briefMultiConfig[].mediaMarketingFunnelAdtypeBudgetConfig` | `rangeMatch` | adtype层级预算达成要求 | `80` → `rangeMatch: 80` |
+| `mediaMarketingFunnelAdtype_must_achieve` | - | - | 是否必须达成（当前版本未在JSON中体现，可能用于验证逻辑） | `False` |
+
+### 3.8 配置映射示例
+
+以测试用例1为例，配置映射如下：
+
+```python
+# testcase.py
+TEST_CASES = {
+    1: {
+        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks", ...],
+        "kpi_must_achieve": False,
+        "kpi_target_rate": 80,
+        "region_match_type": "完全匹配",
+        "region_budget_range_match": 5,
+        "region_budget_must_achieve": False,
+        "region_budget_target_rate": 90,
+        "region_kpi_target_rate": 80,
+        "stage_match_type": "完全匹配",
+        "stage_range_match": 20,
+        "marketingfunnel_match_type": "完全匹配",
+        "marketingfunnel_range_match": 15,
+        "media_match_type": "完全匹配",
+        "media_range_match": 5,
+        "allow_zero_budget": False,
+        "mediaMarketingFunnelAdtype_target_rate": 80,
+        "module_priority_list": ["kpiInfo", "regionBudget", "media", ...],
+    },
+}
+```
+
+对应生成的JSON结构：
+
+```json
+{
+  "basicInfo": {
+    "kpiInfo": [
+      {"key": "Impression", "priority": 1, "completion": 0, ...},
+      {"key": "VideoViews", "priority": 2, "completion": 0, ...},
+      {"key": "Engagement", "priority": 3, "completion": 0, ...},
+      ...
+    ],
+    "kpiInfoBudgetConfig": {
+      "rangeMatch": 80
+    },
+    "regionBudgetConfig": {
+      "consistentMatch": 1,
+      "rangeMatch": 5
+      // 注意：region_budget_must_achieve=False 时不设置 budgetCompletionRule 和 kpiCompletionRule
+    },
+    "moduleConfig": [
+      {"moduleName": "kpiInfo", "priority": 1},
+      {"moduleName": "regionBudget", "priority": 2},
+      {"moduleName": "media", "priority": 3},
+      ...
+    ]
+  },
+  "briefMultiConfig": [
+    {
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "moduleConfig": [
+        {"moduleName": "kpiInfo", "priority": 1},
+        {"moduleName": "regionBudget", "priority": 2},
+        ...
+      ]
+    }
+  ]
+}
+```
+
+### 3.9 注意事项
+
+1. **优先级映射**：数组顺序决定优先级，第一个元素优先级为1，第二个为2，以此类推
+2. **匹配类型转换**：
+   - `"完全匹配"` → `consistentMatch: 1`
+   - `"大小关系匹配"` → `consistentMatch: 0`
+3. **必须达成字段**：
+   - 当 `region_budget_must_achieve=False` 时，不设置 `budgetCompletionRule` 和 `kpiCompletionRule` 字段
+   - 当 `region_budget_must_achieve=True` 时，设置这两个字段为对应的 `target_rate` 值
+4. **零预算配置**：
+   - `allow_zero_budget=False` → `precision: 2`（不允许为0）
+   - `allow_zero_budget=True` → `precision: 1`（允许为0）
+5. **国家级别配置**：`stageBudgetConfig`、`marketingFunnelBudgetConfig`、`mediaBudgetConfig`、`mediaMarketingFunnelAdtypeBudgetConfig` 和 `moduleConfig` 在每个国家的 `briefMultiConfig` 中都需要配置
+
+---
+
+## 4. 数据说明
+
+### 4.1 KPI指标类型
 - **Impression**: 展示次数（优先级1）
 - **Clicks**: 点击次数（优先级2）
 - **LinkClicks**: 链接点击（优先级3）
@@ -204,13 +360,13 @@
 - **Like**: 点赞数（优先级7）
 - **Purchase**: 购买转化（优先级8）
 
-### 3.2 营销漏斗类型
+### 4.2 营销漏斗类型
 - **Awareness**: 认知阶段
 - **Consideration**: 考虑阶段
 - **Traffic**: 流量阶段
 - **Conversion**: 转化阶段
 
-### 3.3 媒体平台
+### 4.3 媒体平台
 - **Meta**: Facebook/Instagram 的父媒体
   - **FB&IG**: Facebook和Instagram合并平台
   - **FB**: Facebook（单独）
@@ -221,7 +377,7 @@
 - **TikTok**: TikTok 的父媒体
   - **TT**: TikTok
 
-### 3.4 广告类型示例
+### 4.4 广告类型示例
 - **Video Action Campaign**: 视频行动广告（Google）
 - **Video Ads Sequencing**: 视频广告序列（Google）
 - **Video Views**: 视频观看广告（Meta）
@@ -237,7 +393,7 @@
 
 ---
 
-## 4. 注意事项
+## 5. 注意事项
 
 1. **必填字段**: 标记为"是"的字段必须提供，否则接口可能返回错误
 2. **null值处理**: 某些字段允许为 `null`，表示未设置或使用默认值（如 `categoryLevel4Id`, `campaignId`）
@@ -255,9 +411,9 @@
 
 ---
 
-## 5. 示例数据说明
+## 6. 示例数据说明
 
-### 5.1 完整示例
+### 6.1 完整示例
 参考 `brief_template.json` 文件，包含：
 - 多个国家/区域的配置（US, GB, FR, DE, ME&NA, LATAM 等）
 - 每个国家/区域包含完整的阶段、漏斗、媒体和广告类型配置
@@ -265,14 +421,14 @@
 - 营销漏斗和媒体平台都包含预算金额
 - 广告类型包含完整的8种KPI目标值配置
 
-### 5.2 最小化示例
+### 6.2 最小化示例
 至少需要包含：
 - `basicInfo` 中的必填字段
 - `briefMultiConfig` 中至少一个国家的完整配置
 
 ---
 
-## 6. 常见问题
+## 7. 常见问题
 
 **Q: budgetAmount 和 budgetPercentage 的关系？**  
 A: 两者可以同时存在，也可以只存在一个。如果同时存在，系统会优先使用 budgetAmount。
@@ -291,7 +447,4 @@ A: `dates` 是一个字符串数组，格式为 `["YYYYMMDD", "YYYYMMDD"]`，第
 
 **Q: 区域代码和国家代码有什么区别？**  
 A: 国家代码使用ISO标准代码（如 US, GB），`groupName` 为 "CountrySimpleCode"；区域代码是自定义的区域标识（如 ME&NA, LATAM），`groupName` 为 "RegionSimpleCode"。
-
-**Q: FB&IG 是什么意思？**  
-A: "FB&IG" 表示 Facebook 和 Instagram 的合并平台配置，用于同时配置两个平台的预算和设置。
 
