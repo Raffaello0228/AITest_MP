@@ -9,7 +9,7 @@
 TEST_CASES = {
     # ========== 基准用例 ==========
     # 用例0：基准用例 - 所有分配策略字段使用默认值（完全匹配，默认误差范围）
-    0: {
+    "基准用例-完全匹配默认配置": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -48,7 +48,7 @@ TEST_CASES = {
     },
     # ========== 测试 region_match_type（推广区域预算分配策略） ==========
     # 用例1：只改变 region_match_type 为"大小关系匹配"，其他与基准用例相同
-    1: {
+    "测试-region_match_type-大小关系匹配": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -86,7 +86,7 @@ TEST_CASES = {
         ],
     },
     # 用例2：region_match_type 为"完全匹配"，但误差范围改为10%（测试误差范围影响）
-    2: {
+    "测试-region_budget_range_match-10%": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -124,7 +124,7 @@ TEST_CASES = {
         ],
     },
     # 用例3：region_match_type 为"完全匹配"，但勾选必须达成（测试必须达成影响）
-    3: {
+    "测试-region_budget_must_achieve-必须达成": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -163,7 +163,7 @@ TEST_CASES = {
     },
     # ========== 测试 stage_match_type（阶段预算分配策略） ==========
     # 用例4：只改变 stage_match_type 为"大小关系匹配"，其他与基准用例相同
-    4: {
+    "测试-stage_match_type-大小关系匹配": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -201,7 +201,7 @@ TEST_CASES = {
         ],
     },
     # 用例5：stage_match_type 为"完全匹配"，但误差范围改为30%（测试误差范围影响）
-    5: {
+    "测试-stage_range_match-30%": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -240,7 +240,7 @@ TEST_CASES = {
     },
     # ========== 测试 marketingfunnel_match_type（营销漏斗预算分配策略） ==========
     # 用例6：只改变 marketingfunnel_match_type 为"大小关系匹配"，其他与基准用例相同
-    6: {
+    "测试-marketingfunnel_match_type-大小关系匹配": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -278,7 +278,7 @@ TEST_CASES = {
         ],
     },
     # 用例7：marketingfunnel_match_type 为"完全匹配"，但误差范围改为25%（测试误差范围影响）
-    7: {
+    "测试-marketingfunnel_range_match-25%": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -317,7 +317,7 @@ TEST_CASES = {
     },
     # ========== 测试 media_match_type（媒体预算分配策略） ==========
     # 用例8：只改变 media_match_type 为"大小关系匹配"，其他与基准用例相同
-    8: {
+    "测试-media_match_type-大小关系匹配": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -355,7 +355,7 @@ TEST_CASES = {
         ],
     },
     # 用例9：media_match_type 为"完全匹配"，但误差范围改为10%（测试误差范围影响）
-    9: {
+    "测试-media_range_match-10%": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -394,7 +394,7 @@ TEST_CASES = {
     },
     # ========== 测试 mediaMarketingFunnelAdtype 相关配置 ==========
     # 用例10：allow_zero_budget 改为True（允许零预算）
-    10: {
+    "测试-allow_zero_budget-允许零预算": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -432,7 +432,7 @@ TEST_CASES = {
         ],
     },
     # 用例11：mediaMarketingFunnelAdtype_target_rate 改为90%（测试目标达成率影响）
-    11: {
+    "测试-mediaMarketingFunnelAdtype_target_rate-90%": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -471,7 +471,7 @@ TEST_CASES = {
     },
     # ========== 组合测试：多个分配策略字段同时改变 ==========
     # 用例12：region_match_type 和 stage_match_type 同时改为"大小关系匹配"
-    12: {
+    "组合测试-region和stage-大小关系匹配": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -509,7 +509,7 @@ TEST_CASES = {
         ],
     },
     # 用例13：所有分配策略字段都改为"大小关系匹配"
-    13: {
+    "组合测试-所有策略-大小关系匹配": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",

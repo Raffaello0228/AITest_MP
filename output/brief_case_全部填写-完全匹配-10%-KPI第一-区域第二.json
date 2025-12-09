@@ -6,49 +6,49 @@
         "key": "Impression",
         "val": "4047402603",
         "priority": 1,
-        "completion": 1
-      },
-      {
-        "key": "Clicks",
-        "val": "104478569",
-        "priority": 2,
-        "completion": 1
-      },
-      {
-        "key": "LinkClicks",
-        "val": "4762401",
-        "priority": 3,
-        "completion": 1
+        "completion": 0
       },
       {
         "key": "VideoViews",
         "val": "145502358",
-        "priority": 4,
-        "completion": 1
+        "priority": 2,
+        "completion": 0
       },
       {
         "key": "Engagement",
         "val": "206209897",
+        "priority": 3,
+        "completion": 0
+      },
+      {
+        "key": "Clicks",
+        "val": "104478569",
+        "priority": 4,
+        "completion": 0
+      },
+      {
+        "key": "LinkClicks",
+        "val": "4762401",
         "priority": 5,
-        "completion": 1
+        "completion": 0
       },
       {
         "key": "Followers",
         "val": "14504",
         "priority": 6,
-        "completion": 1
+        "completion": 0
       },
       {
         "key": "Like",
         "val": "23466",
         "priority": 7,
-        "completion": 1
+        "completion": 0
       },
       {
         "key": "Purchase",
         "val": "2888441",
         "priority": 8,
-        "completion": 1
+        "completion": 0
       }
     ],
     "kpiInfoBudgetConfig": {
@@ -56,14 +56,9 @@
     },
     "regionBudgetConfig": {
       "consistentMatch": 1,
-      "rangeMatch": 10,
-      "budgetCompletionRule": 90,
-      "kpiCompletionRule": 80
+      "rangeMatch": 10
     },
     "dimension": [
-      "corporation",
-      "competitor",
-      "category",
       "ai"
     ],
     "usedHistoryMp": 0,
@@ -97,7 +92,7 @@
         "priority": 7
       }
     ],
-    "mediaPlanName": "test_script",
+    "mediaPlanName": "全部填写-完全匹配-10%-KPI第一-区域第二",
     "corporationId": "29887",
     "currency": "USD",
     "totalBudget": 55108469.03,
@@ -117,26 +112,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "426605",
+            "key": "VideoViews",
+            "val": "29264",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "1053",
+            "key": "Engagement",
+            "val": "43989",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "29264",
+            "key": "Clicks",
+            "val": "426605",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "43989",
+            "key": "LinkClicks",
+            "val": "1053",
             "completion": 0,
             "priority": 5
           },
@@ -176,26 +171,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "1484441",
+            "key": "VideoViews",
+            "val": "1244119",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "122994",
+            "key": "Engagement",
+            "val": "1972944",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "1244119",
+            "key": "Clicks",
+            "val": "1484441",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "1972944",
+            "key": "LinkClicks",
+            "val": "122994",
             "completion": 0,
             "priority": 5
           },
@@ -235,26 +230,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "2821369",
+            "key": "VideoViews",
+            "val": "1103099",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "0",
+            "key": "Engagement",
+            "val": "1771392",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "1103099",
+            "key": "Clicks",
+            "val": "2821369",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "1771392",
+            "key": "LinkClicks",
+            "val": "0",
             "completion": 0,
             "priority": 5
           },
@@ -294,26 +289,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "2648414",
+            "key": "VideoViews",
+            "val": "3761400",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "3081",
+            "key": "Engagement",
+            "val": "4557220",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "3761400",
+            "key": "Clicks",
+            "val": "2648414",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "4557220",
+            "key": "LinkClicks",
+            "val": "3081",
             "completion": 0,
             "priority": 5
           },
@@ -353,26 +348,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "648637",
+            "key": "VideoViews",
+            "val": "777812",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "3013",
+            "key": "Engagement",
+            "val": "723194",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "777812",
+            "key": "Clicks",
+            "val": "648637",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "723194",
+            "key": "LinkClicks",
+            "val": "3013",
             "completion": 0,
             "priority": 5
           },
@@ -412,26 +407,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "11061089",
+            "key": "VideoViews",
+            "val": "4101552",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "195794",
+            "key": "Engagement",
+            "val": "4603090",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "4101552",
+            "key": "Clicks",
+            "val": "11061089",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "4603090",
+            "key": "LinkClicks",
+            "val": "195794",
             "completion": 0,
             "priority": 5
           },
@@ -471,26 +466,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "14206300",
+            "key": "VideoViews",
+            "val": "24677571",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "325556",
+            "key": "Engagement",
+            "val": "34814318",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "24677571",
+            "key": "Clicks",
+            "val": "14206300",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "34814318",
+            "key": "LinkClicks",
+            "val": "325556",
             "completion": 0,
             "priority": 5
           },
@@ -530,26 +525,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "3379311",
+            "key": "VideoViews",
+            "val": "10278772",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "909967",
+            "key": "Engagement",
+            "val": "13242944",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "10278772",
+            "key": "Clicks",
+            "val": "3379311",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "13242944",
+            "key": "LinkClicks",
+            "val": "909967",
             "completion": 0,
             "priority": 5
           },
@@ -589,26 +584,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "5205596",
+            "key": "VideoViews",
+            "val": "3365465",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "11",
+            "key": "Engagement",
+            "val": "3517328",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "3365465",
+            "key": "Clicks",
+            "val": "5205596",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "3517328",
+            "key": "LinkClicks",
+            "val": "11",
             "completion": 0,
             "priority": 5
           },
@@ -648,26 +643,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "8735471",
+            "key": "VideoViews",
+            "val": "6544063",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "164080",
+            "key": "Engagement",
+            "val": "9781093",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "6544063",
+            "key": "Clicks",
+            "val": "8735471",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "9781093",
+            "key": "LinkClicks",
+            "val": "164080",
             "completion": 0,
             "priority": 5
           },
@@ -707,26 +702,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "4222486",
+            "key": "VideoViews",
+            "val": "6126245",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "439660",
+            "key": "Engagement",
+            "val": "9937325",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "6126245",
+            "key": "Clicks",
+            "val": "4222486",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "9937325",
+            "key": "LinkClicks",
+            "val": "439660",
             "completion": 0,
             "priority": 5
           },
@@ -766,26 +761,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "387408",
+            "key": "VideoViews",
+            "val": "187540",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "0",
+            "key": "Engagement",
+            "val": "260004",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "187540",
+            "key": "Clicks",
+            "val": "387408",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "260004",
+            "key": "LinkClicks",
+            "val": "0",
             "completion": 0,
             "priority": 5
           },
@@ -825,26 +820,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "7636869",
+            "key": "VideoViews",
+            "val": "15983800",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "57399",
+            "key": "Engagement",
+            "val": "22887528",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "15983800",
+            "key": "Clicks",
+            "val": "7636869",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "22887528",
+            "key": "LinkClicks",
+            "val": "57399",
             "completion": 0,
             "priority": 5
           },
@@ -884,26 +879,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "5228492",
+            "key": "VideoViews",
+            "val": "10984858",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "35637",
+            "key": "Engagement",
+            "val": "16505864",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "10984858",
+            "key": "Clicks",
+            "val": "5228492",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "16505864",
+            "key": "LinkClicks",
+            "val": "35637",
             "completion": 0,
             "priority": 5
           },
@@ -943,26 +938,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "883816",
+            "key": "VideoViews",
+            "val": "314389",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "128253",
+            "key": "Engagement",
+            "val": "701105",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "314389",
+            "key": "Clicks",
+            "val": "883816",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "701105",
+            "key": "LinkClicks",
+            "val": "128253",
             "completion": 0,
             "priority": 5
           },
@@ -1002,26 +997,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "5459066",
+            "key": "VideoViews",
+            "val": "10525329",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "47240",
+            "key": "Engagement",
+            "val": "15199732",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "10525329",
+            "key": "Clicks",
+            "val": "5459066",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "15199732",
+            "key": "LinkClicks",
+            "val": "47240",
             "completion": 0,
             "priority": 5
           },
@@ -1061,26 +1056,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "14956832",
+            "key": "VideoViews",
+            "val": "33733557",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "978051",
+            "key": "Engagement",
+            "val": "47336873",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "33733557",
+            "key": "Clicks",
+            "val": "14956832",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "47336873",
+            "key": "LinkClicks",
+            "val": "978051",
             "completion": 0,
             "priority": 5
           },
@@ -1120,26 +1115,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "12199965",
+            "key": "VideoViews",
+            "val": "8203810",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "1198987",
+            "key": "Engagement",
+            "val": "12867122",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "8203810",
+            "key": "Clicks",
+            "val": "12199965",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "12867122",
+            "key": "LinkClicks",
+            "val": "1198987",
             "completion": 0,
             "priority": 5
           },
@@ -1179,26 +1174,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "1158164",
+            "key": "VideoViews",
+            "val": "813882",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "151625",
+            "key": "Engagement",
+            "val": "1366614",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "813882",
+            "key": "Clicks",
+            "val": "1158164",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "1366614",
+            "key": "LinkClicks",
+            "val": "151625",
             "completion": 0,
             "priority": 5
           },
@@ -1238,26 +1233,26 @@
             "priority": 1
           },
           {
-            "key": "Clicks",
-            "val": "1728238",
+            "key": "VideoViews",
+            "val": "2745831",
             "completion": 0,
             "priority": 2
           },
           {
-            "key": "LinkClicks",
-            "val": "0",
+            "key": "Engagement",
+            "val": "4120218",
             "completion": 0,
             "priority": 3
           },
           {
-            "key": "VideoViews",
-            "val": "2745831",
+            "key": "Clicks",
+            "val": "1728238",
             "completion": 0,
             "priority": 4
           },
           {
-            "key": "Engagement",
-            "val": "4120218",
+            "key": "LinkClicks",
+            "val": "0",
             "completion": 0,
             "priority": 5
           },
@@ -1291,7 +1286,7 @@
     "categoryLevel4Id": null,
     "campaignId": null,
     "competitorCorporationId": "294697,256233",
-    "uuid": "259d9fa0-6469-4733-8c4d-a03a17f2452c"
+    "uuid": "31f5ebb8-1b19-4b0a-a49e-55114a6563e2"
   },
   "briefMultiConfig": [
     {
@@ -1334,7 +1329,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -1411,7 +1407,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 99.97,
+              "budgetPercentage": 99.74,
               "budgetAmount": 321384.52
             },
             {
@@ -1428,7 +1424,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.23,
               "budgetAmount": 748.49
             }
           ]
@@ -1854,7 +1850,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -1931,7 +1928,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 95.16,
               "budgetAmount": 1139772.52
             },
             {
@@ -1948,12 +1945,12 @@
           "children": [
             {
               "name": "FB",
-              "budgetPercentage": 2.54,
+              "budgetPercentage": 0.12,
               "budgetAmount": 1473.55
             },
             {
               "name": "FB&IG",
-              "budgetPercentage": 97.46,
+              "budgetPercentage": 4.71,
               "budgetAmount": 56459.86
             }
           ]
@@ -1965,7 +1962,7 @@
           "children": [
             {
               "name": "TT",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.01,
               "budgetAmount": 0.13
             }
           ]
@@ -2519,7 +2516,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -2603,7 +2601,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.0,
               "budgetAmount": 0.05
             }
           ]
@@ -2855,7 +2853,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -2932,7 +2931,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 99.79,
               "budgetAmount": 1477038.99
             }
           ]
@@ -2944,17 +2943,17 @@
           "children": [
             {
               "name": "FB",
-              "budgetPercentage": 4.66,
+              "budgetPercentage": 0.01,
               "budgetAmount": 141.86
             },
             {
               "name": "FB&IG",
-              "budgetPercentage": 33.8,
+              "budgetPercentage": 0.07,
               "budgetAmount": 1028.88
             },
             {
               "name": "IG",
-              "budgetPercentage": 61.54,
+              "budgetPercentage": 0.13,
               "budgetAmount": 1873.24
             }
           ]
@@ -2966,7 +2965,7 @@
           "children": [
             {
               "name": "TT",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.0,
               "budgetAmount": 64.7
             }
           ]
@@ -3464,7 +3463,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -3541,7 +3541,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 99.72,
               "budgetAmount": 341682.92
             }
           ]
@@ -3553,7 +3553,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.24,
               "budgetAmount": 823.49
             }
           ]
@@ -3565,7 +3565,7 @@
           "children": [
             {
               "name": "TT",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.04,
               "budgetAmount": 143.12
             }
           ]
@@ -4005,7 +4005,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -4087,7 +4088,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 97.91,
               "budgetAmount": 6371138.16
             },
             {
@@ -4104,17 +4105,17 @@
           "children": [
             {
               "name": "FB",
-              "budgetPercentage": 0.04,
+              "budgetPercentage": 0.0,
               "budgetAmount": 49.33
             },
             {
               "name": "FB&IG",
-              "budgetPercentage": 99.53,
+              "budgetPercentage": 2.07,
               "budgetAmount": 134747.21
             },
             {
               "name": "IG",
-              "budgetPercentage": 0.43,
+              "budgetPercentage": 0.01,
               "budgetAmount": 581.87
             }
           ]
@@ -4126,7 +4127,7 @@
           "children": [
             {
               "name": "TT",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.01,
               "budgetAmount": 342.93
             }
           ]
@@ -4808,7 +4809,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -4885,7 +4887,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 97.17,
               "budgetAmount": 8832034.71
             },
             {
@@ -4902,7 +4904,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 2.83,
               "budgetAmount": 256945.82
             }
           ]
@@ -5328,7 +5330,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -5405,7 +5408,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 99.47,
               "budgetAmount": 736431.91
             }
           ]
@@ -5417,7 +5420,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.36,
               "budgetAmount": 2670.69
             }
           ]
@@ -5429,7 +5432,7 @@
           "children": [
             {
               "name": "TT",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.17,
               "budgetAmount": 1279.48
             }
           ]
@@ -5869,7 +5872,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -5946,7 +5950,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 99.94,
               "budgetAmount": 2836064.58
             }
           ]
@@ -5958,7 +5962,7 @@
           "children": [
             {
               "name": "IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.06,
               "budgetAmount": 1586.1
             }
           ]
@@ -5970,7 +5974,7 @@
           "children": [
             {
               "name": "TT",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.0,
               "budgetAmount": 92.82
             }
           ]
@@ -6349,7 +6353,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -6426,7 +6431,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 97.8,
               "budgetAmount": 5707864.87
             }
           ]
@@ -6438,7 +6443,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 2.2,
               "budgetAmount": 128556.17
             }
           ]
@@ -6863,7 +6868,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -6940,7 +6946,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 80.94,
               "budgetAmount": 2222138.69
             }
           ]
@@ -6952,17 +6958,17 @@
           "children": [
             {
               "name": "FB",
-              "budgetPercentage": 0.88,
+              "budgetPercentage": 0.17,
               "budgetAmount": 4629.05
             },
             {
               "name": "FB&IG",
-              "budgetPercentage": 98.22,
+              "budgetPercentage": 18.72,
               "budgetAmount": 514073.5
             },
             {
               "name": "IG",
-              "budgetPercentage": 0.89,
+              "budgetPercentage": 0.17,
               "budgetAmount": 4672.56
             }
           ]
@@ -7333,7 +7339,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -7586,7 +7593,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -7663,7 +7671,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 99.98,
+              "budgetPercentage": 99.27,
               "budgetAmount": 3361866.68
             },
             {
@@ -7680,12 +7688,12 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 93.07,
+              "budgetPercentage": 0.66,
               "budgetAmount": 22355.91
             },
             {
               "name": "IG",
-              "budgetPercentage": 6.93,
+              "budgetPercentage": 0.05,
               "budgetAmount": 1663.52
             }
           ]
@@ -8173,7 +8181,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -8250,7 +8259,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 99.72,
+              "budgetPercentage": 99.46,
               "budgetAmount": 1147015.93
             },
             {
@@ -8267,7 +8276,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.26,
               "budgetAmount": 3016.82
             }
           ]
@@ -8693,7 +8702,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -8765,7 +8775,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 89.66,
               "budgetAmount": 286898.31
             }
           ]
@@ -8777,7 +8787,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 10.34,
               "budgetAmount": 33072.84
             }
           ]
@@ -9029,7 +9039,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -9106,7 +9117,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 99.18,
               "budgetAmount": 4488848.14
             },
             {
@@ -9123,12 +9134,12 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 94.89,
+              "budgetPercentage": 0.77,
               "budgetAmount": 34653.51
             },
             {
               "name": "IG",
-              "budgetPercentage": 5.11,
+              "budgetPercentage": 0.04,
               "budgetAmount": 1866.8
             }
           ]
@@ -9140,7 +9151,7 @@
           "children": [
             {
               "name": "TT",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.01,
               "budgetAmount": 363.22
             }
           ]
@@ -9755,7 +9766,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -9832,7 +9844,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 95.89,
               "budgetAmount": 5695227.14
             },
             {
@@ -9849,7 +9861,7 @@
           "children": [
             {
               "name": "FB&IG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 4.1,
               "budgetAmount": 243473.01
             }
           ]
@@ -9861,7 +9873,7 @@
           "children": [
             {
               "name": "TT",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 0.01,
               "budgetAmount": 500.0
             }
           ]
@@ -10358,7 +10370,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -10430,7 +10443,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 89.98,
               "budgetAmount": 5195224.04
             }
           ]
@@ -10442,12 +10455,12 @@
           "children": [
             {
               "name": "FB",
-              "budgetPercentage": 0.31,
+              "budgetPercentage": 0.03,
               "budgetAmount": 1804.33
             },
             {
               "name": "FB&IG",
-              "budgetPercentage": 99.69,
+              "budgetPercentage": 9.99,
               "budgetAmount": 576976.09
             }
           ]
@@ -10817,7 +10830,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,
@@ -10894,7 +10908,7 @@
           "children": [
             {
               "name": "GG",
-              "budgetPercentage": 100.0,
+              "budgetPercentage": 88.77,
               "budgetAmount": 921130.05
             },
             {
@@ -10911,12 +10925,12 @@
           "children": [
             {
               "name": "FB",
-              "budgetPercentage": 2.67,
+              "budgetPercentage": 0.3,
               "budgetAmount": 3116.84
             },
             {
               "name": "FB&IG",
-              "budgetPercentage": 97.33,
+              "budgetPercentage": 10.93,
               "budgetAmount": 113401.74
             }
           ]
@@ -11399,7 +11413,8 @@
         "rangeMatch": 20
       },
       "marketingFunnelBudgetConfig": {
-        "consistentMatch": 0
+        "consistentMatch": 1,
+        "rangeMatch": 15
       },
       "mediaBudgetConfig": {
         "consistentMatch": 1,

@@ -1,6 +1,6 @@
 TEST_CASES = {
     # 用例1：全部填写，完全匹配，5%，不勾选必须达成，KPI指标第一，推广区域预算分配第二
-    1: {
+    "全部填写-完全匹配-5%-KPI第一-区域第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -38,7 +38,7 @@ TEST_CASES = {
         ],
     },
     # 用例2：全部填写，完全匹配，5%，不勾选必须达成，推广区域预算分配第一，KPI指标第二
-    2: {
+    "全部填写-完全匹配-5%-区域第一-KPI第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -76,7 +76,7 @@ TEST_CASES = {
         ],
     },
     # 用例3：全部填写，完全匹配，10%，不勾选必须达成，KPI指标第一，推广区域预算分配第二
-    3: {
+    "全部填写-完全匹配-10%-KPI第一-区域第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -114,7 +114,7 @@ TEST_CASES = {
         ],
     },
     # 用例4：全部填写，完全匹配，10%，不勾选必须达成，推广区域预算分配第一，KPI指标第二
-    4: {
+    "全部填写-完全匹配-10%-区域第一-KPI第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -152,7 +152,7 @@ TEST_CASES = {
         ],
     },
     # 用例5：部分填写，完全匹配，5%，不勾选必须达成，KPI指标第一，推广区域预算分配第二
-    5: {
+    "部分填写-完全匹配-5%-KPI第一-区域第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -190,7 +190,7 @@ TEST_CASES = {
         ],
     },
     # 用例6：部分填写，完全匹配，5%，不勾选必须达成，推广区域预算分配第一，KPI指标第二
-    6: {
+    "部分填写-完全匹配-5%-区域第一-KPI第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -228,7 +228,7 @@ TEST_CASES = {
         ],
     },
     # 用例7：大小关系匹配，不勾选必须达成，KPI指标第一，推广区域预算分配第二
-    7: {
+    "大小关系匹配-不勾选必须达成-KPI第一-区域第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -266,7 +266,7 @@ TEST_CASES = {
         ],
     },
     # 用例8：大小关系匹配，不勾选必须达成，推广区域预算分配第一，KPI指标第二
-    8: {
+    "大小关系匹配-不勾选必须达成-区域第一-KPI第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -304,7 +304,7 @@ TEST_CASES = {
         ],
     },
     # 用例9：大小关系匹配，勾选必须达成，KPI指标第一，推广区域预算分配第二
-    9: {
+    "大小关系匹配-勾选必须达成-KPI第一-区域第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",
@@ -342,7 +342,7 @@ TEST_CASES = {
         ],
     },
     # 用例10：大小关系匹配，勾选必须达成，推广区域预算分配第一，KPI指标第二
-    10: {
+    "大小关系匹配-勾选必须达成-区域第一-KPI第二": {
         "kpi_priority_list": [
             "Impression",
             "VideoViews",

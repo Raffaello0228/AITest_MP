@@ -25,6 +25,52 @@ KPI_KEYS = [
 MAX_REGION_COUNT: int | None = None
 
 
+def normalize_percentage_sum(
+    items: list[dict], percent_key: str = "budgetPercentage"
+) -> None:
+    """
+    调整百分比分配，使总和精确为 100（保留两位小数），误差补到最后一项。
+    """
+    if not items:
+        return
+    total = round(sum(float(x.get(percent_key, 0) or 0) for x in items), 2)
+    diff = round(100 - total, 2)
+    items[-1][percent_key] = round(float(items[-1].get(percent_key, 0) or 0) + diff, 2)
+
+
+def reorder_priorities(result: dict) -> dict:
+    """
+    按 priority 对各层列表重新排序（升序），确保生成结果顺序一致。
+    """
+
+    def sort_list(lst: list[dict]):
+        lst.sort(key=lambda x: x.get("priority", 1e9))
+
+    basic = result.get("basicInfo", {})
+    # basicInfo.kpiInfo / moduleConfig
+    if "kpiInfo" in basic:
+        sort_list(basic["kpiInfo"])
+    if "moduleConfig" in basic:
+        sort_list(basic["moduleConfig"])
+
+    # regionBudget kpiInfo
+    for region in basic.get("regionBudget", []):
+        if "kpiInfo" in region:
+            sort_list(region["kpiInfo"])
+
+    # briefMultiConfig 层级
+    for country in result.get("briefMultiConfig", []):
+        if "moduleConfig" in country:
+            sort_list(country["moduleConfig"])
+        # mediaMarketingFunnelAdtype -> adTypeWithKPI.kpiInfo
+        for mmfa in country.get("mediaMarketingFunnelAdtype", []):
+            for adtype in mmfa.get("adTypeWithKPI", []):
+                if "kpiInfo" in adtype:
+                    sort_list(adtype["kpiInfo"])
+
+    return result
+
+
 def load_mapping(adtype_path: str) -> pd.DataFrame:
     """
     读取 adtype 映射表（CSV），标准化列名，主要按 (Media, Ad Type) 做映射。
@@ -307,6 +353,8 @@ def build_country_media(country_df: pd.DataFrame) -> list[dict]:
         return res
 
     grouped_media = country_df.dropna(subset=["Media_final"]).groupby("Media_final")
+    # 收集所有子平台，用于全局归一化（所有 children 的百分比之和=100）
+    all_children_refs: list[dict] = []
     for media, g_media in grouped_media:
         media_budget = float(g_media["spend"].sum())
         if media_budget <= 0:
@@ -319,7 +367,8 @@ def build_country_media(country_df: pd.DataFrame) -> list[dict]:
             plat_budget = float(g_plat["spend"].sum())
             if plat_budget <= 0:
                 continue
-            plat_pct = plat_budget / media_budget * 100 if media_budget > 0 else 0
+            # 平台预算百分比改为「占国家总预算的比例」
+            plat_pct = plat_budget / total * 100 if total > 0 else 0
             children.append(
                 {
                     "name": platform,
@@ -327,6 +376,7 @@ def build_country_media(country_df: pd.DataFrame) -> list[dict]:
                     "budgetAmount": round(plat_budget, 2),
                 }
             )
+            all_children_refs.append(children[-1])
 
         res.append(
             {
@@ -336,6 +386,9 @@ def build_country_media(country_df: pd.DataFrame) -> list[dict]:
                 "children": children,
             }
         )
+
+    # 确保所有媒体下的 children 预算百分比总和为 100
+    normalize_percentage_sum(all_children_refs, "budgetPercentage")
     return res
 
 
@@ -504,19 +557,26 @@ def load_testcase_template(template_path: str = "testcase_template.py"):
         return None
 
 
-def apply_testcase_template_config(result: dict, case_config: dict) -> dict:
+def apply_testcase_template_config(
+    result: dict, case_config: dict, case_name: str = None
+) -> dict:
     """
     根据 testcase_template.py 格式的配置修改生成的JSON数据。
 
     Args:
         result: 生成的JSON数据
         case_config: 测试用例配置字典（testcase_template.py 格式）
+        case_name: 测试用例名称，将作为 mediaPlanName（可选）
 
     Returns:
         修改后的JSON数据
     """
     result = deepcopy(result)
     basic_info = result["basicInfo"]
+
+    # 设置 mediaPlanName（如果提供了用例名称）
+    if case_name:
+        basic_info["mediaPlanName"] = case_name
 
     # 1. 配置 KPI 优先级和 completion
     kpi_info = basic_info.get("kpiInfo", [])
@@ -700,7 +760,7 @@ def convert(
     template_path: str = "brief_template.json",
     output_path: str = "cases/brief_from_data.json",
     max_regions: int | None = None,
-    test_case_id: int | None = None,
+    test_case_id: str | int | None = None,
     use_testcase_template: bool = False,
     testcase_template_path: str = "testcase_template.py",
 ) -> dict:
@@ -713,7 +773,7 @@ def convert(
         template_path: 模板JSON文件路径
         output_path: 输出JSON文件路径
         max_regions: 最大区域数量限制
-        test_case_id: 测试用例编号，如果提供则应用测试用例配置
+        test_case_id: 测试用例编号或名称（字符串），如果提供则应用测试用例配置
         use_testcase_template: 是否使用 testcase_template.py 格式的测试用例
         testcase_template_path: testcase_template.py 文件路径
 
@@ -756,6 +816,21 @@ def convert(
         "briefMultiConfig": brief_multi,
     }
 
+    # 如果指定了测试用例编号，应用测试用例配置
+    if test_case_id is not None and use_testcase_template:
+        test_cases = load_testcase_template(testcase_template_path)
+        if test_cases is None:
+            raise ValueError(f"无法加载测试用例模板: {testcase_template_path}")
+        if test_case_id not in test_cases:
+            raise ValueError(f"测试用例编号 {test_case_id} 不存在于模板中")
+        # 传递用例名称（用例ID就是用例名称）
+        result = apply_testcase_template_config(
+            result, test_cases[test_case_id], case_name=str(test_case_id)
+        )
+
+    # 统一按 priority 排序（升序）
+    reorder_priorities(result)
+
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
@@ -769,7 +844,7 @@ def batch_generate(
     output_dir: str = "output",
     max_regions: int | None = None,
     testcase_template_path: str = "testcase_template.py",
-    test_case_ids: list[int] | None = None,
+    test_case_ids: list[str] | None = None,
 ) -> list[dict]:
     """
     批量生成多个测试用例的JSON文件。
@@ -781,7 +856,7 @@ def batch_generate(
         output_dir: 输出目录
         max_regions: 最大区域数量限制
         testcase_template_path: testcase_template.py 文件路径
-        test_case_ids: 要生成的测试用例编号列表，如果为None则生成所有用例
+        test_case_ids: 要生成的测试用例名称列表，如果为None则生成所有用例
 
     Returns:
         生成的JSON数据字典列表
@@ -806,7 +881,9 @@ def batch_generate(
             continue
 
         print(f"正在生成测试用例 {case_id}...")
-        output_file = output_path / f"brief_case_{case_id}.json"
+        # 使用用例名称作为文件名（替换特殊字符）
+        safe_filename = case_id.replace("/", "_").replace("\\", "_").replace(":", "_")
+        output_file = output_path / f"brief_case_{safe_filename}.json"
 
         try:
             result = convert(
@@ -866,13 +943,9 @@ if __name__ == "__main__":
             print(f"未知参数: {arg}")
             i += 1
         else:
-            # 尝试解析为测试用例编号
-            try:
-                test_case_id = int(arg)
-                i += 1
-            except ValueError:
-                print(f"警告：无法解析参数 '{arg}'")
-                i += 1
+            # 测试用例名称（字符串）
+            test_case_id = arg
+            i += 1
 
     # 批量生成模式
     if batch_mode:
@@ -880,7 +953,7 @@ if __name__ == "__main__":
         print(f"测试用例模板: {testcase_template_path}")
         print(f"最大区域数: {max_regions}")
 
-        # 如果指定了测试用例编号，只生成指定的用例
+        # 如果指定了测试用例名称，只生成指定的用例
         test_case_ids = None
         if test_case_id is not None:
             test_case_ids = [test_case_id]

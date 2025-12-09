@@ -109,7 +109,7 @@ class APIClient:
         # 确保 basicInfo 存在并添加UUID
         if "basicInfo" not in body:
             body["basicInfo"] = {}
-        body["basicInfo"]["taskId"] = uuid
+        body["basicInfo"]["uuid"] = uuid
 
         return body
 
@@ -538,15 +538,17 @@ def create_client_from_config(
             - SAVE_URL: Save接口的URL
             - QUERY_URL_TEMPLATE: 查询接口URL模板
             - COMMON_HEADERS: 通用请求头
+            - BRIEF_DETAIL_URL_TEMPLATE: brief-detail 接口URL模板（可选，如果存在则自动使用）
         request_json_path: request.json文件路径（可选）
         default_request_body: 默认请求体（可选）
-        brief_detail_url_template: brief-detail 接口URL模板（可选）
+        brief_detail_url_template: brief-detail 接口URL模板（可选，优先级高于 api_config 中的配置）
         brief_detail_headers: brief-detail 接口的请求头（可选）
         logger: 日志记录器（可选）
 
     Returns:
         APIClient实例
     """
+
     return APIClient(
         get_uuid_url=api_config["GET_UUID_URL"],
         save_url=api_config["SAVE_URL"],
@@ -554,7 +556,7 @@ def create_client_from_config(
         common_headers=api_config["COMMON_HEADERS"],
         request_json_path=request_json_path,
         default_request_body=default_request_body,
-        brief_detail_url_template=brief_detail_url_template,
+        brief_detail_url_template=api_config["BRIEF_DETAIL_URL_TEMPLATE"],
         brief_detail_headers=brief_detail_headers,
         logger=logger,
     )

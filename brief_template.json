@@ -61,9 +61,6 @@
       "kpiCompletionRule": 80
     },
     "dimension": [
-      "corporation",
-      "competitor",
-      "category",
       "ai"
     ],
     "usedHistoryMp": 0,
