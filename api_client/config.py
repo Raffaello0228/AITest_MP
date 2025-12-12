@@ -121,7 +121,7 @@ API_CONFIG = {
     "GET_UUID_URL": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/brief/get-signed-uuid",
     "SAVE_URL": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/brief/multi-country/brief-save",
     "QUERY_URL_TEMPLATE": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/job/{job_id}/brief-submit-query",
-    "BRIEF_DETAIL_URL_TEMPLATE": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/brief/multi-country/{task_id}/brief-detail",
+    "BATCH_QUERY_URL_TEMPLATE": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/result/multi-country/{job_id}/mp-query-batch",
     "COMMON_HEADERS": {
         "accept": "*/*",
         "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
@@ -130,7 +130,7 @@ API_CONFIG = {
         "referer": "https://pre-op.meetsocial.cn/",
         "x-sino-global-userid": "2641",
         # !!! 替换为有效 token
-        "x-sino-jwt-token": "eyJYLVNJTk8tVE9LRU4iOiJTLWU0ZmM2Mjg2OTkwOTQ2NjRhNGIzNzYxMTgwNjg5YzUzIiwiWC1TSU5PLUFQUC1JRCI6InNpbm8tb3AiLCJ0eXAiOiJKV1QiLCJYLVNJTk8tVE9LRU4tVFlQRSI6IlNTTyIsImFsZyI6IkhTMjU2In0.eyJ1c2VyTmFtZSI6InNpbW9uLnN1biIsImV4cCI6MTc2NTM0ODIxNiwidXNlcklkIjoyNjQxfQ.xUxMro9Runc1LsOpdJsth3F5vYQ0kWuE8P1ApVMipR0",
+        "x-sino-jwt-token": "eyJYLVNJTk8tVE9LRU4iOiJTLTY0YTkwZWIxYWYyNTQ2MmFiNGZmYTBlMmEyNWQwZDA2IiwiWC1TSU5PLUFQUC1JRCI6InNpbm8tb3AiLCJ0eXAiOiJKV1QiLCJYLVNJTk8tVE9LRU4tVFlQRSI6IlNTTyIsImFsZyI6IkhTMjU2In0.eyJ1c2VyTmFtZSI6InNpbW9uLnN1biIsImV4cCI6MTc2NTYxNjEwNSwidXNlcklkIjoyNjQxfQ._mR68Uaw657gjlbKlQo267oy_EBH4tW9ih8AL9-Pp2w",
         "x-channel-access-token": "undefined",
         "x-channel-userid": "undefined",
         "sec-ch-ua": '"Not;A=Brand";v="99", "Google Chrome";v="139", "Chromium";v="139"',

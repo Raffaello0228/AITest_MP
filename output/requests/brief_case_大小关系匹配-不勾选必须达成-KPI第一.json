@@ -1,0 +1,5210 @@
+{
+  "basicInfo": {
+    "isHistoryMp": 1,
+    "kpiInfo": [
+      {
+        "key": "Impression",
+        "val": "3118609566",
+        "priority": 1,
+        "completion": 0
+      },
+      {
+        "key": "VideoViews",
+        "val": "869046442",
+        "priority": 2,
+        "completion": 0
+      },
+      {
+        "key": "Engagement",
+        "val": "264644640",
+        "priority": 3,
+        "completion": 1
+      }
+    ],
+    "kpiInfoBudgetConfig": {
+      "rangeMatch": 80
+    },
+    "regionBudgetConfig": {
+      "consistentMatch": 0,
+      "budgetCompletionRule": 90,
+      "kpiCompletionRule": 80
+    },
+    "dimension": [
+      "corporation",
+      "category",
+      "ai"
+    ],
+    "usedHistoryMp": 1,
+    "moduleConfig": [
+      {
+        "moduleName": "kpiInfo",
+        "priority": 1
+      },
+      {
+        "moduleName": "regionBudget",
+        "priority": 2
+      },
+      {
+        "moduleName": "media",
+        "priority": 3
+      },
+      {
+        "moduleName": "marketingFunnel",
+        "priority": 4
+      },
+      {
+        "moduleName": "stage",
+        "priority": 5
+      },
+      {
+        "moduleName": "regionKPI",
+        "priority": 6
+      },
+      {
+        "moduleName": "mediaMarketingFunnelAdtype",
+        "priority": 7
+      }
+    ],
+    "country": {
+      "code": "TH",
+      "groupName": "CountrySimpleCode"
+    },
+    "totalBudget": 1142145.05,
+    "uuid": "44b0caeb-3094-429e-97e6-61c1a72fa7f4",
+    "regionBudget": [
+      {
+        "country": {
+          "code": "DE",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 5.87,
+        "budgetAmount": 67022.92,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "134045820",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "77590302",
+            "completion": 1,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "14321134",
+            "completion": 0,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "EG",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 12.35,
+        "budgetAmount": 141045.8,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "349723137",
+            "completion": 1,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "119051167",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "28949496",
+            "completion": 1,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "GB",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 8.93,
+        "budgetAmount": 102022.9,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "204045820",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "118108696",
+            "completion": 1,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "21799767",
+            "completion": 0,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "IN",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 8.67,
+        "budgetAmount": 99045.8,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "1098926766",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "90933918",
+            "completion": 1,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "69384802",
+            "completion": 0,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "JP",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 9.79,
+        "budgetAmount": 111778.63,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "99116369",
+            "completion": 1,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "50708148",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "11784093",
+            "completion": 1,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "MY",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 10.51,
+        "budgetAmount": 120045.8,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "138482400",
+            "completion": 1,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "56074422",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "13427858",
+            "completion": 0,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "PH",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 9.9,
+        "budgetAmount": 113045.8,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "242435140",
+            "completion": 1,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "79420448",
+            "completion": 1,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "32652820",
+            "completion": 0,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "PK",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 9.28,
+        "budgetAmount": 106045.8,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "467109466",
+            "completion": 1,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "151210601",
+            "completion": 1,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "31676916",
+            "completion": 0,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "SA",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 12.35,
+        "budgetAmount": 141045.8,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "191639731",
+            "completion": 1,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "54316965",
+            "completion": 0,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "15973664",
+            "completion": 0,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      },
+      {
+        "country": {
+          "code": "TH",
+          "groupName": "CountrySimpleCode"
+        },
+        "budgetPercentage": 12.35,
+        "budgetAmount": 141045.8,
+        "kpiInfo": [
+          {
+            "key": "Impression",
+            "val": "193084917",
+            "completion": 0,
+            "priority": 1
+          },
+          {
+            "key": "VideoViews",
+            "val": "71631775",
+            "completion": 1,
+            "priority": 2
+          },
+          {
+            "key": "Engagement",
+            "val": "24674090",
+            "completion": 1,
+            "priority": 3
+          }
+        ],
+        "completion": 0
+      }
+    ],
+    "historyMpId": "850769ca-ec61-4e7d-9bfa-43ca0efe",
+    "isModified": 0,
+    "mediaPlanName": "大小关系匹配-不勾选必须达成-KPI第一",
+    "corporationId": "118101",
+    "currency": "USD",
+    "corporationName": "HAIER SINGAPORE INVESTMENT HOLDINGS PTE. LTD",
+    "accountId": "1017240246669512",
+    "categoryLevel1Id": "7",
+    "categoryLevel2Id": "7002",
+    "categoryLevel3Id": "7002001",
+    "campaignId": null
+  },
+  "briefMultiConfig": [
+    {
+      "country": {
+        "code": "DE",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 67022.92,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 5.83,
+          "budgetAmount": 3908.4
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 77.88,
+          "budgetAmount": 52194.52
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 16.29,
+          "budgetAmount": 10920.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 26.44,
+          "budgetAmount": 17723.06,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 16.29,
+              "budgetAmount": 10920.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 10.15,
+              "budgetAmount": 6803.06
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 73.56,
+          "budgetAmount": 49299.86,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 68.57,
+              "budgetAmount": 45956.35
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 4.99,
+              "budgetAmount": 3343.51
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 10920.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "21840000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "12641739",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2333333",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 390.84,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "781680",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "452463",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "83513",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 6412.22,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "12824430",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "7423218",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1370131",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 3517.56,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "7035120",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "4072168",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "751615",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 17080.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "34160000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "19772976",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "3649573",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 18946.57,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "37893136",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "21933842",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "4048412",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 6412.22,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "12824430",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "7423218",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1370131",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 3343.51,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "6687024",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "3870678",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "714426",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "EG",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 141045.8,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 5.54,
+          "budgetAmount": 7816.79
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 81.5,
+          "budgetAmount": 114959.01
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 12.95,
+          "budgetAmount": 18270.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 15.05,
+          "budgetAmount": 21225.73,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 12.95,
+              "budgetAmount": 18270.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 2.1,
+              "budgetAmount": 2955.73
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 58.68,
+          "budgetAmount": 82769.31,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 53.94,
+              "budgetAmount": 76082.29
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 4.74,
+              "budgetAmount": 6687.02
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 26.27,
+          "budgetAmount": 37050.76,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 26.27,
+              "budgetAmount": 37050.76
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 18270.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "58983005",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "21150601",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "3903846",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 390.84,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1261789",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "452463",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "83513",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8280494",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2969286",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "548052",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 6644.27,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "71683217",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "825247",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "887156",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 28980.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "65407626",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "5182070",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "5302239",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 37893.13,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "59045980",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "15084349",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "15492678",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1361406",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1086634",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1098557",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 6687.02,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "7455813",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "956348",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1004942",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "TT",
+              "spend": 781.68,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2523578",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "904925",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "167025",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "CI Follows",
+              "platform": "TT",
+              "spend": 15750.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "16795454",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "16087208",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "261134",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "TT",
+              "spend": 20519.08,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "56924775",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "54352036",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "200354",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "GB",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 102022.9,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 3.83,
+          "budgetAmount": 3908.4
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 78.88,
+          "budgetAmount": 80474.5
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 17.29,
+          "budgetAmount": 17640.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 18.74,
+          "budgetAmount": 19117.86,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 17.29,
+              "budgetAmount": 17640.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 1.45,
+              "budgetAmount": 1477.86
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 43.65,
+          "budgetAmount": 44534.66,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 40.37,
+              "budgetAmount": 41191.15
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 3.28,
+              "budgetAmount": 3343.51
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 37.61,
+          "budgetAmount": 38370.38,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 37.61,
+              "budgetAmount": 38370.38
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 17640.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "35280000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "20421270",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "3769231",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 195.42,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "390840",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "226232",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "41756",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 1282.44,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2564886",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1484644",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "274026",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 3322.14,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "6644280",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "3845936",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "709859",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 17640.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "35280000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "20421270",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "3769231",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 18946.57,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "37893136",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "21933842",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "4048412",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 1282.44,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2564886",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1484644",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "274026",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 3343.51,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "6687024",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "3870678",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "714426",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "TT",
+              "spend": 390.84,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "781680",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "452463",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "83513",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "CI Follows",
+              "platform": "TT",
+              "spend": 27720.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "55440000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "32090567",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "5923077",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "TT",
+              "spend": 10259.54,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "20519088",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "11877150",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2192210",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "IN",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 99045.8,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 7.89,
+          "budgetAmount": 7816.79
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 78.33,
+          "budgetAmount": 77579.01
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 13.78,
+          "budgetAmount": 13650.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 27.52,
+          "budgetAmount": 27256.11,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 13.78,
+              "budgetAmount": 13650.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 13.74,
+              "budgetAmount": 13606.11
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 72.48,
+          "budgetAmount": 71789.69,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 65.73,
+              "budgetAmount": 65102.67
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 6.75,
+              "budgetAmount": 6687.02
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 13650.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "273000000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "15802173",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2916667",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 781.68,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "15633580",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "904925",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "167025",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 12824.43,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "256488500",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "14846431",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2740262",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 7035.11,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "152560559",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1948388",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2096941",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 7350.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "94222989",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "0",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "74865",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 37893.13,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "249406478",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "42610895",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "44361239",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 12824.43,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "19425567",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "9100012",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "9123073",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 6687.02,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "38189093",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "5721094",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "7904730",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "JP",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 111778.63,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 4.37,
+          "budgetAmount": 4885.51
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 84.36,
+          "budgetAmount": 94293.12
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 11.27,
+          "budgetAmount": 12600.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 12.92,
+          "budgetAmount": 14447.33,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 11.27,
+              "budgetAmount": 12600.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 1.65,
+              "budgetAmount": 1847.33
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 66.71,
+          "budgetAmount": 74568.33,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 62.97,
+              "budgetAmount": 70388.94
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 3.74,
+              "budgetAmount": 4179.39
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 20.36,
+          "budgetAmount": 22762.97,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 20.37,
+              "budgetAmount": 22762.97
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 12600.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "18000000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "14586621",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2692308",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 244.28,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "348964",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "282789",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "52196",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 1603.05,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2290076",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1855804",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "342533",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 4152.68,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8170697",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "13020",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "13424",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 40950.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "23687590",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "118656",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "140719",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 23683.21,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "7929144",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2521135",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2646063",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 1603.05,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "200806",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "139800",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "139934",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 4179.39,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "5970557",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "4838348",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "893032",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "TT",
+              "spend": 488.55,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "697929",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "565579",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "104391",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "CI Follows",
+              "platform": "TT",
+              "spend": 9450.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "13500000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "10939966",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2019231",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "TT",
+              "spend": 12824.42,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "18320606",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "14846430",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2740262",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "MY",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 120045.8,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 6.51,
+          "budgetAmount": 7816.79
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 83.69,
+          "budgetAmount": 100469.01
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 9.8,
+          "budgetAmount": 11760.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 12.26,
+          "budgetAmount": 14715.73,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 9.8,
+              "budgetAmount": 11760.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 2.46,
+              "budgetAmount": 2955.73
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 50.41,
+          "budgetAmount": 60509.31,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 44.83,
+              "budgetAmount": 53822.29
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 5.57,
+              "budgetAmount": 6687.02
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 37.34,
+          "budgetAmount": 44820.76,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 37.34,
+              "budgetAmount": 44820.76
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 11760.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "37966072",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "13614180",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2512821",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 390.84,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1261789",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "452463",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "83513",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8280494",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2969286",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "548052",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 6644.27,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "22866112",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "446655",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "458321",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 6720.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "9779345",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "252602",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "265402",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 37893.13,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "23818991",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "7897543",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "8092508",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "818188",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "515160",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "516460",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 6687.02,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2097423",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "533425",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "578856",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "TT",
+              "spend": 781.68,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2523578",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "904925",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "167025",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "CI Follows",
+              "platform": "TT",
+              "spend": 23520.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "6155877",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "6000963",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "140313",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "TT",
+              "spend": 20519.08,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "22914531",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "22487220",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "64587",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "PH",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 113045.8,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 6.91,
+          "budgetAmount": 7816.79
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 88.13,
+          "budgetAmount": 99629.01
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 4.95,
+          "budgetAmount": 5600.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 7.57,
+          "budgetAmount": 8555.73,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 4.95,
+              "budgetAmount": 5600.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 2.61,
+              "budgetAmount": 2955.73
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 57.49,
+          "budgetAmount": 64989.31,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 51.57,
+              "budgetAmount": 58302.29
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 5.92,
+              "budgetAmount": 6687.02
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 34.94,
+          "budgetAmount": 39500.76,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 34.95,
+              "budgetAmount": 39500.76
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 5600.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "20000000",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "6482943",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1196581",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 390.84,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1395855",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "452463",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "83513",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "9160304",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2969286",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "548052",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 6644.27,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "51119162",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2403733",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2432178",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 11200.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "32757146",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "148334",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "196409",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 37893.13,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "77520649",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "24365575",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "24976943",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1583023",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1152649",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1154937",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 6687.02,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "6108228",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1524514",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1572297",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "TT",
+              "spend": 781.68,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2791711",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "904925",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "167025",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "CI Follows",
+              "platform": "TT",
+              "spend": 18200.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "4118833",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "3983965",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "209376",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "TT",
+              "spend": 20519.08,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "35880229",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "35032061",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "115509",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "PK",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 106045.8,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 7.37,
+          "budgetAmount": 7816.79
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 90.25,
+          "budgetAmount": 95709.01
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 2.38,
+          "budgetAmount": 2520.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 5.16,
+          "budgetAmount": 5475.73,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 2.38,
+              "budgetAmount": 2520.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 2.79,
+              "budgetAmount": 2955.73
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 69.21,
+          "budgetAmount": 73389.31,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 62.9,
+              "budgetAmount": 66702.29
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 6.31,
+              "budgetAmount": 6687.02
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 25.63,
+          "budgetAmount": 27180.76,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 25.62,
+              "budgetAmount": 27180.76
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 2520.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8135587",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2917324",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "538462",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 390.84,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1261789",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "452463",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "83513",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8280494",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2969286",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "548052",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 6644.27,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "102031645",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "0",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "55752",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 19600.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "113419591",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "7389441",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "7721596",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 37893.13,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "93398436",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "15094184",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "17389699",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1800750",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1299751",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1303902",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 6687.02,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "9137346",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1632250",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1873771",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "TT",
+              "spend": 781.68,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2523578",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "904925",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "167025",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "CI Follows",
+              "platform": "TT",
+              "spend": 5880.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8150155",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "7269147",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "631879",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "TT",
+              "spend": 20519.08,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "118970095",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "111281830",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1363265",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "SA",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 141045.8,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 5.54,
+          "budgetAmount": 7816.79
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 86.42,
+          "budgetAmount": 121889.01
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 8.04,
+          "budgetAmount": 11340.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 10.14,
+          "budgetAmount": 14295.73,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 8.04,
+              "budgetAmount": 11340.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 2.1,
+              "budgetAmount": 2955.73
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 56.0,
+          "budgetAmount": 78989.31,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 51.26,
+              "budgetAmount": 72302.29
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 4.74,
+              "budgetAmount": 6687.02
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 33.86,
+          "budgetAmount": 47760.76,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 33.86,
+              "budgetAmount": 47760.76
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 11340.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "36610141",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "13127959",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "2423077",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 390.84,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1261789",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "452463",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "83513",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8280494",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2969286",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "548052",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 6644.27,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "32700958",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "615673",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "639723",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 25200.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "44395652",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1747573",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1808197",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 37893.13,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "38362382",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "9196412",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "9345897",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "869425",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "519150",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "520926",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 6687.02,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1513267",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "200841",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "235649",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "TT",
+              "spend": 781.68,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2523578",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "904925",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "167025",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "CI Follows",
+              "platform": "TT",
+              "spend": 26460.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "3059025",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2943185",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "136433",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "TT",
+              "spend": 20519.08,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "22063020",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "21639498",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "65172",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": {
+        "code": "TH",
+        "groupName": "CountrySimpleCode"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "regionBudget",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "regionKPI",
+          "priority": 6
+        },
+        {
+          "moduleName": "mediaMarketingFunnelAdtype",
+          "priority": 7
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelAdtypeBudgetConfig": {
+        "precision": 2,
+        "rangeMatch": 80
+      },
+      "stage": [
+        {
+          "name": "1st",
+          "budgetPercentage": 100.0,
+          "budgetAmount": 141045.8,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 5.54,
+          "budgetAmount": 7816.79
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 76.59,
+          "budgetAmount": 108029.01
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 17.87,
+          "budgetAmount": 25200.0
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 19.96,
+          "budgetAmount": 28155.73,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 17.87,
+              "budgetAmount": 25200.0
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 2.1,
+              "budgetAmount": 2955.73
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 49.3,
+          "budgetAmount": 69539.31,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 44.56,
+              "budgetAmount": 62852.29
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 4.74,
+              "budgetAmount": 6687.02
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 30.74,
+          "budgetAmount": 43350.76,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 30.73,
+              "budgetAmount": 43350.76
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelAdtype": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adTypeName": "Demand Gen",
+              "platform": "GG",
+              "spend": 25200.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "81355869",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "29173243",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "5384615",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "VRC 2.0",
+              "platform": "YTB",
+              "spend": 390.84,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1261789",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "452463",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "83513",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "VVC",
+              "platform": "YTB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8280494",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2969286",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "548052",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "FB",
+              "spend": 6644.27,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "21917499",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "869275",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "883783",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Page Likes",
+              "platform": "FB",
+              "spend": 15750.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "16412980",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "1523359",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "1570596",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "FB",
+              "spend": 37893.13,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "36448312",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "14239699",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "14383634",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "FB",
+              "spend": 2564.89,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "944004",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "769922",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "772158",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Post Engagement",
+              "platform": "IG",
+              "spend": 6687.02,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "3445191",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "632864",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "678528",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adType": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adType": []
+            }
+          ],
+          "adTypeWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adTypeName": "Reach",
+              "platform": "TT",
+              "spend": 781.68,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2523578",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "904925",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "167025",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "CI Follows",
+              "platform": "TT",
+              "spend": 22050.0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2589745",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2509283",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "151194",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adTypeName": "Video Views",
+              "platform": "TT",
+              "spend": 20519.08,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "17905456",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "17587456",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Engagement",
+                  "val": "50992",
+                  "priority": 3,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

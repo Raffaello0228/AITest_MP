@@ -4,9 +4,16 @@ import importlib.util
 from collections import defaultdict
 from copy import deepcopy
 from pathlib import Path
+import random
+import traceback
+import sys
+import os
 
 import numpy as np
 import pandas as pd
+
+# 调试模式：设置环境变量 DEBUG=1 来启用详细调试输出
+DEBUG = os.getenv("DEBUG", "0") == "1"
 
 
 KPI_KEYS = [
@@ -75,54 +82,64 @@ def load_mapping(adtype_path: str) -> pd.DataFrame:
     """
     读取 adtype 映射表（CSV），标准化列名，主要按 (Media, Ad Type) 做映射。
     """
-    # 先尝试 utf-8，如果失败再回退到常见的本地编码（如 gbk）
     try:
-        df = pd.read_csv(adtype_path, encoding="utf-8")
-    except UnicodeDecodeError:
+        # 先尝试 utf-8，如果失败再回退到常见的本地编码（如 gbk）
         try:
-            df = pd.read_csv(adtype_path, encoding="gbk")
+            df = pd.read_csv(adtype_path, encoding="utf-8")
         except UnicodeDecodeError:
-            # 最后兜底：使用 latin1 防止再次抛错（可能会出现少量乱码，但不影响英文字段）
-            df = pd.read_csv(adtype_path, encoding="latin1")
-    # 去掉前后空格
-    df.columns = [c.strip() for c in df.columns]
-    for col in df.columns:
-        if df[col].dtype == object:
-            df[col] = df[col].astype(str).str.strip()
-    return df
+            try:
+                df = pd.read_csv(adtype_path, encoding="gbk")
+            except UnicodeDecodeError:
+                # 最后兜底：使用 latin1 防止再次抛错（可能会出现少量乱码，但不影响英文字段）
+                df = pd.read_csv(adtype_path, encoding="latin1")
+        # 去掉前后空格
+        df.columns = [c.strip() for c in df.columns]
+        for col in df.columns:
+            if df[col].dtype == object:
+                df[col] = df[col].astype(str).str.strip()
+        return df
+    except Exception as e:
+        print(f"[ERROR] 加载映射文件失败 {adtype_path}: {e}")
+        traceback.print_exc()
+        raise
 
 
 def load_data(data_path: str) -> pd.DataFrame:
     """
     读取历史数据 CSV，并做基本清洗。
     """
-    df = pd.read_csv(data_path)
+    try:
+        df = pd.read_csv(data_path)
 
-    # 统一列名
-    df.columns = [c.strip() for c in df.columns]
+        # 统一列名
+        df.columns = [c.strip() for c in df.columns]
 
-    # 将 \N 等视为缺失
-    df = df.replace({"\\N": np.nan})
+        # 将 \N 等视为缺失
+        df = df.replace({"\\N": np.nan})
 
-    # 数值列转浮点
-    num_cols = [
-        "spend",
-        "impressions",
-        "clicks",
-        "link_clicks",
-        "engagements",
-        "likes",
-        "video_views",
-        "video_watched_2s",
-        "purchases",
-        "leads",
-        "follows",
-    ]
-    for col in num_cols:
-        if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
+        # 数值列转浮点
+        num_cols = [
+            "spend",
+            "impressions",
+            "clicks",
+            "link_clicks",
+            "engagements",
+            "likes",
+            "video_views",
+            "video_watched_2s",
+            "purchases",
+            "leads",
+            "follows",
+        ]
+        for col in num_cols:
+            if col in df.columns:
+                df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
 
-    return df
+        return df
+    except Exception as e:
+        print(f"[ERROR] 加载数据文件失败 {data_path}: {e}")
+        traceback.print_exc()
+        raise
 
 
 def infer_media(row: pd.Series, adtype_map_medias: dict) -> str | None:
@@ -139,7 +156,7 @@ def infer_media(row: pd.Series, adtype_map_medias: dict) -> str | None:
     if ch_id == 3:
         return "Google"
     if ch_id == 18:
-        return "Tiktok"
+        return "TikTok"
 
     # 根据 media_channel 直接判断
     if media_channel in {"FB", "IG", "FB&IG", "FBIGFB&IG"}:
@@ -147,7 +164,7 @@ def infer_media(row: pd.Series, adtype_map_medias: dict) -> str | None:
     if media_channel in {"YTB", "GG"}:
         return "Google"
     if media_channel == "TT":
-        return "Tiktok"
+        return "TikTok"
 
     # 兜底：如果某个 ad_type 只在一个 Media 中出现，就用它
     medias = adtype_map_medias.get(ad_type)
@@ -234,6 +251,22 @@ def attach_mapping(data_df: pd.DataFrame, map_df: pd.DataFrame) -> pd.DataFrame:
     return merged
 
 
+def safe_sum(df: pd.DataFrame, col_name: str) -> float:
+    """
+    安全地获取DataFrame列的sum值，如果列不存在则返回0.0。
+
+    Args:
+        df: DataFrame
+        col_name: 列名
+
+    Returns:
+        列的总和，如果列不存在则返回0.0
+    """
+    if col_name in df.columns:
+        return float(df[col_name].sum())
+    return 0.0
+
+
 def build_basic_info(template_basic: dict, df: pd.DataFrame) -> dict:
     """
     构建 basicInfo：总预算 + 全局 KPI 聚合 + 区域预算。
@@ -243,16 +276,16 @@ def build_basic_info(template_basic: dict, df: pd.DataFrame) -> dict:
     total_budget = float(df["spend"].sum())
     basic["totalBudget"] = round(total_budget, 2)
 
-    # 全局 KPI 聚合
+    # 全局 KPI 聚合（如果列不存在则视为0）
     kpi_agg = {
-        "Impression": df["impressions"].sum(),
-        "Clicks": df["clicks"].sum(),
-        "LinkClicks": df["link_clicks"].sum(),
-        "VideoViews": df["video_views"].sum(),
-        "Engagement": df["engagements"].sum(),
-        "Followers": df["follows"].sum(),
-        "Like": df["likes"].sum(),
-        "Purchase": df["purchases"].sum(),
+        "Impression": safe_sum(df, "impressions"),
+        "Clicks": safe_sum(df, "clicks"),
+        "LinkClicks": safe_sum(df, "link_clicks"),
+        "VideoViews": safe_sum(df, "video_views"),
+        "Engagement": safe_sum(df, "engagements"),
+        "Followers": safe_sum(df, "follows"),
+        "Like": safe_sum(df, "likes"),
+        "Purchase": safe_sum(df, "purchases"),
     }
 
     kpi_info = []
@@ -267,7 +300,7 @@ def build_basic_info(template_basic: dict, df: pd.DataFrame) -> dict:
                 "key": key,
                 "val": str(int(val)),
                 "priority": tmpl_priority_map.get(key, KPI_KEYS.index(key) + 1),
-                "completion": 1,
+                "completion": 0,  # 初始值为0，后续在 apply_testcase_template_config 中根据 kpi_must_achieve 随机勾选
             }
         )
     basic["kpiInfo"] = kpi_info
@@ -284,14 +317,14 @@ def build_basic_info(template_basic: dict, df: pd.DataFrame) -> dict:
         )
 
         kpi_country = {
-            "Impression": g["impressions"].sum(),
-            "Clicks": g["clicks"].sum(),
-            "LinkClicks": g["link_clicks"].sum(),
-            "VideoViews": g["video_views"].sum(),
-            "Engagement": g["engagements"].sum(),
-            "Followers": g["follows"].sum(),
-            "Like": g["likes"].sum(),
-            "Purchase": g["purchases"].sum(),
+            "Impression": safe_sum(g, "impressions"),
+            "Clicks": safe_sum(g, "clicks"),
+            "LinkClicks": safe_sum(g, "link_clicks"),
+            "VideoViews": safe_sum(g, "video_views"),
+            "Engagement": safe_sum(g, "engagements"),
+            "Followers": safe_sum(g, "follows"),
+            "Like": safe_sum(g, "likes"),
+            "Purchase": safe_sum(g, "purchases"),
         }
 
         kpi_list = []
@@ -448,35 +481,33 @@ def build_country_stage(country_df: pd.DataFrame) -> list[dict]:
 def build_country_media_marketing_adtype(country_df: pd.DataFrame) -> list[dict]:
     """
     构造 mediaMarketingFunnelAdtype 结构：
-    - 每个 media 一条
-    - platform: 当前国家该 media 下所有平台
-    - marketingFunnels: 当前 media 相关的所有 funnel
-    - adTypeWithKPI: 按 (funnel, ad_type, platform) 聚合 KPI
+    - 每个 (media, platform) 组合一个对象
+    - platform: 单个平台名称（数组形式，但只包含一个元素）
+    - marketingFunnels: 当前 media-platform 相关的所有 funnel
+    - adTypeWithKPI: 按 (funnel, ad_type) 聚合 KPI（platform 已在对象层级）
     """
     result = []
 
-    # 先按 media 切分
-    for media, g_media in country_df.dropna(subset=["Media_final"]).groupby(
-        "Media_final"
-    ):
+    # 先按 (media, platform) 切分，每个组合一个对象
+    for (media, platform), g_media_platform in country_df.dropna(
+        subset=["Media_final", "Platform_final"]
+    ).groupby(["Media_final", "Platform_final"]):
+        # 确保 platform 是字符串且非空
+        if not isinstance(platform, str) or not platform:
+            continue
+
         media_entry: dict = {
             "mediaName": media,
-            "platform": sorted(
-                {
-                    p
-                    for p in g_media["Platform_final"].unique().tolist()
-                    if isinstance(p, str) and p
-                }
-            ),
+            "platform": [platform],  # 单个平台，但保持数组格式
             "marketingFunnels": [],
             "adTypeWithKPI": [],
         }
 
-        # marketingFunnels 列表
+        # marketingFunnels 列表：当前 media-platform 下的所有 funnel
         funnels = sorted(
             {
                 f
-                for f in g_media["Funnel_final"].unique().tolist()
+                for f in g_media_platform["Funnel_final"].unique().tolist()
                 if isinstance(f, str) and f
             }
         )
@@ -489,23 +520,23 @@ def build_country_media_marketing_adtype(country_df: pd.DataFrame) -> list[dict]
                 }
             )
 
-        # adTypeWithKPI：按 (funnel, ad_type, platform) 聚合
-        key_cols = ["Funnel_final", "ad_type", "Platform_final"]
-        g_valid = g_media.dropna(subset=["Funnel_final", "ad_type"])
+        # adTypeWithKPI：按 (funnel, ad_type) 聚合（platform 已在对象层级）
+        key_cols = ["Funnel_final", "ad_type"]
+        g_valid = g_media_platform.dropna(subset=["Funnel_final", "ad_type"])
         if not g_valid.empty:
             grouped = g_valid.groupby(key_cols)
-            for (funnel, ad_type, platform), g_combo in grouped:
+            for (funnel, ad_type), g_combo in grouped:
                 spend = float(g_combo["spend"].sum())
-                # KPI 聚合
+                # KPI 聚合（如果列不存在则视为0）
                 kpi_vals = {
-                    "Impression": g_combo["impressions"].sum(),
-                    "Clicks": g_combo["clicks"].sum(),
-                    "LinkClicks": g_combo["link_clicks"].sum(),
-                    "VideoViews": g_combo["video_views"].sum(),
-                    "Engagement": g_combo["engagements"].sum(),
-                    "Followers": g_combo["follows"].sum(),
-                    "Like": g_combo["likes"].sum(),
-                    "Purchase": g_combo["purchases"].sum(),
+                    "Impression": safe_sum(g_combo, "impressions"),
+                    "Clicks": safe_sum(g_combo, "clicks"),
+                    "LinkClicks": safe_sum(g_combo, "link_clicks"),
+                    "VideoViews": safe_sum(g_combo, "video_views"),
+                    "Engagement": safe_sum(g_combo, "engagements"),
+                    "Followers": safe_sum(g_combo, "follows"),
+                    "Like": safe_sum(g_combo, "likes"),
+                    "Purchase": safe_sum(g_combo, "purchases"),
                 }
                 kpi_list = []
                 for key in KPI_KEYS:
@@ -522,7 +553,7 @@ def build_country_media_marketing_adtype(country_df: pd.DataFrame) -> list[dict]
                     {
                         "funnelName": funnel,
                         "adTypeName": ad_type,
-                        "platform": platform,
+                        "platform": platform,  # 保留 platform 字段用于兼容
                         "spend": round(spend, 2),
                         "kpiInfo": kpi_list,
                     }
@@ -578,26 +609,55 @@ def apply_testcase_template_config(
     if case_name:
         basic_info["mediaPlanName"] = case_name
 
+    # 为随机勾选 completion 生成可复现的随机数实例（基于用例名）
+    rng = random.Random(case_name or "default_seed")
+
+    def choose_completion_flags(n: int) -> list[int]:
+        """
+        返回长度为 n 的 0/1 列表：
+        - 如果 n <= 1，全 1（无法部分勾选）
+        - 否则随机选择 1..n-1 个位置为 1，保证不是全 1 也不是全 0
+        """
+        if n <= 1:
+            return [1] * n
+        ones_count = rng.randint(1, n - 1)
+        indices = list(range(n))
+        rng.shuffle(indices)
+        flags = [0] * n
+        for idx in indices[:ones_count]:
+            flags[idx] = 1
+        return flags
+
     # 1. 配置 KPI 优先级和 completion
     kpi_info = basic_info.get("kpiInfo", [])
     kpi_priority_list = case_config.get("kpi_priority_list", [])
     kpi_must_achieve = case_config.get("kpi_must_achieve", False)
 
-    # 创建KPI优先级映射
+    # 创建KPI优先级映射（只包含 testcase 中指定的 KPI）
     kpi_priority_map = {}
     for idx, kpi_key in enumerate(kpi_priority_list, 1):
         kpi_priority_map[kpi_key] = idx
 
+    # 只保留 kpi_priority_list 中指定的 KPI
+    kpi_info_filtered = [
+        kpi_item for kpi_item in kpi_info if kpi_item["key"] in kpi_priority_map
+    ]
+
     # 更新KPI配置
-    for kpi_item in kpi_info:
+    # 如果必须达成，则随机选择部分 KPI 勾选 completion=1（避免全勾选/全不勾选）
+    kpi_flags = (
+        choose_completion_flags(len(kpi_info_filtered))
+        if kpi_must_achieve
+        else [0] * len(kpi_info_filtered)
+    )
+
+    for idx, kpi_item in enumerate(kpi_info_filtered):
         kpi_key = kpi_item["key"]
-        if kpi_key in kpi_priority_map:
-            kpi_item["priority"] = kpi_priority_map[kpi_key]
-            kpi_item["completion"] = 1 if kpi_must_achieve else 0
-        else:
-            # 不在优先级列表中的KPI，设置较低的优先级
-            kpi_item["priority"] = 999
-            kpi_item["completion"] = 0
+        kpi_item["priority"] = kpi_priority_map[kpi_key]
+        kpi_item["completion"] = kpi_flags[idx] if kpi_must_achieve else 0
+
+    # 更新 basicInfo.kpiInfo，只保留过滤后的 KPI
+    basic_info["kpiInfo"] = kpi_info_filtered
 
     # 2. 配置 kpiInfoBudgetConfig
     kpi_target_rate = case_config.get("kpi_target_rate")
@@ -618,11 +678,11 @@ def apply_testcase_template_config(
     }
     if region_match_type == "完全匹配" and region_budget_range_match is not None:
         region_config["rangeMatch"] = region_budget_range_match
-    if region_budget_must_achieve:
-        if region_budget_target_rate is not None:
-            region_config["budgetCompletionRule"] = region_budget_target_rate
-        if region_kpi_target_rate is not None:
-            region_config["kpiCompletionRule"] = region_kpi_target_rate
+    # 无论是否 must_achieve，只要提供了目标达成率就写入，避免遗漏
+    if region_budget_target_rate is not None:
+        region_config["budgetCompletionRule"] = region_budget_target_rate
+    if region_kpi_target_rate is not None:
+        region_config["kpiCompletionRule"] = region_kpi_target_rate
     basic_info["regionBudgetConfig"] = region_config
 
     # 4. 配置 moduleConfig 优先级
@@ -636,18 +696,40 @@ def apply_testcase_template_config(
             module["priority"] = 999
 
     # 5. 更新 regionBudget 中每个国家的 KPI 优先级和 completion
-    for region in basic_info.get("regionBudget", []):
-        # 设置 region 的 completion（根据 region_budget_must_achieve）
-        region["completion"] = 1 if region_budget_must_achieve else 0
+    # 为区域 completion 生成随机标记（若必须达成为 True）
+    regions = basic_info.get("regionBudget", [])
+    region_flags = (
+        choose_completion_flags(len(regions))
+        if region_budget_must_achieve
+        else [0] * len(regions)
+    )
 
-        for region_kpi in region.get("kpiInfo", []):
+    for r_idx, region in enumerate(regions):
+        # 设置 region 的 completion（根据 region_budget_must_achieve，并随机选择）
+        region["completion"] = region_flags[r_idx]
+
+        # 区域 KPI 同样按全局 KPI 优先级映射，且当 kpi_must_achieve 为 True 时随机选择部分勾选
+        # 只保留 kpi_priority_list 中指定的 KPI
+        kpi_list = region.get("kpiInfo", [])
+        kpi_list_filtered = [
+            kpi_item for kpi_item in kpi_list if kpi_item["key"] in kpi_priority_map
+        ]
+
+        region_kpi_flags = (
+            choose_completion_flags(len(kpi_list_filtered))
+            if kpi_must_achieve
+            else [0] * len(kpi_list_filtered)
+        )
+
+        for k_idx, region_kpi in enumerate(kpi_list_filtered):
             kpi_key = region_kpi["key"]
-            if kpi_key in kpi_priority_map:
-                region_kpi["priority"] = kpi_priority_map[kpi_key]
-                region_kpi["completion"] = 1 if kpi_must_achieve else 0
-            else:
-                region_kpi["priority"] = 999
-                region_kpi["completion"] = 0
+            region_kpi["priority"] = kpi_priority_map[kpi_key]
+            region_kpi["completion"] = (
+                region_kpi_flags[k_idx] if kpi_must_achieve else 0
+            )
+
+        # 更新 region 的 kpiInfo，只保留过滤后的 KPI
+        region["kpiInfo"] = kpi_list_filtered
 
     # 6. 配置每个国家的 briefMultiConfig
     stage_match_type = case_config.get("stage_match_type", "完全匹配")
@@ -709,6 +791,21 @@ def apply_testcase_template_config(
                 module["priority"] = module_priority_list.index(module_name) + 1
             else:
                 module["priority"] = 999
+
+        # 过滤 mediaMarketingFunnelAdtype 中的 KPI，只保留 kpi_priority_list 中指定的
+        for mmfa in country_config.get("mediaMarketingFunnelAdtype", []):
+            for adtype in mmfa.get("adTypeWithKPI", []):
+                kpi_list = adtype.get("kpiInfo", [])
+                kpi_list_filtered = [
+                    kpi_item
+                    for kpi_item in kpi_list
+                    if kpi_item["key"] in kpi_priority_map
+                ]
+                # 更新优先级（只保留过滤后的 KPI）
+                for kpi_item in kpi_list_filtered:
+                    kpi_key = kpi_item["key"]
+                    kpi_item["priority"] = kpi_priority_map[kpi_key]
+                adtype["kpiInfo"] = kpi_list_filtered
 
     return result
 
@@ -780,68 +877,109 @@ def convert(
     Returns:
         生成的JSON数据字典
     """
-    # 读取模板
-    with open(template_path, "r", encoding="utf-8") as f:
-        template = json.load(f)
 
-    template_basic = template["basicInfo"]
-    template_first_country = template["briefMultiConfig"][0]
+    def debug_print(msg: str):
+        if DEBUG:
+            print(msg)
 
-    # 读取数据与映射
-    map_df = load_mapping(adtype_path)
-    data_df = load_data(data_path)
+    try:
+        debug_print(f"[DEBUG] 开始转换，数据文件: {data_path}")
+        # 读取模板
+        debug_print(f"[DEBUG] 读取模板文件: {template_path}")
+        with open(template_path, "r", encoding="utf-8") as f:
+            template = json.load(f)
 
-    merged_df = attach_mapping(data_df, map_df)
+        template_basic = template["basicInfo"]
+        template_first_country = template["briefMultiConfig"][0]
+        debug_print(f"[DEBUG] 模板读取成功")
 
-    # 控制区域数量：只保留花费最高的前 max_regions 个国家
-    # 优先使用函数参数 max_regions，其次使用全局常量 MAX_REGION_COUNT
-    limit = max_regions if max_regions is not None else MAX_REGION_COUNT
-    if limit is not None and "country_code" in merged_df.columns:
-        country_spend = (
-            merged_df.groupby("country_code")["spend"]
-            .sum()
-            .sort_values(ascending=False)
-        )
-        top_countries = country_spend.head(limit).index.tolist()
-        merged_df = merged_df[merged_df["country_code"].isin(top_countries)]
+        # 读取数据与映射
+        debug_print(f"[DEBUG] 读取映射文件: {adtype_path}")
+        map_df = load_mapping(adtype_path)
+        debug_print(f"[DEBUG] 映射文件读取成功，共 {len(map_df)} 行")
 
-    # 构建 basicInfo
-    basic_info = build_basic_info(template_basic, merged_df)
+        debug_print(f"[DEBUG] 读取数据文件: {data_path}")
+        data_df = load_data(data_path)
+        debug_print(f"[DEBUG] 数据文件读取成功，共 {len(data_df)} 行")
 
-    # briefMultiConfig
-    brief_multi = build_brief_multi_config(template_first_country, merged_df)
+        debug_print(f"[DEBUG] 开始合并映射...")
+        merged_df = attach_mapping(data_df, map_df)
+        debug_print(f"[DEBUG] 合并完成，共 {len(merged_df)} 行")
 
-    result = {
-        "basicInfo": basic_info,
-        "briefMultiConfig": brief_multi,
-    }
+        # 控制区域数量：只保留花费最高的前 max_regions 个国家
+        # 优先使用函数参数 max_regions，其次使用全局常量 MAX_REGION_COUNT
+        limit = max_regions if max_regions is not None else MAX_REGION_COUNT
+        if limit is not None and "country_code" in merged_df.columns:
+            debug_print(f"[DEBUG] 限制区域数量为: {limit}")
+            country_spend = (
+                merged_df.groupby("country_code")["spend"]
+                .sum()
+                .sort_values(ascending=False)
+            )
+            top_countries = country_spend.head(limit).index.tolist()
+            merged_df = merged_df[merged_df["country_code"].isin(top_countries)]
+            debug_print(
+                f"[DEBUG] 过滤后剩余 {len(merged_df)} 行，国家: {top_countries}"
+            )
 
-    # 如果指定了测试用例编号，应用测试用例配置
-    if test_case_id is not None and use_testcase_template:
-        test_cases = load_testcase_template(testcase_template_path)
-        if test_cases is None:
-            raise ValueError(f"无法加载测试用例模板: {testcase_template_path}")
-        if test_case_id not in test_cases:
-            raise ValueError(f"测试用例编号 {test_case_id} 不存在于模板中")
-        # 传递用例名称（用例ID就是用例名称）
-        result = apply_testcase_template_config(
-            result, test_cases[test_case_id], case_name=str(test_case_id)
-        )
+        # 构建 basicInfo
+        debug_print(f"[DEBUG] 构建 basicInfo...")
+        basic_info = build_basic_info(template_basic, merged_df)
+        debug_print(f"[DEBUG] basicInfo 构建完成")
 
-    # 统一按 priority 排序（升序）
-    reorder_priorities(result)
+        # briefMultiConfig
+        debug_print(f"[DEBUG] 构建 briefMultiConfig...")
+        brief_multi = build_brief_multi_config(template_first_country, merged_df)
+        debug_print(f"[DEBUG] briefMultiConfig 构建完成，共 {len(brief_multi)} 个国家")
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+        result = {
+            "basicInfo": basic_info,
+            "briefMultiConfig": brief_multi,
+        }
 
-    return result
+        # 如果指定了测试用例编号，应用测试用例配置
+        if test_case_id is not None and use_testcase_template:
+            debug_print(f"[DEBUG] 应用测试用例配置: {test_case_id}")
+            test_cases = load_testcase_template(testcase_template_path)
+            if test_cases is None:
+                raise ValueError(f"无法加载测试用例模板: {testcase_template_path}")
+            if test_case_id not in test_cases:
+                raise ValueError(f"测试用例编号 {test_case_id} 不存在于模板中")
+            # 传递用例名称（用例ID就是用例名称）
+            result = apply_testcase_template_config(
+                result, test_cases[test_case_id], case_name=str(test_case_id)
+            )
+            debug_print(f"[DEBUG] 测试用例配置应用完成")
+
+        # 统一按 priority 排序（升序）
+        debug_print(f"[DEBUG] 重新排序优先级...")
+        reorder_priorities(result)
+
+        debug_print(f"[DEBUG] 写入输出文件: {output_path}")
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        debug_print(f"[DEBUG] 转换完成！")
+
+        return result
+    except FileNotFoundError as e:
+        print(f"[ERROR] 文件未找到: {e}")
+        traceback.print_exc()
+        raise
+    except KeyError as e:
+        print(f"[ERROR] 键错误（可能是模板或数据格式问题）: {e}")
+        traceback.print_exc()
+        raise
+    except Exception as e:
+        print(f"[ERROR] 转换过程中发生错误: {e}")
+        traceback.print_exc()
+        raise
 
 
 def batch_generate(
-    data_path: str = "data.csv",
+    data_path: str = "data_haier.csv",
     adtype_path: str = "adtype_dict.csv",
     template_path: str = "brief_template.json",
-    output_dir: str = "output",
+    output_dir: str = "output/requests",
     max_regions: int | None = None,
     testcase_template_path: str = "testcase_template.py",
     test_case_ids: list[str] | None = None,
@@ -900,6 +1038,8 @@ def batch_generate(
             print(f"✓ 已生成测试用例 {case_id}: {output_file}")
         except Exception as e:
             print(f"✗ 生成测试用例 {case_id} 失败: {e}")
+            print(f"详细错误信息:")
+            traceback.print_exc()
 
     print(f"\n批量生成完成，共生成 {len(results)} 个文件")
     return results
@@ -910,8 +1050,8 @@ if __name__ == "__main__":
 
     # 解析命令行参数
     test_case_id = None
-    max_regions = 20
-    batch_mode = False
+    max_regions = 10
+    batch_mode = True
     use_testcase_template = False
     testcase_template_path = "testcase_template.py"
 
@@ -939,6 +1079,11 @@ if __name__ == "__main__":
                     i += 2
             else:
                 i += 1
+        elif arg == "--debug" or arg == "-d":
+            DEBUG = True
+            os.environ["DEBUG"] = "1"
+            print("[DEBUG] 调试模式已启用")
+            i += 1
         elif arg.startswith("-"):
             print(f"未知参数: {arg}")
             i += 1
@@ -969,4 +1114,6 @@ if __name__ == "__main__":
             )
         except Exception as e:
             print(f"批量生成失败: {e}")
+            print("\n详细错误堆栈:")
+            traceback.print_exc()
             sys.exit(1)

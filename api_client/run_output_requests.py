@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-批量读取 output 目录下的 JSON 请求，调用 API 完整流程，并在任务成功后拉取 brief-detail 结果。
+批量读取 output 目录下的 JSON 请求，调用 API 完整流程，并在任务成功后拉取批量查询结果。
 
 使用方式：
     python api_client/run_output_requests.py --dir output --max-attempts 200 --interval 2000 \
-        --brief-detail https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/brief/multi-country/{task_id}/brief-detail
+        --brief-detail https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/result/multi-country/{job_id}/mp-query-batch
 """
 
 import argparse
@@ -53,19 +53,12 @@ async def main(args):
     max_attempts = args.max_attempts or env_cfg.max_polling_attempts
     interval_ms = args.interval or env_cfg.polling_interval
 
-    # brief-detail 配置：优先使用命令行参数，其次使用 API_CONFIG 中的配置
+    # 批量查询接口配置：优先使用命令行参数，其次使用 API_CONFIG 中的配置
     brief_detail_tmpl = args.brief_detail or API_CONFIG.get("BRIEF_DETAIL_URL_TEMPLATE")
 
-    brief_detail_headers = None
-    if args.brief_detail_headers:
-        # 允许传入 JSON 字符串形式的 headers
-        try:
-            brief_detail_headers = json.loads(args.brief_detail_headers)
-        except Exception as e:
-            print(f"brief-detail headers 解析失败，将使用 common headers，错误: {e}")
-
-    # 创建 detail 结果输出目录
-    detail_output_dir = output_dir / "detail_results"
+    # 创建批量查询结果输出目录（在 output 目录下，而不是在 requests 目录下）
+    output_base = output_dir.parent if output_dir.name == "requests" else output_dir
+    detail_output_dir = output_base / "results"
     detail_output_dir.mkdir(parents=True, exist_ok=True)
 
     async with create_client_from_config(api_config=API_CONFIG) as client:
@@ -93,24 +86,31 @@ async def main(args):
             # 保存 detail 结果到本地文件
             if result.get("detail_result"):
                 detail_result = result.get("detail_result")
-                # 生成输出文件名：将原文件名中的 brief_case_ 替换为 brief_detail_
-                detail_filename = (
-                    file_path.stem.replace("brief_case_", "brief_detail_") + ".json"
-                )
+
+                # 将 uuid 和 job_id 添加到结果中
+                if result.get("uuid"):
+                    detail_result["uuid"] = result["uuid"]
+                if result.get("job_id"):
+                    detail_result["job_id"] = result["job_id"]
+
+                # 生成输出文件名：将原文件名中的 brief_case_ 替换为 batch_query_
+                # 如果存在 job_id，则包含在文件名中
+                base_filename = file_path.stem.replace("brief_case_", "mp_result_")
+                detail_filename = f"{base_filename}.json"
                 detail_output_path = detail_output_dir / detail_filename
 
                 try:
-                    # 保存完整的 detail_result 数据
+                    # 保存完整的 detail_result 数据（包含 uuid 和 job_id）
                     with detail_output_path.open("w", encoding="utf-8") as f:
                         json.dump(detail_result, f, ensure_ascii=False, indent=2)
-                    print(f"✓ detail 结果已保存: {detail_output_path}")
+                    print(f"✓ 批量查询结果已保存: {detail_output_path}")
                 except Exception as e:
-                    print(f"✗ 保存 detail 结果失败: {e}")
+                    print(f"✗ 保存批量查询结果失败: {e}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="批量调用 output 目录中的请求 JSON")
-    parser.add_argument("--dir", default="output", help="请求 JSON 所在目录")
+    parser.add_argument("--dir", default="output/requests", help="请求 JSON 所在目录")
     parser.add_argument(
         "--max-attempts",
         type=int,
@@ -127,14 +127,9 @@ if __name__ == "__main__":
         "--brief-detail",
         type=str,
         default=None,
-        help="brief-detail URL 模板，需包含 {task_id} 占位符（可选，默认使用 config.py 中的配置）",
+        help="批量查询接口 URL 模板，需包含 {job_id} 占位符（可选，默认使用 config.py 中的配置）",
     )
-    parser.add_argument(
-        "--brief-detail-headers",
-        type=str,
-        default=None,
-        help='brief-detail 请求头，JSON 字符串，例如 \'{"x-sino-jwt-token": "..."}\'',
-    )
+
     args = parser.parse_args()
 
     asyncio.run(main(args))

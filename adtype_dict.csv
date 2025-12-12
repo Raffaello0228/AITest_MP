@@ -23,16 +23,16 @@ Google,YTB,Awareness,Awareness,Non-skippable,Auction,CPM
 Google,YTB,Awareness,Awareness,Video Ads Sequencing,Auction,CPM
 Google,YTB,Consideration,Video Views,VVC,Auction,CPV
 Google,YTB,Conversion,Conversion,Video Action Campaign,Auction,CPM
-Tiktok,TT,Awareness,Reach,TopView,reserved,CPM
-Tiktok,TT,Awareness,Reach,TopFeed(R&F),reserved,CPM
-Tiktok,TT,Awareness,Reach,StandardFeed£¨R&F£©,reserved,CPM
-Tiktok,TT,Awareness,Reach,Reach,Auction,CPM
-Tiktok,TT,Consideration,Video Views,CI to Live,Auction,CPV
-Tiktok,TT,Consideration,Video Views,Video Views,Auction,CPV
-Tiktok,TT,Consideration,Follower,CI Follows,Auction,CPF
-Tiktok,TT,Traffic,Traffic,Traffic,Auction,CPC
-Tiktok,TT,Conversion,Sales,Video Shopping Ads,Auction,CPP
-Tiktok,TT,Conversion,Sales,LIVE Shopping Ads,Auction,CPP
-Tiktok,TT,Conversion,Sales,Product Shopping Ads,Auction,CPP
-Tiktok,TT,Conversion,Sales,Website Conversion,Auction,CPP
-Tiktok,TT,Conversion,Sales,Catalog Sales,Auction,CPP
+TikTok,TT,Awareness,Reach,TopView,reserved,CPM
+TikTok,TT,Awareness,Reach,TopFeed(R&F),reserved,CPM
+TikTok,TT,Awareness,Reach,StandardFeedï¿½ï¿½R&Fï¿½ï¿½,reserved,CPM
+TikTok,TT,Awareness,Reach,Reach,Auction,CPM
+TikTok,TT,Consideration,Video Views,CI to Live,Auction,CPV
+TikTok,TT,Consideration,Video Views,Video Views,Auction,CPV
+TikTok,TT,Consideration,Follower,CI Follows,Auction,CPF
+TikTok,TT,Traffic,Traffic,Traffic,Auction,CPC
+TikTok,TT,Conversion,Sales,Video Shopping Ads,Auction,CPP
+TikTok,TT,Conversion,Sales,LIVE Shopping Ads,Auction,CPP
+TikTok,TT,Conversion,Sales,Product Shopping Ads,Auction,CPP
+TikTok,TT,Conversion,Sales,Website Conversion,Auction,CPP
+TikTok,TT,Conversion,Sales,Catalog Sales,Auction,CPP

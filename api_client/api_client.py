@@ -24,8 +24,7 @@ class APIClient:
         common_headers: Dict[str, str],
         request_json_path: Optional[str] = None,
         default_request_body: Optional[Dict] = None,
-        brief_detail_url_template: Optional[str] = None,
-        brief_detail_headers: Optional[Dict[str, str]] = None,
+        batch_query_url_template: Optional[str] = None,
         logger: Optional[logging.Logger] = None,
     ):
         """
@@ -38,8 +37,7 @@ class APIClient:
             common_headers: 通用请求头
             request_json_path: request.json文件路径（可选）
             default_request_body: 默认请求体（可选）
-            brief_detail_url_template: brief-detail 接口URL模板，支持 {task_id} 占位符（可选）
-            brief_detail_headers: brief-detail 接口的请求头（可选，默认复用 common_headers）
+            batch_query_url_template: 批量查询接口URL模板，支持 {job_id} 占位符（可选）
             logger: 日志记录器（可选）
         """
         self.get_uuid_url = get_uuid_url
@@ -48,8 +46,7 @@ class APIClient:
         self.common_headers = common_headers
         self.request_json_path = request_json_path
         self.default_request_body = default_request_body or {}
-        self.brief_detail_url_template = brief_detail_url_template
-        self.brief_detail_headers = brief_detail_headers
+        self.batch_query_url_template = batch_query_url_template
         self.logger = logger or self._setup_default_logger()
         self.session: Optional[aiohttp.ClientSession] = None
 
@@ -242,7 +239,7 @@ class APIClient:
 
     async def query_job_status(
         self,
-        job_id: str,
+        uuid: str,
         max_attempts: int = 100,
         polling_interval_ms: int = 2000,
     ) -> Dict[str, Any]:
@@ -267,7 +264,7 @@ class APIClient:
         if not self.session:
             raise RuntimeError("API客户端未初始化，请使用 async with 语句")
 
-        if not job_id:
+        if not uuid:
             return {
                 "success": False,
                 "error": "No jobId provided",
@@ -278,16 +275,16 @@ class APIClient:
                 "job_id": None,
             }
 
-        query_url = self.query_url_template.format(job_id=job_id)
+        query_url = self.query_url_template.format(job_id=uuid)
         start_time = time.time()
 
-        self.logger.info(f"开始轮询任务状态: {job_id}")
+        self.logger.info(f"开始轮询任务状态: {uuid}")
 
         for attempt in range(1, max_attempts + 1):
             attempt_start_time = time.time()
 
             try:
-                async with self.session.get(
+                async with self.session.post(
                     query_url, headers=self.common_headers
                 ) as response:
                     attempt_time = int((time.time() - attempt_start_time) * 1000)
@@ -304,22 +301,22 @@ class APIClient:
                     job_status = data.get("result", {}).get("jobStatus") or data.get(
                         "jobStatus"
                     )
-
+                    job_id = data.get("result", {}).get("jobId")
                     # 记录轮询信息
                     if attempt % 10 == 0 or job_status in [
                         "SUCCESS",
                         "FAILED",
-                        "ERROR",
+                        "EXECUTING",
                     ]:
                         self.logger.info(
-                            f"[QUERY] 轮询尝试 {attempt}: JobID={job_id}, 状态={job_status}, 耗时={attempt_time}ms"
+                            f"[QUERY] 轮询尝试 {attempt}: JobID={uuid}, 状态={job_status}, 耗时={attempt_time}ms"
                         )
 
                     # 检查任务状态 - 只有SUCCESS、FAILED、ERROR才视为最终状态
-                    if job_status in ["SUCCESS", "FAILED", "ERROR"]:
+                    if job_status in ["SUCCESS", "FAILED"]:
                         total_time = int((time.time() - start_time) * 1000)
                         self.logger.info(
-                            f"[QUERY] 任务完成: JobID={job_id}, 状态={job_status}, 总耗时={total_time}ms, 轮询次数={attempt}"
+                            f"[QUERY] 任务完成: JobID={uuid}, 状态={job_status}, 总耗时={total_time}ms, 轮询次数={attempt}"
                         )
                         return {
                             "success": job_status == "SUCCESS",
@@ -362,36 +359,34 @@ class APIClient:
             "job_status": "TIMEOUT",
         }
 
-    async def fetch_brief_detail(self, task_id: str) -> Dict[str, Any]:
+    async def mp_query_batch(self, job_id: str) -> Dict[str, Any]:
         """
-        调用 brief-detail 接口获取详情。
+        调用批量查询接口获取详情。
 
         Args:
-            task_id: brief 的 taskId（即创建时的 uuid）
+            job_id: 任务ID（job_id）
 
         Returns:
             包含 success / status / body_snippet 或 error 的字典
         """
         if not self.session:
             raise RuntimeError("API客户端未初始化，请使用 async with 语句")
-        if not self.brief_detail_url_template:
-            raise RuntimeError(
-                "未配置 brief_detail_url_template，无法调用 brief-detail 接口"
-            )
+        if not self.batch_query_url_template:
+            raise RuntimeError("未配置 batch_query_url_template，无法调用批量查询接口")
 
-        url = self.brief_detail_url_template.format(task_id=task_id)
-        headers = self.brief_detail_headers or self.common_headers
+        url = self.batch_query_url_template.format(job_id=job_id)
+        headers = self.common_headers
 
         start_time = time.time()
-        self.logger.info(f"开始调用 brief-detail: {url}")
+        self.logger.info(f"开始调用批量查询接口: {url}")
         try:
             async with self.session.post(url, headers=headers) as response:
                 cost = int((time.time() - start_time) * 1000)
                 text = await response.text()
 
                 if response.status >= 400:
-                    error_msg = f"brief-detail failed: {response.status} {response.reason} {text[:200]}"
-                    self.logger.error(f"[BRIEF-DETAIL] {error_msg}, 耗时: {cost}ms")
+                    error_msg = f"批量查询接口失败: {response.status} {response.reason} {text[:200]}"
+                    self.logger.error(f"[BATCH-QUERY] {error_msg}, 耗时: {cost}ms")
                     return {
                         "success": False,
                         "status": response.status,
@@ -400,7 +395,7 @@ class APIClient:
                         "body_snippet": text[:500] if text else "",
                     }
 
-                self.logger.info(f"[BRIEF-DETAIL] 成功，耗时: {cost}ms")
+                self.logger.info(f"[BATCH-QUERY] 成功，耗时: {cost}ms")
                 try:
                     data = json.loads(text) if text else {}
                 except json.JSONDecodeError:
@@ -463,28 +458,17 @@ class APIClient:
                     "error": save_result.get("error", "Save failed"),
                 }
 
-            job_id = save_result["job_id"]
-            if not job_id:
-                return {
-                    "success": False,
-                    "uuid": uuid,
-                    "job_id": None,
-                    "save_result": save_result,
-                    "query_result": None,
-                    "total_time": int((time.time() - workflow_start) * 1000),
-                    "error": "Save succeeded but no job_id returned",
-                }
-
             # 3. 轮询任务状态
             query_result = await self.query_job_status(
-                job_id, max_polling_attempts, polling_interval_ms
+                uuid, max_polling_attempts, polling_interval_ms
             )
 
+            job_id = query_result.get("job_id")
             total_time = int((time.time() - workflow_start) * 1000)
 
             detail_result: Optional[Dict[str, Any]] = None
-            if query_result["success"] and self.brief_detail_url_template:
-                detail_result = await self.fetch_brief_detail(uuid)
+            if query_result["success"] and self.batch_query_url_template:
+                detail_result = await self.mp_query_batch(uuid)
 
             success_all = query_result["success"] and (
                 detail_result is None or detail_result.get("success", False)
@@ -525,8 +509,6 @@ def create_client_from_config(
     api_config: Dict[str, Any],
     request_json_path: Optional[str] = None,
     default_request_body: Optional[Dict] = None,
-    brief_detail_url_template: Optional[str] = None,
-    brief_detail_headers: Optional[Dict[str, str]] = None,
     logger: Optional[logging.Logger] = None,
 ) -> APIClient:
     """
@@ -538,11 +520,8 @@ def create_client_from_config(
             - SAVE_URL: Save接口的URL
             - QUERY_URL_TEMPLATE: 查询接口URL模板
             - COMMON_HEADERS: 通用请求头
-            - BRIEF_DETAIL_URL_TEMPLATE: brief-detail 接口URL模板（可选，如果存在则自动使用）
         request_json_path: request.json文件路径（可选）
         default_request_body: 默认请求体（可选）
-        brief_detail_url_template: brief-detail 接口URL模板（可选，优先级高于 api_config 中的配置）
-        brief_detail_headers: brief-detail 接口的请求头（可选）
         logger: 日志记录器（可选）
 
     Returns:
@@ -556,7 +535,6 @@ def create_client_from_config(
         common_headers=api_config["COMMON_HEADERS"],
         request_json_path=request_json_path,
         default_request_body=default_request_body,
-        brief_detail_url_template=api_config["BRIEF_DETAIL_URL_TEMPLATE"],
-        brief_detail_headers=brief_detail_headers,
+        batch_query_url_template=api_config["BATCH_QUERY_URL_TEMPLATE"],
         logger=logger,
     )

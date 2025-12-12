@@ -23,3 +23,6 @@
 | 10 | impression<br>views<br>engagement | 大小关系匹配 | - | 勾选 | 推广区域预算分配第一<br>KPI指标第二<br>其他同默认选择 | 增加一个必须达成的达成率 |
 
 **结果衡量标准：** 前三指标达成率（impression, views, engagement）
+
+
+统计指标
