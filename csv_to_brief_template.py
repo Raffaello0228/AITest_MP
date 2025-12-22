@@ -544,6 +544,7 @@ def build_country_media_marketing_adtype(country_df: pd.DataFrame) -> list[dict]
                         {
                             "key": key,
                             "val": str(int(kpi_vals.get(key, 0.0))),
+                            # "val": None,
                             "priority": KPI_KEYS.index(key) + 1,
                             "completion": 0,
                         }

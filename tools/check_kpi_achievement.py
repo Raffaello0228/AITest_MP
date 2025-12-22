@@ -156,19 +156,14 @@ def check_global_kpi_achievement(
 
         if target == 0:
             achievement_rate = 0.0 if actual == 0 else "null"
-            # 当 completion=1 时，必须 actual >= target（即 actual == 0）
-            # 当 completion=0 时，只要 actual == 0 即可
+            # target 为 0 时，只要 actual 也为 0 即达成，不再区分 completion
             achieved = actual == 0
         else:
-            achievement_rate = (actual / target) * 100
-            # 当 completion=1 时，必须 actual >= target
-            # 当 completion=0 时，满足达成率条件即可（保留2位小数后再判断）
-            if completion == 1:
-                achieved = actual >= target
-            else:
-                achievement_rate_rounded = round(achievement_rate, 2)
-                achieved = achievement_rate_rounded >= kpi_target_rate
-                achievement_rate = achievement_rate_rounded
+            # 使用整数百分比进行判断，避免精度问题
+            raw_achievement_rate = (actual / target) * 100
+            achievement_rate = round(raw_achievement_rate)
+            # 无论 completion 是否为 1，一律按整数达成率与 target_rate 判断
+            achieved = achievement_rate >= kpi_target_rate
 
         results[kpi_name] = {
             "target": target,
@@ -244,22 +239,24 @@ def check_region_budget_achievement(
             target = target_info["target"]
             actual = region_budget_actual.get(country_code, 0.0)
 
+            # 使用整数百分比误差进行判断，避免精度问题
             error_percentage = abs(actual_percentage - target_percentage)
-            # 保留2位小数后再判断
-            error_percentage_rounded = round(error_percentage, 2)
-            achieved = error_percentage_rounded <= region_budget_range_match
+            error_percentage = round(error_percentage)
+            achieved = error_percentage <= region_budget_range_match
 
             if target == 0:
                 achievement_rate = 0.0 if actual == 0 else "null"
             else:
-                achievement_rate = (actual / target) * 100
+                # achievement_rate 也统一保留为整数百分比
+                raw_achievement_rate = (actual / target) * 100
+                achievement_rate = round(raw_achievement_rate)
 
             results[country_code] = {
                 "target": target,
                 "actual": actual,
                 "target_percentage": target_percentage,
                 "actual_percentage": actual_percentage,
-                "error_percentage": error_percentage_rounded,
+                "error_percentage": error_percentage,
                 "range_match": region_budget_range_match,
                 "achievement_rate": achievement_rate,
                 "target_rate": region_budget_target_rate,
@@ -269,6 +266,17 @@ def check_region_budget_achievement(
 
     elif region_match_type == "大小关系匹配":
         # 大小关系匹配：判断大小顺序是否一致，如果有 completion=1 的，判断是否达成 target_rate
+        # 目标 & 实际预算都接近（diff < 总预算的 1/10000）的地区视为“并列”，允许排序互换
+        total_target_budget = sum(
+            info["target"] for info in region_budget_targets.values()
+        )
+        target_diff_threshold = (
+            total_target_budget / 10000.0 if total_target_budget > 0 else 0.0
+        )
+        actual_diff_threshold = (
+            total_actual_budget / 10000.0 if total_actual_budget > 0 else 0.0
+        )
+
         # 构建目标大小顺序（按 budget_percentage 降序）
         target_order = sorted(
             region_budget_targets.items(),
@@ -289,8 +297,48 @@ def check_region_budget_achievement(
             country_code: rank for rank, (country_code, _) in enumerate(actual_order)
         }
 
-        # 判断顺序是否一致
-        order_consistent = target_rank == actual_rank
+        # 判断顺序是否一致：
+        # - 对于目标 & 实际预算差都很小的地区对，允许它们在排序中互换位置（视为并列）
+        order_consistent = True
+        country_codes = list(region_budget_targets.keys())
+        n = len(country_codes)
+        for i in range(n):
+            if not order_consistent:
+                break
+            for j in range(i + 1, n):
+                ci = country_codes[i]
+                cj = country_codes[j]
+                ti = target_rank.get(ci)
+                tj = target_rank.get(cj)
+                ai = actual_rank.get(ci)
+                aj = actual_rank.get(cj)
+                if ti is None or tj is None or ai is None or aj is None:
+                    continue
+
+                # 是否存在“相对顺序相反”的情况
+                inverted = (ti < tj and ai > aj) or (ti > tj and ai < aj)
+                if not inverted:
+                    continue
+
+                # 检查两地区是否可视为“并列”
+                target_diff = abs(
+                    region_budget_targets[ci]["target"]
+                    - region_budget_targets[cj]["target"]
+                )
+                actual_diff = abs(
+                    region_budget_actual.get(ci, 0.0)
+                    - region_budget_actual.get(cj, 0.0)
+                )
+                can_treat_as_tie = (
+                    total_target_budget > 0
+                    and total_actual_budget > 0
+                    and target_diff < target_diff_threshold
+                    and actual_diff < actual_diff_threshold
+                )
+
+                if not can_treat_as_tie:
+                    order_consistent = False
+                    break
 
         # 检查是否有 completion=1 的区域
         has_must_achieve = any(
@@ -308,7 +356,9 @@ def check_region_budget_achievement(
             if target == 0:
                 achievement_rate = 0.0 if actual == 0 else "null"
             else:
-                achievement_rate = (actual / target) * 100
+                # 统一使用整数百分比，避免精度问题
+                raw_achievement_rate = (actual / target) * 100
+                achievement_rate = round(raw_achievement_rate)
 
             # 判断是否达成
             if not order_consistent:
@@ -316,11 +366,11 @@ def check_region_budget_achievement(
                 achieved = False
             elif has_must_achieve and completion == 1:
                 # 有必须达成的区域，且当前区域必须达成
-                # 当 completion=1 时，必须 actual >= target
-                if target == 0:
-                    achieved = actual == 0
+                # 先保证顺序一致，然后再看该区域自身是否达到达成率阈值
+                if isinstance(achievement_rate, (int, float)):
+                    achieved = achievement_rate >= region_budget_target_rate
                 else:
-                    achieved = actual >= target
+                    achieved = False
             elif has_must_achieve and completion == 0:
                 # 有必须达成的区域，但当前区域不需要必须达成，只要顺序一致即可
                 achieved = True
@@ -353,7 +403,9 @@ def check_region_budget_achievement(
                 achievement_rate = 0.0 if actual == 0 else "null"
                 achieved = actual == 0
             else:
-                achievement_rate = (actual / target) * 100
+                # 统一使用整数百分比进行判断，避免精度问题
+                raw_achievement_rate = (actual / target) * 100
+                achievement_rate = round(raw_achievement_rate)
                 achieved = achievement_rate >= region_budget_target_rate
 
             results[country_code] = {
@@ -424,19 +476,14 @@ def check_region_kpi_achievement(
 
             if target == 0:
                 achievement_rate = 0.0 if actual == 0 else "null"
-                # 当 completion=1 时，必须 actual >= target（即 actual == 0）
-                # 当 completion=0 时，只要 actual == 0 即可
+                # target 为 0 时，只要 actual 也为 0 即达成，不再区分 completion
                 achieved = actual == 0
             else:
-                achievement_rate = (actual / target) * 100
-                # 当 completion=1 时，必须 actual >= target
-                # 当 completion=0 时，满足达成率条件即可（保留2位小数后再判断）
-                if completion == 1:
-                    achieved = actual >= target
-                else:
-                    achievement_rate_rounded = round(achievement_rate, 2)
-                    achieved = achievement_rate_rounded >= region_kpi_target_rate
-                    achievement_rate = achievement_rate_rounded
+                # 统一使用整数百分比进行判断，避免精度问题
+                raw_achievement_rate = (actual / target) * 100
+                achievement_rate = round(raw_achievement_rate)
+                # 无论 completion 是否为 1，一律按整数达成率与 target_rate 判断
+                achieved = achievement_rate >= region_kpi_target_rate
 
             results[country_code][kpi_name] = {
                 "target": target,
@@ -535,14 +582,12 @@ def check_stage_budget_achievement(
                 )
                 satisfied = actual_info["actual_percentage"] == 0
             else:
-                # range_match 以预算占比的上下浮动范围判定
+                # range_match 以预算占比的上下浮动范围判定，统一使用整数百分比
                 error_percentage = abs(
                     actual_info["actual_percentage"] - target_info["target_percentage"]
                 )
-                # 保留2位小数后再判断
-                error_percentage_rounded = round(error_percentage, 2)
-                satisfied = error_percentage_rounded <= stage_range_match
-                error_percentage = error_percentage_rounded
+                error_percentage = round(error_percentage)
+                satisfied = error_percentage <= stage_range_match
 
             results[country_code][stage_name] = {
                 "target": target,
@@ -641,14 +686,12 @@ def check_marketingfunnel_budget_achievement(
                 )
                 satisfied = actual_info["actual_percentage"] == 0
             else:
-                # 以预算占比浮动范围判定
+                # 以预算占比浮动范围判定，统一使用整数百分比
                 error_percentage = abs(
                     actual_info["actual_percentage"] - target_info["target_percentage"]
                 )
-                # 保留2位小数后再判断
-                error_percentage_rounded = round(error_percentage, 2)
-                satisfied = error_percentage_rounded <= funnel_range_match
-                error_percentage = error_percentage_rounded
+                error_percentage = round(error_percentage)
+                satisfied = error_percentage <= funnel_range_match
 
             results[country_code][funnel_name] = {
                 "target": target,
@@ -747,14 +790,12 @@ def check_media_budget_achievement(
                 )
                 satisfied = actual_info["actual_percentage"] == 0
             else:
-                # 以预算占比浮动范围判定
+                # 以预算占比浮动范围判定，统一使用整数百分比
                 error_percentage = abs(
                     actual_info["actual_percentage"] - target_info["target_percentage"]
                 )
-                # 保留2位小数后再判断
-                error_percentage_rounded = round(error_percentage, 2)
-                satisfied = error_percentage_rounded <= media_range_match
-                error_percentage = error_percentage_rounded
+                error_percentage = round(error_percentage)
+                satisfied = error_percentage <= media_range_match
 
             results[country_code][media_name] = {
                 "target": target,
@@ -866,19 +907,14 @@ def check_adtype_kpi_achievement(
 
             if target == 0:
                 achievement_rate = 0.0 if actual == 0 else "null"
-                # 当 completion=1 时，必须 actual >= target（即 actual == 0）
-                # 当 completion=0 时，只要 actual == 0 即可
+                # target 为 0 时，只要 actual 也为 0 即达成，不再区分 completion
                 achieved = actual == 0
             else:
-                achievement_rate = (actual / target) * 100
-                # 当 completion=1 时，必须 actual >= target
-                # 当 completion=0 时，满足达成率条件即可（保留2位小数后再判断）
-                if completion == 1:
-                    achieved = actual >= target
-                else:
-                    achievement_rate_rounded = round(achievement_rate, 2)
-                    achieved = achievement_rate_rounded >= adtype_target_rate
-                    achievement_rate = achievement_rate_rounded
+                # 统一使用整数百分比进行判断，避免精度问题
+                raw_achievement_rate = (actual / target) * 100
+                achievement_rate = round(raw_achievement_rate)
+                # 无论 completion 是否为 1，一律按整数达成率与 target_rate 判断
+                achieved = achievement_rate >= adtype_target_rate
 
             results[key]["kpis"][kpi_name] = {
                 "target": target,
@@ -1368,6 +1404,8 @@ def main():
                 "marketingfunnel_range_match", 15
             ),
             "media_range_match": testcase_config.get("media_range_match", 5),
+            "kpi_priority_list": testcase_config.get("kpi_priority_list", []),
+            "module_priority_list": testcase_config.get("module_priority_list", []),
         },
         "global_kpi": check_global_kpi_achievement(
             request_json, ai_data_list, testcase_config

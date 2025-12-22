@@ -66,6 +66,26 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
     )
     report_lines.append("\n---\n")
 
+    # KPI优先级
+    kpi_priority_list = testcase_config.get("kpi_priority_list", [])
+    if kpi_priority_list:
+        report_lines.append("### KPI优先级\n")
+        report_lines.append("| 优先级 | KPI |\n")
+        report_lines.append("|--------|-----|\n")
+        for idx, kpi_name in enumerate(kpi_priority_list, 1):
+            report_lines.append(f"| {idx} | {kpi_name} |\n")
+        report_lines.append("\n---\n")
+
+    # 模块优先级
+    module_priority_list = testcase_config.get("module_priority_list", [])
+    if module_priority_list:
+        report_lines.append("### 模块优先级\n")
+        report_lines.append("| 优先级 | 模块 |\n")
+        report_lines.append("|--------|-----|\n")
+        for idx, module_name in enumerate(module_priority_list, 1):
+            report_lines.append(f"| {idx} | {module_name} |\n")
+        report_lines.append("\n---\n")
+
     # 全局 KPI
     if "global_kpi" in results:
         report_lines.append("## 全局 KPI 达成情况\n")
@@ -370,6 +390,10 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
     # Adtype 预算分配检查
     if "adtype_budget_allocation" in results:
         report_lines.append("## Adtype 预算分配检查\n")
+        report_lines.append(
+            "\n**说明**: 当 `allow_zero_budget=False` 时，检查每个推广区域下每个 Adtype 是否都分配了预算。"
+            "按 (媒体, 平台, 广告类型) 聚合求和预算（跨所有 stage），只要预算 > 0 即视为已分配。\n"
+        )
         adtype_allocation = results["adtype_budget_allocation"]
         total_satisfied = 0
         total_count = 0
@@ -593,6 +617,26 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
     )
     html_lines.append("    </table>\n")
 
+    # KPI优先级
+    kpi_priority_list = testcase_config.get("kpi_priority_list", [])
+    if kpi_priority_list:
+        html_lines.append("    <h3>KPI优先级</h3>\n")
+        html_lines.append("    <table class='config-table'>\n")
+        html_lines.append("      <tr><th>优先级</th><th>KPI</th></tr>\n")
+        for idx, kpi_name in enumerate(kpi_priority_list, 1):
+            html_lines.append(f"      <tr><td>{idx}</td><td>{kpi_name}</td></tr>\n")
+        html_lines.append("    </table>\n")
+
+    # 模块优先级
+    module_priority_list = testcase_config.get("module_priority_list", [])
+    if module_priority_list:
+        html_lines.append("    <h3>模块优先级</h3>\n")
+        html_lines.append("    <table class='config-table'>\n")
+        html_lines.append("      <tr><th>优先级</th><th>模块</th></tr>\n")
+        for idx, module_name in enumerate(module_priority_list, 1):
+            html_lines.append(f"      <tr><td>{idx}</td><td>{module_name}</td></tr>\n")
+        html_lines.append("    </table>\n")
+
     # 全局 KPI
     if "global_kpi" in results:
         html_lines.append("    <h2>全局 KPI 达成情况</h2>\n")
@@ -725,6 +769,11 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
     # Adtype 预算分配检查
     if "adtype_budget_allocation" in results:
         html_lines.append("    <h2>Adtype 预算分配检查</h2>\n")
+        html_lines.append(
+            "    <div class='summary'><strong>说明</strong>: 当 <code>allow_zero_budget=False</code> 时，"
+            "检查每个推广区域下每个 Adtype 是否都分配了预算。按 (媒体, 平台, 广告类型) 聚合求和预算（跨所有 stage），"
+            "只要预算 > 0 即视为已分配。</div>\n"
+        )
         adtype_allocation = results["adtype_budget_allocation"]
         total_satisfied = 0
         total_count = 0

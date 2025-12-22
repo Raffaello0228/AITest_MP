@@ -1,0 +1,5855 @@
+{
+  "case_name": "完全匹配-5%-区域第一",
+  "uuid": "812deab4-584d-4c22-8617-44b01988",
+  "job_id": "1766392797_1_17dd790f",
+  "testcase_config": {
+    "kpi_target_rate": 80,
+    "region_budget_target_rate": 90,
+    "region_kpi_target_rate": 80,
+    "mediaMarketingFunnelAdtype_target_rate": 80,
+    "stage_range_match": 20,
+    "marketingfunnel_range_match": 15,
+    "media_range_match": 5,
+    "kpi_priority_list": [
+      "Impression",
+      "VideoViews",
+      "Engagement"
+    ],
+    "module_priority_list": [
+      "regionBudget",
+      "kpiInfo",
+      "media",
+      "marketingFunnel",
+      "stage",
+      "regionKPI",
+      "mediaMarketingFunnelAdtype"
+    ]
+  },
+  "global_kpi": {
+    "Impression": {
+      "target": 3118609566.0,
+      "actual": 6536273254.0,
+      "achievement_rate": 210,
+      "target_rate": 80,
+      "achieved": true,
+      "priority": 1,
+      "completion": 0
+    },
+    "VideoViews": {
+      "target": 869046442.0,
+      "actual": 961758707.0,
+      "achievement_rate": 111,
+      "target_rate": 80,
+      "achieved": true,
+      "priority": 2,
+      "completion": 0
+    },
+    "Engagement": {
+      "target": 264644640.0,
+      "actual": 290706873.0,
+      "achievement_rate": 110,
+      "target_rate": 80,
+      "achieved": true,
+      "priority": 3,
+      "completion": 0
+    }
+  },
+  "region_budget": {
+    "DE": {
+      "target": 67022.92,
+      "actual": 69829.0,
+      "target_percentage": 5.87,
+      "actual_percentage": 6.11401849028949,
+      "error_percentage": 0,
+      "range_match": 5,
+      "achievement_rate": 104,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "EG": {
+      "target": 141045.8,
+      "actual": 198150.0,
+      "target_percentage": 12.35,
+      "actual_percentage": 17.349421642166757,
+      "error_percentage": 5,
+      "range_match": 5,
+      "achievement_rate": 140,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "GB": {
+      "target": 102022.9,
+      "actual": 106295.0,
+      "target_percentage": 8.93,
+      "actual_percentage": 9.306872437315747,
+      "error_percentage": 0,
+      "range_match": 5,
+      "achievement_rate": 104,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "IN": {
+      "target": 99045.8,
+      "actual": 92581.0,
+      "target_percentage": 8.67,
+      "actual_percentage": 8.10611559451648,
+      "error_percentage": 1,
+      "range_match": 5,
+      "achievement_rate": 93,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "JP": {
+      "target": 111778.63,
+      "actual": 69722.0,
+      "target_percentage": 9.79,
+      "actual_percentage": 6.10464989015973,
+      "error_percentage": 4,
+      "range_match": 5,
+      "achievement_rate": 62,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "MY": {
+      "target": 120045.8,
+      "actual": 69891.0,
+      "target_percentage": 10.51,
+      "actual_percentage": 6.119447024944117,
+      "error_percentage": 4,
+      "range_match": 5,
+      "achievement_rate": 58,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "PH": {
+      "target": 113045.8,
+      "actual": 170149.0,
+      "target_percentage": 9.9,
+      "actual_percentage": 14.897737789518201,
+      "error_percentage": 5,
+      "range_match": 5,
+      "achievement_rate": 151,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "PK": {
+      "target": 106045.8,
+      "actual": 161887.0,
+      "target_percentage": 9.28,
+      "actual_percentage": 14.174341768283874,
+      "error_percentage": 5,
+      "range_match": 5,
+      "achievement_rate": 153,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "SA": {
+      "target": 141045.8,
+      "actual": 83934.0,
+      "target_percentage": 12.35,
+      "actual_percentage": 7.3490101242171315,
+      "error_percentage": 5,
+      "range_match": 5,
+      "achievement_rate": 60,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    },
+    "TH": {
+      "target": 141045.8,
+      "actual": 119675.0,
+      "target_percentage": 12.35,
+      "actual_percentage": 10.478385238588476,
+      "error_percentage": 2,
+      "range_match": 5,
+      "achievement_rate": 85,
+      "target_rate": 90,
+      "achieved": true,
+      "match_type": "完全匹配"
+    }
+  },
+  "region_kpi": {
+    "DE": {
+      "Impression": {
+        "target": 134045820.0,
+        "actual": 139658000.0,
+        "achievement_rate": 104,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 77590302.0,
+        "actual": 77587774.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 14321134.0,
+        "actual": 14857232.0,
+        "achievement_rate": 104,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "EG": {
+      "Impression": {
+        "target": 349723137.0,
+        "actual": 1599673695.0,
+        "achievement_rate": 457,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 119051167.0,
+        "actual": 119049189.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 28949496.0,
+        "actual": 28948795.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "GB": {
+      "Impression": {
+        "target": 204045820.0,
+        "actual": 212590000.0,
+        "achievement_rate": 104,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 118108696.0,
+        "actual": 118105552.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 21799767.0,
+        "actual": 22615955.0,
+        "achievement_rate": 104,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "IN": {
+      "Impression": {
+        "target": 1098926766.0,
+        "actual": 1098876667.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 90933918.0,
+        "actual": 90932064.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 69384802.0,
+        "actual": 69383940.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "JP": {
+      "Impression": {
+        "target": 99116369.0,
+        "actual": 99118981.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 50708148.0,
+        "actual": 60012570.0,
+        "achievement_rate": 118,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 11784093.0,
+        "actual": 11784342.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "MY": {
+      "Impression": {
+        "target": 138482400.0,
+        "actual": 202044419.0,
+        "achievement_rate": 146,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 56074422.0,
+        "actual": 67041658.0,
+        "achievement_rate": 120,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 13427858.0,
+        "actual": 13427318.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "PH": {
+      "Impression": {
+        "target": 242435140.0,
+        "actual": 1165386232.0,
+        "achievement_rate": 481,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 79420448.0,
+        "actual": 79418070.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 32652820.0,
+        "actual": 57367172.0,
+        "achievement_rate": 176,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "PK": {
+      "Impression": {
+        "target": 467109466.0,
+        "actual": 1407641935.0,
+        "achievement_rate": 301,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 151210601.0,
+        "actual": 151207723.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 31676916.0,
+        "actual": 31675799.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "SA": {
+      "Impression": {
+        "target": 191639731.0,
+        "actual": 253870198.0,
+        "achievement_rate": 132,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 54316965.0,
+        "actual": 77608700.0,
+        "achievement_rate": 143,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 15973664.0,
+        "actual": 15973101.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    },
+    "TH": {
+      "Impression": {
+        "target": 193084917.0,
+        "actual": 357413127.0,
+        "achievement_rate": 185,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 1,
+        "completion": 0
+      },
+      "VideoViews": {
+        "target": 71631775.0,
+        "actual": 120795407.0,
+        "achievement_rate": 169,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 2,
+        "completion": 0
+      },
+      "Engagement": {
+        "target": 24674090.0,
+        "actual": 24673219.0,
+        "achievement_rate": 100,
+        "target_rate": 80,
+        "achieved": true,
+        "priority": 3,
+        "completion": 0
+      }
+    }
+  },
+  "adtype_kpi": {
+    "DE|Google|GG|Traffic|Demand Gen": {
+      "country": "DE",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 21840000.0,
+          "actual": 107236000.0,
+          "achievement_rate": 491,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 12641739.0,
+          "actual": 59575556.0,
+          "achievement_rate": 471,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2333333.0,
+          "actual": 11408085.0,
+          "achievement_rate": 489,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "DE|Google|YTB|Awareness|VRC 2.0": {
+      "country": "DE",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 781680.0,
+          "actual": 20362000.0,
+          "achievement_rate": 2605,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 452463.0,
+          "actual": 11312222.0,
+          "achievement_rate": 2500,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 83513.0,
+          "actual": 2166170.0,
+          "achievement_rate": 2594,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "DE|Google|YTB|Consideration|VVC": {
+      "country": "DE",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 12824430.0,
+          "actual": 1340000.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 7423218.0,
+          "actual": 744444.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1370131.0,
+          "actual": 142553.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "DE|Meta|FB|Awareness|Reach": {
+      "country": "DE",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 7035120.0,
+          "actual": 1340000.0,
+          "achievement_rate": 19,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 4072168.0,
+          "actual": 744444.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 751615.0,
+          "actual": 142553.0,
+          "achievement_rate": 19,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "DE|Meta|FB|Consideration|Page Likes": {
+      "country": "DE",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 34160000.0,
+          "actual": 1340000.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 19772976.0,
+          "actual": 744444.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 3649573.0,
+          "actual": 142553.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "DE|Meta|FB|Consideration|Post Engagement": {
+      "country": "DE",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 37893136.0,
+          "actual": 1340000.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 21933842.0,
+          "actual": 744444.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 4048412.0,
+          "actual": 142553.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "DE|Meta|FB|Consideration|Video Views": {
+      "country": "DE",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 12824430.0,
+          "actual": 1340000.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 7423218.0,
+          "actual": 744444.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1370131.0,
+          "actual": 142553.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "DE|Meta|IG|Consideration|Post Engagement": {
+      "country": "DE",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 6687024.0,
+          "actual": 1340000.0,
+          "achievement_rate": 20,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 3870678.0,
+          "actual": 744444.0,
+          "achievement_rate": 19,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 714426.0,
+          "actual": 142553.0,
+          "achievement_rate": 20,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|Google|GG|Traffic|Demand Gen": {
+      "country": "EG",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 58983005.0,
+          "actual": 22748387.0,
+          "achievement_rate": 39,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 21150601.0,
+          "actual": 7835556.0,
+          "achievement_rate": 37,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 3903846.0,
+          "actual": 1500426.0,
+          "achievement_rate": 38,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|Google|YTB|Awareness|VRC 2.0": {
+      "country": "EG",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 1261789.0,
+          "actual": 9100000.0,
+          "achievement_rate": 721,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 452463.0,
+          "actual": 3134444.0,
+          "achievement_rate": 693,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 83513.0,
+          "actual": 600213.0,
+          "achievement_rate": 719,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|Google|YTB|Consideration|VVC": {
+      "country": "EG",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 8280494.0,
+          "actual": 4548387.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2969286.0,
+          "actual": 1566667.0,
+          "achievement_rate": 53,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 548052.0,
+          "actual": 300000.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|Meta|FB|Awareness|Reach": {
+      "country": "EG",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 71683217.0,
+          "actual": 1253744444.0,
+          "achievement_rate": 1749,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 825247.0,
+          "actual": 13930494.0,
+          "achievement_rate": 1688,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 887156.0,
+          "actual": 15044933.0,
+          "achievement_rate": 1696,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|Meta|FB|Consideration|Page Likes": {
+      "country": "EG",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 65407626.0,
+          "actual": 3204545.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 5182070.0,
+          "actual": 251786.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 5302239.0,
+          "actual": 256364.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|Meta|FB|Consideration|Post Engagement": {
+      "country": "EG",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 59045980.0,
+          "actual": 25325000.0,
+          "achievement_rate": 43,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 15084349.0,
+          "actual": 6483200.0,
+          "achievement_rate": 43,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 15492678.0,
+          "actual": 6753333.0,
+          "achievement_rate": 44,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|Meta|FB|Consideration|Video Views": {
+      "country": "EG",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 1361406.0,
+          "actual": 750000.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1086634.0,
+          "actual": 587500.0,
+          "achievement_rate": 54,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1098557.0,
+          "actual": 613043.0,
+          "achievement_rate": 56,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|Meta|IG|Consideration|Post Engagement": {
+      "country": "EG",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 7455813.0,
+          "actual": 1566667.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 956348.0,
+          "actual": 201429.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1004942.0,
+          "actual": 210448.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|TikTok|TT|Awareness|Reach": {
+      "country": "EG",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 2523578.0,
+          "actual": 4548387.0,
+          "achievement_rate": 180,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 904925.0,
+          "actual": 1566667.0,
+          "achievement_rate": 173,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 167025.0,
+          "actual": 300000.0,
+          "achievement_rate": 180,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|TikTok|TT|Consideration|CI Follows": {
+      "country": "EG",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "CI Follows",
+      "kpis": {
+        "Impression": {
+          "target": 16795454.0,
+          "actual": 1500000.0,
+          "achievement_rate": 9,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 16087208.0,
+          "actual": 1410000.0,
+          "achievement_rate": 9,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 261134.0,
+          "actual": 23383.0,
+          "achievement_rate": 9,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "EG|TikTok|TT|Consideration|Video Views": {
+      "country": "EG",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 56924775.0,
+          "actual": 88038889.0,
+          "achievement_rate": 155,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 54352036.0,
+          "actual": 79235000.0,
+          "achievement_rate": 146,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 200354.0,
+          "actual": 309512.0,
+          "achievement_rate": 154,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|Google|GG|Traffic|Demand Gen": {
+      "country": "GB",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 35280000.0,
+          "actual": 163236000.0,
+          "achievement_rate": 463,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 20421270.0,
+          "actual": 90686667.0,
+          "achievement_rate": 444,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 3769231.0,
+          "actual": 17365532.0,
+          "achievement_rate": 461,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|Google|YTB|Awareness|VRC 2.0": {
+      "country": "GB",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 390840.0,
+          "actual": 20792000.0,
+          "achievement_rate": 5320,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 226232.0,
+          "actual": 11551111.0,
+          "achievement_rate": 5106,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 41756.0,
+          "actual": 2211915.0,
+          "achievement_rate": 5297,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|Google|YTB|Consideration|VVC": {
+      "country": "GB",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 2564886.0,
+          "actual": 2040000.0,
+          "achievement_rate": 80,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1484644.0,
+          "actual": 1133333.0,
+          "achievement_rate": 76,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 274026.0,
+          "actual": 217021.0,
+          "achievement_rate": 79,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|Meta|FB|Awareness|Reach": {
+      "country": "GB",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 6644280.0,
+          "actual": 2040000.0,
+          "achievement_rate": 31,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 3845936.0,
+          "actual": 1133333.0,
+          "achievement_rate": 29,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 709859.0,
+          "actual": 217021.0,
+          "achievement_rate": 31,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|Meta|FB|Consideration|Page Likes": {
+      "country": "GB",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 35280000.0,
+          "actual": 2040000.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 20421270.0,
+          "actual": 1133333.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 3769231.0,
+          "actual": 217021.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|Meta|FB|Consideration|Post Engagement": {
+      "country": "GB",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 37893136.0,
+          "actual": 2040000.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 21933842.0,
+          "actual": 1133333.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 4048412.0,
+          "actual": 217021.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|Meta|FB|Consideration|Video Views": {
+      "country": "GB",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 2564886.0,
+          "actual": 2040000.0,
+          "achievement_rate": 80,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1484644.0,
+          "actual": 1133333.0,
+          "achievement_rate": 76,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 274026.0,
+          "actual": 217021.0,
+          "achievement_rate": 79,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|Meta|IG|Consideration|Post Engagement": {
+      "country": "GB",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 6687024.0,
+          "actual": 2040000.0,
+          "achievement_rate": 31,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 3870678.0,
+          "actual": 1133333.0,
+          "achievement_rate": 29,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 714426.0,
+          "actual": 217021.0,
+          "achievement_rate": 30,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|TikTok|TT|Awareness|Reach": {
+      "country": "GB",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 781680.0,
+          "actual": 2040000.0,
+          "achievement_rate": 261,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 452463.0,
+          "actual": 1133333.0,
+          "achievement_rate": 250,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 83513.0,
+          "actual": 217021.0,
+          "achievement_rate": 260,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|TikTok|TT|Consideration|CI Follows": {
+      "country": "GB",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "CI Follows",
+      "kpis": {
+        "Impression": {
+          "target": 55440000.0,
+          "actual": 6122000.0,
+          "achievement_rate": 11,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 32090567.0,
+          "actual": 3401111.0,
+          "achievement_rate": 11,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 5923077.0,
+          "actual": 651277.0,
+          "achievement_rate": 11,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "GB|TikTok|TT|Consideration|Video Views": {
+      "country": "GB",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 20519088.0,
+          "actual": 2040000.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 11877150.0,
+          "actual": 1133333.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2192210.0,
+          "actual": 217021.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "IN|Google|GG|Traffic|Demand Gen": {
+      "country": "IN",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 273000000.0,
+          "actual": 645460000.0,
+          "achievement_rate": 236,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 15802173.0,
+          "actual": 35858889.0,
+          "achievement_rate": 227,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2916667.0,
+          "actual": 6866596.0,
+          "achievement_rate": 235,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "IN|Google|YTB|Awareness|VRC 2.0": {
+      "country": "IN",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 15633580.0,
+          "actual": 59420000.0,
+          "achievement_rate": 380,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 904925.0,
+          "actual": 3301111.0,
+          "achievement_rate": 365,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 167025.0,
+          "actual": 632128.0,
+          "achievement_rate": 378,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "IN|Google|YTB|Consideration|VVC": {
+      "country": "IN",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 256488500.0,
+          "actual": 19800000.0,
+          "achievement_rate": 8,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 14846431.0,
+          "actual": 1100000.0,
+          "achievement_rate": 7,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2740262.0,
+          "actual": 210638.0,
+          "achievement_rate": 8,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "IN|Meta|FB|Awareness|Reach": {
+      "country": "IN",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 152560559.0,
+          "actual": 19800000.0,
+          "achievement_rate": 13,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1948388.0,
+          "actual": 275000.0,
+          "achievement_rate": 14,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2096941.0,
+          "actual": 291176.0,
+          "achievement_rate": 14,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "IN|Meta|FB|Consideration|Page Likes": {
+      "country": "IN",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 94222989.0,
+          "actual": 12375000.0,
+          "achievement_rate": 13,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 0.0,
+          "actual": 0.0,
+          "achievement_rate": 0.0,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 74865.0,
+          "actual": 10081.0,
+          "achievement_rate": 13,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "IN|Meta|FB|Consideration|Post Engagement": {
+      "country": "IN",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 249406478.0,
+          "actual": 160846667.0,
+          "achievement_rate": 64,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 42610895.0,
+          "actual": 26807778.0,
+          "achievement_rate": 63,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 44361239.0,
+          "actual": 26807778.0,
+          "achievement_rate": 60,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "IN|Meta|FB|Consideration|Video Views": {
+      "country": "IN",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 19425567.0,
+          "actual": 1500000.0,
+          "achievement_rate": 8,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 9100012.0,
+          "actual": 707143.0,
+          "achievement_rate": 8,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 9123073.0,
+          "actual": 707143.0,
+          "achievement_rate": 8,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "IN|Meta|IG|Consideration|Post Engagement": {
+      "country": "IN",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 38189093.0,
+          "actual": 146000000.0,
+          "achievement_rate": 382,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 5721094.0,
+          "actual": 21900000.0,
+          "achievement_rate": 383,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 7904730.0,
+          "actual": 32850000.0,
+          "achievement_rate": 416,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|Google|GG|Traffic|Demand Gen": {
+      "country": "JP",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 18000000.0,
+          "actual": 7984286.0,
+          "achievement_rate": 44,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 14586621.0,
+          "actual": 6210000.0,
+          "achievement_rate": 43,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2692308.0,
+          "actual": 1189149.0,
+          "achievement_rate": 44,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|Google|YTB|Awareness|VRC 2.0": {
+      "country": "JP",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 348964.0,
+          "actual": 1597143.0,
+          "achievement_rate": 458,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 282789.0,
+          "actual": 1242222.0,
+          "achievement_rate": 439,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 52196.0,
+          "actual": 237872.0,
+          "achievement_rate": 456,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|Google|YTB|Consideration|VVC": {
+      "country": "JP",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 2290076.0,
+          "actual": 3194286.0,
+          "achievement_rate": 139,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1855804.0,
+          "actual": 2484444.0,
+          "achievement_rate": 134,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 342533.0,
+          "actual": 475745.0,
+          "achievement_rate": 139,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|Meta|FB|Awareness|Reach": {
+      "country": "JP",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 8170697.0,
+          "actual": 18274510.0,
+          "achievement_rate": 224,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 13020.0,
+          "actual": 29216.0,
+          "achievement_rate": 224,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 13424.0,
+          "actual": 30133.0,
+          "achievement_rate": 224,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|Meta|FB|Consideration|Page Likes": {
+      "country": "JP",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 23687590.0,
+          "actual": 646243.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 118656.0,
+          "actual": 3240.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 140719.0,
+          "actual": 3842.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|Meta|FB|Consideration|Post Engagement": {
+      "country": "JP",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 7929144.0,
+          "actual": 373913.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2521135.0,
+          "actual": 118936.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2646063.0,
+          "actual": 124222.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|Meta|FB|Consideration|Video Views": {
+      "country": "JP",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 200806.0,
+          "actual": 140100.0,
+          "achievement_rate": 70,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 139800.0,
+          "actual": 97217.0,
+          "achievement_rate": 70,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 139934.0,
+          "actual": 97217.0,
+          "achievement_rate": 69,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|Meta|IG|Consideration|Post Engagement": {
+      "country": "JP",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 5970557.0,
+          "actual": 55945714.0,
+          "achievement_rate": 937,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 4838348.0,
+          "actual": 43513333.0,
+          "achievement_rate": 899,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 893032.0,
+          "actual": 8332340.0,
+          "achievement_rate": 933,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|TikTok|TT|Awareness|Reach": {
+      "country": "JP",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 697929.0,
+          "actual": 1597143.0,
+          "achievement_rate": 229,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 565579.0,
+          "actual": 1242222.0,
+          "achievement_rate": 220,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 104391.0,
+          "actual": 237872.0,
+          "achievement_rate": 228,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|TikTok|TT|Consideration|CI Follows": {
+      "country": "JP",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "CI Follows",
+      "kpis": {
+        "Impression": {
+          "target": 13500000.0,
+          "actual": 1597143.0,
+          "achievement_rate": 12,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 10939966.0,
+          "actual": 1242222.0,
+          "achievement_rate": 11,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2019231.0,
+          "actual": 237872.0,
+          "achievement_rate": 12,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "JP|TikTok|TT|Consideration|Video Views": {
+      "country": "JP",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 18320606.0,
+          "actual": 4790000.0,
+          "achievement_rate": 26,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 14846430.0,
+          "actual": 3725556.0,
+          "achievement_rate": 25,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2740262.0,
+          "actual": 713404.0,
+          "achievement_rate": 26,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|Google|GG|Traffic|Demand Gen": {
+      "country": "MY",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 37966072.0,
+          "actual": 19361290.0,
+          "achievement_rate": 51,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 13614180.0,
+          "actual": 6668889.0,
+          "achievement_rate": 49,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2512821.0,
+          "actual": 1277021.0,
+          "achievement_rate": 51,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|Google|YTB|Awareness|VRC 2.0": {
+      "country": "MY",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 1261789.0,
+          "actual": 3870968.0,
+          "achievement_rate": 307,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 452463.0,
+          "actual": 1333333.0,
+          "achievement_rate": 295,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 83513.0,
+          "actual": 255319.0,
+          "achievement_rate": 306,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|Google|YTB|Consideration|VVC": {
+      "country": "MY",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 8280494.0,
+          "actual": 7745161.0,
+          "achievement_rate": 94,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2969286.0,
+          "actual": 2667778.0,
+          "achievement_rate": 90,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 548052.0,
+          "actual": 510851.0,
+          "achievement_rate": 93,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|Meta|FB|Awareness|Reach": {
+      "country": "MY",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 22866112.0,
+          "actual": 4137931.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 446655.0,
+          "actual": 80537.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 458321.0,
+          "actual": 82759.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|Meta|FB|Consideration|Page Likes": {
+      "country": "MY",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 9779345.0,
+          "actual": 1739130.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 252602.0,
+          "actual": 45113.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 265402.0,
+          "actual": 47431.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|Meta|FB|Consideration|Post Engagement": {
+      "country": "MY",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 23818991.0,
+          "actual": 754717.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 7897543.0,
+          "actual": 250000.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 8092508.0,
+          "actual": 255319.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|Meta|FB|Consideration|Video Views": {
+      "country": "MY",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 818188.0,
+          "actual": 383387.0,
+          "achievement_rate": 47,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 515160.0,
+          "actual": 240000.0,
+          "achievement_rate": 47,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 516460.0,
+          "actual": 240000.0,
+          "achievement_rate": 46,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|Meta|IG|Consideration|Post Engagement": {
+      "country": "MY",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 2097423.0,
+          "actual": 376176.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 533425.0,
+          "actual": 96000.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 578856.0,
+          "actual": 103448.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|TikTok|TT|Awareness|Reach": {
+      "country": "MY",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 2523578.0,
+          "actual": 155767742.0,
+          "achievement_rate": 6172,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 904925.0,
+          "actual": 53653333.0,
+          "achievement_rate": 5929,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 167025.0,
+          "actual": 10274043.0,
+          "achievement_rate": 6151,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|TikTok|TT|Consideration|CI Follows": {
+      "country": "MY",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "CI Follows",
+      "kpis": {
+        "Impression": {
+          "target": 6155877.0,
+          "actual": 314136.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 6000963.0,
+          "actual": 307692.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 140313.0,
+          "actual": 7160.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "MY|TikTok|TT|Consideration|Video Views": {
+      "country": "MY",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 22914531.0,
+          "actual": 1333333.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 22487220.0,
+          "actual": 1333333.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 64587.0,
+          "actual": 3777.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|Google|GG|Traffic|Demand Gen": {
+      "country": "PH",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 20000000.0,
+          "actual": 20185714.0,
+          "achievement_rate": 101,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 6482943.0,
+          "actual": 6280000.0,
+          "achievement_rate": 97,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1196581.0,
+          "actual": 1202553.0,
+          "achievement_rate": 100,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|Google|YTB|Awareness|VRC 2.0": {
+      "country": "PH",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 1395855.0,
+          "actual": 8075000.0,
+          "achievement_rate": 578,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 452463.0,
+          "actual": 2512222.0,
+          "achievement_rate": 555,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 83513.0,
+          "actual": 481064.0,
+          "achievement_rate": 576,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|Google|YTB|Consideration|VVC": {
+      "country": "PH",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 9160304.0,
+          "actual": 4035714.0,
+          "achievement_rate": 44,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2969286.0,
+          "actual": 1255556.0,
+          "achievement_rate": 42,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 548052.0,
+          "actual": 240426.0,
+          "achievement_rate": 44,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|Meta|FB|Awareness|Reach": {
+      "country": "PH",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 51119162.0,
+          "actual": 695669231.0,
+          "achievement_rate": 1361,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2403733.0,
+          "actual": 32298929.0,
+          "achievement_rate": 1344,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2432178.0,
+          "actual": 33495185.0,
+          "achievement_rate": 1377,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|Meta|FB|Consideration|Page Likes": {
+      "country": "PH",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 32757146.0,
+          "actual": 3323529.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 148334.0,
+          "actual": 14967.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 196409.0,
+          "actual": 19825.0,
+          "achievement_rate": 10,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|Meta|FB|Consideration|Post Engagement": {
+      "country": "PH",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 77520649.0,
+          "actual": 2306122.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 24365575.0,
+          "actual": 706250.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 24976943.0,
+          "actual": 753333.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|Meta|FB|Consideration|Video Views": {
+      "country": "PH",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 1583023.0,
+          "actual": 697531.0,
+          "achievement_rate": 44,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1152649.0,
+          "actual": 513636.0,
+          "achievement_rate": 45,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1154937.0,
+          "actual": 513636.0,
+          "achievement_rate": 44,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|Meta|IG|Consideration|Post Engagement": {
+      "country": "PH",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 6108228.0,
+          "actual": 1036697.0,
+          "achievement_rate": 17,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1524514.0,
+          "actual": 256818.0,
+          "achievement_rate": 17,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1572297.0,
+          "actual": 262791.0,
+          "achievement_rate": 17,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|TikTok|TT|Awareness|Reach": {
+      "country": "PH",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 2791711.0,
+          "actual": 4035714.0,
+          "achievement_rate": 145,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 904925.0,
+          "actual": 1255556.0,
+          "achievement_rate": 139,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 167025.0,
+          "actual": 240426.0,
+          "achievement_rate": 144,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|TikTok|TT|Consideration|CI Follows": {
+      "country": "PH",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "CI Follows",
+      "kpis": {
+        "Impression": {
+          "target": 4118833.0,
+          "actual": 255656.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 3983965.0,
+          "actual": 245652.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 209376.0,
+          "actual": 13003.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PH|TikTok|TT|Consideration|Video Views": {
+      "country": "PH",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 35880229.0,
+          "actual": 15459649.0,
+          "achievement_rate": 43,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 35032061.0,
+          "actual": 14686667.0,
+          "achievement_rate": 42,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 115509.0,
+          "actual": 49617.0,
+          "achievement_rate": 43,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|Google|GG|Traffic|Demand Gen": {
+      "country": "PK",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 8135587.0,
+          "actual": 17103226.0,
+          "achievement_rate": 210,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2917324.0,
+          "actual": 5891111.0,
+          "achievement_rate": 202,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 538462.0,
+          "actual": 1128085.0,
+          "achievement_rate": 210,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|Google|YTB|Awareness|VRC 2.0": {
+      "country": "PK",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 1261789.0,
+          "actual": 6841935.0,
+          "achievement_rate": 542,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 452463.0,
+          "actual": 2356667.0,
+          "achievement_rate": 521,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 83513.0,
+          "actual": 451277.0,
+          "achievement_rate": 540,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|Google|YTB|Consideration|VVC": {
+      "country": "PK",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 8280494.0,
+          "actual": 3419355.0,
+          "achievement_rate": 41,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2969286.0,
+          "actual": 1177778.0,
+          "achievement_rate": 40,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 548052.0,
+          "actual": 225532.0,
+          "achievement_rate": 41,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|Meta|FB|Awareness|Reach": {
+      "country": "PK",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 102031645.0,
+          "actual": 843171429.0,
+          "achievement_rate": 826,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 0.0,
+          "actual": 0.0,
+          "achievement_rate": 0.0,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 55752.0,
+          "actual": 495151.0,
+          "achievement_rate": 888,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|Meta|FB|Consideration|Page Likes": {
+      "country": "PK",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 113419591.0,
+          "actual": 371476471.0,
+          "achievement_rate": 328,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 7389441.0,
+          "actual": 23389259.0,
+          "achievement_rate": 317,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 7721596.0,
+          "actual": 25260400.0,
+          "achievement_rate": 327,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|Meta|FB|Consideration|Post Engagement": {
+      "country": "PK",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 93398436.0,
+          "actual": 2585366.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 15094184.0,
+          "actual": 424000.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 17389699.0,
+          "actual": 481818.0,
+          "achievement_rate": 3,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|Meta|FB|Consideration|Video Views": {
+      "country": "PK",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 1800750.0,
+          "actual": 746479.0,
+          "achievement_rate": 41,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1299751.0,
+          "actual": 530000.0,
+          "achievement_rate": 41,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1303902.0,
+          "actual": 530000.0,
+          "achievement_rate": 41,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|Meta|IG|Consideration|Post Engagement": {
+      "country": "PK",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 9137346.0,
+          "actual": 1452055.0,
+          "achievement_rate": 16,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1632250.0,
+          "actual": 258537.0,
+          "achievement_rate": 16,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1873771.0,
+          "actual": 294444.0,
+          "achievement_rate": 16,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|TikTok|TT|Awareness|Reach": {
+      "country": "PK",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 2523578.0,
+          "actual": 3419355.0,
+          "achievement_rate": 135,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 904925.0,
+          "actual": 1177778.0,
+          "achievement_rate": 130,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 167025.0,
+          "actual": 225532.0,
+          "achievement_rate": 135,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|TikTok|TT|Consideration|CI Follows": {
+      "country": "PK",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "CI Follows",
+      "kpis": {
+        "Impression": {
+          "target": 8150155.0,
+          "actual": 1472222.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 7269147.0,
+          "actual": 1325000.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 631879.0,
+          "actual": 113978.0,
+          "achievement_rate": 18,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "PK|TikTok|TT|Consideration|Video Views": {
+      "country": "PK",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 118970095.0,
+          "actual": 133829412.0,
+          "achievement_rate": 112,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 111281830.0,
+          "actual": 113755000.0,
+          "achievement_rate": 102,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1363265.0,
+          "actual": 1506689.0,
+          "achievement_rate": 111,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|Google|GG|Traffic|Demand Gen": {
+      "country": "SA",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 36610141.0,
+          "actual": 188567742.0,
+          "achievement_rate": 515,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 13127959.0,
+          "actual": 64951111.0,
+          "achievement_rate": 495,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 2423077.0,
+          "actual": 12437447.0,
+          "achievement_rate": 513,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|Google|YTB|Awareness|VRC 2.0": {
+      "country": "SA",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 1261789.0,
+          "actual": 9100000.0,
+          "achievement_rate": 721,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 452463.0,
+          "actual": 3134444.0,
+          "achievement_rate": 693,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 83513.0,
+          "actual": 600213.0,
+          "achievement_rate": 719,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|Google|YTB|Consideration|VVC": {
+      "country": "SA",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 8280494.0,
+          "actual": 4548387.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2969286.0,
+          "actual": 1566667.0,
+          "achievement_rate": 53,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 548052.0,
+          "actual": 300000.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|Meta|FB|Awareness|Reach": {
+      "country": "SA",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 32700958.0,
+          "actual": 21630000.0,
+          "achievement_rate": 66,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 615673.0,
+          "actual": 400556.0,
+          "achievement_rate": 65,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 639723.0,
+          "actual": 415962.0,
+          "achievement_rate": 65,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|Meta|FB|Consideration|Page Likes": {
+      "country": "SA",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 44395652.0,
+          "actual": 2473684.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1747573.0,
+          "actual": 97917.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1808197.0,
+          "actual": 101439.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|Meta|FB|Consideration|Post Engagement": {
+      "country": "SA",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 38362382.0,
+          "actual": 1424242.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 9196412.0,
+          "actual": 343902.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 9345897.0,
+          "actual": 343902.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|Meta|FB|Consideration|Video Views": {
+      "country": "SA",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 869425.0,
+          "actual": 477966.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 519150.0,
+          "actual": 287755.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 520926.0,
+          "actual": 287755.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|Meta|IG|Consideration|Post Engagement": {
+      "country": "SA",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 1513267.0,
+          "actual": 319005.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 200841.0,
+          "actual": 42342.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 235649.0,
+          "actual": 49648.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|TikTok|TT|Awareness|Reach": {
+      "country": "SA",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 2523578.0,
+          "actual": 13648387.0,
+          "achievement_rate": 541,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 904925.0,
+          "actual": 4701111.0,
+          "achievement_rate": 520,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 167025.0,
+          "actual": 900213.0,
+          "achievement_rate": 539,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|TikTok|TT|Consideration|CI Follows": {
+      "country": "SA",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "CI Follows",
+      "kpis": {
+        "Impression": {
+          "target": 3059025.0,
+          "actual": 163006.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2943185.0,
+          "actual": 156667.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 136433.0,
+          "actual": 7272.0,
+          "achievement_rate": 5,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "SA|TikTok|TT|Consideration|Video Views": {
+      "country": "SA",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 22063020.0,
+          "actual": 1516129.0,
+          "achievement_rate": 7,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 21639498.0,
+          "actual": 1410000.0,
+          "achievement_rate": 7,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 65172.0,
+          "actual": 4479.0,
+          "achievement_rate": 7,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|Google|GG|Traffic|Demand Gen": {
+      "country": "TH",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adtype": "Demand Gen",
+      "kpis": {
+        "Impression": {
+          "target": 81355869.0,
+          "actual": 313267742.0,
+          "achievement_rate": 385,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 29173243.0,
+          "actual": 107903333.0,
+          "achievement_rate": 370,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 5384615.0,
+          "actual": 20662340.0,
+          "achievement_rate": 384,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|Google|YTB|Awareness|VRC 2.0": {
+      "country": "TH",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adtype": "VRC 2.0",
+      "kpis": {
+        "Impression": {
+          "target": 1261789.0,
+          "actual": 9100000.0,
+          "achievement_rate": 721,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 452463.0,
+          "actual": 3134444.0,
+          "achievement_rate": 693,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 83513.0,
+          "actual": 600213.0,
+          "achievement_rate": 719,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|Google|YTB|Consideration|VVC": {
+      "country": "TH",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adtype": "VVC",
+      "kpis": {
+        "Impression": {
+          "target": 8280494.0,
+          "actual": 4548387.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2969286.0,
+          "actual": 1566667.0,
+          "achievement_rate": 53,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 548052.0,
+          "actual": 300000.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|Meta|FB|Awareness|Reach": {
+      "country": "TH",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 21917499.0,
+          "actual": 4700000.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 869275.0,
+          "actual": 185526.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 883783.0,
+          "actual": 188000.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|Meta|FB|Consideration|Page Likes": {
+      "country": "TH",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Page Likes",
+      "kpis": {
+        "Impression": {
+          "target": 16412980.0,
+          "actual": 1468750.0,
+          "achievement_rate": 9,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 1523359.0,
+          "actual": 136893.0,
+          "achievement_rate": 9,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 1570596.0,
+          "actual": 141000.0,
+          "achievement_rate": 9,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|Meta|FB|Consideration|Post Engagement": {
+      "country": "TH",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 36448312.0,
+          "actual": 1355769.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 14239699.0,
+          "actual": 522222.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 14383634.0,
+          "actual": 542308.0,
+          "achievement_rate": 4,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|Meta|FB|Consideration|Video Views": {
+      "country": "TH",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 944004.0,
+          "actual": 518382.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 769922.0,
+          "actual": 427273.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 772158.0,
+          "actual": 427273.0,
+          "achievement_rate": 55,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|Meta|IG|Consideration|Post Engagement": {
+      "country": "TH",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adtype": "Post Engagement",
+      "kpis": {
+        "Impression": {
+          "target": 3445191.0,
+          "actual": 726804.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 632864.0,
+          "actual": 133019.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 678528.0,
+          "actual": 142424.0,
+          "achievement_rate": 21,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|TikTok|TT|Awareness|Reach": {
+      "country": "TH",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adtype": "Reach",
+      "kpis": {
+        "Impression": {
+          "target": 2523578.0,
+          "actual": 13648387.0,
+          "achievement_rate": 541,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 904925.0,
+          "actual": 4701111.0,
+          "achievement_rate": 520,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 167025.0,
+          "actual": 900213.0,
+          "achievement_rate": 539,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|TikTok|TT|Consideration|CI Follows": {
+      "country": "TH",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "CI Follows",
+      "kpis": {
+        "Impression": {
+          "target": 2589745.0,
+          "actual": 165687.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 2509283.0,
+          "actual": 160227.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 151194.0,
+          "actual": 9671.0,
+          "achievement_rate": 6,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    },
+    "TH|TikTok|TT|Consideration|Video Views": {
+      "country": "TH",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Consideration",
+      "adtype": "Video Views",
+      "kpis": {
+        "Impression": {
+          "target": 17905456.0,
+          "actual": 1226087.0,
+          "achievement_rate": 7,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": 17587456.0,
+          "actual": 1175000.0,
+          "achievement_rate": 7,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Engagement": {
+          "target": 50992.0,
+          "actual": 3504.0,
+          "achievement_rate": 7,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 3,
+          "completion": 0
+        }
+      }
+    }
+  },
+  "stage_budget": {
+    "IN": {
+      "1st": {
+        "target": 99045.8,
+        "actual": 92581.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "EG": {
+      "1st": {
+        "target": 141045.8,
+        "actual": 198150.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "SA": {
+      "1st": {
+        "target": 141045.8,
+        "actual": 83934.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "DE": {
+      "1st": {
+        "target": 67022.92,
+        "actual": 69829.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "GB": {
+      "1st": {
+        "target": 102022.9,
+        "actual": 106295.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "TH": {
+      "1st": {
+        "target": 141045.8,
+        "actual": 119675.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "MY": {
+      "1st": {
+        "target": 120045.8,
+        "actual": 69891.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "PH": {
+      "1st": {
+        "target": 113045.8,
+        "actual": 170149.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "JP": {
+      "1st": {
+        "target": 111778.63,
+        "actual": 69722.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "PK": {
+      "1st": {
+        "target": 106045.8,
+        "actual": 161887.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    }
+  },
+  "marketingfunnel_budget": {
+    "IN": {
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 4951.0,
+        "error_percentage": 3,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 7.89,
+        "actual_percentage": 5.347749538242188
+      },
+      "Traffic": {
+        "target": 13650.0,
+        "actual": 32273.0,
+        "error_percentage": 21,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 13.78,
+        "actual_percentage": 34.859204372387424
+      },
+      "Consideration": {
+        "target": 77579.01,
+        "actual": 55357.0,
+        "error_percentage": 19,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 78.33,
+        "actual_percentage": 59.79304608937039
+      }
+    },
+    "EG": {
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 133326.0,
+        "error_percentage": 62,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 5.54,
+        "actual_percentage": 67.28538985616956
+      },
+      "Traffic": {
+        "target": 18270.0,
+        "actual": 7052.0,
+        "error_percentage": 9,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 12.95,
+        "actual_percentage": 3.558920010093364
+      },
+      "Consideration": {
+        "target": 114959.01,
+        "actual": 57772.0,
+        "error_percentage": 52,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 81.5,
+        "actual_percentage": 29.155690133737068
+      }
+    },
+    "SA": {
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 12788.0,
+        "error_percentage": 10,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 5.54,
+        "actual_percentage": 15.235780494197822
+      },
+      "Traffic": {
+        "target": 11340.0,
+        "actual": 58456.0,
+        "error_percentage": 62,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 8.04,
+        "actual_percentage": 69.64519741701814
+      },
+      "Consideration": {
+        "target": 121889.01,
+        "actual": 12690.0,
+        "error_percentage": 71,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 86.42,
+        "actual_percentage": 15.119022088784046
+      }
+    },
+    "DE": {
+      "Awareness": {
+        "target": 3908.4,
+        "actual": 11521.0,
+        "error_percentage": 11,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 5.83,
+        "actual_percentage": 16.498875825230204
+      },
+      "Traffic": {
+        "target": 10920.0,
+        "actual": 53618.0,
+        "error_percentage": 60,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 16.29,
+        "actual_percentage": 76.78471695140988
+      },
+      "Consideration": {
+        "target": 52194.52,
+        "actual": 4690.0,
+        "error_percentage": 71,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 77.88,
+        "actual_percentage": 6.716407223359921
+      }
+    },
+    "GB": {
+      "Awareness": {
+        "target": 3908.4,
+        "actual": 13456.0,
+        "error_percentage": 9,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 3.83,
+        "actual_percentage": 12.659109083211817
+      },
+      "Traffic": {
+        "target": 17640.0,
+        "actual": 81618.0,
+        "error_percentage": 59,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 17.29,
+        "actual_percentage": 76.78442071593207
+      },
+      "Consideration": {
+        "target": 80474.5,
+        "actual": 11221.0,
+        "error_percentage": 68,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 78.88,
+        "actual_percentage": 10.556470200856108
+      }
+    },
+    "TH": {
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 9872.0,
+        "error_percentage": 3,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 5.54,
+        "actual_percentage": 8.249007729266763
+      },
+      "Traffic": {
+        "target": 25200.0,
+        "actual": 97113.0,
+        "error_percentage": 63,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 17.87,
+        "actual_percentage": 81.14727386672237
+      },
+      "Consideration": {
+        "target": 108029.01,
+        "actual": 12690.0,
+        "error_percentage": 66,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 76.59,
+        "actual_percentage": 10.603718404010863
+      }
+    },
+    "MY": {
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 51888.0,
+        "error_percentage": 68,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 6.51,
+        "actual_percentage": 74.24131862471562
+      },
+      "Traffic": {
+        "target": 11760.0,
+        "actual": 6002.0,
+        "error_percentage": 1,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 9.8,
+        "actual_percentage": 8.587657924482409
+      },
+      "Consideration": {
+        "target": 100469.01,
+        "actual": 12001.0,
+        "error_percentage": 67,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 83.69,
+        "actual_percentage": 17.171023450801965
+      }
+    },
+    "PH": {
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 146645.0,
+        "error_percentage": 79,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 6.91,
+        "actual_percentage": 86.18622501454607
+      },
+      "Traffic": {
+        "target": 5600.0,
+        "actual": 5652.0,
+        "error_percentage": 2,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 4.95,
+        "actual_percentage": 3.321794427237304
+      },
+      "Consideration": {
+        "target": 99629.01,
+        "actual": 17852.0,
+        "error_percentage": 78,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 88.13,
+        "actual_percentage": 10.491980558216623
+      }
+    },
+    "JP": {
+      "Awareness": {
+        "target": 4885.51,
+        "actual": 12674.0,
+        "error_percentage": 14,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 4.37,
+        "actual_percentage": 18.177906543128426
+      },
+      "Traffic": {
+        "target": 12600.0,
+        "actual": 5589.0,
+        "error_percentage": 3,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 11.27,
+        "actual_percentage": 8.016121166920055
+      },
+      "Consideration": {
+        "target": 94293.12,
+        "actual": 51459.0,
+        "error_percentage": 11,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 84.36,
+        "actual_percentage": 73.80597228995153
+      }
+    },
+    "PK": {
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 63263.0,
+        "error_percentage": 32,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 7.37,
+        "actual_percentage": 39.07849302291104
+      },
+      "Traffic": {
+        "target": 2520.0,
+        "actual": 5302.0,
+        "error_percentage": 1,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 2.38,
+        "actual_percentage": 3.275124006251274
+      },
+      "Consideration": {
+        "target": 95709.01,
+        "actual": 93322.0,
+        "error_percentage": 33,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 90.25,
+        "actual_percentage": 57.646382970837685
+      }
+    }
+  },
+  "media_budget": {
+    "IN": {
+      "Google": {
+        "target": 27256.11,
+        "actual": 36234.0,
+        "error_percentage": 12,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 27.52,
+        "actual_percentage": 39.13762003002776
+      },
+      "Meta": {
+        "target": 71789.69,
+        "actual": 56347.0,
+        "error_percentage": 12,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 72.48,
+        "actual_percentage": 60.86237996997224
+      }
+    },
+    "EG": {
+      "Google": {
+        "target": 21225.73,
+        "actual": 11283.0,
+        "error_percentage": 9,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 15.05,
+        "actual_percentage": 5.694171082513248
+      },
+      "TikTok": {
+        "target": 37050.76,
+        "actual": 34514.0,
+        "error_percentage": 9,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 26.27,
+        "actual_percentage": 17.418117587686098
+      },
+      "Meta": {
+        "target": 82769.31,
+        "actual": 152353.0,
+        "error_percentage": 18,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 58.68,
+        "actual_percentage": 76.88771132980065
+      }
+    },
+    "SA": {
+      "Google": {
+        "target": 14295.73,
+        "actual": 62687.0,
+        "error_percentage": 65,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 10.14,
+        "actual_percentage": 74.68606285891296
+      },
+      "TikTok": {
+        "target": 47760.76,
+        "actual": 7051.0,
+        "error_percentage": 25,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 33.86,
+        "actual_percentage": 8.400648128291277
+      },
+      "Meta": {
+        "target": 78989.31,
+        "actual": 14196.0,
+        "error_percentage": 39,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 56.0,
+        "actual_percentage": 16.91328901279577
+      }
+    },
+    "DE": {
+      "Google": {
+        "target": 17723.06,
+        "actual": 64469.0,
+        "error_percentage": 66,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 26.44,
+        "actual_percentage": 92.3241060304458
+      },
+      "Meta": {
+        "target": 49299.86,
+        "actual": 5360.0,
+        "error_percentage": 66,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 73.56,
+        "actual_percentage": 7.675893969554197
+      }
+    },
+    "GB": {
+      "Google": {
+        "target": 19117.86,
+        "actual": 93034.0,
+        "error_percentage": 69,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 18.74,
+        "actual_percentage": 87.52434263135613
+      },
+      "TikTok": {
+        "target": 38370.38,
+        "actual": 5101.0,
+        "error_percentage": 33,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 37.61,
+        "actual_percentage": 4.798908697492826
+      },
+      "Meta": {
+        "target": 44534.66,
+        "actual": 8160.0,
+        "error_percentage": 36,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 43.65,
+        "actual_percentage": 7.676748671151041
+      }
+    },
+    "TH": {
+      "Google": {
+        "target": 28155.73,
+        "actual": 101344.0,
+        "error_percentage": 65,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 19.96,
+        "actual_percentage": 84.68268226446625
+      },
+      "TikTok": {
+        "target": 43350.76,
+        "actual": 7051.0,
+        "error_percentage": 25,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 30.74,
+        "actual_percentage": 5.891790265301859
+      },
+      "Meta": {
+        "target": 69539.31,
+        "actual": 11280.0,
+        "error_percentage": 40,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 49.3,
+        "actual_percentage": 9.425527470231879
+      }
+    },
+    "MY": {
+      "Google": {
+        "target": 14715.73,
+        "actual": 9603.0,
+        "error_percentage": 1,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 12.26,
+        "actual_percentage": 13.739966519294331
+      },
+      "TikTok": {
+        "target": 44820.76,
+        "actual": 50688.0,
+        "error_percentage": 35,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 37.34,
+        "actual_percentage": 72.52435935957419
+      },
+      "Meta": {
+        "target": 60509.31,
+        "actual": 9600.0,
+        "error_percentage": 37,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 50.41,
+        "actual_percentage": 13.735674121131474
+      }
+    },
+    "PH": {
+      "Google": {
+        "target": 8555.73,
+        "actual": 9043.0,
+        "error_percentage": 2,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 7.57,
+        "actual_percentage": 5.314753539544752
+      },
+      "TikTok": {
+        "target": 39500.76,
+        "actual": 11072.0,
+        "error_percentage": 28,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 34.94,
+        "actual_percentage": 6.507237773951066
+      },
+      "Meta": {
+        "target": 64989.31,
+        "actual": 150034.0,
+        "error_percentage": 31,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 57.49,
+        "actual_percentage": 88.17800868650419
+      }
+    },
+    "JP": {
+      "Google": {
+        "target": 14447.33,
+        "actual": 8943.0,
+        "error_percentage": 0,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 12.92,
+        "actual_percentage": 12.826654427583833
+      },
+      "TikTok": {
+        "target": 22762.97,
+        "actual": 5589.0,
+        "error_percentage": 12,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 20.36,
+        "actual_percentage": 8.016121166920055
+      },
+      "Meta": {
+        "target": 74568.33,
+        "actual": 55190.0,
+        "error_percentage": 12,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 66.71,
+        "actual_percentage": 79.15722440549612
+      }
+    },
+    "PK": {
+      "Google": {
+        "target": 5475.73,
+        "actual": 8483.0,
+        "error_percentage": 0,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 5.16,
+        "actual_percentage": 5.240074867036884
+      },
+      "TikTok": {
+        "target": 27180.76,
+        "actual": 24871.0,
+        "error_percentage": 10,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 25.63,
+        "actual_percentage": 15.36318543181355
+      },
+      "Meta": {
+        "target": 73389.31,
+        "actual": 128533.0,
+        "error_percentage": 10,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 69.21,
+        "actual_percentage": 79.39673970114957
+      }
+    }
+  },
+  "adtype_budget_allocation": {
+    "IN": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 2971.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 990.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 990.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 32273.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 990.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 24127.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 990.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 26280.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 990.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 990.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 990.0,
+        "satisfied": true
+      }
+    },
+    "EG": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 2821.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 7052.0,
+        "satisfied": true
+      },
+      "TikTok|TT|CI Follows": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "CI Follows",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 16208.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Video Views": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Video Views",
+        "budget": 31694.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Reach": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Reach",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 16258.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 112837.0,
+        "satisfied": true
+      }
+    },
+    "SA": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 2821.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 58456.0,
+        "satisfied": true
+      },
+      "TikTok|TT|CI Follows": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "CI Follows",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Video Views": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Video Views",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Reach": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Reach",
+        "budget": 4231.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 4326.0,
+        "satisfied": true
+      }
+    },
+    "DE": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 10181.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 670.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 670.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 53618.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 670.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 670.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 670.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 670.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 670.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 670.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 670.0,
+        "satisfied": true
+      }
+    },
+    "GB": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 10396.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 81618.0,
+        "satisfied": true
+      },
+      "TikTok|TT|CI Follows": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "CI Follows",
+        "budget": 3061.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Video Views": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Video Views",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Reach": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Reach",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 1020.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 1020.0,
+        "satisfied": true
+      }
+    },
+    "TH": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 2821.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 97113.0,
+        "satisfied": true
+      },
+      "TikTok|TT|CI Follows": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "CI Follows",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Video Views": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Video Views",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Reach": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Reach",
+        "budget": 4231.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 1410.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 1410.0,
+        "satisfied": true
+      }
+    },
+    "MY": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 6002.0,
+        "satisfied": true
+      },
+      "TikTok|TT|CI Follows": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "CI Follows",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 2401.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Video Views": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Video Views",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Reach": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Reach",
+        "budget": 48288.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 1200.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 1200.0,
+        "satisfied": true
+      }
+    },
+    "PH": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 2261.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 5652.0,
+        "satisfied": true
+      },
+      "TikTok|TT|CI Follows": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "CI Follows",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Video Views": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Video Views",
+        "budget": 8812.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Reach": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Reach",
+        "budget": 1130.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 52817.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 90437.0,
+        "satisfied": true
+      }
+    },
+    "JP": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 5589.0,
+        "satisfied": true
+      },
+      "TikTok|TT|CI Follows": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "CI Follows",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 39162.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 2236.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Video Views": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Video Views",
+        "budget": 3353.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Reach": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Reach",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 1118.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 9320.0,
+        "satisfied": true
+      }
+    },
+    "PK": {
+      "Google|YTB|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VRC 2.0",
+        "budget": 2121.0,
+        "satisfied": true
+      },
+      "Meta|FB|Video Views": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Video Views",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "Meta|IG|Page Likes": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Page Likes",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "Google|GG|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "adtype": "Demand Gen",
+        "budget": 5302.0,
+        "satisfied": true
+      },
+      "TikTok|TT|CI Follows": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "CI Follows",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "Meta|FB|Page Likes": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Page Likes",
+        "budget": 63151.0,
+        "satisfied": true
+      },
+      "Meta|FB|Post Engagement": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Post Engagement",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "Meta|IG|Video Views": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Video Views",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "Meta|IG|Post Engagement": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Post Engagement",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "Google|YTB|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "adtype": "VVC",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Video Views": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Video Views",
+        "budget": 22751.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Reach": {
+        "media": "TikTok",
+        "platform": "TT",
+        "adtype": "Reach",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "Meta|IG|Reach": {
+        "media": "Meta",
+        "platform": "IG",
+        "adtype": "Reach",
+        "budget": 1060.0,
+        "satisfied": true
+      },
+      "Meta|FB|Reach": {
+        "media": "Meta",
+        "platform": "FB",
+        "adtype": "Reach",
+        "budget": 59022.0,
+        "satisfied": true
+      }
+    }
+  }
+}

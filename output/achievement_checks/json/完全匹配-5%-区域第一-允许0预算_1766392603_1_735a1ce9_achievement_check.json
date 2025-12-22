@@ -1,7 +1,7 @@
 {
-  "case_name": "大小关系匹配-不勾选必须达成-区域第一",
-  "uuid": "409993f4-4f1f-4842-982c-2f58d36a",
-  "job_id": "1765533980_1_2c49b118",
+  "case_name": "完全匹配-5%-区域第一-允许0预算",
+  "uuid": "6e56874a-ccc2-42e1-b9d9-c50f4359",
+  "job_id": "1766392603_1_735a1ce9",
   "testcase_config": {
     "kpi_target_rate": 80,
     "region_budget_target_rate": 90,
@@ -9,13 +9,27 @@
     "mediaMarketingFunnelAdtype_target_rate": 80,
     "stage_range_match": 20,
     "marketingfunnel_range_match": 15,
-    "media_range_match": 5
+    "media_range_match": 5,
+    "kpi_priority_list": [
+      "Impression",
+      "VideoViews",
+      "Engagement"
+    ],
+    "module_priority_list": [
+      "regionBudget",
+      "kpiInfo",
+      "media",
+      "marketingFunnel",
+      "stage",
+      "regionKPI",
+      "mediaMarketingFunnelAdtype"
+    ]
   },
   "global_kpi": {
     "Impression": {
       "target": 3118609566.0,
-      "actual": 2843618763.0,
-      "achievement_rate": 91.18,
+      "actual": 6803481281.0,
+      "achievement_rate": 218,
       "target_rate": 80,
       "achieved": true,
       "priority": 1,
@@ -23,19 +37,19 @@
     },
     "VideoViews": {
       "target": 869046442.0,
-      "actual": 694945056.0,
-      "achievement_rate": 79.97,
+      "actual": 974890403.0,
+      "achievement_rate": 112,
       "target_rate": 80,
-      "achieved": false,
+      "achieved": true,
       "priority": 2,
       "completion": 0
     },
     "Engagement": {
       "target": 264644640.0,
-      "actual": 187263220.0,
-      "achievement_rate": 70.76,
+      "actual": 293231664.0,
+      "achievement_rate": 111,
       "target_rate": 80,
-      "achieved": false,
+      "achieved": true,
       "priority": 3,
       "completion": 0
     }
@@ -43,171 +57,151 @@
   "region_budget": {
     "DE": {
       "target": 67022.92,
-      "actual": 67023.0,
+      "actual": 69831.0,
       "target_percentage": 5.87,
-      "actual_percentage": 5.868086898432008,
-      "target_rank": 9,
-      "actual_rank": 9,
-      "achievement_rate": 100.00011936215255,
+      "actual_percentage": 6.114054418945504,
+      "error_percentage": 0,
+      "range_match": 5,
+      "achievement_rate": 104,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "EG": {
       "target": 141045.8,
-      "actual": 141050.0,
+      "actual": 198153.0,
       "target_percentage": 12.35,
-      "actual_percentage": 12.349397326646594,
-      "target_rank": 0,
-      "actual_rank": 1,
-      "achievement_rate": 100.0029777561615,
+      "actual_percentage": 17.3492893597014,
+      "error_percentage": 5,
+      "range_match": 5,
+      "achievement_rate": 140,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "GB": {
       "target": 102022.9,
-      "actual": 102018.0,
+      "actual": 106298.0,
       "target_percentage": 8.93,
-      "actual_percentage": 8.932015714071834,
-      "target_rank": 7,
-      "actual_rank": 7,
-      "achievement_rate": 99.99519715671678,
+      "actual_percentage": 9.306923237889608,
+      "error_percentage": 0,
+      "range_match": 5,
+      "achievement_rate": 104,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "IN": {
       "target": 99045.8,
-      "actual": 99044.0,
+      "actual": 90500.0,
       "target_percentage": 8.67,
-      "actual_percentage": 8.67163210790773,
-      "target_rank": 8,
-      "actual_rank": 8,
-      "achievement_rate": 99.99818265893153,
+      "actual_percentage": 7.923729073256408,
+      "error_percentage": 1,
+      "range_match": 5,
+      "achievement_rate": 91,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "JP": {
       "target": 111778.63,
-      "actual": 111776.0,
+      "actual": 65540.0,
       "target_percentage": 9.79,
-      "actual_percentage": 9.786361117215524,
-      "target_rank": 5,
-      "actual_rank": 5,
-      "achievement_rate": 99.99764713523506,
+      "actual_percentage": 5.738355839350552,
+      "error_percentage": 4,
+      "range_match": 5,
+      "achievement_rate": 59,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "MY": {
       "target": 120045.8,
-      "actual": 120050.0,
+      "actual": 75448.0,
       "target_percentage": 10.51,
-      "actual_percentage": 10.51077737726993,
-      "target_rank": 3,
-      "actual_rank": 3,
-      "achievement_rate": 100.0034986646763,
+      "actual_percentage": 6.605850951591706,
+      "error_percentage": 4,
+      "range_match": 5,
+      "achievement_rate": 63,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "PH": {
       "target": 113045.8,
-      "actual": 113050.0,
+      "actual": 170153.0,
       "target_percentage": 9.9,
-      "actual_percentage": 9.897904060811042,
-      "target_rank": 4,
-      "actual_rank": 4,
-      "achievement_rate": 100.00371530830867,
+      "actual_percentage": 14.89774887294804,
+      "error_percentage": 5,
+      "range_match": 5,
+      "achievement_rate": 151,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "PK": {
       "target": 106045.8,
-      "actual": 106050.0,
+      "actual": 163153.0,
       "target_percentage": 9.28,
-      "actual_percentage": 9.285030744352154,
-      "target_rank": 6,
-      "actual_rank": 6,
-      "achievement_rate": 100.00396055289318,
+      "actual_percentage": 14.284863751259696,
+      "error_percentage": 5,
+      "range_match": 5,
+      "achievement_rate": 154,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "SA": {
       "target": 141045.8,
-      "actual": 141050.0,
+      "actual": 83937.0,
       "target_percentage": 12.35,
-      "actual_percentage": 12.349397326646594,
-      "target_rank": 1,
-      "actual_rank": 2,
-      "achievement_rate": 100.0029777561615,
+      "actual_percentage": 7.3491054941648954,
+      "error_percentage": 5,
+      "range_match": 5,
+      "achievement_rate": 60,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     },
     "TH": {
       "target": 141045.8,
-      "actual": 141050.0,
+      "actual": 119126.0,
       "target_percentage": 12.35,
-      "actual_percentage": 12.349397326646594,
-      "target_rank": 2,
-      "actual_rank": 0,
-      "achievement_rate": 100.0029777561615,
+      "actual_percentage": 10.430079000892185,
+      "error_percentage": 2,
+      "range_match": 5,
+      "achievement_rate": 84,
       "target_rate": 90,
-      "completion": 0,
-      "order_consistent": false,
-      "achieved": false,
-      "match_type": "大小关系匹配"
+      "achieved": true,
+      "match_type": "完全匹配"
     }
   },
   "region_kpi": {
     "DE": {
       "Impression": {
         "target": 134045820.0,
-        "actual": 97488000.0,
-        "achievement_rate": 72.73,
+        "actual": 139662000.0,
+        "achievement_rate": 104,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 1,
         "completion": 0
       },
       "VideoViews": {
         "target": 77590302.0,
-        "actual": 54160000.0,
-        "achievement_rate": 69.8,
+        "actual": 77590000.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 2,
         "completion": 0
       },
       "Engagement": {
         "target": 14321134.0,
-        "actual": 10371064.0,
-        "achievement_rate": 72.42,
+        "actual": 14857658.0,
+        "achievement_rate": 104,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 3,
         "completion": 0
       }
@@ -215,8 +209,8 @@
     "EG": {
       "Impression": {
         "target": 349723137.0,
-        "actual": 335842042.0,
-        "achievement_rate": 96.03,
+        "actual": 1648062398.0,
+        "achievement_rate": 471,
         "target_rate": 80,
         "achieved": true,
         "priority": 1,
@@ -224,19 +218,19 @@
       },
       "VideoViews": {
         "target": 119051167.0,
-        "actual": 92750413.0,
-        "achievement_rate": 77.91,
+        "actual": 119049898.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 2,
         "completion": 0
       },
       "Engagement": {
         "target": 28949496.0,
-        "actual": 22097172.0,
-        "achievement_rate": 76.33,
+        "actual": 28949560.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 3,
         "completion": 0
       }
@@ -244,28 +238,28 @@
     "GB": {
       "Impression": {
         "target": 204045820.0,
-        "actual": 160314000.0,
-        "achievement_rate": 78.57,
+        "actual": 212596000.0,
+        "achievement_rate": 104,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 1,
         "completion": 0
       },
       "VideoViews": {
         "target": 118108696.0,
-        "actual": 89063337.0,
-        "achievement_rate": 75.41,
+        "actual": 118108889.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 2,
         "completion": 0
       },
       "Engagement": {
         "target": 21799767.0,
-        "actual": 17054686.0,
-        "achievement_rate": 78.23,
+        "actual": 22616596.0,
+        "achievement_rate": 104,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 3,
         "completion": 0
       }
@@ -273,8 +267,8 @@
     "IN": {
       "Impression": {
         "target": 1098926766.0,
-        "actual": 956561313.0,
-        "achievement_rate": 87.05,
+        "actual": 1098907778.0,
+        "achievement_rate": 100,
         "target_rate": 80,
         "achieved": true,
         "priority": 1,
@@ -282,19 +276,19 @@
       },
       "VideoViews": {
         "target": 90933918.0,
-        "actual": 56453649.0,
-        "achievement_rate": 62.08,
+        "actual": 90932500.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 2,
         "completion": 0
       },
       "Engagement": {
         "target": 69384802.0,
-        "actual": 36178033.0,
-        "achievement_rate": 52.14,
+        "actual": 69383868.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 3,
         "completion": 0
       }
@@ -302,8 +296,8 @@
     "JP": {
       "Impression": {
         "target": 99116369.0,
-        "actual": 103780664.0,
-        "achievement_rate": 104.71,
+        "actual": 99116219.0,
+        "achievement_rate": 100,
         "target_rate": 80,
         "achieved": true,
         "priority": 1,
@@ -311,8 +305,8 @@
       },
       "VideoViews": {
         "target": 50708148.0,
-        "actual": 63689563.0,
-        "achievement_rate": 125.6,
+        "actual": 61397879.0,
+        "achievement_rate": 121,
         "target_rate": 80,
         "achieved": true,
         "priority": 2,
@@ -320,8 +314,8 @@
       },
       "Engagement": {
         "target": 11784093.0,
-        "actual": 13525682.0,
-        "achievement_rate": 114.78,
+        "actual": 11784188.0,
+        "achievement_rate": 100,
         "target_rate": 80,
         "achieved": true,
         "priority": 3,
@@ -331,8 +325,8 @@
     "MY": {
       "Impression": {
         "target": 138482400.0,
-        "actual": 175234991.0,
-        "achievement_rate": 126.54,
+        "actual": 244982868.0,
+        "achievement_rate": 177,
         "target_rate": 80,
         "achieved": true,
         "priority": 1,
@@ -340,8 +334,8 @@
       },
       "VideoViews": {
         "target": 56074422.0,
-        "actual": 54922937.0,
-        "achievement_rate": 97.95,
+        "actual": 76312245.0,
+        "achievement_rate": 136,
         "target_rate": 80,
         "achieved": true,
         "priority": 2,
@@ -349,8 +343,8 @@
       },
       "Engagement": {
         "target": 13427858.0,
-        "actual": 12585030.0,
-        "achievement_rate": 93.72,
+        "actual": 15017115.0,
+        "achievement_rate": 112,
         "target_rate": 80,
         "achieved": true,
         "priority": 3,
@@ -360,8 +354,8 @@
     "PH": {
       "Impression": {
         "target": 242435140.0,
-        "actual": 246088536.0,
-        "achievement_rate": 101.51,
+        "actual": 1217949060.0,
+        "achievement_rate": 502,
         "target_rate": 80,
         "achieved": true,
         "priority": 1,
@@ -369,8 +363,8 @@
       },
       "VideoViews": {
         "target": 79420448.0,
-        "actual": 64646096.0,
-        "achievement_rate": 81.4,
+        "actual": 79419921.0,
+        "achievement_rate": 100,
         "target_rate": 80,
         "achieved": true,
         "priority": 2,
@@ -378,10 +372,10 @@
       },
       "Engagement": {
         "target": 32652820.0,
-        "actual": 21074833.0,
-        "achievement_rate": 64.54,
+        "actual": 58298624.0,
+        "achievement_rate": 179,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 3,
         "completion": 0
       }
@@ -389,28 +383,28 @@
     "PK": {
       "Impression": {
         "target": 467109466.0,
-        "actual": 339781532.0,
-        "achievement_rate": 72.74,
+        "actual": 1457566196.0,
+        "achievement_rate": 312,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 1,
         "completion": 0
       },
       "VideoViews": {
         "target": 151210601.0,
-        "actual": 92481035.0,
-        "achievement_rate": 61.16,
+        "actual": 151210740.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 2,
         "completion": 0
       },
       "Engagement": {
         "target": 31676916.0,
-        "actual": 20191378.0,
-        "achievement_rate": 63.74,
+        "actual": 31676820.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 3,
         "completion": 0
       }
@@ -418,8 +412,8 @@
     "SA": {
       "Impression": {
         "target": 191639731.0,
-        "actual": 225919946.0,
-        "achievement_rate": 117.89,
+        "actual": 299451451.0,
+        "achievement_rate": 156,
         "target_rate": 80,
         "achieved": true,
         "priority": 1,
@@ -427,8 +421,8 @@
       },
       "VideoViews": {
         "target": 54316965.0,
-        "actual": 62420735.0,
-        "achievement_rate": 114.92,
+        "actual": 76794908.0,
+        "achievement_rate": 141,
         "target_rate": 80,
         "achieved": true,
         "priority": 2,
@@ -436,8 +430,8 @@
       },
       "Engagement": {
         "target": 15973664.0,
-        "actual": 15220195.0,
-        "achievement_rate": 95.28,
+        "actual": 15973436.0,
+        "achievement_rate": 100,
         "target_rate": 80,
         "achieved": true,
         "priority": 3,
@@ -447,8 +441,8 @@
     "TH": {
       "Impression": {
         "target": 193084917.0,
-        "actual": 202607739.0,
-        "achievement_rate": 104.93,
+        "actual": 385187311.0,
+        "achievement_rate": 199,
         "target_rate": 80,
         "achieved": true,
         "priority": 1,
@@ -456,8 +450,8 @@
       },
       "VideoViews": {
         "target": 71631775.0,
-        "actual": 64357291.0,
-        "achievement_rate": 89.84,
+        "actual": 124073423.0,
+        "achievement_rate": 173,
         "target_rate": 80,
         "achieved": true,
         "priority": 2,
@@ -465,10 +459,10 @@
       },
       "Engagement": {
         "target": 24674090.0,
-        "actual": 18965147.0,
-        "achievement_rate": 76.86,
+        "actual": 24673799.0,
+        "achievement_rate": 100,
         "target_rate": 80,
-        "achieved": false,
+        "achieved": true,
         "priority": 3,
         "completion": 0
       }
@@ -484,28 +478,28 @@
       "kpis": {
         "Impression": {
           "target": 21840000.0,
-          "actual": 12186000.0,
-          "achievement_rate": 55.8,
+          "actual": 107236000.0,
+          "achievement_rate": 491,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 12641739.0,
-          "actual": 6770000.0,
-          "achievement_rate": 53.55,
+          "actual": 59575556.0,
+          "achievement_rate": 471,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 2333333.0,
-          "actual": 1296383.0,
-          "achievement_rate": 55.56,
+          "actual": 11408085.0,
+          "achievement_rate": 489,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 3,
           "completion": 0
         }
@@ -520,8 +514,8 @@
       "kpis": {
         "Impression": {
           "target": 781680.0,
-          "actual": 12186000.0,
-          "achievement_rate": 1558.95,
+          "actual": 21702000.0,
+          "achievement_rate": 2776,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -529,8 +523,8 @@
         },
         "VideoViews": {
           "target": 452463.0,
-          "actual": 6770000.0,
-          "achievement_rate": 1496.25,
+          "actual": 12056667.0,
+          "achievement_rate": 2665,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -538,8 +532,8 @@
         },
         "Engagement": {
           "target": 83513.0,
-          "actual": 1296383.0,
-          "achievement_rate": 1552.31,
+          "actual": 2308723.0,
+          "achievement_rate": 2765,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -556,28 +550,28 @@
       "kpis": {
         "Impression": {
           "target": 12824430.0,
-          "actual": 12186000.0,
-          "achievement_rate": 95.02,
+          "actual": 2680000.0,
+          "achievement_rate": 21,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 7423218.0,
-          "actual": 6770000.0,
-          "achievement_rate": 91.2,
+          "actual": 1488889.0,
+          "achievement_rate": 20,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1370131.0,
-          "actual": 1296383.0,
-          "achievement_rate": 94.62,
+          "actual": 285106.0,
+          "achievement_rate": 21,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -592,28 +586,28 @@
       "kpis": {
         "Impression": {
           "target": 7035120.0,
-          "actual": 12186000.0,
-          "achievement_rate": 173.22,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 4072168.0,
-          "actual": 6770000.0,
-          "achievement_rate": 166.25,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 751615.0,
-          "actual": 1296383.0,
-          "achievement_rate": 172.48,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -628,8 +622,8 @@
       "kpis": {
         "Impression": {
           "target": 34160000.0,
-          "actual": 12186000.0,
-          "achievement_rate": 35.67,
+          "actual": 4022000.0,
+          "achievement_rate": 12,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -637,8 +631,8 @@
         },
         "VideoViews": {
           "target": 19772976.0,
-          "actual": 6770000.0,
-          "achievement_rate": 34.24,
+          "actual": 2234444.0,
+          "achievement_rate": 11,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -646,8 +640,8 @@
         },
         "Engagement": {
           "target": 3649573.0,
-          "actual": 1296383.0,
-          "achievement_rate": 35.52,
+          "actual": 427872.0,
+          "achievement_rate": 12,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -664,8 +658,8 @@
       "kpis": {
         "Impression": {
           "target": 37893136.0,
-          "actual": 12186000.0,
-          "achievement_rate": 32.16,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -673,8 +667,8 @@
         },
         "VideoViews": {
           "target": 21933842.0,
-          "actual": 6770000.0,
-          "achievement_rate": 30.87,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -682,8 +676,8 @@
         },
         "Engagement": {
           "target": 4048412.0,
-          "actual": 1296383.0,
-          "achievement_rate": 32.02,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -700,28 +694,28 @@
       "kpis": {
         "Impression": {
           "target": 12824430.0,
-          "actual": 12186000.0,
-          "achievement_rate": 95.02,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 7423218.0,
-          "actual": 6770000.0,
-          "achievement_rate": 91.2,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1370131.0,
-          "actual": 1296383.0,
-          "achievement_rate": 94.62,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -736,28 +730,28 @@
       "kpis": {
         "Impression": {
           "target": 6687024.0,
-          "actual": 12186000.0,
-          "achievement_rate": 182.23,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 3870678.0,
-          "actual": 6770000.0,
-          "achievement_rate": 174.9,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 714426.0,
-          "actual": 1296383.0,
-          "achievement_rate": 181.46,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -772,8 +766,8 @@
       "kpis": {
         "Impression": {
           "target": 58983005.0,
-          "actual": 32500000.0,
-          "achievement_rate": 55.1,
+          "actual": 22748387.0,
+          "achievement_rate": 39,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -781,8 +775,8 @@
         },
         "VideoViews": {
           "target": 21150601.0,
-          "actual": 11194444.0,
-          "achievement_rate": 52.93,
+          "actual": 7835556.0,
+          "achievement_rate": 37,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -790,8 +784,8 @@
         },
         "Engagement": {
           "target": 3903846.0,
-          "actual": 2143617.0,
-          "achievement_rate": 54.91,
+          "actual": 1500426.0,
+          "achievement_rate": 38,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -808,8 +802,8 @@
       "kpis": {
         "Impression": {
           "target": 1261789.0,
-          "actual": 32500000.0,
-          "achievement_rate": 2575.71,
+          "actual": 13648387.0,
+          "achievement_rate": 1082,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -817,8 +811,8 @@
         },
         "VideoViews": {
           "target": 452463.0,
-          "actual": 11194444.0,
-          "achievement_rate": 2474.11,
+          "actual": 4701111.0,
+          "achievement_rate": 1039,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -826,8 +820,8 @@
         },
         "Engagement": {
           "target": 83513.0,
-          "actual": 2143617.0,
-          "achievement_rate": 2566.81,
+          "actual": 900213.0,
+          "achievement_rate": 1078,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -844,28 +838,28 @@
       "kpis": {
         "Impression": {
           "target": 8280494.0,
-          "actual": 32500000.0,
-          "achievement_rate": 392.49,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 2969286.0,
-          "actual": 11194444.0,
-          "achievement_rate": 377.01,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 548052.0,
-          "actual": 2143617.0,
-          "achievement_rate": 391.13,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -880,8 +874,8 @@
       "kpis": {
         "Impression": {
           "target": 71683217.0,
-          "actual": 111944444.0,
-          "achievement_rate": 156.17,
+          "actual": 1253744444.0,
+          "achievement_rate": 1749,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -889,8 +883,8 @@
         },
         "VideoViews": {
           "target": 825247.0,
-          "actual": 1243827.0,
-          "achievement_rate": 150.72,
+          "actual": 13930494.0,
+          "achievement_rate": 1688,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -898,8 +892,8 @@
         },
         "Engagement": {
           "target": 887156.0,
-          "actual": 1343333.0,
-          "achievement_rate": 151.42,
+          "actual": 15044933.0,
+          "achievement_rate": 1696,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -916,8 +910,8 @@
       "kpis": {
         "Impression": {
           "target": 65407626.0,
-          "actual": 22897727.0,
-          "achievement_rate": 35.01,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -925,8 +919,8 @@
         },
         "VideoViews": {
           "target": 5182070.0,
-          "actual": 1799107.0,
-          "achievement_rate": 34.72,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -934,8 +928,8 @@
         },
         "Engagement": {
           "target": 5302239.0,
-          "actual": 1831818.0,
-          "achievement_rate": 34.55,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -952,8 +946,8 @@
       "kpis": {
         "Impression": {
           "target": 59045980.0,
-          "actual": 15742188.0,
-          "achievement_rate": 26.66,
+          "actual": 31340625.0,
+          "achievement_rate": 53,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -961,8 +955,8 @@
         },
         "VideoViews": {
           "target": 15084349.0,
-          "actual": 4030000.0,
-          "achievement_rate": 26.72,
+          "actual": 8023200.0,
+          "achievement_rate": 53,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -970,8 +964,8 @@
         },
         "Engagement": {
           "target": 15492678.0,
-          "actual": 4197917.0,
-          "achievement_rate": 27.1,
+          "actual": 8357500.0,
+          "achievement_rate": 54,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -988,28 +982,28 @@
       "kpis": {
         "Impression": {
           "target": 1361406.0,
-          "actual": 5359043.0,
-          "achievement_rate": 393.64,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 1086634.0,
-          "actual": 4197917.0,
-          "achievement_rate": 386.32,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1098557.0,
-          "actual": 4380435.0,
-          "achievement_rate": 398.74,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1024,28 +1018,28 @@
       "kpis": {
         "Impression": {
           "target": 7455813.0,
-          "actual": 11194444.0,
-          "achievement_rate": 150.14,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 956348.0,
-          "actual": 1439286.0,
-          "achievement_rate": 150.5,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1004942.0,
-          "actual": 1503731.0,
-          "achievement_rate": 149.63,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1060,28 +1054,28 @@
       "kpis": {
         "Impression": {
           "target": 2523578.0,
-          "actual": 32500000.0,
-          "achievement_rate": 1287.85,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 904925.0,
-          "actual": 11194444.0,
-          "achievement_rate": 1237.06,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 167025.0,
-          "actual": 2143617.0,
-          "achievement_rate": 1283.41,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1096,8 +1090,8 @@
       "kpis": {
         "Impression": {
           "target": 16795454.0,
-          "actual": 10718085.0,
-          "achievement_rate": 63.82,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1105,8 +1099,8 @@
         },
         "VideoViews": {
           "target": 16087208.0,
-          "actual": 10075000.0,
-          "achievement_rate": 62.63,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1114,8 +1108,8 @@
         },
         "Engagement": {
           "target": 261134.0,
-          "actual": 167081.0,
-          "achievement_rate": 63.98,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1132,28 +1126,28 @@
       "kpis": {
         "Impression": {
           "target": 56924775.0,
-          "actual": 27986111.0,
-          "achievement_rate": 49.16,
+          "actual": 91047222.0,
+          "achievement_rate": 160,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 54352036.0,
-          "actual": 25187500.0,
-          "achievement_rate": 46.34,
+          "actual": 81942500.0,
+          "achievement_rate": 151,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 200354.0,
-          "actual": 98389.0,
-          "achievement_rate": 49.11,
+          "actual": 320088.0,
+          "achievement_rate": 160,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 3,
           "completion": 0
         }
@@ -1168,28 +1162,28 @@
       "kpis": {
         "Impression": {
           "target": 35280000.0,
-          "actual": 14574000.0,
-          "achievement_rate": 41.31,
+          "actual": 163236000.0,
+          "achievement_rate": 463,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 20421270.0,
-          "actual": 8096667.0,
-          "achievement_rate": 39.65,
+          "actual": 90686667.0,
+          "achievement_rate": 444,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 3769231.0,
-          "actual": 1550426.0,
-          "achievement_rate": 41.13,
+          "actual": 17365532.0,
+          "achievement_rate": 461,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 3,
           "completion": 0
         }
@@ -1204,8 +1198,8 @@
       "kpis": {
         "Impression": {
           "target": 390840.0,
-          "actual": 14574000.0,
-          "achievement_rate": 3728.89,
+          "actual": 26914000.0,
+          "achievement_rate": 6886,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -1213,8 +1207,8 @@
         },
         "VideoViews": {
           "target": 226232.0,
-          "actual": 8096667.0,
-          "achievement_rate": 3578.92,
+          "actual": 14952222.0,
+          "achievement_rate": 6609,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -1222,8 +1216,8 @@
         },
         "Engagement": {
           "target": 41756.0,
-          "actual": 1550426.0,
-          "achievement_rate": 3713.06,
+          "actual": 2863191.0,
+          "achievement_rate": 6857,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -1240,28 +1234,28 @@
       "kpis": {
         "Impression": {
           "target": 2564886.0,
-          "actual": 14574000.0,
-          "achievement_rate": 568.21,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 1484644.0,
-          "actual": 8096667.0,
-          "achievement_rate": 545.36,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 274026.0,
-          "actual": 1550426.0,
-          "achievement_rate": 565.8,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1276,8 +1270,8 @@
       "kpis": {
         "Impression": {
           "target": 6644280.0,
-          "actual": 14574000.0,
-          "achievement_rate": 219.35,
+          "actual": 6122000.0,
+          "achievement_rate": 92,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -1285,8 +1279,8 @@
         },
         "VideoViews": {
           "target": 3845936.0,
-          "actual": 8096667.0,
-          "achievement_rate": 210.53,
+          "actual": 3401111.0,
+          "achievement_rate": 88,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -1294,8 +1288,8 @@
         },
         "Engagement": {
           "target": 709859.0,
-          "actual": 1550426.0,
-          "achievement_rate": 218.41,
+          "actual": 651277.0,
+          "achievement_rate": 92,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -1312,8 +1306,8 @@
       "kpis": {
         "Impression": {
           "target": 35280000.0,
-          "actual": 14574000.0,
-          "achievement_rate": 41.31,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1321,8 +1315,8 @@
         },
         "VideoViews": {
           "target": 20421270.0,
-          "actual": 8096667.0,
-          "achievement_rate": 39.65,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1330,8 +1324,8 @@
         },
         "Engagement": {
           "target": 3769231.0,
-          "actual": 1550426.0,
-          "achievement_rate": 41.13,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1348,8 +1342,8 @@
       "kpis": {
         "Impression": {
           "target": 37893136.0,
-          "actual": 14574000.0,
-          "achievement_rate": 38.46,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1357,8 +1351,8 @@
         },
         "VideoViews": {
           "target": 21933842.0,
-          "actual": 8096667.0,
-          "achievement_rate": 36.91,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1366,8 +1360,8 @@
         },
         "Engagement": {
           "target": 4048412.0,
-          "actual": 1550426.0,
-          "achievement_rate": 38.3,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1384,28 +1378,28 @@
       "kpis": {
         "Impression": {
           "target": 2564886.0,
-          "actual": 14574000.0,
-          "achievement_rate": 568.21,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 1484644.0,
-          "actual": 8096667.0,
-          "achievement_rate": 545.36,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 274026.0,
-          "actual": 1550426.0,
-          "achievement_rate": 565.8,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1420,28 +1414,28 @@
       "kpis": {
         "Impression": {
           "target": 6687024.0,
-          "actual": 14574000.0,
-          "achievement_rate": 217.94,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 3870678.0,
-          "actual": 8096667.0,
-          "achievement_rate": 209.18,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 714426.0,
-          "actual": 1550426.0,
-          "achievement_rate": 217.02,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1456,28 +1450,28 @@
       "kpis": {
         "Impression": {
           "target": 781680.0,
-          "actual": 14574000.0,
-          "achievement_rate": 1864.45,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 452463.0,
-          "actual": 8096667.0,
-          "achievement_rate": 1789.46,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 83513.0,
-          "actual": 1550426.0,
-          "achievement_rate": 1856.51,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1492,8 +1486,8 @@
       "kpis": {
         "Impression": {
           "target": 55440000.0,
-          "actual": 14574000.0,
-          "achievement_rate": 26.29,
+          "actual": 10202000.0,
+          "achievement_rate": 18,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1501,8 +1495,8 @@
         },
         "VideoViews": {
           "target": 32090567.0,
-          "actual": 8096667.0,
-          "achievement_rate": 25.23,
+          "actual": 5667778.0,
+          "achievement_rate": 18,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1510,8 +1504,8 @@
         },
         "Engagement": {
           "target": 5923077.0,
-          "actual": 1550426.0,
-          "achievement_rate": 26.18,
+          "actual": 1085319.0,
+          "achievement_rate": 18,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1528,8 +1522,8 @@
       "kpis": {
         "Impression": {
           "target": 20519088.0,
-          "actual": 14574000.0,
-          "achievement_rate": 71.03,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1537,8 +1531,8 @@
         },
         "VideoViews": {
           "target": 11877150.0,
-          "actual": 8096667.0,
-          "achievement_rate": 68.17,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1546,8 +1540,8 @@
         },
         "Engagement": {
           "target": 2192210.0,
-          "actual": 1550426.0,
-          "achievement_rate": 70.72,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1564,28 +1558,28 @@
       "kpis": {
         "Impression": {
           "target": 273000000.0,
-          "actual": 180080000.0,
-          "achievement_rate": 65.96,
+          "actual": 702060000.0,
+          "achievement_rate": 257,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 15802173.0,
-          "actual": 10004444.0,
-          "achievement_rate": 63.31,
+          "actual": 39003333.0,
+          "achievement_rate": 247,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 2916667.0,
-          "actual": 1915745.0,
-          "achievement_rate": 65.68,
+          "actual": 7468723.0,
+          "achievement_rate": 256,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 3,
           "completion": 0
         }
@@ -1600,8 +1594,8 @@
       "kpis": {
         "Impression": {
           "target": 15633580.0,
-          "actual": 180080000.0,
-          "achievement_rate": 1151.88,
+          "actual": 99040000.0,
+          "achievement_rate": 634,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -1609,8 +1603,8 @@
         },
         "VideoViews": {
           "target": 904925.0,
-          "actual": 10004444.0,
-          "achievement_rate": 1105.56,
+          "actual": 5502222.0,
+          "achievement_rate": 608,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -1618,8 +1612,8 @@
         },
         "Engagement": {
           "target": 167025.0,
-          "actual": 1915745.0,
-          "achievement_rate": 1146.98,
+          "actual": 1053617.0,
+          "achievement_rate": 631,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -1636,8 +1630,8 @@
       "kpis": {
         "Impression": {
           "target": 256488500.0,
-          "actual": 180080000.0,
-          "achievement_rate": 70.21,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1645,8 +1639,8 @@
         },
         "VideoViews": {
           "target": 14846431.0,
-          "actual": 10004444.0,
-          "achievement_rate": 67.39,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1654,8 +1648,8 @@
         },
         "Engagement": {
           "target": 2740262.0,
-          "actual": 1915745.0,
-          "achievement_rate": 69.91,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1672,28 +1666,28 @@
       "kpis": {
         "Impression": {
           "target": 152560559.0,
-          "actual": 180080000.0,
-          "achievement_rate": 118.04,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 1948388.0,
-          "actual": 2501111.0,
-          "achievement_rate": 128.37,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 2096941.0,
-          "actual": 2648235.0,
-          "achievement_rate": 126.29,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1708,10 +1702,10 @@
       "kpis": {
         "Impression": {
           "target": 94222989.0,
-          "actual": 112550000.0,
-          "achievement_rate": 119.45,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
@@ -1726,10 +1720,10 @@
         },
         "Engagement": {
           "target": 74865.0,
-          "actual": 91690.0,
-          "achievement_rate": 122.47,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1744,8 +1738,8 @@
       "kpis": {
         "Impression": {
           "target": 249406478.0,
-          "actual": 60026667.0,
-          "achievement_rate": 24.07,
+          "actual": 105346667.0,
+          "achievement_rate": 42,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1753,8 +1747,8 @@
         },
         "VideoViews": {
           "target": 42610895.0,
-          "actual": 10004444.0,
-          "achievement_rate": 23.48,
+          "actual": 17557778.0,
+          "achievement_rate": 41,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1762,8 +1756,8 @@
         },
         "Engagement": {
           "target": 44361239.0,
-          "actual": 10004444.0,
-          "achievement_rate": 22.55,
+          "actual": 17557778.0,
+          "achievement_rate": 40,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1780,8 +1774,8 @@
       "kpis": {
         "Impression": {
           "target": 19425567.0,
-          "actual": 13642424.0,
-          "achievement_rate": 70.23,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1789,8 +1783,8 @@
         },
         "VideoViews": {
           "target": 9100012.0,
-          "actual": 6431429.0,
-          "achievement_rate": 70.67,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1798,8 +1792,8 @@
         },
         "Engagement": {
           "target": 9123073.0,
-          "actual": 6431429.0,
-          "achievement_rate": 70.5,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1816,8 +1810,8 @@
       "kpis": {
         "Impression": {
           "target": 38189093.0,
-          "actual": 50022222.0,
-          "achievement_rate": 130.99,
+          "actual": 192461111.0,
+          "achievement_rate": 504,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -1825,8 +1819,8 @@
         },
         "VideoViews": {
           "target": 5721094.0,
-          "actual": 7503333.0,
-          "achievement_rate": 131.15,
+          "actual": 28869167.0,
+          "achievement_rate": 505,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -1834,8 +1828,8 @@
         },
         "Engagement": {
           "target": 7904730.0,
-          "actual": 11255000.0,
-          "achievement_rate": 142.38,
+          "actual": 43303750.0,
+          "achievement_rate": 548,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -1852,8 +1846,8 @@
       "kpis": {
         "Impression": {
           "target": 18000000.0,
-          "actual": 11405714.0,
-          "achievement_rate": 63.37,
+          "actual": 7984286.0,
+          "achievement_rate": 44,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -1861,8 +1855,8 @@
         },
         "VideoViews": {
           "target": 14586621.0,
-          "actual": 8871111.0,
-          "achievement_rate": 60.82,
+          "actual": 6210000.0,
+          "achievement_rate": 43,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -1870,8 +1864,8 @@
         },
         "Engagement": {
           "target": 2692308.0,
-          "actual": 1698723.0,
-          "achievement_rate": 63.1,
+          "actual": 1189149.0,
+          "achievement_rate": 44,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -1888,28 +1882,28 @@
       "kpis": {
         "Impression": {
           "target": 348964.0,
-          "actual": 11405714.0,
-          "achievement_rate": 3268.45,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 282789.0,
-          "actual": 8871111.0,
-          "achievement_rate": 3137.01,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 52196.0,
-          "actual": 1698723.0,
-          "achievement_rate": 3254.51,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -1924,8 +1918,8 @@
       "kpis": {
         "Impression": {
           "target": 2290076.0,
-          "actual": 11405714.0,
-          "achievement_rate": 498.05,
+          "actual": 4790000.0,
+          "achievement_rate": 209,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -1933,8 +1927,8 @@
         },
         "VideoViews": {
           "target": 1855804.0,
-          "actual": 8871111.0,
-          "achievement_rate": 478.02,
+          "actual": 3725556.0,
+          "achievement_rate": 201,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -1942,8 +1936,8 @@
         },
         "Engagement": {
           "target": 342533.0,
-          "actual": 1698723.0,
-          "achievement_rate": 495.93,
+          "actual": 713404.0,
+          "achievement_rate": 208,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -1960,8 +1954,8 @@
       "kpis": {
         "Impression": {
           "target": 8170697.0,
-          "actual": 15654902.0,
-          "achievement_rate": 191.6,
+          "actual": 6574510.0,
+          "achievement_rate": 80,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -1969,8 +1963,8 @@
         },
         "VideoViews": {
           "target": 13020.0,
-          "actual": 25028.0,
-          "achievement_rate": 192.23,
+          "actual": 10511.0,
+          "achievement_rate": 81,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -1978,8 +1972,8 @@
         },
         "Engagement": {
           "target": 13424.0,
-          "actual": 25813.0,
-          "achievement_rate": 192.29,
+          "actual": 10841.0,
+          "achievement_rate": 81,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -1996,8 +1990,8 @@
       "kpis": {
         "Impression": {
           "target": 23687590.0,
-          "actual": 4615029.0,
-          "achievement_rate": 19.48,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2005,8 +1999,8 @@
         },
         "VideoViews": {
           "target": 118656.0,
-          "actual": 23135.0,
-          "achievement_rate": 19.5,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2014,8 +2008,8 @@
         },
         "Engagement": {
           "target": 140719.0,
-          "actual": 27436.0,
-          "achievement_rate": 19.5,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2032,8 +2026,8 @@
       "kpis": {
         "Impression": {
           "target": 7929144.0,
-          "actual": 2670234.0,
-          "achievement_rate": 33.68,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2041,8 +2035,8 @@
         },
         "VideoViews": {
           "target": 2521135.0,
-          "actual": 849362.0,
-          "achievement_rate": 33.69,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2050,8 +2044,8 @@
         },
         "Engagement": {
           "target": 2646063.0,
-          "actual": 887111.0,
-          "achievement_rate": 33.53,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2068,28 +2062,28 @@
       "kpis": {
         "Impression": {
           "target": 200806.0,
-          "actual": 1000501.0,
-          "achievement_rate": 498.24,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 139800.0,
-          "actual": 694261.0,
-          "achievement_rate": 496.61,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 139934.0,
-          "actual": 694261.0,
-          "achievement_rate": 496.13,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2104,28 +2098,28 @@
       "kpis": {
         "Impression": {
           "target": 5970557.0,
-          "actual": 11405714.0,
-          "achievement_rate": 191.03,
+          "actual": 3194286.0,
+          "achievement_rate": 54,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 4838348.0,
-          "actual": 8871111.0,
-          "achievement_rate": 183.35,
+          "actual": 2484444.0,
+          "achievement_rate": 51,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 893032.0,
-          "actual": 1698723.0,
-          "achievement_rate": 190.22,
+          "actual": 475745.0,
+          "achievement_rate": 53,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2140,8 +2134,8 @@
       "kpis": {
         "Impression": {
           "target": 697929.0,
-          "actual": 11405714.0,
-          "achievement_rate": 1634.22,
+          "actual": 62930000.0,
+          "achievement_rate": 9017,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -2149,8 +2143,8 @@
         },
         "VideoViews": {
           "target": 565579.0,
-          "actual": 8871111.0,
-          "achievement_rate": 1568.5,
+          "actual": 48945556.0,
+          "achievement_rate": 8654,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -2158,8 +2152,8 @@
         },
         "Engagement": {
           "target": 104391.0,
-          "actual": 1698723.0,
-          "achievement_rate": 1627.27,
+          "actual": 9372553.0,
+          "achievement_rate": 8978,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -2176,28 +2170,28 @@
       "kpis": {
         "Impression": {
           "target": 13500000.0,
-          "actual": 11405714.0,
-          "achievement_rate": 84.49,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 10939966.0,
-          "actual": 8871111.0,
-          "achievement_rate": 81.09,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 2019231.0,
-          "actual": 1698723.0,
-          "achievement_rate": 84.13,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2212,8 +2206,8 @@
       "kpis": {
         "Impression": {
           "target": 18320606.0,
-          "actual": 11405714.0,
-          "achievement_rate": 62.26,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2221,8 +2215,8 @@
         },
         "VideoViews": {
           "target": 14846430.0,
-          "actual": 8871111.0,
-          "achievement_rate": 59.75,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2230,8 +2224,8 @@
         },
         "Engagement": {
           "target": 2740262.0,
-          "actual": 1698723.0,
-          "achievement_rate": 61.99,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2248,8 +2242,8 @@
       "kpis": {
         "Impression": {
           "target": 37966072.0,
-          "actual": 27661290.0,
-          "achievement_rate": 72.86,
+          "actual": 19361290.0,
+          "achievement_rate": 51,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2257,8 +2251,8 @@
         },
         "VideoViews": {
           "target": 13614180.0,
-          "actual": 9527778.0,
-          "achievement_rate": 69.98,
+          "actual": 6668889.0,
+          "achievement_rate": 49,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2266,8 +2260,8 @@
         },
         "Engagement": {
           "target": 2512821.0,
-          "actual": 1824468.0,
-          "achievement_rate": 72.61,
+          "actual": 1277021.0,
+          "achievement_rate": 51,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2284,28 +2278,28 @@
       "kpis": {
         "Impression": {
           "target": 1261789.0,
-          "actual": 27661290.0,
-          "achievement_rate": 2192.23,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 452463.0,
-          "actual": 9527778.0,
-          "achievement_rate": 2105.76,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 83513.0,
-          "actual": 1824468.0,
-          "achievement_rate": 2184.65,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2320,8 +2314,8 @@
       "kpis": {
         "Impression": {
           "target": 8280494.0,
-          "actual": 27661290.0,
-          "achievement_rate": 334.05,
+          "actual": 19361290.0,
+          "achievement_rate": 234,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -2329,8 +2323,8 @@
         },
         "VideoViews": {
           "target": 2969286.0,
-          "actual": 9527778.0,
-          "achievement_rate": 320.88,
+          "actual": 6668889.0,
+          "achievement_rate": 225,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -2338,8 +2332,8 @@
         },
         "Engagement": {
           "target": 548052.0,
-          "actual": 1824468.0,
-          "achievement_rate": 332.9,
+          "actual": 1277021.0,
+          "achievement_rate": 233,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -2356,28 +2350,28 @@
       "kpis": {
         "Impression": {
           "target": 22866112.0,
-          "actual": 29568966.0,
-          "achievement_rate": 129.31,
+          "actual": 12417241.0,
+          "achievement_rate": 54,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 446655.0,
-          "actual": 575503.0,
-          "achievement_rate": 128.85,
+          "actual": 241678.0,
+          "achievement_rate": 54,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 458321.0,
-          "actual": 591379.0,
-          "achievement_rate": 129.03,
+          "actual": 248345.0,
+          "achievement_rate": 54,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2392,28 +2386,28 @@
       "kpis": {
         "Impression": {
           "target": 9779345.0,
-          "actual": 12427536.0,
-          "achievement_rate": 127.08,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 252602.0,
-          "actual": 322368.0,
-          "achievement_rate": 127.62,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 265402.0,
-          "actual": 338933.0,
-          "achievement_rate": 127.71,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2428,8 +2422,8 @@
       "kpis": {
         "Impression": {
           "target": 23818991.0,
-          "actual": 5393082.0,
-          "achievement_rate": 22.64,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2437,8 +2431,8 @@
         },
         "VideoViews": {
           "target": 7897543.0,
-          "actual": 1786458.0,
-          "achievement_rate": 22.62,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2446,8 +2440,8 @@
         },
         "Engagement": {
           "target": 8092508.0,
-          "actual": 1824468.0,
-          "achievement_rate": 22.55,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2464,28 +2458,28 @@
       "kpis": {
         "Impression": {
           "target": 818188.0,
-          "actual": 2739617.0,
-          "achievement_rate": 334.84,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 515160.0,
-          "actual": 1715000.0,
-          "achievement_rate": 332.91,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 516460.0,
-          "actual": 1715000.0,
-          "achievement_rate": 332.07,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2500,28 +2494,28 @@
       "kpis": {
         "Impression": {
           "target": 2097423.0,
-          "actual": 2688088.0,
-          "achievement_rate": 128.16,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 533425.0,
-          "actual": 686000.0,
-          "achievement_rate": 128.6,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 578856.0,
-          "actual": 739224.0,
-          "achievement_rate": 127.7,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2536,8 +2530,8 @@
       "kpis": {
         "Impression": {
           "target": 2523578.0,
-          "actual": 27661290.0,
-          "achievement_rate": 1096.11,
+          "actual": 181425806.0,
+          "achievement_rate": 7189,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -2545,8 +2539,8 @@
         },
         "VideoViews": {
           "target": 904925.0,
-          "actual": 9527778.0,
-          "achievement_rate": 1052.88,
+          "actual": 62491111.0,
+          "achievement_rate": 6906,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -2554,8 +2548,8 @@
         },
         "Engagement": {
           "target": 167025.0,
-          "actual": 1824468.0,
-          "achievement_rate": 1092.33,
+          "actual": 11966383.0,
+          "achievement_rate": 7164,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -2572,8 +2566,8 @@
       "kpis": {
         "Impression": {
           "target": 6155877.0,
-          "actual": 2244764.0,
-          "achievement_rate": 36.47,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2581,8 +2575,8 @@
         },
         "VideoViews": {
           "target": 6000963.0,
-          "actual": 2198718.0,
-          "achievement_rate": 36.64,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2590,8 +2584,8 @@
         },
         "Engagement": {
           "target": 140313.0,
-          "actual": 51163.0,
-          "achievement_rate": 36.46,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2608,8 +2602,8 @@
       "kpis": {
         "Impression": {
           "target": 22914531.0,
-          "actual": 9527778.0,
-          "achievement_rate": 41.58,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2617,8 +2611,8 @@
         },
         "VideoViews": {
           "target": 22487220.0,
-          "actual": 9527778.0,
-          "achievement_rate": 42.37,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2626,8 +2620,8 @@
         },
         "Engagement": {
           "target": 64587.0,
-          "actual": 26991.0,
-          "achievement_rate": 41.79,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2644,8 +2638,8 @@
       "kpis": {
         "Impression": {
           "target": 20000000.0,
-          "actual": 28839286.0,
-          "achievement_rate": 144.2,
+          "actual": 20185714.0,
+          "achievement_rate": 101,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -2653,8 +2647,8 @@
         },
         "VideoViews": {
           "target": 6482943.0,
-          "actual": 8972222.0,
-          "achievement_rate": 138.4,
+          "actual": 6280000.0,
+          "achievement_rate": 97,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -2662,8 +2656,8 @@
         },
         "Engagement": {
           "target": 1196581.0,
-          "actual": 1718085.0,
-          "achievement_rate": 143.58,
+          "actual": 1202553.0,
+          "achievement_rate": 100,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -2680,8 +2674,8 @@
       "kpis": {
         "Impression": {
           "target": 1395855.0,
-          "actual": 28839286.0,
-          "achievement_rate": 2066.07,
+          "actual": 12110714.0,
+          "achievement_rate": 868,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -2689,8 +2683,8 @@
         },
         "VideoViews": {
           "target": 452463.0,
-          "actual": 8972222.0,
-          "achievement_rate": 1982.97,
+          "actual": 3767778.0,
+          "achievement_rate": 833,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -2698,8 +2692,8 @@
         },
         "Engagement": {
           "target": 83513.0,
-          "actual": 1718085.0,
-          "achievement_rate": 2057.27,
+          "actual": 721489.0,
+          "achievement_rate": 864,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -2716,28 +2710,28 @@
       "kpis": {
         "Impression": {
           "target": 9160304.0,
-          "actual": 28839286.0,
-          "achievement_rate": 314.83,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 2969286.0,
-          "actual": 8972222.0,
-          "achievement_rate": 302.17,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 548052.0,
-          "actual": 1718085.0,
-          "achievement_rate": 313.49,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2752,8 +2746,8 @@
       "kpis": {
         "Impression": {
           "target": 51119162.0,
-          "actual": 62115385.0,
-          "achievement_rate": 121.51,
+          "actual": 695669231.0,
+          "achievement_rate": 1361,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -2761,8 +2755,8 @@
         },
         "VideoViews": {
           "target": 2403733.0,
-          "actual": 2883929.0,
-          "achievement_rate": 119.98,
+          "actual": 32298929.0,
+          "achievement_rate": 1344,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -2770,8 +2764,8 @@
         },
         "Engagement": {
           "target": 2432178.0,
-          "actual": 2990741.0,
-          "achievement_rate": 122.97,
+          "actual": 33495185.0,
+          "achievement_rate": 1377,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -2788,8 +2782,8 @@
       "kpis": {
         "Impression": {
           "target": 32757146.0,
-          "actual": 23750000.0,
-          "achievement_rate": 72.5,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2797,8 +2791,8 @@
         },
         "VideoViews": {
           "target": 148334.0,
-          "actual": 106954.0,
-          "achievement_rate": 72.1,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2806,8 +2800,8 @@
         },
         "Engagement": {
           "target": 196409.0,
-          "actual": 141667.0,
-          "achievement_rate": 72.13,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2824,8 +2818,8 @@
       "kpis": {
         "Impression": {
           "target": 77520649.0,
-          "actual": 16479592.0,
-          "achievement_rate": 21.26,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2833,8 +2827,8 @@
         },
         "VideoViews": {
           "target": 24365575.0,
-          "actual": 5046875.0,
-          "achievement_rate": 20.71,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2842,8 +2836,8 @@
         },
         "Engagement": {
           "target": 24976943.0,
-          "actual": 5383333.0,
-          "achievement_rate": 21.55,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -2860,28 +2854,28 @@
       "kpis": {
         "Impression": {
           "target": 1583023.0,
-          "actual": 4984568.0,
-          "achievement_rate": 314.88,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 1152649.0,
-          "actual": 3670455.0,
-          "achievement_rate": 318.44,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1154937.0,
-          "actual": 3670455.0,
-          "achievement_rate": 317.81,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2896,28 +2890,28 @@
       "kpis": {
         "Impression": {
           "target": 6108228.0,
-          "actual": 7408257.0,
-          "achievement_rate": 121.28,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 1524514.0,
-          "actual": 1835227.0,
-          "achievement_rate": 120.38,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1572297.0,
-          "actual": 1877907.0,
-          "achievement_rate": 119.44,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2932,28 +2926,28 @@
       "kpis": {
         "Impression": {
           "target": 2791711.0,
-          "actual": 28839286.0,
-          "achievement_rate": 1033.03,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 904925.0,
-          "actual": 8972222.0,
-          "achievement_rate": 991.49,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 167025.0,
-          "actual": 1718085.0,
-          "achievement_rate": 1028.64,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -2968,8 +2962,8 @@
       "kpis": {
         "Impression": {
           "target": 4118833.0,
-          "actual": 1826923.0,
-          "achievement_rate": 44.36,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -2977,8 +2971,8 @@
         },
         "VideoViews": {
           "target": 3983965.0,
-          "actual": 1755435.0,
-          "achievement_rate": 44.06,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -2986,8 +2980,8 @@
         },
         "Engagement": {
           "target": 209376.0,
-          "actual": 92923.0,
-          "achievement_rate": 44.38,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -3004,8 +2998,8 @@
       "kpis": {
         "Impression": {
           "target": 35880229.0,
-          "actual": 14166667.0,
-          "achievement_rate": 39.48,
+          "actual": 15852632.0,
+          "achievement_rate": 44,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -3013,8 +3007,8 @@
         },
         "VideoViews": {
           "target": 35032061.0,
-          "actual": 13458333.0,
-          "achievement_rate": 38.42,
+          "actual": 15060000.0,
+          "achievement_rate": 43,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -3022,8 +3016,8 @@
         },
         "Engagement": {
           "target": 115509.0,
-          "actual": 45467.0,
-          "achievement_rate": 39.36,
+          "actual": 50878.0,
+          "achievement_rate": 44,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -3040,8 +3034,8 @@
       "kpis": {
         "Impression": {
           "target": 8135587.0,
-          "actual": 24435484.0,
-          "achievement_rate": 300.35,
+          "actual": 17103226.0,
+          "achievement_rate": 210,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -3049,8 +3043,8 @@
         },
         "VideoViews": {
           "target": 2917324.0,
-          "actual": 8416667.0,
-          "achievement_rate": 288.51,
+          "actual": 5891111.0,
+          "achievement_rate": 202,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -3058,8 +3052,8 @@
         },
         "Engagement": {
           "target": 538462.0,
-          "actual": 1611702.0,
-          "achievement_rate": 299.32,
+          "actual": 1128085.0,
+          "achievement_rate": 210,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -3076,8 +3070,8 @@
       "kpis": {
         "Impression": {
           "target": 1261789.0,
-          "actual": 24435484.0,
-          "achievement_rate": 1936.57,
+          "actual": 10261290.0,
+          "achievement_rate": 813,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -3085,8 +3079,8 @@
         },
         "VideoViews": {
           "target": 452463.0,
-          "actual": 8416667.0,
-          "achievement_rate": 1860.19,
+          "actual": 3534444.0,
+          "achievement_rate": 781,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -3094,8 +3088,8 @@
         },
         "Engagement": {
           "target": 83513.0,
-          "actual": 1611702.0,
-          "achievement_rate": 1929.88,
+          "actual": 676809.0,
+          "achievement_rate": 810,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -3112,28 +3106,28 @@
       "kpis": {
         "Impression": {
           "target": 8280494.0,
-          "actual": 24435484.0,
-          "achievement_rate": 295.1,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 2969286.0,
-          "actual": 8416667.0,
-          "achievement_rate": 283.46,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 548052.0,
-          "actual": 1611702.0,
-          "achievement_rate": 294.08,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3148,10 +3142,10 @@
       "kpis": {
         "Impression": {
           "target": 102031645.0,
-          "actual": 108214286.0,
-          "achievement_rate": 106.06,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
@@ -3166,10 +3160,10 @@
         },
         "Engagement": {
           "target": 55752.0,
-          "actual": 63549.0,
-          "achievement_rate": 113.99,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3184,28 +3178,28 @@
       "kpis": {
         "Impression": {
           "target": 113419591.0,
-          "actual": 44558824.0,
-          "achievement_rate": 39.29,
+          "actual": 409052941.0,
+          "achievement_rate": 361,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 7389441.0,
-          "actual": 2805556.0,
-          "achievement_rate": 37.97,
+          "actual": 25755185.0,
+          "achievement_rate": 349,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 7721596.0,
-          "actual": 3030000.0,
-          "achievement_rate": 39.24,
+          "actual": 27815600.0,
+          "achievement_rate": 360,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 3,
           "completion": 0
         }
@@ -3220,8 +3214,8 @@
       "kpis": {
         "Impression": {
           "target": 93398436.0,
-          "actual": 18475610.0,
-          "achievement_rate": 19.78,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -3229,8 +3223,8 @@
         },
         "VideoViews": {
           "target": 15094184.0,
-          "actual": 3030000.0,
-          "achievement_rate": 20.07,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -3238,8 +3232,8 @@
         },
         "Engagement": {
           "target": 17389699.0,
-          "actual": 3443182.0,
-          "achievement_rate": 19.8,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -3256,28 +3250,28 @@
       "kpis": {
         "Impression": {
           "target": 1800750.0,
-          "actual": 5334507.0,
-          "achievement_rate": 296.24,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 1299751.0,
-          "actual": 3787500.0,
-          "achievement_rate": 291.4,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1303902.0,
-          "actual": 3787500.0,
-          "achievement_rate": 290.47,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3292,28 +3286,28 @@
       "kpis": {
         "Impression": {
           "target": 9137346.0,
-          "actual": 10376712.0,
-          "achievement_rate": 113.56,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 1632250.0,
-          "actual": 1847561.0,
-          "achievement_rate": 113.19,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1873771.0,
-          "actual": 2104167.0,
-          "achievement_rate": 112.3,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3328,28 +3322,28 @@
       "kpis": {
         "Impression": {
           "target": 2523578.0,
-          "actual": 24435484.0,
-          "achievement_rate": 968.29,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 904925.0,
-          "actual": 8416667.0,
-          "achievement_rate": 930.1,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 167025.0,
-          "actual": 1611702.0,
-          "achievement_rate": 964.95,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3364,28 +3358,28 @@
       "kpis": {
         "Impression": {
           "target": 8150155.0,
-          "actual": 10520833.0,
-          "achievement_rate": 129.09,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 7269147.0,
-          "actual": 9468750.0,
-          "achievement_rate": 130.26,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 631879.0,
-          "actual": 814516.0,
-          "achievement_rate": 128.9,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3400,28 +3394,28 @@
       "kpis": {
         "Impression": {
           "target": 118970095.0,
-          "actual": 44558824.0,
-          "achievement_rate": 37.45,
+          "actual": 136505882.0,
+          "achievement_rate": 115,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 111281830.0,
-          "actual": 37875000.0,
-          "achievement_rate": 34.04,
+          "actual": 116030000.0,
+          "achievement_rate": 104,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 1363265.0,
-          "actual": 501656.0,
-          "achievement_rate": 36.8,
+          "actual": 1536821.0,
+          "achievement_rate": 113,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 3,
           "completion": 0
         }
@@ -3436,8 +3430,8 @@
       "kpis": {
         "Impression": {
           "target": 36610141.0,
-          "actual": 32500000.0,
-          "achievement_rate": 88.77,
+          "actual": 173109677.0,
+          "achievement_rate": 473,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -3445,8 +3439,8 @@
         },
         "VideoViews": {
           "target": 13127959.0,
-          "actual": 11194444.0,
-          "achievement_rate": 85.27,
+          "actual": 59626667.0,
+          "achievement_rate": 454,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -3454,8 +3448,8 @@
         },
         "Engagement": {
           "target": 2423077.0,
-          "actual": 2143617.0,
-          "achievement_rate": 88.47,
+          "actual": 11417872.0,
+          "achievement_rate": 471,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -3472,28 +3466,28 @@
       "kpis": {
         "Impression": {
           "target": 1261789.0,
-          "actual": 32500000.0,
-          "achievement_rate": 2575.71,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 452463.0,
-          "actual": 11194444.0,
-          "achievement_rate": 2474.11,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 83513.0,
-          "actual": 2143617.0,
-          "achievement_rate": 2566.81,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3508,8 +3502,8 @@
       "kpis": {
         "Impression": {
           "target": 8280494.0,
-          "actual": 32500000.0,
-          "achievement_rate": 392.49,
+          "actual": 22748387.0,
+          "achievement_rate": 275,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -3517,8 +3511,8 @@
         },
         "VideoViews": {
           "target": 2969286.0,
-          "actual": 11194444.0,
-          "achievement_rate": 377.01,
+          "actual": 7835556.0,
+          "achievement_rate": 264,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -3526,8 +3520,8 @@
         },
         "Engagement": {
           "target": 548052.0,
-          "actual": 2143617.0,
-          "achievement_rate": 391.13,
+          "actual": 1500426.0,
+          "achievement_rate": 274,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -3544,8 +3538,8 @@
       "kpis": {
         "Impression": {
           "target": 32700958.0,
-          "actual": 50375000.0,
-          "achievement_rate": 154.05,
+          "actual": 59690000.0,
+          "achievement_rate": 183,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -3553,8 +3547,8 @@
         },
         "VideoViews": {
           "target": 615673.0,
-          "actual": 932870.0,
-          "achievement_rate": 151.52,
+          "actual": 1105370.0,
+          "achievement_rate": 180,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -3562,8 +3556,8 @@
         },
         "Engagement": {
           "target": 639723.0,
-          "actual": 968750.0,
-          "achievement_rate": 151.43,
+          "actual": 1147885.0,
+          "achievement_rate": 179,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -3580,8 +3574,8 @@
       "kpis": {
         "Impression": {
           "target": 44395652.0,
-          "actual": 17675439.0,
-          "achievement_rate": 39.81,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -3589,8 +3583,8 @@
         },
         "VideoViews": {
           "target": 1747573.0,
-          "actual": 699653.0,
-          "achievement_rate": 40.04,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -3598,8 +3592,8 @@
         },
         "Engagement": {
           "target": 1808197.0,
-          "actual": 724820.0,
-          "achievement_rate": 40.09,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -3616,8 +3610,8 @@
       "kpis": {
         "Impression": {
           "target": 38362382.0,
-          "actual": 10176768.0,
-          "achievement_rate": 26.53,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -3625,8 +3619,8 @@
         },
         "VideoViews": {
           "target": 9196412.0,
-          "actual": 2457317.0,
-          "achievement_rate": 26.72,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -3634,8 +3628,8 @@
         },
         "Engagement": {
           "target": 9345897.0,
-          "actual": 2457317.0,
-          "achievement_rate": 26.29,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -3652,28 +3646,28 @@
       "kpis": {
         "Impression": {
           "target": 869425.0,
-          "actual": 3415254.0,
-          "achievement_rate": 392.82,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 519150.0,
-          "actual": 2056122.0,
-          "achievement_rate": 396.06,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 520926.0,
-          "actual": 2056122.0,
-          "achievement_rate": 394.71,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3688,28 +3682,28 @@
       "kpis": {
         "Impression": {
           "target": 1513267.0,
-          "actual": 2279412.0,
-          "achievement_rate": 150.63,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 200841.0,
-          "actual": 302553.0,
-          "achievement_rate": 150.64,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 235649.0,
-          "actual": 354754.0,
-          "achievement_rate": 150.54,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3724,8 +3718,8 @@
       "kpis": {
         "Impression": {
           "target": 2523578.0,
-          "actual": 32500000.0,
-          "achievement_rate": 1287.85,
+          "actual": 22748387.0,
+          "achievement_rate": 901,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -3733,8 +3727,8 @@
         },
         "VideoViews": {
           "target": 904925.0,
-          "actual": 11194444.0,
-          "achievement_rate": 1237.06,
+          "actual": 7835556.0,
+          "achievement_rate": 866,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -3742,8 +3736,8 @@
         },
         "Engagement": {
           "target": 167025.0,
-          "actual": 2143617.0,
-          "achievement_rate": 1283.41,
+          "actual": 1500426.0,
+          "achievement_rate": 898,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -3760,8 +3754,8 @@
       "kpis": {
         "Impression": {
           "target": 3059025.0,
-          "actual": 1164740.0,
-          "achievement_rate": 38.08,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -3769,8 +3763,8 @@
         },
         "VideoViews": {
           "target": 2943185.0,
-          "actual": 1119444.0,
-          "achievement_rate": 38.04,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -3778,8 +3772,8 @@
         },
         "Engagement": {
           "target": 136433.0,
-          "actual": 51960.0,
-          "achievement_rate": 38.08,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -3796,8 +3790,8 @@
       "kpis": {
         "Impression": {
           "target": 22063020.0,
-          "actual": 10833333.0,
-          "achievement_rate": 49.1,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -3805,8 +3799,8 @@
         },
         "VideoViews": {
           "target": 21639498.0,
-          "actual": 10075000.0,
-          "achievement_rate": 46.56,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -3814,8 +3808,8 @@
         },
         "Engagement": {
           "target": 65172.0,
-          "actual": 32004.0,
-          "achievement_rate": 49.11,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -3832,28 +3826,28 @@
       "kpis": {
         "Impression": {
           "target": 81355869.0,
-          "actual": 32500000.0,
-          "achievement_rate": 39.95,
+          "actual": 311483871.0,
+          "achievement_rate": 383,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 29173243.0,
-          "actual": 11194444.0,
-          "achievement_rate": 38.37,
+          "actual": 107288889.0,
+          "achievement_rate": 368,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 5384615.0,
-          "actual": 2143617.0,
-          "achievement_rate": 39.81,
+          "actual": 20544681.0,
+          "achievement_rate": 382,
           "target_rate": 80,
-          "achieved": false,
+          "achieved": true,
           "priority": 3,
           "completion": 0
         }
@@ -3868,28 +3862,28 @@
       "kpis": {
         "Impression": {
           "target": 1261789.0,
-          "actual": 32500000.0,
-          "achievement_rate": 2575.71,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 452463.0,
-          "actual": 11194444.0,
-          "achievement_rate": 2474.11,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 83513.0,
-          "actual": 2143617.0,
-          "achievement_rate": 2566.81,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3904,8 +3898,8 @@
       "kpis": {
         "Impression": {
           "target": 8280494.0,
-          "actual": 32500000.0,
-          "achievement_rate": 392.49,
+          "actual": 22748387.0,
+          "achievement_rate": 275,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -3913,8 +3907,8 @@
         },
         "VideoViews": {
           "target": 2969286.0,
-          "actual": 11194444.0,
-          "achievement_rate": 377.01,
+          "actual": 7835556.0,
+          "achievement_rate": 264,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -3922,8 +3916,8 @@
         },
         "Engagement": {
           "target": 548052.0,
-          "actual": 2143617.0,
-          "achievement_rate": 391.13,
+          "actual": 1500426.0,
+          "achievement_rate": 274,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -3940,28 +3934,28 @@
       "kpis": {
         "Impression": {
           "target": 21917499.0,
-          "actual": 33583333.0,
-          "achievement_rate": 153.23,
+          "actual": 14103333.0,
+          "achievement_rate": 64,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 869275.0,
-          "actual": 1325658.0,
-          "achievement_rate": 152.5,
+          "actual": 556711.0,
+          "achievement_rate": 64,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 883783.0,
-          "actual": 1343333.0,
-          "achievement_rate": 152.0,
+          "actual": 564133.0,
+          "achievement_rate": 64,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -3976,8 +3970,8 @@
       "kpis": {
         "Impression": {
           "target": 16412980.0,
-          "actual": 10494792.0,
-          "achievement_rate": 63.94,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -3985,8 +3979,8 @@
         },
         "VideoViews": {
           "target": 1523359.0,
-          "actual": 978155.0,
-          "achievement_rate": 64.21,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -3994,8 +3988,8 @@
         },
         "Engagement": {
           "target": 1570596.0,
-          "actual": 1007500.0,
-          "achievement_rate": 64.15,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -4012,8 +4006,8 @@
       "kpis": {
         "Impression": {
           "target": 36448312.0,
-          "actual": 9687500.0,
-          "achievement_rate": 26.58,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -4021,8 +4015,8 @@
         },
         "VideoViews": {
           "target": 14239699.0,
-          "actual": 3731481.0,
-          "achievement_rate": 26.2,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -4030,8 +4024,8 @@
         },
         "Engagement": {
           "target": 14383634.0,
-          "actual": 3875000.0,
-          "achievement_rate": 26.94,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -4048,28 +4042,28 @@
       "kpis": {
         "Impression": {
           "target": 944004.0,
-          "actual": 3704044.0,
-          "achievement_rate": 392.38,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 769922.0,
-          "actual": 3053030.0,
-          "achievement_rate": 396.54,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 772158.0,
-          "actual": 3053030.0,
-          "achievement_rate": 395.39,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -4084,28 +4078,28 @@
       "kpis": {
         "Impression": {
           "target": 3445191.0,
-          "actual": 5193299.0,
-          "achievement_rate": 150.74,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 1,
           "completion": 0
         },
         "VideoViews": {
           "target": 632864.0,
-          "actual": 950472.0,
-          "achievement_rate": 150.19,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 2,
           "completion": 0
         },
         "Engagement": {
           "target": 678528.0,
-          "actual": 1017677.0,
-          "achievement_rate": 149.98,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
-          "achieved": true,
+          "achieved": false,
           "priority": 3,
           "completion": 0
         }
@@ -4120,8 +4114,8 @@
       "kpis": {
         "Impression": {
           "target": 2523578.0,
-          "actual": 32500000.0,
-          "achievement_rate": 1287.85,
+          "actual": 22748387.0,
+          "achievement_rate": 901,
           "target_rate": 80,
           "achieved": true,
           "priority": 1,
@@ -4129,8 +4123,8 @@
         },
         "VideoViews": {
           "target": 904925.0,
-          "actual": 11194444.0,
-          "achievement_rate": 1237.06,
+          "actual": 7835556.0,
+          "achievement_rate": 866,
           "target_rate": 80,
           "achieved": true,
           "priority": 2,
@@ -4138,8 +4132,8 @@
         },
         "Engagement": {
           "target": 167025.0,
-          "actual": 2143617.0,
-          "achievement_rate": 1283.41,
+          "actual": 1500426.0,
+          "achievement_rate": 898,
           "target_rate": 80,
           "achieved": true,
           "priority": 3,
@@ -4156,8 +4150,8 @@
       "kpis": {
         "Impression": {
           "target": 2589745.0,
-          "actual": 1183901.0,
-          "achievement_rate": 45.71,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -4165,8 +4159,8 @@
         },
         "VideoViews": {
           "target": 2509283.0,
-          "actual": 1144886.0,
-          "achievement_rate": 45.63,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -4174,8 +4168,8 @@
         },
         "Engagement": {
           "target": 151194.0,
-          "actual": 69102.0,
-          "achievement_rate": 45.7,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -4192,8 +4186,8 @@
       "kpis": {
         "Impression": {
           "target": 17905456.0,
-          "actual": 8760870.0,
-          "achievement_rate": 48.93,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
@@ -4201,8 +4195,8 @@
         },
         "VideoViews": {
           "target": 17587456.0,
-          "actual": 8395833.0,
-          "achievement_rate": 47.74,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 2,
@@ -4210,8 +4204,8 @@
         },
         "Engagement": {
           "target": 50992.0,
-          "actual": 25037.0,
-          "achievement_rate": 49.1,
+          "actual": 0.0,
+          "achievement_rate": 0,
           "target_rate": 80,
           "achieved": false,
           "priority": 3,
@@ -4221,55 +4215,11 @@
     }
   },
   "stage_budget": {
-    "IN": {
-      "1st": {
-        "target": 99045.8,
-        "actual": 99044.0,
-        "error_percentage": 0.0,
-        "range_match": 20,
-        "satisfied": true,
-        "target_percentage": 100.0,
-        "actual_percentage": 100.0
-      }
-    },
-    "PH": {
-      "1st": {
-        "target": 113045.8,
-        "actual": 113050.0,
-        "error_percentage": 0.0,
-        "range_match": 20,
-        "satisfied": true,
-        "target_percentage": 100.0,
-        "actual_percentage": 100.0
-      }
-    },
-    "PK": {
-      "1st": {
-        "target": 106045.8,
-        "actual": 106050.0,
-        "error_percentage": 0.0,
-        "range_match": 20,
-        "satisfied": true,
-        "target_percentage": 100.0,
-        "actual_percentage": 100.0
-      }
-    },
     "SA": {
       "1st": {
         "target": 141045.8,
-        "actual": 141050.0,
-        "error_percentage": 0.0,
-        "range_match": 20,
-        "satisfied": true,
-        "target_percentage": 100.0,
-        "actual_percentage": 100.0
-      }
-    },
-    "DE": {
-      "1st": {
-        "target": 67022.92,
-        "actual": 67023.0,
-        "error_percentage": 0.0,
+        "actual": 83937.0,
+        "error_percentage": 0,
         "range_match": 20,
         "satisfied": true,
         "target_percentage": 100.0,
@@ -4279,19 +4229,52 @@
     "JP": {
       "1st": {
         "target": 111778.63,
-        "actual": 111776.0,
-        "error_percentage": 0.0,
+        "actual": 65540.0,
+        "error_percentage": 0,
         "range_match": 20,
         "satisfied": true,
         "target_percentage": 100.0,
         "actual_percentage": 100.0
       }
     },
-    "TH": {
+    "DE": {
+      "1st": {
+        "target": 67022.92,
+        "actual": 69831.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "PK": {
+      "1st": {
+        "target": 106045.8,
+        "actual": 163153.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "EG": {
       "1st": {
         "target": 141045.8,
-        "actual": 141050.0,
-        "error_percentage": 0.0,
+        "actual": 198153.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "IN": {
+      "1st": {
+        "target": 99045.8,
+        "actual": 90500.0,
+        "error_percentage": 0,
         "range_match": 20,
         "satisfied": true,
         "target_percentage": 100.0,
@@ -4301,19 +4284,19 @@
     "MY": {
       "1st": {
         "target": 120045.8,
-        "actual": 120050.0,
-        "error_percentage": 0.0,
+        "actual": 75448.0,
+        "error_percentage": 0,
         "range_match": 20,
         "satisfied": true,
         "target_percentage": 100.0,
         "actual_percentage": 100.0
       }
     },
-    "EG": {
+    "TH": {
       "1st": {
         "target": 141045.8,
-        "actual": 141050.0,
-        "error_percentage": 0.0,
+        "actual": 119126.0,
+        "error_percentage": 0,
         "range_match": 20,
         "satisfied": true,
         "target_percentage": 100.0,
@@ -4323,8 +4306,19 @@
     "GB": {
       "1st": {
         "target": 102022.9,
-        "actual": 102018.0,
-        "error_percentage": 0.0,
+        "actual": 106298.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 100.0,
+        "actual_percentage": 100.0
+      }
+    },
+    "PH": {
+      "1st": {
+        "target": 113045.8,
+        "actual": 170153.0,
+        "error_percentage": 0,
         "range_match": 20,
         "satisfied": true,
         "target_percentage": 100.0,
@@ -4333,1528 +4327,568 @@
     }
   },
   "marketingfunnel_budget": {
-    "IN": {
-      "Awareness": {
-        "target": 7816.79,
-        "actual": 27012.0,
-        "error_percentage": 19.38,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 7.89,
-        "actual_percentage": 27.27272727272727
-      },
-      "Consideration": {
-        "target": 77579.01,
-        "actual": 63028.0,
-        "error_percentage": 14.69,
-        "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 78.33,
-        "actual_percentage": 63.63636363636363
-      },
-      "Traffic": {
-        "target": 13650.0,
-        "actual": 9004.0,
-        "error_percentage": 4.69,
-        "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 13.78,
-        "actual_percentage": 9.090909090909092
-      }
-    },
-    "PH": {
-      "Awareness": {
-        "target": 7816.79,
-        "actual": 32300.0,
-        "error_percentage": 21.66,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 6.91,
-        "actual_percentage": 28.57142857142857
-      },
-      "Consideration": {
-        "target": 99629.01,
-        "actual": 72675.0,
-        "error_percentage": 23.84,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 88.13,
-        "actual_percentage": 64.28571428571429
-      },
-      "Traffic": {
-        "target": 5600.0,
-        "actual": 8075.0,
-        "error_percentage": 2.19,
-        "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 4.95,
-        "actual_percentage": 7.142857142857142
-      }
-    },
-    "PK": {
-      "Awareness": {
-        "target": 7816.79,
-        "actual": 30300.0,
-        "error_percentage": 21.2,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 7.37,
-        "actual_percentage": 28.57142857142857
-      },
-      "Consideration": {
-        "target": 95709.01,
-        "actual": 68175.0,
-        "error_percentage": 25.96,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 90.25,
-        "actual_percentage": 64.28571428571429
-      },
-      "Traffic": {
-        "target": 2520.0,
-        "actual": 7575.0,
-        "error_percentage": 4.76,
-        "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 2.38,
-        "actual_percentage": 7.142857142857142
-      }
-    },
     "SA": {
+      "Traffic": {
+        "target": 11340.0,
+        "actual": 53664.0,
+        "error_percentage": 56,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 8.04,
+        "actual_percentage": 63.933664534114875
+      },
       "Awareness": {
         "target": 7816.79,
-        "actual": 40300.0,
-        "error_percentage": 23.03,
+        "actual": 23221.0,
+        "error_percentage": 22,
         "range_match": 15,
         "satisfied": false,
         "target_percentage": 5.54,
-        "actual_percentage": 28.57142857142857
+        "actual_percentage": 27.664796216209776
       },
       "Consideration": {
         "target": 121889.01,
-        "actual": 90675.0,
-        "error_percentage": 22.13,
+        "actual": 7052.0,
+        "error_percentage": 78,
         "range_match": 15,
         "satisfied": false,
         "target_percentage": 86.42,
-        "actual_percentage": 64.28571428571429
-      },
-      "Traffic": {
-        "target": 11340.0,
-        "actual": 10075.0,
-        "error_percentage": 0.9,
-        "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 8.04,
-        "actual_percentage": 7.142857142857142
-      }
-    },
-    "DE": {
-      "Awareness": {
-        "target": 3908.4,
-        "actual": 18279.0,
-        "error_percentage": 21.44,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 5.83,
-        "actual_percentage": 27.27272727272727
-      },
-      "Consideration": {
-        "target": 52194.52,
-        "actual": 42651.0,
-        "error_percentage": 14.24,
-        "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 77.88,
-        "actual_percentage": 63.63636363636363
-      },
-      "Traffic": {
-        "target": 10920.0,
-        "actual": 6093.0,
-        "error_percentage": 7.2,
-        "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 16.29,
-        "actual_percentage": 9.090909090909092
+        "actual_percentage": 8.401539249675352
       }
     },
     "JP": {
-      "Awareness": {
-        "target": 4885.51,
-        "actual": 31936.0,
-        "error_percentage": 24.2,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 4.37,
-        "actual_percentage": 28.57142857142857
-      },
-      "Consideration": {
-        "target": 94293.12,
-        "actual": 71856.0,
-        "error_percentage": 20.07,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 84.36,
-        "actual_percentage": 64.28571428571429
-      },
       "Traffic": {
         "target": 12600.0,
-        "actual": 7984.0,
-        "error_percentage": 4.13,
+        "actual": 5589.0,
+        "error_percentage": 3,
         "range_match": 15,
         "satisfied": true,
         "target_percentage": 11.27,
-        "actual_percentage": 7.142857142857142
-      }
-    },
-    "TH": {
+        "actual_percentage": 8.527616722612146
+      },
       "Awareness": {
-        "target": 7816.79,
-        "actual": 40300.0,
-        "error_percentage": 23.03,
+        "target": 4885.51,
+        "actual": 54362.0,
+        "error_percentage": 79,
         "range_match": 15,
         "satisfied": false,
-        "target_percentage": 5.54,
-        "actual_percentage": 28.57142857142857
+        "target_percentage": 4.37,
+        "actual_percentage": 82.94476655477571
       },
       "Consideration": {
-        "target": 108029.01,
-        "actual": 90675.0,
-        "error_percentage": 12.3,
+        "target": 94293.12,
+        "actual": 5589.0,
+        "error_percentage": 76,
         "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 76.59,
-        "actual_percentage": 64.28571428571429
-      },
-      "Traffic": {
-        "target": 25200.0,
-        "actual": 10075.0,
-        "error_percentage": 10.73,
-        "range_match": 15,
-        "satisfied": true,
-        "target_percentage": 17.87,
-        "actual_percentage": 7.142857142857142
+        "satisfied": false,
+        "target_percentage": 84.36,
+        "actual_percentage": 8.527616722612146
       }
     },
-    "MY": {
-      "Awareness": {
-        "target": 7816.79,
-        "actual": 34300.0,
-        "error_percentage": 22.06,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 6.51,
-        "actual_percentage": 28.57142857142857
-      },
-      "Consideration": {
-        "target": 100469.01,
-        "actual": 77175.0,
-        "error_percentage": 19.4,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 83.69,
-        "actual_percentage": 64.28571428571429
-      },
+    "DE": {
       "Traffic": {
-        "target": 11760.0,
-        "actual": 8575.0,
-        "error_percentage": 2.66,
+        "target": 10920.0,
+        "actual": 53618.0,
+        "error_percentage": 60,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 16.29,
+        "actual_percentage": 76.78251779295728
+      },
+      "Awareness": {
+        "target": 3908.4,
+        "actual": 12862.0,
+        "error_percentage": 13,
         "range_match": 15,
         "satisfied": true,
-        "target_percentage": 9.8,
-        "actual_percentage": 7.142857142857142
+        "target_percentage": 5.83,
+        "actual_percentage": 18.41875384857728
+      },
+      "Consideration": {
+        "target": 52194.52,
+        "actual": 3351.0,
+        "error_percentage": 73,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 77.88,
+        "actual_percentage": 4.798728358465438
+      }
+    },
+    "PK": {
+      "Traffic": {
+        "target": 2520.0,
+        "actual": 5302.0,
+        "error_percentage": 1,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 2.38,
+        "actual_percentage": 3.2497103945376424
+      },
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 65106.0,
+        "error_percentage": 33,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 7.37,
+        "actual_percentage": 39.90487456559181
+      },
+      "Consideration": {
+        "target": 95709.01,
+        "actual": 92745.0,
+        "error_percentage": 33,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 90.25,
+        "actual_percentage": 56.84541503987055
       }
     },
     "EG": {
-      "Awareness": {
-        "target": 7816.79,
-        "actual": 40300.0,
-        "error_percentage": 23.03,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 5.54,
-        "actual_percentage": 28.57142857142857
-      },
-      "Consideration": {
-        "target": 114959.01,
-        "actual": 90675.0,
-        "error_percentage": 17.21,
-        "range_match": 15,
-        "satisfied": false,
-        "target_percentage": 81.5,
-        "actual_percentage": 64.28571428571429
-      },
       "Traffic": {
         "target": 18270.0,
-        "actual": 10075.0,
-        "error_percentage": 5.81,
+        "actual": 7052.0,
+        "error_percentage": 9,
         "range_match": 15,
         "satisfied": true,
         "target_percentage": 12.95,
-        "actual_percentage": 7.142857142857142
+        "actual_percentage": 3.558866128698531
+      },
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 138266.0,
+        "error_percentage": 64,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 5.54,
+        "actual_percentage": 69.7773942357673
+      },
+      "Consideration": {
+        "target": 114959.01,
+        "actual": 52835.0,
+        "error_percentage": 55,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 81.5,
+        "actual_percentage": 26.663739635534156
+      }
+    },
+    "IN": {
+      "Traffic": {
+        "target": 13650.0,
+        "actual": 35103.0,
+        "error_percentage": 25,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 13.78,
+        "actual_percentage": 38.7878453038674
+      },
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 4952.0,
+        "error_percentage": 2,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 7.89,
+        "actual_percentage": 5.47182320441989
+      },
+      "Consideration": {
+        "target": 77579.01,
+        "actual": 50445.0,
+        "error_percentage": 23,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 78.33,
+        "actual_percentage": 55.7403314917127
+      }
+    },
+    "MY": {
+      "Traffic": {
+        "target": 11760.0,
+        "actual": 6002.0,
+        "error_percentage": 2,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 9.8,
+        "actual_percentage": 7.955147916445764
+      },
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 63444.0,
+        "error_percentage": 78,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 6.51,
+        "actual_percentage": 84.08970416710847
+      },
+      "Consideration": {
+        "target": 100469.01,
+        "actual": 6002.0,
+        "error_percentage": 76,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 83.69,
+        "actual_percentage": 7.955147916445764
+      }
+    },
+    "TH": {
+      "Traffic": {
+        "target": 25200.0,
+        "actual": 96560.0,
+        "error_percentage": 63,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 17.87,
+        "actual_percentage": 81.05703205009821
+      },
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 15514.0,
+        "error_percentage": 7,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 5.54,
+        "actual_percentage": 13.023185534643991
+      },
+      "Consideration": {
+        "target": 108029.01,
+        "actual": 7052.0,
+        "error_percentage": 71,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 76.59,
+        "actual_percentage": 5.919782415257794
       }
     },
     "GB": {
-      "Awareness": {
-        "target": 3908.4,
-        "actual": 29148.0,
-        "error_percentage": 24.74,
+      "Traffic": {
+        "target": 17640.0,
+        "actual": 81618.0,
+        "error_percentage": 59,
         "range_match": 15,
         "satisfied": false,
+        "target_percentage": 17.29,
+        "actual_percentage": 76.78225366422699
+      },
+      "Awareness": {
+        "target": 3908.4,
+        "actual": 19579.0,
+        "error_percentage": 15,
+        "range_match": 15,
+        "satisfied": true,
         "target_percentage": 3.83,
-        "actual_percentage": 28.57142857142857
+        "actual_percentage": 18.41897307569286
       },
       "Consideration": {
         "target": 80474.5,
-        "actual": 65583.0,
-        "error_percentage": 14.59,
+        "actual": 5101.0,
+        "error_percentage": 74,
         "range_match": 15,
-        "satisfied": true,
+        "satisfied": false,
         "target_percentage": 78.88,
-        "actual_percentage": 64.28571428571429
-      },
+        "actual_percentage": 4.798773260080152
+      }
+    },
+    "PH": {
       "Traffic": {
-        "target": 17640.0,
-        "actual": 7287.0,
-        "error_percentage": 10.15,
+        "target": 5600.0,
+        "actual": 5652.0,
+        "error_percentage": 2,
         "range_match": 15,
         "satisfied": true,
-        "target_percentage": 17.29,
-        "actual_percentage": 7.142857142857142
+        "target_percentage": 4.95,
+        "actual_percentage": 3.321716337649057
+      },
+      "Awareness": {
+        "target": 7816.79,
+        "actual": 155465.0,
+        "error_percentage": 84,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 6.91,
+        "actual_percentage": 91.36776900789289
+      },
+      "Consideration": {
+        "target": 99629.01,
+        "actual": 9036.0,
+        "error_percentage": 83,
+        "range_match": 15,
+        "satisfied": false,
+        "target_percentage": 88.13,
+        "actual_percentage": 5.310514654458046
       }
     }
   },
   "media_budget": {
-    "IN": {
-      "Meta": {
-        "target": 71789.69,
-        "actual": 72032.0,
-        "error_percentage": 0.25,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 72.48,
-        "actual_percentage": 72.72727272727273
-      },
-      "Google": {
-        "target": 27256.11,
-        "actual": 27012.0,
-        "error_percentage": 0.25,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 27.52,
-        "actual_percentage": 27.27272727272727
-      }
-    },
-    "PH": {
-      "Meta": {
-        "target": 64989.31,
-        "actual": 64600.0,
-        "error_percentage": 0.35,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 57.49,
-        "actual_percentage": 57.14285714285714
-      },
-      "TikTok": {
-        "target": 39500.76,
-        "actual": 24225.0,
-        "error_percentage": 13.51,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 34.94,
-        "actual_percentage": 21.428571428571427
-      },
-      "Google": {
-        "target": 8555.73,
-        "actual": 24225.0,
-        "error_percentage": 13.86,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 7.57,
-        "actual_percentage": 21.428571428571427
-      }
-    },
-    "PK": {
-      "Meta": {
-        "target": 73389.31,
-        "actual": 60600.0,
-        "error_percentage": 12.07,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 69.21,
-        "actual_percentage": 57.14285714285714
-      },
-      "TikTok": {
-        "target": 27180.76,
-        "actual": 22725.0,
-        "error_percentage": 4.2,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 25.63,
-        "actual_percentage": 21.428571428571427
-      },
-      "Google": {
-        "target": 5475.73,
-        "actual": 22725.0,
-        "error_percentage": 16.27,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 5.16,
-        "actual_percentage": 21.428571428571427
-      }
-    },
     "SA": {
-      "Meta": {
-        "target": 78989.31,
-        "actual": 80600.0,
-        "error_percentage": 1.14,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 56.0,
-        "actual_percentage": 57.14285714285714
-      },
-      "TikTok": {
-        "target": 47760.76,
-        "actual": 30225.0,
-        "error_percentage": 12.43,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 33.86,
-        "actual_percentage": 21.428571428571427
-      },
       "Google": {
         "target": 14295.73,
-        "actual": 30225.0,
-        "error_percentage": 11.29,
+        "actual": 60716.0,
+        "error_percentage": 62,
         "range_match": 5,
         "satisfied": false,
         "target_percentage": 10.14,
-        "actual_percentage": 21.428571428571427
-      }
-    },
-    "DE": {
-      "Meta": {
-        "target": 49299.86,
-        "actual": 48744.0,
-        "error_percentage": 0.83,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 73.56,
-        "actual_percentage": 72.72727272727273
+        "actual_percentage": 72.33520378379022
       },
-      "Google": {
-        "target": 17723.06,
-        "actual": 18279.0,
-        "error_percentage": 0.83,
+      "Meta": {
+        "target": 78989.31,
+        "actual": 16169.0,
+        "error_percentage": 37,
         "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 26.44,
-        "actual_percentage": 27.27272727272727
+        "satisfied": false,
+        "target_percentage": 56.0,
+        "actual_percentage": 19.263256966534424
+      },
+      "TikTok": {
+        "target": 47760.76,
+        "actual": 7052.0,
+        "error_percentage": 25,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 33.86,
+        "actual_percentage": 8.401539249675352
       }
     },
     "JP": {
+      "Google": {
+        "target": 14447.33,
+        "actual": 8942.0,
+        "error_percentage": 1,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 12.92,
+        "actual_percentage": 13.64357644186756
+      },
       "Meta": {
         "target": 74568.33,
-        "actual": 63872.0,
-        "error_percentage": 9.57,
+        "actual": 12547.0,
+        "error_percentage": 48,
         "range_match": 5,
         "satisfied": false,
         "target_percentage": 66.71,
-        "actual_percentage": 57.14285714285714
+        "actual_percentage": 19.144034177601466
       },
       "TikTok": {
         "target": 22762.97,
-        "actual": 23952.0,
-        "error_percentage": 1.07,
+        "actual": 44051.0,
+        "error_percentage": 47,
         "range_match": 5,
-        "satisfied": true,
+        "satisfied": false,
         "target_percentage": 20.36,
-        "actual_percentage": 21.428571428571427
-      },
-      "Google": {
-        "target": 14447.33,
-        "actual": 23952.0,
-        "error_percentage": 8.51,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 12.92,
-        "actual_percentage": 21.428571428571427
-      }
-    },
-    "TH": {
-      "Meta": {
-        "target": 69539.31,
-        "actual": 80600.0,
-        "error_percentage": 7.84,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 49.3,
-        "actual_percentage": 57.14285714285714
-      },
-      "TikTok": {
-        "target": 43350.76,
-        "actual": 30225.0,
-        "error_percentage": 9.31,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 30.74,
-        "actual_percentage": 21.428571428571427
-      },
-      "Google": {
-        "target": 28155.73,
-        "actual": 30225.0,
-        "error_percentage": 1.47,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 19.96,
-        "actual_percentage": 21.428571428571427
-      }
-    },
-    "MY": {
-      "Meta": {
-        "target": 60509.31,
-        "actual": 68600.0,
-        "error_percentage": 6.73,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 50.41,
-        "actual_percentage": 57.14285714285714
-      },
-      "TikTok": {
-        "target": 44820.76,
-        "actual": 25725.0,
-        "error_percentage": 15.91,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 37.34,
-        "actual_percentage": 21.428571428571427
-      },
-      "Google": {
-        "target": 14715.73,
-        "actual": 25725.0,
-        "error_percentage": 9.17,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 12.26,
-        "actual_percentage": 21.428571428571427
-      }
-    },
-    "EG": {
-      "Meta": {
-        "target": 82769.31,
-        "actual": 80600.0,
-        "error_percentage": 1.54,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 58.68,
-        "actual_percentage": 57.14285714285714
-      },
-      "TikTok": {
-        "target": 37050.76,
-        "actual": 30225.0,
-        "error_percentage": 4.84,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 26.27,
-        "actual_percentage": 21.428571428571427
-      },
-      "Google": {
-        "target": 21225.73,
-        "actual": 30225.0,
-        "error_percentage": 6.38,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 15.05,
-        "actual_percentage": 21.428571428571427
-      }
-    },
-    "GB": {
-      "Meta": {
-        "target": 44534.66,
-        "actual": 58296.0,
-        "error_percentage": 13.49,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 43.65,
-        "actual_percentage": 57.14285714285714
-      },
-      "TikTok": {
-        "target": 38370.38,
-        "actual": 21861.0,
-        "error_percentage": 16.18,
-        "range_match": 5,
-        "satisfied": false,
-        "target_percentage": 37.61,
-        "actual_percentage": 21.428571428571427
-      },
-      "Google": {
-        "target": 19117.86,
-        "actual": 21861.0,
-        "error_percentage": 2.69,
-        "range_match": 5,
-        "satisfied": true,
-        "target_percentage": 18.74,
-        "actual_percentage": 21.428571428571427
-      }
-    }
-  },
-  "adtype_budget_allocation": {
-    "IN": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 9004.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 9004.0,
-        "satisfied": true
-      }
-    },
-    "PH": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Reach": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Reach",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Video Views": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Video Views",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|CI Follows": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "CI Follows",
-        "budget": 8075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 8075.0,
-        "satisfied": true
-      }
-    },
-    "PK": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Reach": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Reach",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Video Views": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Video Views",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "TikTok|TT|CI Follows": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "CI Follows",
-        "budget": 7575.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 7575.0,
-        "satisfied": true
-      }
-    },
-    "SA": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Reach": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Video Views": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|CI Follows": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "CI Follows",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
+        "actual_percentage": 67.21238938053096
       }
     },
     "DE": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 6093.0,
-        "satisfied": true
+      "Google": {
+        "target": 17723.06,
+        "actual": 65809.0,
+        "error_percentage": 68,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 26.44,
+        "actual_percentage": 94.24038034683736
       },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 6093.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 6093.0,
-        "satisfied": true
+      "Meta": {
+        "target": 49299.86,
+        "actual": 4022.0,
+        "error_percentage": 68,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 73.56,
+        "actual_percentage": 5.759619653162636
       }
     },
-    "JP": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 7984.0,
-        "satisfied": true
+    "PK": {
+      "Google": {
+        "target": 5475.73,
+        "actual": 8483.0,
+        "error_percentage": 0,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 5.16,
+        "actual_percentage": 5.199414046937537
       },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 7984.0,
-        "satisfied": true
+      "Meta": {
+        "target": 73389.31,
+        "actual": 131464.0,
+        "error_percentage": 11,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 69.21,
+        "actual_percentage": 80.5771269912291
       },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Reach": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Reach",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Video Views": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Video Views",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "TikTok|TT|CI Follows": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "CI Follows",
-        "budget": 7984.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 7984.0,
-        "satisfied": true
-      }
-    },
-    "TH": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Reach": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Video Views": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|CI Follows": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "CI Follows",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
-      }
-    },
-    "MY": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Reach": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Reach",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Video Views": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Video Views",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "TikTok|TT|CI Follows": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "CI Follows",
-        "budget": 8575.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 8575.0,
-        "satisfied": true
+      "TikTok": {
+        "target": 27180.76,
+        "actual": 23206.0,
+        "error_percentage": 11,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 25.63,
+        "actual_percentage": 14.223458961833371
       }
     },
     "EG": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 10075.0,
-        "satisfied": true
+      "Google": {
+        "target": 21225.73,
+        "actual": 11283.0,
+        "error_percentage": 9,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 15.05,
+        "actual_percentage": 5.694084873809632
       },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
+      "Meta": {
+        "target": 82769.31,
+        "actual": 154093.0,
+        "error_percentage": 19,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 58.68,
+        "actual_percentage": 77.76465660373549
       },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 10075.0,
-        "satisfied": true
+      "TikTok": {
+        "target": 37050.76,
+        "actual": 32777.0,
+        "error_percentage": 10,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 26.27,
+        "actual_percentage": 16.54125852245487
+      }
+    },
+    "IN": {
+      "Google": {
+        "target": 27256.11,
+        "actual": 40055.0,
+        "error_percentage": 17,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 27.52,
+        "actual_percentage": 44.25966850828729
       },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 10075.0,
-        "satisfied": true
+      "Meta": {
+        "target": 71789.69,
+        "actual": 50445.0,
+        "error_percentage": 17,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 72.48,
+        "actual_percentage": 55.7403314917127
+      }
+    },
+    "MY": {
+      "Google": {
+        "target": 14715.73,
+        "actual": 12004.0,
+        "error_percentage": 4,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 12.26,
+        "actual_percentage": 15.910295832891528
       },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
+      "Meta": {
+        "target": 60509.31,
+        "actual": 7202.0,
+        "error_percentage": 41,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 50.41,
+        "actual_percentage": 9.545647333262645
       },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
+      "TikTok": {
+        "target": 44820.76,
+        "actual": 56242.0,
+        "error_percentage": 37,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 37.34,
+        "actual_percentage": 74.54405683384583
+      }
+    },
+    "TH": {
+      "Google": {
+        "target": 28155.73,
+        "actual": 103612.0,
+        "error_percentage": 67,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 19.96,
+        "actual_percentage": 86.97681446535601
       },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 10075.0,
-        "satisfied": true
+      "Meta": {
+        "target": 69539.31,
+        "actual": 8462.0,
+        "error_percentage": 42,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 49.3,
+        "actual_percentage": 7.103403119386196
       },
-      "TikTok|TT|Reach": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Video Views": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Video Views",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "TikTok|TT|CI Follows": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "CI Follows",
-        "budget": 10075.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 10075.0,
-        "satisfied": true
+      "TikTok": {
+        "target": 43350.76,
+        "actual": 7052.0,
+        "error_percentage": 25,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 30.74,
+        "actual_percentage": 5.919782415257794
       }
     },
     "GB": {
-      "Meta|FB|Page Likes": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Page Likes",
-        "budget": 7287.0,
-        "satisfied": true
+      "Google": {
+        "target": 19117.86,
+        "actual": 95075.0,
+        "error_percentage": 71,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 18.74,
+        "actual_percentage": 89.44194622664584
       },
-      "Meta|FB|Reach": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Reach",
-        "budget": 7287.0,
-        "satisfied": true
+      "Meta": {
+        "target": 44534.66,
+        "actual": 6122.0,
+        "error_percentage": 38,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 43.65,
+        "actual_percentage": 5.759280513274003
       },
-      "Meta|IG|Post Engagement": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Post Engagement",
-        "budget": 7287.0,
-        "satisfied": true
+      "TikTok": {
+        "target": 38370.38,
+        "actual": 5101.0,
+        "error_percentage": 33,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 37.61,
+        "actual_percentage": 4.798773260080152
+      }
+    },
+    "PH": {
+      "Google": {
+        "target": 8555.73,
+        "actual": 9043.0,
+        "error_percentage": 2,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 7.57,
+        "actual_percentage": 5.314628598966812
       },
-      "Meta|IG|Page Likes": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Page Likes",
-        "budget": 7287.0,
-        "satisfied": true
+      "Meta": {
+        "target": 64989.31,
+        "actual": 152074.0,
+        "error_percentage": 32,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 57.49,
+        "actual_percentage": 89.37485674657513
       },
-      "Meta|IG|Video Views": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Video Views",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "Meta|FB|Video Views": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Video Views",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "Google|YTB|VRC 2.0": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VRC 2.0",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Reach": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Reach",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "Meta|FB|Post Engagement": {
-        "media": "Meta",
-        "platform": "FB",
-        "adtype": "Post Engagement",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "TikTok|TT|Video Views": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "Video Views",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "Google|GG|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "adtype": "Demand Gen",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "Google|YTB|VVC": {
-        "media": "Google",
-        "platform": "YTB",
-        "adtype": "VVC",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "TikTok|TT|CI Follows": {
-        "media": "TikTok",
-        "platform": "TT",
-        "adtype": "CI Follows",
-        "budget": 7287.0,
-        "satisfied": true
-      },
-      "Meta|IG|Reach": {
-        "media": "Meta",
-        "platform": "IG",
-        "adtype": "Reach",
-        "budget": 7287.0,
-        "satisfied": true
+      "TikTok": {
+        "target": 39500.76,
+        "actual": 9036.0,
+        "error_percentage": 30,
+        "range_match": 5,
+        "satisfied": false,
+        "target_percentage": 34.94,
+        "actual_percentage": 5.310514654458046
       }
     }
   }

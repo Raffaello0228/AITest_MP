@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>测试报告 - 大小关系匹配-勾选必须达成-区域第一</title>
+  <style>
+    body { font-family: 'Microsoft YaHei', Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    h1 { color: #333; border-bottom: 3px solid #4CAF50; padding-bottom: 10px; }
+    h2 { color: #555; margin-top: 30px; border-left: 4px solid #4CAF50; padding-left: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+    th { background-color: #4CAF50; color: white; font-weight: bold; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    .status-ok { color: #4CAF50; font-weight: bold; }
+    .status-fail { color: #f44336; font-weight: bold; }
+    .summary { background: #e8f5e9; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    .config-table { background: #fff3e0; }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <h1>测试报告</h1>
+    <p><strong>测试用例</strong>: 大小关系匹配-勾选必须达成-区域第一</p>
+    <p><strong>UUID</strong>: a0fb2f84-0cea-4bf9-9656-20d6175b</p>
+    <p><strong>Job ID</strong>: 1766391832_1_bd222282</p>
+    <p><strong>生成时间</strong>: 2025-12-22 17:52:35</p>
+    <h2>测试配置</h2>
+    <table class='config-table'>
+      <tr><th>配置项</th><th>值</th></tr>
+      <tr><td>KPI目标达成率</td><td>80%</td></tr>
+      <tr><td>区域预算目标达成率</td><td>90%</td></tr>
+      <tr><td>区域KPI目标达成率</td><td>80%</td></tr>
+      <tr><td>广告类型KPI目标达成率</td><td>80%</td></tr>
+      <tr><td>阶段预算误差范围</td><td>20%</td></tr>
+      <tr><td>营销漏斗预算误差范围</td><td>15%</td></tr>
+      <tr><td>媒体预算误差范围</td><td>5%</td></tr>
+    </table>
+    <h3>KPI优先级</h3>
+    <table class='config-table'>
+      <tr><th>优先级</th><th>KPI</th></tr>
+      <tr><td>1</td><td>Impression</td></tr>
+      <tr><td>2</td><td>VideoViews</td></tr>
+      <tr><td>3</td><td>Engagement</td></tr>
+    </table>
+    <h3>模块优先级</h3>
+    <table class='config-table'>
+      <tr><th>优先级</th><th>模块</th></tr>
+      <tr><td>1</td><td>regionBudget</td></tr>
+      <tr><td>2</td><td>kpiInfo</td></tr>
+      <tr><td>3</td><td>media</td></tr>
+      <tr><td>4</td><td>marketingFunnel</td></tr>
+      <tr><td>5</td><td>stage</td></tr>
+      <tr><td>6</td><td>regionKPI</td></tr>
+      <tr><td>7</td><td>mediaMarketingFunnelAdtype</td></tr>
+    </table>
+    <h2>全局 KPI 达成情况</h2>
+    <div class='summary'><strong>达成率</strong>: 3/3 (100.0%)</div>
+    <div class='summary'><strong>判断逻辑</strong>: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。</div>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>5,089,571,654</td><td>3,118,609,566</td><td>163.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>1,078,110,741</td><td>869,046,442</td><td>124.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>292,925,923</td><td>264,644,640</td><td>111.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h2>区域预算达成情况</h2>
+    <div class='summary'><strong>匹配类型</strong>: 大小关系匹配 | <strong>达成率</strong>: 0/10 (0.0%)</div>
+    <div class='summary'><strong>顺序一致性</strong>: <span class='status-fail'>✗ 不一致</span></div>
+    <table>
+      <tr><th>区域</th><th>目标排名</th><th>实际排名</th><th>实际预算</th><th>目标预算</th><th>必须达成</th><th>状态</th></tr>
+      <tr><td>EG</td><td>1</td><td>3</td><td>127,431.00</td><td>141,045.80</td><td>否</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>SA</td><td>2</td><td>2</td><td>141,040.00</td><td>141,045.80</td><td>是</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>TH</td><td>3</td><td>1</td><td>141,041.00</td><td>141,045.80</td><td>是</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>MY</td><td>4</td><td>4</td><td>120,041.00</td><td>120,045.80</td><td>是</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>PH</td><td>5</td><td>5</td><td>117,546.00</td><td>113,045.80</td><td>否</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>JP</td><td>6</td><td>6</td><td>106,300.00</td><td>111,778.63</td><td>否</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>PK</td><td>7</td><td>9</td><td>106,294.00</td><td>106,045.80</td><td>是</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>GB</td><td>8</td><td>7</td><td>106,295.00</td><td>102,022.90</td><td>否</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>IN</td><td>9</td><td>8</td><td>106,294.00</td><td>99,045.80</td><td>是</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>DE</td><td>10</td><td>10</td><td>69,829.00</td><td>67,022.92</td><td>是</td><td class='status-fail'>✗ 未达成</td></tr>
+    </table>
+    <h2>Adtype 预算分配检查</h2>
+    <div class='summary'><strong>说明</strong>: 当 <code>allow_zero_budget=False</code> 时，检查每个推广区域下每个 Adtype 是否都分配了预算。按 (媒体, 平台, 广告类型) 聚合求和预算（跨所有 stage），只要预算 > 0 即视为已分配。</div>
+    <div class='summary'><strong>总体满足率</strong>: 134/134 (100.0%)</div>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>DE</td><td>11/11</td><td>100.0%</td></tr>
+      <tr><td>EG</td><td>14/14</td><td>100.0%</td></tr>
+      <tr><td>GB</td><td>14/14</td><td>100.0%</td></tr>
+      <tr><td>IN</td><td>11/11</td><td>100.0%</td></tr>
+      <tr><td>JP</td><td>14/14</td><td>100.0%</td></tr>
+      <tr><td>MY</td><td>14/14</td><td>100.0%</td></tr>
+      <tr><td>PH</td><td>14/14</td><td>100.0%</td></tr>
+      <tr><td>PK</td><td>14/14</td><td>100.0%</td></tr>
+      <tr><td>SA</td><td>14/14</td><td>100.0%</td></tr>
+      <tr><td>TH</td><td>14/14</td><td>100.0%</td></tr>
+    </table>
+    <div class='summary'><strong>✓ 所有 Adtype 都已分配预算</strong></div>
+    <h2>区域 KPI满足情况</h2>
+    <div class='summary'><strong>判断逻辑</strong>: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。</div>
+    <h3>汇总</h3>
+    <table>
+      <tr><th>区域</th><th>达成数/总数</th><th>达成率</th></tr>
+      <tr><td>DE</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>EG</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>GB</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>IN</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>JP</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>MY</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>PH</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>PK</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>SA</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>TH</td><td>3/3</td><td>100.0%</td></tr>
+    </table>
+    <h3>详细信息</h3>
+    <h4>DE</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>139,658,000</td><td>134,045,820</td><td>104.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>77,587,774</td><td>77,590,302</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>14,857,232</td><td>14,321,134</td><td>104.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>EG</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>498,506,335</td><td>349,723,137</td><td>143.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>119,049,410</td><td>119,051,167</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>28,948,483</td><td>28,949,496</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>GB</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>212,590,000</td><td>204,045,820</td><td>104.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>118,105,552</td><td>118,108,696</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>22,615,955</td><td>21,799,767</td><td>104.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>IN</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>1,432,824,444</td><td>1,098,926,766</td><td>130.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>101,384,008</td><td>90,933,918</td><td>111.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>69,382,944</td><td>69,384,802</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>JP</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>147,008,057</td><td>99,116,369</td><td>148.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>109,742,415</td><td>50,708,148</td><td>216.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>21,285,484</td><td>11,784,093</td><td>181.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>MY</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>363,818,613</td><td>138,482,400</td><td>263.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>122,763,880</td><td>56,074,422</td><td>219.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>24,097,530</td><td>13,427,858</td><td>179.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>PH</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>675,556,408</td><td>242,435,140</td><td>279.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>79,419,021</td><td>79,420,448</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>32,651,659</td><td>32,652,820</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>PK</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>604,086,472</td><td>467,109,466</td><td>129.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>151,208,649</td><td>151,210,601</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>31,675,767</td><td>31,676,916</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>SA</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>589,187,617</td><td>191,639,731</td><td>307.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>54,314,625</td><td>54,316,965</td><td>100.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>18,191,693</td><td>15,973,664</td><td>114.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h4>TH</h4>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>426,335,708</td><td>193,084,917</td><td>221.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>144,535,407</td><td>71,631,775</td><td>202.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Engagement</td><td>3</td><td>否</td><td>29,219,176</td><td>24,674,090</td><td>118.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h2>阶段预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 10/10 (100.0%)</div>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>DE</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>EG</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>GB</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>IN</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>JP</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>MY</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>PH</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>PK</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>SA</td><td>1/1</td><td>100.0%</td></tr>
+      <tr><td>TH</td><td>1/1</td><td>100.0%</td></tr>
+    </table>
+    <h2>营销漏斗预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 15/30 (50.0%)</div>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>DE</td><td>1/3</td><td>33.3%</td></tr>
+      <tr><td>EG</td><td>2/3</td><td>66.7%</td></tr>
+      <tr><td>GB</td><td>1/3</td><td>33.3%</td></tr>
+      <tr><td>IN</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>JP</td><td>1/3</td><td>33.3%</td></tr>
+      <tr><td>MY</td><td>1/3</td><td>33.3%</td></tr>
+      <tr><td>PH</td><td>1/3</td><td>33.3%</td></tr>
+      <tr><td>PK</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>SA</td><td>1/3</td><td>33.3%</td></tr>
+      <tr><td>TH</td><td>1/3</td><td>33.3%</td></tr>
+    </table>
+    <h2>媒体预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 5/28 (17.9%)</div>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>DE</td><td>0/2</td><td>0.0%</td></tr>
+      <tr><td>EG</td><td>1/3</td><td>33.3%</td></tr>
+      <tr><td>GB</td><td>0/3</td><td>0.0%</td></tr>
+      <tr><td>IN</td><td>0/2</td><td>0.0%</td></tr>
+      <tr><td>JP</td><td>0/3</td><td>0.0%</td></tr>
+      <tr><td>MY</td><td>0/3</td><td>0.0%</td></tr>
+      <tr><td>PH</td><td>1/3</td><td>33.3%</td></tr>
+      <tr><td>PK</td><td>3/3</td><td>100.0%</td></tr>
+      <tr><td>SA</td><td>0/3</td><td>0.0%</td></tr>
+      <tr><td>TH</td><td>0/3</td><td>0.0%</td></tr>
+    </table>
+    <h2>总体结论</h2>
+    <h3>各维度达成情况汇总</h3>
+    <table>
+      <tr><th>维度</th><th>达成情况</th><th>达成率</th></tr>
+      <tr><td>全局 KPI</td><td>3/3</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>区域预算</td><td>0/10</td><td class='status-fail'>0.0%</td></tr>
+      <tr><td>区域 KPI</td><td>30/30</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>阶段预算</td><td>10/10</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>营销漏斗预算</td><td>15/30</td><td class='status-fail'>50.0%</td></tr>
+      <tr><td>媒体预算</td><td>5/28</td><td class='status-fail'>17.9%</td></tr>
+      <tr><td>广告类型 KPI</td><td>109/312</td><td class='status-fail'>34.9%</td></tr>
+      <tr><td>Adtype 预算分配</td><td>134/134</td><td class='status-ok'>100.0%</td></tr>
+    </table>
+  </div>
+</body>
+</html>

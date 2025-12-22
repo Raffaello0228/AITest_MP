@@ -154,6 +154,9 @@ def generate_summary_table(all_results: List[Dict[str, Any]]) -> str:
             header.append(all_results[0]["summary"][dim_key]["name"])
     header.append("总 KPI 达成率")
 
+    # 添加模块优先级列
+    header.append("模块优先级")
+
     # 构建表格行
     lines = []
     lines.append("| " + " | ".join(header) + " |")
@@ -163,6 +166,8 @@ def generate_summary_table(all_results: List[Dict[str, Any]]) -> str:
         case_name = result["case_name"]
         summary = result["summary"]
         total_kpi = result["total_kpi"]
+        raw_results = result.get("raw_results", {})
+        testcase_config = raw_results.get("testcase_config", {})
 
         row = [case_name]
         for dim_key in dimension_keys:
@@ -174,6 +179,13 @@ def generate_summary_table(all_results: List[Dict[str, Any]]) -> str:
 
         # 添加总 KPI 达成率
         row.append(f"{total_kpi['achieved']} ({total_kpi['rate']:.1f}%)")
+
+        # 添加模块优先级（显示完整列表）
+        module_priority_list = testcase_config.get("module_priority_list", [])
+        module_priority_str = (
+            ", ".join(module_priority_list) if module_priority_list else "-"
+        )
+        row.append(module_priority_str)
 
         lines.append("| " + " | ".join(row) + " |")
 
@@ -190,6 +202,70 @@ def generate_markdown_report(all_results: List[Dict[str, Any]], output_path: Pat
     report_lines.append(f"**测试用例数量**: {len(all_results)}\n")
     report_lines.append("\n---\n")
 
+    # 全局 KPI Top3（合并到一张表）
+    report_lines.append("## 全局 KPI Top3（按优先级排序）\n")
+    report_lines.append(
+        "| 测试用例 | Top1 KPI | Top1 达成率 | Top1 状态 | Top2 KPI | Top2 达成率 | Top2 状态 | Top3 KPI | Top3 达成率 | Top3 状态 |\n"
+    )
+    report_lines.append(
+        "|----------|----------|-------------|----------|----------|-------------|----------|----------|-------------|----------|\n"
+    )
+
+    for result in all_results:
+        case_name = result["case_name"]
+        raw_results = result.get("raw_results", {})
+        global_kpi = raw_results.get("global_kpi", {})
+
+        if global_kpi:
+            # 按优先级排序，取top3
+            kpi_list = []
+            for kpi_name, kpi_data in global_kpi.items():
+                achievement_rate = kpi_data.get("achievement_rate", 0)
+                # 处理"null"字符串
+                if achievement_rate == "null" or achievement_rate is None:
+                    achievement_rate = 0.0
+                elif isinstance(achievement_rate, str):
+                    try:
+                        achievement_rate = float(achievement_rate)
+                    except (ValueError, TypeError):
+                        achievement_rate = 0.0
+
+                kpi_list.append(
+                    {
+                        "name": kpi_name,
+                        "rate": achievement_rate,
+                        "achieved": kpi_data.get("achieved", False),
+                        "priority": kpi_data.get("priority", 999),
+                    }
+                )
+
+            # 按优先级升序排序（priority 越小优先级越高）
+            kpi_list.sort(key=lambda x: x["priority"])
+            top3 = kpi_list[:3]
+
+            # 填充到3个位置（如果不足3个则用"-"填充）
+            row = [case_name]
+            for i in range(3):
+                if i < len(top3):
+                    kpi = top3[i]
+                    status = "✓ 达成" if kpi["achieved"] else "✗ 未达成"
+                    rate_str = (
+                        f"{kpi['rate']:.2f}%"
+                        if isinstance(kpi["rate"], (int, float))
+                        else str(kpi["rate"])
+                    )
+                    row.extend([kpi["name"], rate_str, status])
+                else:
+                    row.extend(["-", "-", "-"])
+
+            report_lines.append("| " + " | ".join(row) + " |\n")
+        else:
+            # 如果没有全局KPI数据，显示"-"
+            row = [case_name] + ["-", "-", "-"] * 3
+            report_lines.append("| " + " | ".join(row) + " |\n")
+
+    report_lines.append("\n---\n")
+
     # 汇总表格
     report_lines.append("## 各维度达成情况汇总\n")
     report_lines.append(generate_summary_table(all_results))
@@ -197,27 +273,13 @@ def generate_markdown_report(all_results: List[Dict[str, Any]], output_path: Pat
 
     # 说明
     report_lines.append("## 说明\n")
-    report_lines.append(
-        "- **全局 KPI**: 全局 KPI 指标的达成情况\n"
-    )
-    report_lines.append(
-        "- **区域预算**: 各推广区域预算分配的达成情况\n"
-    )
-    report_lines.append(
-        "- **区域 KPI**: 各推广区域 KPI 指标的达成情况\n"
-    )
-    report_lines.append(
-        "- **阶段预算**: 各阶段预算分配的满足情况\n"
-    )
-    report_lines.append(
-        "- **营销漏斗预算**: 各营销漏斗预算分配的满足情况\n"
-    )
-    report_lines.append(
-        "- **媒体预算**: 各媒体预算分配的满足情况\n"
-    )
-    report_lines.append(
-        "- **广告类型 KPI**: 各广告类型 KPI 指标的达成情况\n"
-    )
+    report_lines.append("- **全局 KPI**: 全局 KPI 指标的达成情况\n")
+    report_lines.append("- **区域预算**: 各推广区域预算分配的达成情况\n")
+    report_lines.append("- **区域 KPI**: 各推广区域 KPI 指标的达成情况\n")
+    report_lines.append("- **阶段预算**: 各阶段预算分配的满足情况\n")
+    report_lines.append("- **营销漏斗预算**: 各营销漏斗预算分配的满足情况\n")
+    report_lines.append("- **媒体预算**: 各媒体预算分配的满足情况\n")
+    report_lines.append("- **广告类型 KPI**: 各广告类型 KPI 指标的达成情况\n")
     report_lines.append(
         "- **Adtype 预算分配**: Adtype 预算分配检查（仅当 allow_zero_budget=False 时）\n"
     )
@@ -282,6 +344,95 @@ def generate_html_report(all_results: List[Dict[str, Any]], output_path: Path):
     )
     html_lines.append(f"    <p><strong>测试用例数量</strong>: {len(all_results)}</p>\n")
 
+    # 全局 KPI Top3（合并到一张表）
+    html_lines.append("    <h2>全局 KPI Top3（按优先级排序）</h2>\n")
+    html_lines.append("    <div style='overflow-x: auto;'>\n")
+    html_lines.append("    <table>\n")
+    html_lines.append(
+        "      <tr><th>测试用例</th><th>Top1 KPI</th><th>Top1 达成率</th><th>Top1 状态</th>"
+        "<th>Top2 KPI</th><th>Top2 达成率</th><th>Top2 状态</th>"
+        "<th>Top3 KPI</th><th>Top3 达成率</th><th>Top3 状态</th></tr>\n"
+    )
+
+    for result in all_results:
+        case_name = result["case_name"]
+        raw_results = result.get("raw_results", {})
+        global_kpi = raw_results.get("global_kpi", {})
+
+        html_lines.append("      <tr>")
+        html_lines.append(f"        <td><strong>{case_name}</strong></td>")
+
+        if global_kpi:
+            # 按优先级排序，取top3
+            kpi_list = []
+            for kpi_name, kpi_data in global_kpi.items():
+                achievement_rate = kpi_data.get("achievement_rate", 0)
+                # 处理"null"字符串
+                if achievement_rate == "null" or achievement_rate is None:
+                    achievement_rate = 0.0
+                elif isinstance(achievement_rate, str):
+                    try:
+                        achievement_rate = float(achievement_rate)
+                    except (ValueError, TypeError):
+                        achievement_rate = 0.0
+
+                kpi_list.append(
+                    {
+                        "name": kpi_name,
+                        "rate": achievement_rate,
+                        "achieved": kpi_data.get("achieved", False),
+                        "priority": kpi_data.get("priority", 999),
+                    }
+                )
+
+            # 按优先级升序排序（priority 越小优先级越高）
+            kpi_list.sort(key=lambda x: x["priority"])
+            top3 = kpi_list[:3]
+
+            # 填充到3个位置（如果不足3个则用"-"填充）
+            for i in range(3):
+                if i < len(top3):
+                    kpi = top3[i]
+                    status = "✓ 达成" if kpi["achieved"] else "✗ 未达成"
+                    status_class = "status-ok" if kpi["achieved"] else "status-fail"
+                    rate = kpi["rate"]
+                    rate_str = (
+                        f"{rate:.2f}%" if isinstance(rate, (int, float)) else str(rate)
+                    )
+
+                    # 根据达成率设置颜色
+                    if isinstance(rate, (int, float)):
+                        if rate >= 80:
+                            rate_class = "rate-ok"
+                        elif rate >= 60:
+                            rate_class = "rate-warning"
+                        else:
+                            rate_class = "rate-fail"
+                    else:
+                        rate_class = ""
+
+                    html_lines.append(
+                        f"        <td><strong>{kpi['name']}</strong></td>"
+                    )
+                    html_lines.append(
+                        f"        <td class='{rate_class}'>{rate_str}</td>"
+                    )
+                    html_lines.append(
+                        f"        <td class='{status_class}'>{status}</td>"
+                    )
+                else:
+                    html_lines.append("        <td>-</td>")
+                    html_lines.append("        <td>-</td>")
+                    html_lines.append("        <td>-</td>")
+        else:
+            # 如果没有全局KPI数据，显示"-"
+            html_lines.append("        <td>-</td>" * 9)
+
+        html_lines.append("      </tr>\n")
+
+    html_lines.append("    </table>\n")
+    html_lines.append("    </div>\n")
+
     # 汇总表格
     html_lines.append("    <h2>各维度达成情况汇总</h2>\n")
     html_lines.append("    <div style='overflow-x: auto;'>\n")
@@ -305,6 +456,9 @@ def generate_html_report(all_results: List[Dict[str, Any]], output_path: Path):
             header.append(all_results[0]["summary"][dim_key]["name"])
     header.append("总 KPI 达成率")
 
+    # 添加模块优先级列
+    header.append("模块优先级")
+
     html_lines.append("      <tr>")
     for h in header:
         html_lines.append(f"        <th>{h}</th>")
@@ -315,6 +469,8 @@ def generate_html_report(all_results: List[Dict[str, Any]], output_path: Path):
         case_name = result["case_name"]
         summary = result["summary"]
         total_kpi = result["total_kpi"]
+        raw_results = result.get("raw_results", {})
+        testcase_config = raw_results.get("testcase_config", {})
 
         html_lines.append("      <tr>")
         html_lines.append(f"        <td><strong>{case_name}</strong></td>")
@@ -347,6 +503,14 @@ def generate_html_report(all_results: List[Dict[str, Any]], output_path: Path):
         html_lines.append(
             f"        <td class='{rate_class}'><strong>{total_kpi['achieved']} ({total_rate:.1f}%)</strong></td>"
         )
+
+        # 添加模块优先级（显示完整列表）
+        module_priority_list = testcase_config.get("module_priority_list", [])
+        module_priority_str = (
+            ", ".join(module_priority_list) if module_priority_list else "-"
+        )
+        html_lines.append(f"        <td>{module_priority_str}</td>")
+
         html_lines.append("      </tr>\n")
 
     html_lines.append("    </table>\n")
@@ -364,15 +528,11 @@ def generate_html_report(all_results: List[Dict[str, Any]], output_path: Path):
     html_lines.append(
         "<li><strong>区域 KPI</strong>: 各推广区域 KPI 指标的达成情况</li>\n"
     )
-    html_lines.append(
-        "<li><strong>阶段预算</strong>: 各阶段预算分配的满足情况</li>\n"
-    )
+    html_lines.append("<li><strong>阶段预算</strong>: 各阶段预算分配的满足情况</li>\n")
     html_lines.append(
         "<li><strong>营销漏斗预算</strong>: 各营销漏斗预算分配的满足情况</li>\n"
     )
-    html_lines.append(
-        "<li><strong>媒体预算</strong>: 各媒体预算分配的满足情况</li>\n"
-    )
+    html_lines.append("<li><strong>媒体预算</strong>: 各媒体预算分配的满足情况</li>\n")
     html_lines.append(
         "<li><strong>广告类型 KPI</strong>: 各广告类型 KPI 指标的达成情况</li>\n"
     )
@@ -445,11 +605,14 @@ def main():
             # 计算总 KPI 汇总
             total_kpi = calculate_total_kpi_summary(results)
 
-            all_results.append({
-                "case_name": case_name,
-                "summary": summary,
-                "total_kpi": total_kpi,
-            })
+            all_results.append(
+                {
+                    "case_name": case_name,
+                    "summary": summary,
+                    "total_kpi": total_kpi,
+                    "raw_results": results,  # 保存原始结果以便提取详细KPI信息
+                }
+            )
             print(f"  ✓ 已处理: {case_name}")
         except Exception as e:
             print(f"  ✗ 处理失败 {json_file.name}: {e}")
@@ -487,4 +650,3 @@ if __name__ == "__main__":
     import sys
 
     sys.exit(main())
-

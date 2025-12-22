@@ -130,7 +130,7 @@ API_CONFIG = {
         "referer": "https://pre-op.meetsocial.cn/",
         "x-sino-global-userid": "2641",
         # !!! 替换为有效 token
-        "x-sino-jwt-token": "eyJYLVNJTk8tVE9LRU4iOiJTLTY0YTkwZWIxYWYyNTQ2MmFiNGZmYTBlMmEyNWQwZDA2IiwiWC1TSU5PLUFQUC1JRCI6InNpbm8tb3AiLCJ0eXAiOiJKV1QiLCJYLVNJTk8tVE9LRU4tVFlQRSI6IlNTTyIsImFsZyI6IkhTMjU2In0.eyJ1c2VyTmFtZSI6InNpbW9uLnN1biIsImV4cCI6MTc2NTYxNjEwNSwidXNlcklkIjoyNjQxfQ._mR68Uaw657gjlbKlQo267oy_EBH4tW9ih8AL9-Pp2w",
+        "x-sino-jwt-token": "eyJYLVNJTk8tVE9LRU4iOiJTLThmZjRlZDAxNjkxMjQ1OWZhNjI3NzA0MzNlNjViNDdhIiwiWC1TSU5PLUFQUC1JRCI6InNpbm8tb3AiLCJ0eXAiOiJKV1QiLCJYLVNJTk8tVE9LRU4tVFlQRSI6IlNTTyIsImFsZyI6IkhTMjU2In0.eyJ1c2VyTmFtZSI6InNpbW9uLnN1biIsImV4cCI6MTc2NjQ3Nzk1MCwidXNlcklkIjoyNjQxfQ.X5LoQEVNBM9lbShm0qGr8_jNl6oaoBrdl2s_2Kx_3Io",
         "x-channel-access-token": "undefined",
         "x-channel-userid": "undefined",
         "sec-ch-ua": '"Not;A=Brand";v="99", "Google Chrome";v="139", "Chromium";v="139"',
