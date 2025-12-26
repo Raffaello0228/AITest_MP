@@ -11,11 +11,24 @@ from pathlib import Path
 def main():
     # 获取项目根目录
     project_root = Path(__file__).parent.parent
-    batch_results_dir = project_root / "output" / "results"
-    requests_dir = project_root / "output" / "requests"
-    achievement_checks_dir = project_root / "output" / "achievement_checks" / "json"
+    # 支持 common 和 xiaomi 两个版本
+    # 默认使用 common，如果存在 xiaomi 则优先使用 xiaomi
+    batch_results_dir = project_root / "output" / "common" / "results"
+    requests_dir = project_root / "output" / "common" / "requests"
+    achievement_checks_dir = (
+        project_root / "output" / "common" / "achievement_checks" / "json"
+    )
     testcase_file = project_root / "testcase_template.py"
-    check_script = project_root / "tools" / "check_kpi_achievement.py"
+    check_script = project_root / "core" / "check_kpi_achievement.py"
+
+    # 如果 common 目录不存在，尝试使用 xiaomi
+    if not batch_results_dir.exists():
+        batch_results_dir = project_root / "output" / "xiaomi" / "results"
+        requests_dir = project_root / "output" / "xiaomi" / "requests"
+        achievement_checks_dir = (
+            project_root / "output" / "xiaomi" / "achievement_checks" / "json"
+        )
+        testcase_file = project_root / "testcase_templatex_xiaomi.py"
 
     if not batch_results_dir.exists():
         print(f"错误：目录不存在: {batch_results_dir}")

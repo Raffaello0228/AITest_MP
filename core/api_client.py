@@ -535,6 +535,6 @@ def create_client_from_config(
         common_headers=api_config["COMMON_HEADERS"],
         request_json_path=request_json_path,
         default_request_body=default_request_body,
-        batch_query_url_template=api_config["BATCH_QUERY_URL_TEMPLATE"],
+        batch_query_url_template=api_config.get("BATCH_QUERY_URL_TEMPLATE"),  # 使用 get 以支持可选参数
         logger=logger,
     )

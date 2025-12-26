@@ -1,0 +1,53 @@
+﻿regionCode,regionNameCN,countryCode,countryNameEn,countryNameCN,mpCode
+WE,西欧,FR,France,法国,FR
+WE,西欧,DE,Germany,德国,DE
+WE,西欧,IT,Italy,意大利,IT
+WE,西欧,ES,Spain,西班牙,ES
+WE,西欧,UK,United Kingdom,英国,GB
+WE,西欧,PT,Portugal,葡萄牙,PT
+WE,西欧,NL,Netherlands,荷兰,NL
+WE,西欧,BE,Belgium,比利时,BE
+CEE&Nordic,东北欧,SE,Sweden,瑞典,SE
+CEE&Nordic,东北欧,AT,Austria,奥地利,AT
+CEE&Nordic,东北欧,PL,Poland,波兰,PL
+CEE&Nordic,东北欧,DK,Denmark,丹麦,DK
+CEE&Nordic,东北欧,HU,Hungary,匈牙利,HU
+CEE&Nordic,东北欧,CZ,Czech Republic,捷克,CZ
+CEE&Nordic,东北欧,SI,Slovenia,斯洛文尼亚,SI
+CEE&Nordic,东北欧,RO,Romania,罗马尼亚,RO
+CEE&Nordic,东北欧,FI,Finland,芬兰,FI
+CEE&Nordic,东北欧,GR,Greece,希腊,GR
+CEE&Nordic,东北欧,SK,Slovakia,斯洛伐克,SK
+CEE&Nordic,东北欧,HR,Croatia,克罗地亚,HR
+CEE&Nordic,东北欧,RS,Serbia,塞尔维亚,RS
+CEE&Nordic,东北欧,BG,Bulgaria,保加利亚,BG
+CEE&Nordic,东北欧,MK,North Macedonia,北马其顿,MK
+CEE&Nordic,东北欧,BIH,Bosnia and Herzegovina,波黑,BA
+SEA,东北欧,TH,Thailand,泰国,TH
+SEA,东北欧,MY,Malaysia,马来西亚,MY
+SEA,东北欧,PH,Philippines,菲律宾,PH
+SEA,东北欧,VN,Vietnam,越南,VN
+SEA,东南亚,SG,Singapore,新加坡,SG
+ID,印尼,ID,Indonesia,印尼,ID
+LATAM,拉美,CL,Chile,智利,CL
+LATAM,拉美,PE,Peru,秘鲁,PE
+LATAM,拉美,CO,Colombia,哥伦比亚,CO
+LATAM,拉美,MX,Mexico,墨西哥,MX
+LATAM,拉美,BR,Brazil,巴西,BR
+LATAM,拉美,PA,Panama,巴拿马,PA
+LATAM,拉美,GT,Guatemala,圭地马拉,GT
+LATAM,拉美,CR,Costa Rica,哥斯达黎加,CR
+ME,中东,KSA,Saudi Arabia,沙特阿拉伯,SA
+ME,中东,UAE,United Arab Emirates,阿联酋,AE
+ME,中东,PK,Pakistan,巴基斯坦,PK
+ME,中东,TR,Turkey,土耳其,TR
+ME,中东,IQ,Iraq,伊拉克,IQ
+Africa,非洲,MA,Morocco,摩洛哥,MA
+Africa,非洲,EG,Egypt,埃及,EG
+Africa,非洲,ZA,South Africa,南非,ZA
+Africa,非洲,KE,Kenya,肯尼亚,KE
+Africa,非洲,DZ,Algeria,阿尔及利亚,DZ
+CIS,独联体,AZ,Azerbaijan,阿塞拜疆,AZ
+CIS,独联体,KZ,Kazakhstan,哈萨克斯坦,KZ
+CIS,独联体,RU,Russia,俄罗斯,RU
+CIS,独联体,UZ,Uzbekistan,乌兹别克斯坦,UZ

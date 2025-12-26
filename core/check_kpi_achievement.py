@@ -4,7 +4,7 @@
 根据 testcase 配置判断每个指标是否达成
 
 用法:
-    python tools/check_kpi_achievement.py \
+    python core/check_kpi_achievement.py \
         --testcase-file testcase_template.py \
         --request-file single/brief_case_全部填写-完全匹配-5%-区域第一-KPI第二.json \
         --result-file single/batch_query_results/batch_query_全部填写-完全匹配-5%-区域第一-KPI第二.json \
@@ -1457,12 +1457,18 @@ def main():
             output_base.parent.mkdir(parents=True, exist_ok=True)
             output_file = output_base
     else:
-        # 默认输出到 output/achievement_checks/json/ 目录
-        output_base = (
-            result_file.parent.parent
-            if result_file.parent.name == "batch_query_results"
-            else result_file.parent
-        )
+        # 默认输出到 output/{common|xiaomi}/achievement_checks/json/ 目录
+        # 根据结果文件路径判断是 common 还是 xiaomi
+        result_parent = result_file.parent
+        if result_parent.name == "results":
+            # 新结构：output/common/results 或 output/xiaomi/results
+            output_base = result_parent.parent  # output/common 或 output/xiaomi
+        elif result_parent.name == "batch_query_results":
+            # 旧结构兼容
+            output_base = result_parent.parent
+        else:
+            output_base = result_parent
+
         achievement_checks_dir = output_base / "achievement_checks"
         json_dir = achievement_checks_dir / "json"
         json_dir.mkdir(parents=True, exist_ok=True)
@@ -1479,11 +1485,8 @@ def main():
 
     # 自动生成测试报告
     try:
-        # 确保项目根目录在 sys.path，便于导入 tools.generate_test_report
-        project_root = Path(__file__).resolve().parent.parent
-        if str(project_root) not in sys.path:
-            sys.path.insert(0, str(project_root))
-        from tools.generate_test_report import (
+        # 从 core 模块导入
+        from core.generate_test_report import (
             generate_markdown_report,
             generate_html_report,
         )
@@ -1503,7 +1506,7 @@ def main():
     except Exception as e:
         print(f"警告: 生成测试报告时出错: {e}")
         print(
-            "可以手动运行: python tools/generate_test_report.py --result-file <json文件>"
+            "可以手动运行: python core/generate_test_report.py --result-file <json文件>"
         )
 
     return 0

@@ -18,7 +18,7 @@ def load_json(filepath: Path) -> Any:
 
 
 def calculate_dimension_summary(results: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
-    """计算各维度达成情况汇总（与 generate_test_report.py 中的逻辑一致）"""
+    """计算各维度达成情况汇总（与 core.generate_test_report 中的逻辑一致）"""
     dimensions = {
         "global_kpi": "全局 KPI",
         "region_budget": "区域预算",
@@ -560,7 +560,7 @@ def main():
     parser.add_argument(
         "--input-dir",
         type=Path,
-        default="output/achievement_checks/json",
+        default="output/common/achievement_checks/json",
         help="输入目录（包含所有 achievement_check.json 文件）",
     )
     parser.add_argument(

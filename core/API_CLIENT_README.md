@@ -27,7 +27,7 @@ pip install aiohttp
 
 ```python
 import asyncio
-from api_client import APIClient
+from core import APIClient
 
 async def main():
     async with APIClient(
@@ -60,7 +60,7 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from api_client import create_client_from_config
+from core import create_client_from_config
 
 # 定义API配置
 API_CONFIG = {
@@ -281,7 +281,7 @@ async with PerformanceTester() as tester:
 
 ### 新代码
 ```python
-from api_client import create_client_from_config
+from core import create_client_from_config
 from config import API_CONFIG
 
 async with create_client_from_config(api_config=API_CONFIG) as client:

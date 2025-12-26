@@ -1,0 +1,6 @@
+{
+    "GET_UUID_URL": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/brief/get-signed-uuid",
+    "SAVE_URL": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/brief/multi-country/brief-save",
+    "QUERY_URL_TEMPLATE": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/job/{job_id}/brief-submit-query",
+    "BATCH_QUERY_URL_TEMPLATE": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/result/multi-country/{job_id}/mp-query-batch"
+}

@@ -7,139 +7,25 @@ from pathlib import Path
 import random
 import traceback
 import sys
-import os
 
 import numpy as np
 import pandas as pd
 
-# 调试模式：设置环境变量 DEBUG=1 来启用详细调试输出
-DEBUG = os.getenv("DEBUG", "0") == "1"
+# 添加项目根目录到路径，以便导入 core 模块
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
 
+from core import (
+    KPI_KEYS,
+    MAX_REGION_COUNT,
+    load_data,
+    load_mapping,
+    normalize_percentage_sum,
+    reorder_priorities,
+    safe_sum,
+)
 
-KPI_KEYS = [
-    "Impression",
-    "Clicks",
-    "LinkClicks",
-    "VideoViews",
-    "Engagement",
-    "Followers",
-    "Like",
-    "Purchase",
-]
-
-# 若希望限制 JSON 中的推广区域（国家）数量，在此设置最大国家数；
-# 例如设为 5 表示只保留花费最高的前 5 个国家；设为 None 则不过滤。
-MAX_REGION_COUNT: int | None = None
-
-
-def normalize_percentage_sum(
-    items: list[dict], percent_key: str = "budgetPercentage"
-) -> None:
-    """
-    调整百分比分配，使总和精确为 100（保留两位小数），误差补到最后一项。
-    """
-    if not items:
-        return
-    total = round(sum(float(x.get(percent_key, 0) or 0) for x in items), 2)
-    diff = round(100 - total, 2)
-    items[-1][percent_key] = round(float(items[-1].get(percent_key, 0) or 0) + diff, 2)
-
-
-def reorder_priorities(result: dict) -> dict:
-    """
-    按 priority 对各层列表重新排序（升序），确保生成结果顺序一致。
-    """
-
-    def sort_list(lst: list[dict]):
-        lst.sort(key=lambda x: x.get("priority", 1e9))
-
-    basic = result.get("basicInfo", {})
-    # basicInfo.kpiInfo / moduleConfig
-    if "kpiInfo" in basic:
-        sort_list(basic["kpiInfo"])
-    if "moduleConfig" in basic:
-        sort_list(basic["moduleConfig"])
-
-    # regionBudget kpiInfo
-    for region in basic.get("regionBudget", []):
-        if "kpiInfo" in region:
-            sort_list(region["kpiInfo"])
-
-    # briefMultiConfig 层级
-    for country in result.get("briefMultiConfig", []):
-        if "moduleConfig" in country:
-            sort_list(country["moduleConfig"])
-        # mediaMarketingFunnelAdtype -> adTypeWithKPI.kpiInfo
-        for mmfa in country.get("mediaMarketingFunnelAdtype", []):
-            for adtype in mmfa.get("adTypeWithKPI", []):
-                if "kpiInfo" in adtype:
-                    sort_list(adtype["kpiInfo"])
-
-    return result
-
-
-def load_mapping(adtype_path: str) -> pd.DataFrame:
-    """
-    读取 adtype 映射表（CSV），标准化列名，主要按 (Media, Ad Type) 做映射。
-    """
-    try:
-        # 先尝试 utf-8，如果失败再回退到常见的本地编码（如 gbk）
-        try:
-            df = pd.read_csv(adtype_path, encoding="utf-8")
-        except UnicodeDecodeError:
-            try:
-                df = pd.read_csv(adtype_path, encoding="gbk")
-            except UnicodeDecodeError:
-                # 最后兜底：使用 latin1 防止再次抛错（可能会出现少量乱码，但不影响英文字段）
-                df = pd.read_csv(adtype_path, encoding="latin1")
-        # 去掉前后空格
-        df.columns = [c.strip() for c in df.columns]
-        for col in df.columns:
-            if df[col].dtype == object:
-                df[col] = df[col].astype(str).str.strip()
-        return df
-    except Exception as e:
-        print(f"[ERROR] 加载映射文件失败 {adtype_path}: {e}")
-        traceback.print_exc()
-        raise
-
-
-def load_data(data_path: str) -> pd.DataFrame:
-    """
-    读取历史数据 CSV，并做基本清洗。
-    """
-    try:
-        df = pd.read_csv(data_path)
-
-        # 统一列名
-        df.columns = [c.strip() for c in df.columns]
-
-        # 将 \N 等视为缺失
-        df = df.replace({"\\N": np.nan})
-
-        # 数值列转浮点
-        num_cols = [
-            "spend",
-            "impressions",
-            "clicks",
-            "link_clicks",
-            "engagements",
-            "likes",
-            "video_views",
-            "video_watched_2s",
-            "purchases",
-            "leads",
-            "follows",
-        ]
-        for col in num_cols:
-            if col in df.columns:
-                df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0.0)
-
-        return df
-    except Exception as e:
-        print(f"[ERROR] 加载数据文件失败 {data_path}: {e}")
-        traceback.print_exc()
-        raise
+# 注意：load_data, load_mapping, normalize_percentage_sum, reorder_priorities, safe_sum 已从 core 模块导入
 
 
 def infer_media(row: pd.Series, adtype_map_medias: dict) -> str | None:
@@ -251,20 +137,7 @@ def attach_mapping(data_df: pd.DataFrame, map_df: pd.DataFrame) -> pd.DataFrame:
     return merged
 
 
-def safe_sum(df: pd.DataFrame, col_name: str) -> float:
-    """
-    安全地获取DataFrame列的sum值，如果列不存在则返回0.0。
-
-    Args:
-        df: DataFrame
-        col_name: 列名
-
-    Returns:
-        列的总和，如果列不存在则返回0.0
-    """
-    if col_name in df.columns:
-        return float(df[col_name].sum())
-    return 0.0
+# safe_sum 已从 core 模块导入
 
 
 def build_basic_info(template_basic: dict, df: pd.DataFrame) -> dict:
@@ -878,40 +751,23 @@ def convert(
     Returns:
         生成的JSON数据字典
     """
-
-    def debug_print(msg: str):
-        if DEBUG:
-            print(msg)
-
     try:
-        debug_print(f"[DEBUG] 开始转换，数据文件: {data_path}")
         # 读取模板
-        debug_print(f"[DEBUG] 读取模板文件: {template_path}")
         with open(template_path, "r", encoding="utf-8") as f:
             template = json.load(f)
 
         template_basic = template["basicInfo"]
         template_first_country = template["briefMultiConfig"][0]
-        debug_print(f"[DEBUG] 模板读取成功")
 
         # 读取数据与映射
-        debug_print(f"[DEBUG] 读取映射文件: {adtype_path}")
         map_df = load_mapping(adtype_path)
-        debug_print(f"[DEBUG] 映射文件读取成功，共 {len(map_df)} 行")
-
-        debug_print(f"[DEBUG] 读取数据文件: {data_path}")
         data_df = load_data(data_path)
-        debug_print(f"[DEBUG] 数据文件读取成功，共 {len(data_df)} 行")
-
-        debug_print(f"[DEBUG] 开始合并映射...")
         merged_df = attach_mapping(data_df, map_df)
-        debug_print(f"[DEBUG] 合并完成，共 {len(merged_df)} 行")
 
         # 控制区域数量：只保留花费最高的前 max_regions 个国家
         # 优先使用函数参数 max_regions，其次使用全局常量 MAX_REGION_COUNT
         limit = max_regions if max_regions is not None else MAX_REGION_COUNT
         if limit is not None and "country_code" in merged_df.columns:
-            debug_print(f"[DEBUG] 限制区域数量为: {limit}")
             country_spend = (
                 merged_df.groupby("country_code")["spend"]
                 .sum()
@@ -919,19 +775,12 @@ def convert(
             )
             top_countries = country_spend.head(limit).index.tolist()
             merged_df = merged_df[merged_df["country_code"].isin(top_countries)]
-            debug_print(
-                f"[DEBUG] 过滤后剩余 {len(merged_df)} 行，国家: {top_countries}"
-            )
 
         # 构建 basicInfo
-        debug_print(f"[DEBUG] 构建 basicInfo...")
         basic_info = build_basic_info(template_basic, merged_df)
-        debug_print(f"[DEBUG] basicInfo 构建完成")
 
         # briefMultiConfig
-        debug_print(f"[DEBUG] 构建 briefMultiConfig...")
         brief_multi = build_brief_multi_config(template_first_country, merged_df)
-        debug_print(f"[DEBUG] briefMultiConfig 构建完成，共 {len(brief_multi)} 个国家")
 
         result = {
             "basicInfo": basic_info,
@@ -940,7 +789,6 @@ def convert(
 
         # 如果指定了测试用例编号，应用测试用例配置
         if test_case_id is not None and use_testcase_template:
-            debug_print(f"[DEBUG] 应用测试用例配置: {test_case_id}")
             test_cases = load_testcase_template(testcase_template_path)
             if test_cases is None:
                 raise ValueError(f"无法加载测试用例模板: {testcase_template_path}")
@@ -950,16 +798,12 @@ def convert(
             result = apply_testcase_template_config(
                 result, test_cases[test_case_id], case_name=str(test_case_id)
             )
-            debug_print(f"[DEBUG] 测试用例配置应用完成")
 
         # 统一按 priority 排序（升序）
-        debug_print(f"[DEBUG] 重新排序优先级...")
         reorder_priorities(result)
 
-        debug_print(f"[DEBUG] 写入输出文件: {output_path}")
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
-        debug_print(f"[DEBUG] 转换完成！")
 
         return result
     except FileNotFoundError as e:
@@ -978,9 +822,9 @@ def convert(
 
 def batch_generate(
     data_path: str = "data_haier.csv",
-    adtype_path: str = "adtype_dict.csv",
+    adtype_path: str = "doc/common/adtype_dict.csv",
     template_path: str = "brief_template.json",
-    output_dir: str = "output/requests",
+    output_dir: str = "output/common/requests",
     max_regions: int | None = None,
     testcase_template_path: str = "testcase_template.py",
     test_case_ids: list[str] | None = None,
@@ -1055,43 +899,6 @@ if __name__ == "__main__":
     batch_mode = True
     use_testcase_template = False
     testcase_template_path = "testcase_template.py"
-
-    # 解析参数
-    i = 1
-    while i < len(sys.argv):
-        arg = sys.argv[i]
-        if arg == "--batch" or arg == "-b":
-            batch_mode = True
-            i += 1
-        elif arg == "--template" or arg == "-t":
-            use_testcase_template = True
-            if i + 1 < len(sys.argv):
-                testcase_template_path = sys.argv[i + 1]
-                i += 2
-            else:
-                i += 1
-        elif arg == "--max-regions" or arg == "-r":
-            if i + 1 < len(sys.argv):
-                try:
-                    max_regions = int(sys.argv[i + 1])
-                    i += 2
-                except ValueError:
-                    print(f"警告：无效的区域数量 '{sys.argv[i + 1]}'，使用默认值 20")
-                    i += 2
-            else:
-                i += 1
-        elif arg == "--debug" or arg == "-d":
-            DEBUG = True
-            os.environ["DEBUG"] = "1"
-            print("[DEBUG] 调试模式已启用")
-            i += 1
-        elif arg.startswith("-"):
-            print(f"未知参数: {arg}")
-            i += 1
-        else:
-            # 测试用例名称（字符串）
-            test_case_id = arg
-            i += 1
 
     # 批量生成模式
     if batch_mode:

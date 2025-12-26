@@ -1,0 +1,5 @@
+{
+    "GET_UUID_URL": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/mediaPlan/brief/get-signed-uuid",
+    "SAVE_URL": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/estimation/br/tasks/create",
+    "QUERY_URL_TEMPLATE": "https://pre-pu-gateway.meetsocial.com/sino-adtech-mediaplan/estimation/br/tasks/{job_id}/query"
+}
