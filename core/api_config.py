@@ -140,12 +140,6 @@ def get_strategy_config() -> StrategyConfig:
         max_failure_rate=_get_performance_value("max_failure_rate", 0.2),
         max_polling_attempts=_get_performance_value("max_polling_attempts", 30000),
         polling_interval=_get_performance_value("polling_interval", 2000),
-        max_concurrency_threshold=_get_performance_value(
-            "max_concurrency_threshold", 16
-        ),
-        enable_concurrency_monitoring=_get_performance_value(
-            "enable_concurrency_monitoring", True
-        ),
     )
 
 
@@ -173,34 +167,53 @@ _BASE_HEADERS = {
 }
 
 
-def _get_common_headers(environment: str = "TESTING") -> Dict[str, str]:
+def _get_common_headers(environment: str = "TEST") -> Dict[str, str]:
     """
     根据环境获取请求头（包含对应环境的 token）
 
     Args:
-        environment: 环境名称，"TESTING"、"STAGING" 或 "PRODUCTION"
+        environment: 环境名称，"TEST"、"PRE" 或 "PROD"
 
     Returns:
         包含 token 的请求头字典
     """
     env_upper = environment.upper()
-    token = _TOKEN_MAP.get(env_upper, _TOKEN_TEST)  # 默认使用 TESTING 的 token
+    # 兼容旧的环境名称
+    env_mapping = {
+        "TESTING": "TEST",
+        "STAGING": "PRE",
+        "PRODUCTION": "PROD",
+    }
+    env_upper = env_mapping.get(env_upper, env_upper)
+    token = _TOKEN_MAP.get(env_upper, _TOKEN_TEST)  # 默认使用 TEST 的 token
     return {
         **_BASE_HEADERS,
         "x-sino-jwt-token": token,
     }
 
 
+# 为了向后兼容，保留默认的 API_CONFIG（使用 TEST 环境的 token）
+API_CONFIG = {
+    **_CONSTANT_COMMON,
+    "COMMON_HEADERS": _get_common_headers("TEST"),
+}
+
+API_CONFIG_XIAOMI = {
+    **_CONSTANT_XIAOMI,
+    "COMMON_HEADERS": _get_common_headers("TEST"),
+}
+
+
 # 便捷函数：根据版本和环境获取配置
 def get_api_config(
-    version: str = "common", environment: str = "TESTING"
+    version: str = "common", environment: str = "TEST"
 ) -> Dict[str, Any]:
     """
     根据版本和环境获取对应的 API 配置
 
     Args:
         version: 版本名称，"common" 或 "xiaomi"
-        environment: 环境名称，"TESTING"、"STAGING" 或 "PRODUCTION"
+        environment: 环境名称，"TEST"、"PRE" 或 "PROD"（也支持 "TESTING"、"STAGING"、"PRODUCTION"）
 
     Returns:
         API 配置字典（包含对应环境的 token）

@@ -27,6 +27,7 @@ from core import (
     API_CONFIG_XIAOMI,
     ENVIRONMENT_CONFIGS,
     get_api_config,
+    get_strategy_config,
 )
 
 
@@ -61,13 +62,13 @@ async def main(args):
         print(f"目录 {output_dir} 中未找到 json 文件")
         return
 
-    # 获取环境配置（默认使用 TESTING）
-    environment = args.environment or "TESTING"
-    env_cfg = ENVIRONMENT_CONFIGS.get(
-        environment.upper(), ENVIRONMENT_CONFIGS["TESTING"]
-    )
-    max_attempts = args.max_attempts or env_cfg.max_polling_attempts
-    interval_ms = args.interval or env_cfg.polling_interval
+    # 获取环境配置（默认使用 TEST）
+    environment = args.environment or "PRE"
+
+    # 从策略配置获取轮询参数
+    strategy_config = get_strategy_config()
+    max_attempts = args.max_attempts or strategy_config.max_polling_attempts
+    interval_ms = args.interval or strategy_config.polling_interval
 
     # 根据命令行参数或目录路径自动判断版本
     if args.version:
@@ -171,9 +172,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--environment",
         type=str,
-        choices=["TESTING", "STAGING", "PRODUCTION"],
+        choices=["TEST", "PRE", "PROD", "TESTING", "STAGING", "PRODUCTION"],
         default=None,
-        help="指定环境（TESTING、STAGING 或 PRODUCTION），默认使用 TESTING",
+        help="指定环境（TEST、PRE 或 PROD，也支持 TESTING、STAGING、PRODUCTION），默认使用 TEST",
     )
 
     args = parser.parse_args()
