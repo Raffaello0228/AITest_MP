@@ -11,24 +11,26 @@ from pathlib import Path
 def main():
     # 获取项目根目录
     project_root = Path(__file__).parent.parent
-    # 支持 common 和 xiaomi 两个版本
-    # 默认使用 common，如果存在 xiaomi 则优先使用 xiaomi
-    batch_results_dir = project_root / "output" / "common" / "results"
-    requests_dir = project_root / "output" / "common" / "requests"
-    achievement_checks_dir = (
-        project_root / "output" / "common" / "achievement_checks" / "json"
-    )
-    testcase_file = project_root / "testcase_template.py"
-    check_script = project_root / "core" / "check_kpi_achievement.py"
 
-    # 如果 common 目录不存在，尝试使用 xiaomi
+    # 支持 common 和 xiaomi 两个版本
+    # 优先检查 xiaomi，如果不存在则使用 common
+    batch_results_dir = project_root / "output" / "xiaomi" / "results"
+    requests_dir = project_root / "output" / "xiaomi" / "requests"
+    achievement_checks_dir = (
+        project_root / "output" / "xiaomi" / "achievement_checks" / "json"
+    )
+    testcase_file = project_root / "testcase_templatex_xiaomi.py"
+    check_script = project_root / "core" / "check_kpi_achievement_xiaomi.py"
+
+    # 如果 xiaomi 目录不存在，尝试使用 common
     if not batch_results_dir.exists():
-        batch_results_dir = project_root / "output" / "xiaomi" / "results"
-        requests_dir = project_root / "output" / "xiaomi" / "requests"
+        batch_results_dir = project_root / "output" / "common" / "results"
+        requests_dir = project_root / "output" / "common" / "requests"
         achievement_checks_dir = (
-            project_root / "output" / "xiaomi" / "achievement_checks" / "json"
+            project_root / "output" / "common" / "achievement_checks" / "json"
         )
-        testcase_file = project_root / "testcase_templatex_xiaomi.py"
+        testcase_file = project_root / "testcase_template.py"
+        check_script = project_root / "core" / "check_kpi_achievement.py"
 
     if not batch_results_dir.exists():
         print(f"错误：目录不存在: {batch_results_dir}")

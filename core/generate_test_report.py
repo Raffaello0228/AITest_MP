@@ -93,9 +93,13 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
         achieved_count = sum(1 for v in global_kpi.values() if v.get("achieved", False))
         total_count = len(global_kpi)
 
-        report_lines.append(
-            f"**达成率**: {achieved_count}/{total_count} ({achieved_count/total_count*100:.2f}%)\n"
-        )
+        if total_count > 0:
+            rate = achieved_count / total_count * 100
+            report_lines.append(
+                f"**达成率**: {achieved_count}/{total_count} ({rate:.2f}%)\n"
+            )
+        else:
+            report_lines.append(f"**达成率**: {achieved_count}/{total_count} (N/A)\n")
         report_lines.append(
             '\n**判断逻辑**: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。\n'
         )
@@ -141,9 +145,13 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
             match_type = first_region.get("match_type", "完全匹配")
 
         report_lines.append(f"**匹配类型**: {match_type}\n")
-        report_lines.append(
-            f"**达成率**: {achieved_count}/{total_count} ({achieved_count/total_count*100:.2f}%)\n"
-        )
+        if total_count > 0:
+            rate = achieved_count / total_count * 100
+            report_lines.append(
+                f"**达成率**: {achieved_count}/{total_count} ({rate:.2f}%)\n"
+            )
+        else:
+            report_lines.append(f"**达成率**: {achieved_count}/{total_count} (N/A)\n")
 
         if match_type == "完全匹配":
             report_lines.append(
@@ -381,13 +389,227 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
                 if kpi_data.get("achieved", False):
                     total_achieved += 1
 
-        report_lines.append(
-            f"**总体达成率**: {total_achieved}/{total_count} ({total_achieved/total_count*100:.1f}%)\n"
-        )
+        if total_count > 0:
+            rate = total_achieved / total_count * 100
+            report_lines.append(
+                f"**总体达成率**: {total_achieved}/{total_count} ({rate:.1f}%)\n"
+            )
+        else:
+            report_lines.append(
+                f"**总体达成率**: {total_achieved}/{total_count} (N/A)\n"
+            )
         report_lines.append("\n(详细数据请查看 JSON 文件)\n")
         report_lines.append("\n---\n")
 
-    # Adtype 预算分配检查
+    # MediaMarketingFunnelFormat KPI 达成情况
+    if "mediaMarketingFunnelFormat_kpi" in results:
+        report_lines.append("## MediaMarketingFunnelFormat KPI 达成情况\n")
+        format_kpi = results["mediaMarketingFunnelFormat_kpi"]
+        total_achieved = 0
+        total_count = 0
+
+        for key, format_data in format_kpi.items():
+            kpis = format_data.get("kpis", {})
+            for kpi_name, kpi_data in kpis.items():
+                total_count += 1
+                if kpi_data.get("achieved", False):
+                    total_achieved += 1
+
+        if total_count > 0:
+            rate = total_achieved / total_count * 100
+            report_lines.append(
+                f"**总体达成率**: {total_achieved}/{total_count} ({rate:.1f}%)\n"
+            )
+        else:
+            report_lines.append(
+                f"**总体达成率**: {total_achieved}/{total_count} (N/A)\n"
+            )
+
+        # 按国家汇总
+        country_summary = {}
+        for key, format_data in format_kpi.items():
+            country = format_data.get("country", "")
+            if country not in country_summary:
+                country_summary[country] = {"achieved": 0, "total": 0}
+            kpis = format_data.get("kpis", {})
+            for kpi_name, kpi_data in kpis.items():
+                country_summary[country]["total"] += 1
+                if kpi_data.get("achieved", False):
+                    country_summary[country]["achieved"] += 1
+
+        if country_summary:
+            report_lines.append("\n| 区域 | 达成数/总数 | 达成率 |\n")
+            report_lines.append("|------|-------------|--------|\n")
+            for country_code in sorted(country_summary.keys()):
+                summary = country_summary[country_code]
+                if summary["total"] > 0:
+                    rate = summary["achieved"] / summary["total"] * 100
+                    report_lines.append(
+                        f"| {country_code} | {summary['achieved']}/{summary['total']} | {rate:.1f}% |\n"
+                    )
+                else:
+                    report_lines.append(
+                        f"| {country_code} | {summary['achieved']}/{summary['total']} | N/A |\n"
+                    )
+
+        report_lines.append("\n---\n")
+
+    # MediaMarketingFunnelFormatBudgetConfig 预算满足情况
+    if "mediaMarketingFunnelFormatBudgetConfig_budget" in results:
+        report_lines.append("## MediaMarketingFunnelFormatBudgetConfig 预算满足情况\n")
+        format_budget = results["mediaMarketingFunnelFormatBudgetConfig_budget"]
+        total_satisfied = 0
+        total_count = 0
+
+        # 按国家分组统计
+        country_stats = {}
+        for key, format_data in format_budget.items():
+            country_code = format_data.get("country", "")
+            if country_code not in country_stats:
+                country_stats[country_code] = {"satisfied": 0, "total": 0}
+            country_stats[country_code]["total"] += 1
+            if format_data.get("achieved", False):
+                country_stats[country_code]["satisfied"] += 1
+                total_satisfied += 1
+            total_count += 1
+
+        if total_count > 0:
+            rate = total_satisfied / total_count * 100
+            report_lines.append(
+                f"**总体满足率**: {total_satisfied}/{total_count} ({rate:.1f}%)\n"
+            )
+        else:
+            report_lines.append(
+                f"**总体满足率**: {total_satisfied}/{total_count} (N/A)\n"
+            )
+
+        report_lines.append("\n| 区域 | 满足数/总数 | 满足率 |\n")
+        report_lines.append("|------|-------------|--------|\n")
+
+        for country_code in sorted(country_stats.keys()):
+            stats = country_stats[country_code]
+            if stats["total"] > 0:
+                rate = stats["satisfied"] / stats["total"] * 100
+                report_lines.append(
+                    f"| {country_code} | {stats['satisfied']}/{stats['total']} | {rate:.1f}% |\n"
+                )
+            else:
+                report_lines.append(
+                    f"| {country_code} | {stats['satisfied']}/{stats['total']} | N/A |\n"
+                )
+
+        # 显示未满足的配置
+        unsatisfied_count = 0
+        for country_code in sorted(country_stats.keys()):
+            unsatisfied = [
+                (key, format_data)
+                for key, format_data in format_budget.items()
+                if format_data.get("country") == country_code
+                and not format_data.get("achieved", False)
+            ]
+            if unsatisfied:
+                unsatisfied_count += len(unsatisfied)
+                report_lines.append(f"\n### {country_code} - 未满足的配置\n")
+                report_lines.append(
+                    "| 媒体 | 平台 | 漏斗 | 广告格式 | 创意 | 目标预算 | 实际预算 | 达成率 | 最小要求 |\n"
+                )
+                report_lines.append(
+                    "|------|------|------|----------|------|----------|----------|--------|----------|\n"
+                )
+                for key, format_data in sorted(unsatisfied, key=lambda x: x[0]):
+                    achievement_rate = format_data.get("achievement_rate", "N/A")
+                    if isinstance(achievement_rate, (int, float)):
+                        achievement_rate_str = f"{achievement_rate}%"
+                    else:
+                        achievement_rate_str = str(achievement_rate)
+                    report_lines.append(
+                        f"| {format_data.get('media', '')} | {format_data.get('platform', '')} | "
+                        f"{format_data.get('funnel', '')} | {format_data.get('adformat', '')} | "
+                        f"{format_data.get('creative', '')} | {format_data.get('target', 0):,.0f} | "
+                        f"{format_data.get('actual', 0):,.0f} | {achievement_rate_str} | "
+                        f"{format_data.get('min_required', 0):,.0f} |\n"
+                    )
+
+        if unsatisfied_count == 0:
+            report_lines.append("\n✓ 所有配置都已满足\n")
+
+        report_lines.append("\n---\n")
+
+    # AdFormat 预算分配检查（Xiaomi版本）
+    if "adformat_budget_allocation" in results:
+        report_lines.append("## AdFormat 预算分配检查\n")
+        report_lines.append(
+            "\n**说明**: 当 `allow_zero_budget=False` 时，检查每个推广区域下每个 AdFormat 是否都分配了预算。"
+            "按 (媒体, 平台, 广告格式) 聚合求和预算，只要预算 > 0 即视为已分配。\n"
+        )
+        adformat_allocation = results["adformat_budget_allocation"]
+        total_satisfied = 0
+        total_count = 0
+
+        for country_code in sorted(adformat_allocation.keys()):
+            country_formats = adformat_allocation[country_code]
+            country_satisfied = sum(
+                1 for v in country_formats.values() if v.get("satisfied", False)
+            )
+            country_total = len(country_formats)
+            total_satisfied += country_satisfied
+            total_count += country_total
+
+        if total_count > 0:
+            rate = total_satisfied / total_count * 100
+            report_lines.append(
+                f"**总体满足率**: {total_satisfied}/{total_count} ({rate:.1f}%)\n"
+            )
+        else:
+            report_lines.append(
+                f"**总体满足率**: {total_satisfied}/{total_count} (N/A)\n"
+            )
+
+        report_lines.append("\n| 区域 | 满足数/总数 | 满足率 |\n")
+        report_lines.append("|------|-------------|--------|\n")
+
+        for country_code in sorted(adformat_allocation.keys()):
+            country_formats = adformat_allocation[country_code]
+            country_satisfied = sum(
+                1 for v in country_formats.values() if v.get("satisfied", False)
+            )
+            country_total = len(country_formats)
+            if country_total > 0:
+                rate = country_satisfied / country_total * 100
+                report_lines.append(
+                    f"| {country_code} | {country_satisfied}/{country_total} | {rate:.1f}% |\n"
+                )
+            else:
+                report_lines.append(
+                    f"| {country_code} | {country_satisfied}/{country_total} | N/A |\n"
+                )
+
+        # 显示未满足的 AdFormat
+        unsatisfied_count = 0
+        for country_code in sorted(adformat_allocation.keys()):
+            country_formats = adformat_allocation[country_code]
+            unsatisfied = [
+                (k, v)
+                for k, v in country_formats.items()
+                if not v.get("satisfied", False)
+            ]
+            if unsatisfied:
+                unsatisfied_count += len(unsatisfied)
+                report_lines.append(f"\n### {country_code} - 未满足的 AdFormat\n")
+                report_lines.append("| 媒体 | 平台 | 广告格式 | 预算 |\n")
+                report_lines.append("|------|------|----------|------|\n")
+                for key, format_data in sorted(unsatisfied, key=lambda x: x[0]):
+                    report_lines.append(
+                        f"| {format_data.get('media', '')} | {format_data.get('platform', '')} | "
+                        f"{format_data.get('adformat', '')} | {format_data.get('budget', 0):,.2f} |\n"
+                    )
+
+        if unsatisfied_count == 0:
+            report_lines.append("\n✓ 所有 AdFormat 都已分配预算\n")
+
+        report_lines.append("\n---\n")
+
+    # Adtype 预算分配检查（Common版本，保留兼容性）
     if "adtype_budget_allocation" in results:
         report_lines.append("## Adtype 预算分配检查\n")
         report_lines.append(
@@ -465,7 +687,13 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
         ("营销漏斗预算", "marketingfunnel_budget"),
         ("媒体预算", "media_budget"),
         ("广告类型 KPI", "adtype_kpi"),
+        ("MediaMarketingFunnelFormat KPI", "mediaMarketingFunnelFormat_kpi"),
+        (
+            "MediaMarketingFunnelFormatBudgetConfig 预算",
+            "mediaMarketingFunnelFormatBudgetConfig_budget",
+        ),
         ("Adtype 预算分配", "adtype_budget_allocation"),
+        ("AdFormat 预算分配", "adformat_budget_allocation"),
     ]
 
     for dim_name, dim_key in dimensions:
@@ -493,20 +721,49 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
                             total_achieved += 1
                 achieved_str = f"{total_achieved}/{total_count}"
                 rate = (total_achieved / total_count * 100) if total_count > 0 else 0
+            elif dim_key == "mediaMarketingFunnelFormat_kpi":
+                total_achieved = 0
+                total_count = 0
+                for format_data in dim_data.values():
+                    kpis = format_data.get("kpis", {})
+                    for kpi_data in kpis.values():
+                        total_count += 1
+                        if kpi_data.get("achieved", False):
+                            total_achieved += 1
+                achieved_str = f"{total_achieved}/{total_count}"
+                rate = (total_achieved / total_count * 100) if total_count > 0 else 0
             elif dim_key in [
                 "stage_budget",
                 "marketingfunnel_budget",
                 "media_budget",
                 "adtype_budget_allocation",
+                "mediaMarketingFunnelFormatBudgetConfig_budget",
+                "adformat_budget_allocation",
             ]:
                 # 这些维度需要统计所有区域下的所有项目
+                # 新结构：dim_data 是 {key: item_data}，其中 key 包含 country_code
+                # 旧结构：dim_data 是 {country_code: {key: item_data}}
                 total_satisfied = 0
                 total_count = 0
-                for country_items in dim_data.values():
-                    for item_data in country_items.values():
-                        total_count += 1
-                        if item_data.get("satisfied", False):
-                            total_satisfied += 1
+                if dim_data:
+                    first_key = next(iter(dim_data.keys()))
+                    first_value = dim_data[first_key]
+                    # 如果第一层的值是字典且包含 "country" 字段，是新结构
+                    if isinstance(first_value, dict) and "country" in first_value:
+                        # 新结构：直接遍历所有项目
+                        for item_data in dim_data.values():
+                            total_count += 1
+                            if item_data.get("achieved", False) or item_data.get(
+                                "satisfied", False
+                            ):
+                                total_satisfied += 1
+                    else:
+                        # 旧结构：按国家分组
+                        for country_items in dim_data.values():
+                            for item_data in country_items.values():
+                                total_count += 1
+                                if item_data.get("satisfied", False):
+                                    total_satisfied += 1
                 achieved_str = f"{total_satisfied}/{total_count}"
                 rate = (total_satisfied / total_count * 100) if total_count > 0 else 0
             else:
@@ -644,9 +901,15 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
         achieved_count = sum(1 for v in global_kpi.values() if v.get("achieved", False))
         total_count = len(global_kpi)
 
-        html_lines.append(
-            f"    <div class='summary'><strong>达成率</strong>: {achieved_count}/{total_count} ({achieved_count/total_count*100:.1f}%)</div>\n"
-        )
+        if total_count > 0:
+            rate = achieved_count / total_count * 100
+            html_lines.append(
+                f"    <div class='summary'><strong>达成率</strong>: {achieved_count}/{total_count} ({rate:.1f}%)</div>\n"
+            )
+        else:
+            html_lines.append(
+                f"    <div class='summary'><strong>达成率</strong>: {achieved_count}/{total_count} (N/A)</div>\n"
+            )
         html_lines.append(
             '    <div class=\'summary\'><strong>判断逻辑</strong>: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。</div>\n'
         )
@@ -690,10 +953,17 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
             first_region = next(iter(region_budget.values()))
             match_type = first_region.get("match_type", "完全匹配")
 
-        html_lines.append(
-            f"    <div class='summary'><strong>匹配类型</strong>: {match_type} | "
-            f"<strong>达成率</strong>: {achieved_count}/{total_count} ({achieved_count/total_count*100:.1f}%)</div>\n"
-        )
+        if total_count > 0:
+            rate = achieved_count / total_count * 100
+            html_lines.append(
+                f"    <div class='summary'><strong>匹配类型</strong>: {match_type} | "
+                f"<strong>达成率</strong>: {achieved_count}/{total_count} ({rate:.1f}%)</div>\n"
+            )
+        else:
+            html_lines.append(
+                f"    <div class='summary'><strong>匹配类型</strong>: {match_type} | "
+                f"<strong>达成率</strong>: {achieved_count}/{total_count} (N/A)</div>\n"
+            )
 
         if match_type == "完全匹配":
             html_lines.append("    <table>\n")
@@ -955,7 +1225,13 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
         ("营销漏斗预算", "marketingfunnel_budget"),
         ("媒体预算", "media_budget"),
         ("广告类型 KPI", "adtype_kpi"),
+        ("MediaMarketingFunnelFormat KPI", "mediaMarketingFunnelFormat_kpi"),
+        (
+            "MediaMarketingFunnelFormatBudgetConfig 预算",
+            "mediaMarketingFunnelFormatBudgetConfig_budget",
+        ),
         ("Adtype 预算分配", "adtype_budget_allocation"),
+        ("AdFormat 预算分配", "adformat_budget_allocation"),
     ]
 
     for dim_name, dim_key in dimensions:
@@ -982,20 +1258,49 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
                             total_achieved += 1
                 achieved_str = f"{total_achieved}/{total_count}"
                 rate = (total_achieved / total_count * 100) if total_count > 0 else 0
+            elif dim_key == "mediaMarketingFunnelFormat_kpi":
+                total_achieved = 0
+                total_count = 0
+                for format_data in dim_data.values():
+                    kpis = format_data.get("kpis", {})
+                    for kpi_data in kpis.values():
+                        total_count += 1
+                        if kpi_data.get("achieved", False):
+                            total_achieved += 1
+                achieved_str = f"{total_achieved}/{total_count}"
+                rate = (total_achieved / total_count * 100) if total_count > 0 else 0
             elif dim_key in [
                 "stage_budget",
                 "marketingfunnel_budget",
                 "media_budget",
                 "adtype_budget_allocation",
+                "mediaMarketingFunnelFormatBudgetConfig_budget",
+                "adformat_budget_allocation",
             ]:
                 # 这些维度需要统计所有区域下的所有项目
+                # 新结构：dim_data 是 {key: item_data}，其中 key 包含 country_code
+                # 旧结构：dim_data 是 {country_code: {key: item_data}}
                 total_satisfied = 0
                 total_count = 0
-                for country_items in dim_data.values():
-                    for item_data in country_items.values():
-                        total_count += 1
-                        if item_data.get("satisfied", False):
-                            total_satisfied += 1
+                if dim_data:
+                    first_key = next(iter(dim_data.keys()))
+                    first_value = dim_data[first_key]
+                    # 如果第一层的值是字典且包含 "country" 字段，是新结构
+                    if isinstance(first_value, dict) and "country" in first_value:
+                        # 新结构：直接遍历所有项目
+                        for item_data in dim_data.values():
+                            total_count += 1
+                            if item_data.get("achieved", False) or item_data.get(
+                                "satisfied", False
+                            ):
+                                total_satisfied += 1
+                    else:
+                        # 旧结构：按国家分组
+                        for country_items in dim_data.values():
+                            for item_data in country_items.values():
+                                total_count += 1
+                                if item_data.get("satisfied", False):
+                                    total_satisfied += 1
                 achieved_str = f"{total_satisfied}/{total_count}"
                 rate = (total_satisfied / total_count * 100) if total_count > 0 else 0
             else:

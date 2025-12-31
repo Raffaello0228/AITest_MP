@@ -1,0 +1,901 @@
+{
+  "basicInfo": {
+    "isHistoryMp": 1,
+    "kpiInfo": [
+      {
+        "key": "Impression",
+        "val": "367908213",
+        "priority": 1,
+        "completion": 0
+      },
+      {
+        "key": "VideoViews",
+        "val": "3499408",
+        "priority": 2,
+        "completion": 0
+      },
+      {
+        "key": "Clicks",
+        "val": "662977",
+        "priority": 4,
+        "completion": 0
+      }
+    ],
+    "kpiInfoBudgetConfig": {
+      "rangeMatch": 80
+    },
+    "dimension": [
+      "corporation",
+      "ai"
+    ],
+    "usedHistoryMp": 1,
+    "moduleConfig": [
+      {
+        "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+        "priority": 1
+      },
+      {
+        "moduleName": "kpiInfo",
+        "priority": 2
+      },
+      {
+        "moduleName": "media",
+        "priority": 3
+      },
+      {
+        "moduleName": "marketingFunnel",
+        "priority": 4
+      },
+      {
+        "moduleName": "stage",
+        "priority": 5
+      },
+      {
+        "moduleName": "mediaMarketingFunnelFormat",
+        "priority": 6
+      }
+    ],
+    "regionBudget": [
+      {
+        "countryInfo": {
+          "countryCode": "ES",
+          "countryNameCN": "西班牙",
+          "countryNameEn": "Spain",
+          "regionCode": "WE",
+          "regionNameCN": "西欧",
+          "mpCode": "ES"
+        }
+      }
+    ],
+    "totalBudget": 689334,
+    "uuid": "d0c3f1db-ec58-48a9-9bd9-de1efcf217a9",
+    "historyMpId": "e930c432-2526-4451-a34e-2f21b8b6",
+    "mediaPlanName": "测试-module_priority_list-mediaMarketingFunnelFormatBudgetConfig第一",
+    "corporationId": "18581",
+    "projectName": "Project",
+    "productName": "Product",
+    "brandName": "Mi",
+    "briefCode": "Brief Code",
+    "currency": "USD",
+    "corporationName": "北京小米移动软件有限公司",
+    "accountId": "1000263097025266",
+    "categoryLevel1Id": "7",
+    "categoryLevel2Id": "7003",
+    "categoryLevel3Id": "7003001",
+    "competitorCorporationId": "10866",
+    "campaignId": null
+  },
+  "briefMultiConfig": [
+    {
+      "countryInfo": {
+        "countryCode": "ES",
+        "countryNameCN": "西班牙",
+        "countryNameEn": "Spain",
+        "regionCode": "WE",
+        "regionNameCN": "西欧",
+        "mpCode": "ES"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+          "priority": 1
+        },
+        {
+          "moduleName": "kpiInfo",
+          "priority": 2
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "mediaMarketingFunnelFormat",
+          "priority": 6
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelFormatBudgetConfig": {
+        "precision": 2,
+        "kpiFlexibility": 80,
+        "totalBudgetFlexibility": 80
+      },
+      "stage": [
+        {
+          "name": "Early Bird",
+          "budgetPercentage": 47.9,
+          "budgetAmount": 330185,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        },
+        {
+          "name": "Open Sale",
+          "budgetPercentage": 52.1,
+          "budgetAmount": 359149,
+          "dates": null,
+          "marketingFunnel": null,
+          "mediaPlatform": null
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 18.43,
+          "budgetAmount": 127036
+        },
+        {
+          "name": "Consideration",
+          "budgetPercentage": 6.97,
+          "budgetAmount": 48013
+        },
+        {
+          "name": "Conversion",
+          "budgetPercentage": 58.31,
+          "budgetAmount": 401944
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 16.3,
+          "budgetAmount": 112341
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 44.5,
+          "budgetAmount": 306757,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 38.69,
+              "budgetAmount": 266687
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 5.81,
+              "budgetAmount": 40070
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 41.83,
+          "budgetAmount": 288346,
+          "children": [
+            {
+              "name": "FB",
+              "budgetPercentage": 3.82,
+              "budgetAmount": 26302
+            },
+            {
+              "name": "FB&IG",
+              "budgetPercentage": 34.34,
+              "budgetAmount": 236735
+            },
+            {
+              "name": "IG",
+              "budgetPercentage": 3.67,
+              "budgetAmount": 25309
+            }
+          ]
+        },
+        {
+          "name": "TikTok",
+          "budgetPercentage": 13.67,
+          "budgetAmount": 94231,
+          "children": [
+            {
+              "name": "TT",
+              "budgetPercentage": 13.67,
+              "budgetAmount": 94231
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelFormat": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Conversion",
+              "adFormatName": "Performance Max",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": 95939,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "17091121",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "95710",
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adFormatName": "Search",
+              "creative": "Text",
+              "adFormatTotalBudget": 138692,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "3498910",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "184486",
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adFormatName": "Demand Gen",
+              "creative": "Image",
+              "adFormatTotalBudget": 32056,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "160280374",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adFormatName": "VRC 2.0",
+              "creative": "Video",
+              "adFormatTotalBudget": 24042,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8586449",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adFormatName": "VVC",
+              "creative": "Video",
+              "adFormatTotalBudget": 16028,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "4452233",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "2003505",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": null,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adFormatName": "Video Link Ads",
+              "creative": "Video",
+              "adFormatTotalBudget": 13072,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1761792",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "933750",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": 13230,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "3324121",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "14135",
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": null,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "FB&IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": 65302,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "35619231",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adFormatName": "Video Link Ads",
+              "creative": "Video",
+              "adFormatTotalBudget": 11873,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1187308",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "59365",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adFormatName": "ASC",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": 135813,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "43975367",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "193242",
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": 23746,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "11873077",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "79154",
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "IG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Consideration",
+              "funnelNameKey": "Consideration",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Conversion",
+              "funnelNameKey": "Conversion",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": null,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Consideration",
+              "adFormatName": "Video Link Ads",
+              "creative": "Video",
+              "adFormatTotalBudget": 7039,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "2146048",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": "502788",
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Conversion",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": 18270,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "8013158",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "7909",
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": null,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": null,
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "TikTok",
+          "platform": [
+            "TT"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adFormat": []
+            },
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": 37692,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "23266857",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": null,
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adFormatName": "Image&Video Link Ads",
+              "creative": "Image&Video",
+              "adFormatTotalBudget": 56538,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "42832167",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "VideoViews",
+                  "val": null,
+                  "priority": 2,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "88341",
+                  "priority": 4,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

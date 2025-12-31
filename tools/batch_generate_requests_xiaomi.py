@@ -423,7 +423,7 @@ def build_country_media_marketing_format(
     - 每个 (media, platform) 组合一个对象
     - platform: 平台名称数组
     - marketingFunnels: 当前 media-platform 相关的所有 funnel（adFormat 替代 adType）
-    - adFormatWithKPI: 按 (funnel, ad_type) 聚合 KPI，新增字段 creative, adFormatTotalBudget, totalBudgetCompletion
+    - adFormatWithKPI: 按 (funnel, ad_type) 聚合 KPI，新增字段 creative, adFormatTotalBudget, completion
     """
     result = []
 
@@ -505,13 +505,19 @@ def build_country_media_marketing_format(
                 else:
                     creative = ""  # 如果数据中没有，设为空字符串
 
+                # 如果预算为0，则传null
+                ad_format_total_budget = int(round(spend))
+                ad_format_total_budget_value = (
+                    None if ad_format_total_budget == 0 else ad_format_total_budget
+                )
+
                 media_entry["adFormatWithKPI"].append(
                     {
                         "funnelName": funnel,
                         "adFormatName": ad_type,  # 新版本：adFormatName 替代 adTypeName
                         "creative": creative,  # 新增字段
-                        "adFormatTotalBudget": int(round(spend)),  # 预算金额保留整数
-                        "totalBudgetCompletion": 0,  # 新增字段
+                        "adFormatTotalBudget": ad_format_total_budget_value,  # 预算金额保留整数，如果为0则传null
+                        "completion": 0,  # 新增字段
                         "kpiInfo": kpi_list,
                     }
                 )
@@ -711,8 +717,11 @@ def apply_testcase_template_config(
 
         # 过滤 mediaMarketingFunnelFormat 中的 KPI，只保留 kpi_priority_list 中指定的
         # 新版本使用 mediaMarketingFunnelFormat -> adFormatWithKPI
+        # 收集所有 adFormatWithKPI 项，用于随机设置 completion
+        all_adformats = []
         for mmff in country_config.get("mediaMarketingFunnelFormat", []):
             for adformat in mmff.get("adFormatWithKPI", []):
+                all_adformats.append(adformat)
                 kpi_list = adformat.get("kpiInfo", [])
                 kpi_list_filtered = [
                     kpi_item
@@ -734,11 +743,15 @@ def apply_testcase_template_config(
                         kpi_item["completion"] = 0
                 adformat["kpiInfo"] = kpi_list_filtered
 
-                # 如果 mediaMarketingFunnelFormatBudgetConfig_must_achieve 为 True，设置 totalBudgetCompletion
-                if mediaMarketingFunnelFormatBudgetConfig_must_achieve:
-                    adformat["totalBudgetCompletion"] = 1
-                else:
-                    adformat["totalBudgetCompletion"] = 0
+        # 如果 mediaMarketingFunnelFormatBudgetConfig_must_achieve 为 True，随机设置 completion
+        # 不能全部为必须达成，也不能全部不为必须达成
+        if mediaMarketingFunnelFormatBudgetConfig_must_achieve:
+            budget_completion_flags = choose_completion_flags(len(all_adformats))
+            for idx, adformat in enumerate(all_adformats):
+                adformat["completion"] = budget_completion_flags[idx]
+        else:
+            for adformat in all_adformats:
+                adformat["completion"] = 0
 
     return result
 
@@ -993,7 +1006,7 @@ def batch_generate(
                 testcase_template_path=testcase_template_path,
             )
             results.append(result)
-            print(f"✓ 已生成测试用例 {case_id}: {output_file}")
+            print(f"[OK] 已生成测试用例 {case_id}: {output_file}")
         except Exception as e:
             print(f"✗ 生成测试用例 {case_id} 失败: {e}")
             print(f"详细错误信息:")

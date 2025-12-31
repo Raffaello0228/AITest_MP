@@ -31,6 +31,132 @@ TEST_CASES = {
             "mediaMarketingFunnelFormatBudgetConfig",
         ],
     },
+    # ========== 测试 mediaMarketingFunnelFormatBudgetConfig 相关字段 ==========
+    # 用例13：mediaMarketingFunnelFormatBudgetConfig必须达成
+    "测试-mediaMarketingFunnelFormatBudgetConfig_must_achieve-True": {
+        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
+        "kpi_must_achieve": False,
+        "kpi_target_rate": 80,
+        "stage_match_type": "完全匹配",
+        "stage_range_match": 20,
+        "marketingfunnel_match_type": "完全匹配",
+        "marketingfunnel_range_match": 15,
+        "media_match_type": "完全匹配",
+        "media_range_match": 5,
+        "allow_zero_budget": False,
+        "mediaMarketingFunnelFormat_target_rate": 80,
+        "mediaMarketingFunnelFormat_must_achieve": False,
+        "mediaMarketingFunnelFormatBudgetConfig_target_rate": 80,
+        "mediaMarketingFunnelFormatBudgetConfig_must_achieve": True,  # 改变
+        "module_priority_list": [
+            "mediaMarketingFunnelFormatBudgetConfig",  # 提高优先级
+            "kpiInfo",
+            "media",
+            "marketingFunnel",
+            "stage",
+            "mediaMarketingFunnelFormat",
+        ],
+    },
+    # 用例14：mediaMarketingFunnelFormatBudgetConfig目标达成率改为90%
+    "测试-mediaMarketingFunnelFormatBudgetConfig_target_rate-90": {
+        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
+        "kpi_must_achieve": False,
+        "kpi_target_rate": 80,
+        "stage_match_type": "完全匹配",
+        "stage_range_match": 20,
+        "marketingfunnel_match_type": "完全匹配",
+        "marketingfunnel_range_match": 15,
+        "media_match_type": "完全匹配",
+        "media_range_match": 5,
+        "allow_zero_budget": False,
+        "mediaMarketingFunnelFormat_target_rate": 80,
+        "mediaMarketingFunnelFormat_must_achieve": False,
+        "mediaMarketingFunnelFormatBudgetConfig_target_rate": 90,  # 改变
+        "mediaMarketingFunnelFormatBudgetConfig_must_achieve": False,
+        "module_priority_list": [
+            "mediaMarketingFunnelFormatBudgetConfig",  # 提高优先级
+            "kpiInfo",
+            "media",
+            "marketingFunnel",
+            "stage",
+            "mediaMarketingFunnelFormat",
+        ],
+    },
+    # 用例14a：mediaMarketingFunnelFormatBudgetConfig目标达成率改为70%（宽松）
+    "测试-mediaMarketingFunnelFormatBudgetConfig_target_rate-70": {
+        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
+        "kpi_must_achieve": False,
+        "kpi_target_rate": 80,
+        "stage_match_type": "完全匹配",
+        "stage_range_match": 20,
+        "marketingfunnel_match_type": "完全匹配",
+        "marketingfunnel_range_match": 15,
+        "media_match_type": "完全匹配",
+        "media_range_match": 5,
+        "allow_zero_budget": False,
+        "mediaMarketingFunnelFormat_target_rate": 80,
+        "mediaMarketingFunnelFormat_must_achieve": False,
+        "mediaMarketingFunnelFormatBudgetConfig_target_rate": 70,  # 改变
+        "mediaMarketingFunnelFormatBudgetConfig_must_achieve": False,
+        "module_priority_list": [
+            "mediaMarketingFunnelFormatBudgetConfig",  # 提高优先级
+            "kpiInfo",
+            "media",
+            "marketingFunnel",
+            "stage",
+            "mediaMarketingFunnelFormat",
+        ],
+    },
+    # 用例14c：mediaMarketingFunnelFormatBudgetConfig必须达成 + 目标达成率90%（组合）
+    "测试-mediaMarketingFunnelFormatBudgetConfig-must_achieve-True_target_rate-90": {
+        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
+        "kpi_must_achieve": False,
+        "kpi_target_rate": 80,
+        "stage_match_type": "完全匹配",
+        "stage_range_match": 20,
+        "marketingfunnel_match_type": "完全匹配",
+        "marketingfunnel_range_match": 15,
+        "media_match_type": "完全匹配",
+        "media_range_match": 5,
+        "allow_zero_budget": False,
+        "mediaMarketingFunnelFormat_target_rate": 80,
+        "mediaMarketingFunnelFormat_must_achieve": False,
+        "mediaMarketingFunnelFormatBudgetConfig_target_rate": 90,  # 改变
+        "mediaMarketingFunnelFormatBudgetConfig_must_achieve": True,  # 改变
+        "module_priority_list": [
+            "mediaMarketingFunnelFormatBudgetConfig",  # 提高优先级
+            "kpiInfo",
+            "media",
+            "marketingFunnel",
+            "stage",
+            "mediaMarketingFunnelFormat",
+        ],
+    },
+    # 用例14d：mediaMarketingFunnelFormatBudgetConfig必须达成 + 目标达成率70%（宽松组合）
+    "测试-mediaMarketingFunnelFormatBudgetConfig-must_achieve-True_target_rate-70": {
+        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
+        "kpi_must_achieve": False,
+        "kpi_target_rate": 80,
+        "stage_match_type": "完全匹配",
+        "stage_range_match": 20,
+        "marketingfunnel_match_type": "完全匹配",
+        "marketingfunnel_range_match": 15,
+        "media_match_type": "完全匹配",
+        "media_range_match": 5,
+        "allow_zero_budget": False,
+        "mediaMarketingFunnelFormat_target_rate": 80,
+        "mediaMarketingFunnelFormat_must_achieve": False,
+        "mediaMarketingFunnelFormatBudgetConfig_target_rate": 70,  # 改变
+        "mediaMarketingFunnelFormatBudgetConfig_must_achieve": True,  # 改变
+        "module_priority_list": [
+            "mediaMarketingFunnelFormatBudgetConfig",  # 提高优先级
+            "kpiInfo",
+            "media",
+            "marketingFunnel",
+            "stage",
+            "mediaMarketingFunnelFormat",
+        ],
+    },
     # ========== 测试 KPI 相关字段 ==========
     # 用例1：KPI必须达成
     "测试-kpi_must_achieve-True": {
@@ -342,57 +468,6 @@ TEST_CASES = {
             "mediaMarketingFunnelFormatBudgetConfig",
         ],
     },
-    # ========== 测试 mediaMarketingFunnelFormatBudgetConfig 相关字段 ==========
-    # 用例13：mediaMarketingFunnelFormatBudgetConfig必须达成
-    "测试-mediaMarketingFunnelFormatBudgetConfig_must_achieve-True": {
-        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
-        "kpi_must_achieve": False,
-        "kpi_target_rate": 80,
-        "stage_match_type": "完全匹配",
-        "stage_range_match": 20,
-        "marketingfunnel_match_type": "完全匹配",
-        "marketingfunnel_range_match": 15,
-        "media_match_type": "完全匹配",
-        "media_range_match": 5,
-        "allow_zero_budget": False,
-        "mediaMarketingFunnelFormat_target_rate": 80,
-        "mediaMarketingFunnelFormat_must_achieve": False,
-        "mediaMarketingFunnelFormatBudgetConfig_target_rate": 80,
-        "mediaMarketingFunnelFormatBudgetConfig_must_achieve": True,  # 改变
-        "module_priority_list": [
-            "mediaMarketingFunnelFormatBudgetConfig",  # 提高优先级
-            "kpiInfo",
-            "media",
-            "marketingFunnel",
-            "stage",
-            "mediaMarketingFunnelFormat",
-        ],
-    },
-    # 用例14：mediaMarketingFunnelFormatBudgetConfig目标达成率改为90%
-    "测试-mediaMarketingFunnelFormatBudgetConfig_target_rate-90": {
-        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
-        "kpi_must_achieve": False,
-        "kpi_target_rate": 80,
-        "stage_match_type": "完全匹配",
-        "stage_range_match": 20,
-        "marketingfunnel_match_type": "完全匹配",
-        "marketingfunnel_range_match": 15,
-        "media_match_type": "完全匹配",
-        "media_range_match": 5,
-        "allow_zero_budget": False,
-        "mediaMarketingFunnelFormat_target_rate": 80,
-        "mediaMarketingFunnelFormat_must_achieve": False,
-        "mediaMarketingFunnelFormatBudgetConfig_target_rate": 90,  # 改变
-        "mediaMarketingFunnelFormatBudgetConfig_must_achieve": False,
-        "module_priority_list": [
-            "mediaMarketingFunnelFormatBudgetConfig",  # 提高优先级
-            "kpiInfo",
-            "media",
-            "marketingFunnel",
-            "stage",
-            "mediaMarketingFunnelFormat",
-        ],
-    },
     # ========== 测试 module_priority_list ==========
     # 用例15：模块优先级改为media第一
     "测试-module_priority_list-media第一": {
@@ -444,8 +519,33 @@ TEST_CASES = {
             "mediaMarketingFunnelFormatBudgetConfig",
         ],
     },
+    # 用例17：模块优先级改为mediaMarketingFunnelFormatBudgetConfig第一
+    "测试-module_priority_list-mediaMarketingFunnelFormatBudgetConfig第一": {
+        "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
+        "kpi_must_achieve": False,
+        "kpi_target_rate": 80,
+        "stage_match_type": "完全匹配",
+        "stage_range_match": 20,
+        "marketingfunnel_match_type": "完全匹配",
+        "marketingfunnel_range_match": 15,
+        "media_match_type": "完全匹配",
+        "media_range_match": 5,
+        "allow_zero_budget": False,
+        "mediaMarketingFunnelFormat_target_rate": 80,
+        "mediaMarketingFunnelFormat_must_achieve": False,
+        "mediaMarketingFunnelFormatBudgetConfig_target_rate": 80,
+        "mediaMarketingFunnelFormatBudgetConfig_must_achieve": False,
+        "module_priority_list": [  # 改变
+            "mediaMarketingFunnelFormatBudgetConfig",  # 提高优先级
+            "kpiInfo",
+            "media",
+            "marketingFunnel",
+            "stage",
+            "mediaMarketingFunnelFormat",
+        ],
+    },
     # ========== 组合测试用例 ==========
-    # 用例17：所有匹配类型都改为大小关系匹配
+    # 用例18：所有匹配类型都改为大小关系匹配
     "组合测试-所有匹配类型-大小关系匹配": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
@@ -470,7 +570,7 @@ TEST_CASES = {
             "mediaMarketingFunnelFormatBudgetConfig",
         ],
     },
-    # 用例18：所有must_achieve都设为True
+    # 用例19：所有must_achieve都设为True
     "组合测试-所有must_achieve-True": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": True,  # 改变
@@ -495,7 +595,7 @@ TEST_CASES = {
             "mediaMarketingFunnelFormatBudgetConfig",
         ],
     },
-    # 用例19：所有target_rate都设为90%
+    # 用例20：所有target_rate都设为90%
     "组合测试-所有target_rate-90": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
@@ -520,7 +620,7 @@ TEST_CASES = {
             "mediaMarketingFunnelFormatBudgetConfig",
         ],
     },
-    # 用例20：严格模式：所有must_achieve=True，所有target_rate=90%，所有误差范围=5%
+    # 用例21：严格模式：所有must_achieve=True，所有target_rate=90%，所有误差范围=5%
     "组合测试-严格模式": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": True,  # 改变
@@ -545,7 +645,7 @@ TEST_CASES = {
             "mediaMarketingFunnelFormatBudgetConfig",
         ],
     },
-    # 用例21：宽松模式：所有must_achieve=False，所有target_rate=70%，所有误差范围=20%
+    # 用例22：宽松模式：所有must_achieve=False，所有target_rate=70%，所有误差范围=20%
     "组合测试-宽松模式": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,

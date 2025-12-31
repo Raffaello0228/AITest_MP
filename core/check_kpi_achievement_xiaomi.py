@@ -55,12 +55,17 @@ def extract_ai_data(result_json: Dict) -> List[Dict]:
     ai_data_list = []
 
     # Xiaomi版本：result.result.dimensionMultiCountryResult
-    result = result_json.get("result", {})
+    result = result_json.get("data", {}).get("result", {})
     dimension_result = result.get("dimensionMultiCountryResult", {})
 
     for region_key, region_data in dimension_result.items():
-        ai_list = region_data.get("ai", [])
+        ai_list = region_data.get("corporation", [])
         for ai_item in ai_list:
+            # 过滤掉 media 列包含 TTL 的总计行
+            media = ai_item.get("media", "")
+            if media and "TTL" in media:
+                continue
+
             ai_item["_region_key"] = region_key
             ai_data_list.append(ai_item)
 
@@ -121,6 +126,26 @@ def extract_kpi_from_ai(ai_item: Dict) -> Dict[str, float]:
             kpi_values[kpi_name] = parse_kpi_value(ai_item[est_field])
 
     return kpi_values
+
+
+def check_region_budget_achievement(
+    request_json: Dict,
+    ai_data_list: List[Dict],
+    testcase_config: Dict[str, Any],
+) -> Dict[str, Any]:
+    """检查区域预算是否达成（Xiaomi版本：已移除，返回空字典）"""
+    # Xiaomi版本不再使用 regionBudget，此函数保留以兼容接口
+    return {}
+
+
+def check_region_kpi_achievement(
+    request_json: Dict,
+    ai_data_list: List[Dict],
+    testcase_config: Dict[str, Any],
+) -> Dict[str, Dict[str, Any]]:
+    """检查区域 KPI 是否达成（Xiaomi版本：已移除，返回空字典）"""
+    # Xiaomi版本不再使用 regionKPI，此函数保留以兼容接口
+    return {}
 
 
 def check_global_kpi_achievement(
@@ -661,28 +686,48 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Dict[str, Any]]:
     """检查 mediaMarketingFunnelFormatBudgetConfig 维度预算是否满足（Xiaomi版本）"""
-    # 提取目标配置
+    # 从 request_json 中提取 totalBudgetFlexibility
+    total_budget_flexibility = 80  # 默认值
+    for country_config in request_json.get("briefMultiConfig", []):
+        budget_config = country_config.get("mediaMarketingFunnelFormatBudgetConfig", {})
+        if budget_config and "totalBudgetFlexibility" in budget_config:
+            total_budget_flexibility = budget_config.get("totalBudgetFlexibility", 80)
+            break
+
+    # 从 request_json 的 adFormatWithKPI 中提取目标配置
     target_configs = {}
     for country_config in request_json.get("briefMultiConfig", []):
         country_code = country_config.get("countryInfo", {}).get("countryCode", "")
         target_configs[country_code] = {}
 
-        budget_config = country_config.get("mediaMarketingFunnelFormatBudgetConfig", {})
-        if not budget_config:
-            continue
+        for media_config in country_config.get("mediaMarketingFunnelFormat", []):
+            media_name = media_config.get("mediaName", "")
+            platform = (
+                media_config.get("platform", [""])[0]
+                if media_config.get("platform")
+                else ""
+            )
+            funnel_name = media_config.get("funnelName", "")
 
-        for config_item in budget_config.get("budgetConfig", []):
-            media_name = config_item.get("mediaName", "")
-            platform = config_item.get("platform", "")
-            funnel_name = config_item.get("funnelName", "")
-            adformat_name = config_item.get("adFormatName", "")
-            creative = config_item.get("creative", "")
+            for adformat in media_config.get("adFormatWithKPI", []):
+                adformat_name = adformat.get("adFormatName", "")
+                creative = adformat.get("creative", "")
+                ad_format_total_budget = adformat.get("adFormatTotalBudget")
+                completion = adformat.get("completion", 0)
 
-            key = f"{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
-            target_configs[country_code][key] = {
-                "target": config_item.get("budgetAmount", 0),
-                "target_percentage": config_item.get("budgetPercentage", 0),
-            }
+                # 只处理设置了 adFormatTotalBudget 的 adformat
+                if ad_format_total_budget is None:
+                    continue
+
+                key = (
+                    f"{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+                )
+                target_configs[country_code][key] = {
+                    "target": (
+                        float(ad_format_total_budget) if ad_format_total_budget else 0
+                    ),
+                    "completion": completion,
+                }
 
     # 从 ai 数据聚合计算实际配置
     actual_configs = {}
@@ -708,66 +753,77 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
         budget = parse_budget(ai_item.get("totalBudget", 0))
         actual_configs[country][key] += budget
 
-    # 计算百分比
-    for country_code in actual_configs.keys():
-        total_budget = sum(actual_configs[country_code].values())
-        for key in actual_configs[country_code].keys():
-            actual_amount = actual_configs[country_code][key]
-            actual_percentage = (
-                (actual_amount / total_budget * 100) if total_budget > 0 else 0.0
-            )
-            actual_configs[country_code][key] = {
-                "actual": actual_amount,
-                "actual_percentage": actual_percentage,
-            }
-
     # 判断是否满足
-    config_target_rate = testcase_config.get(
-        "mediaMarketingFunnelFormatBudgetConfig_target_rate", 80
-    )
-    config_must_achieve = testcase_config.get(
-        "mediaMarketingFunnelFormatBudgetConfig_must_achieve", False
-    )
     results = {}
 
     all_countries = set(target_configs.keys()) | set(actual_configs.keys())
 
     for country_code in all_countries:
-        results[country_code] = {}
         target_data = target_configs.get(country_code, {})
         actual_data = actual_configs.get(country_code, {})
 
         all_keys = set(target_data.keys()) | set(actual_data.keys())
 
         for key in all_keys:
-            target_info = target_data.get(key, {"target": 0, "target_percentage": 0})
-            actual_info = actual_data.get(key, {"actual": 0, "actual_percentage": 0})
+            target_info = target_data.get(key, {"target": 0, "completion": 0})
+            # actual_data[key] 是 float，不是字典
+            actual_amount = actual_data.get(key, 0.0)
+            if isinstance(actual_amount, dict):
+                actual_amount = actual_amount.get("actual", 0.0)
 
             target = target_info["target"]
-            actual = actual_info["actual"]
+            actual = actual_amount
+            completion = target_info.get("completion", 0)
 
-            if target == 0:
-                error_percentage = (
-                    0.0 if actual_info["actual_percentage"] == 0 else "null"
-                )
-                satisfied = actual_info["actual_percentage"] == 0
+            # 解析 key 获取维度信息
+            key_parts = key.split("|")
+            if len(key_parts) >= 5:
+                media_name = key_parts[0]
+                platform = key_parts[1]
+                funnel_name = key_parts[2]
+                adformat_name = key_parts[3]
+                creative = key_parts[4]
             else:
-                error_percentage = abs(
-                    actual_info["actual_percentage"] - target_info["target_percentage"]
-                )
-                error_percentage = round(error_percentage)
-                if config_must_achieve:
-                    satisfied = actual >= target
-                else:
-                    satisfied = error_percentage <= 5  # 默认误差范围5%
+                media_name = platform = funnel_name = adformat_name = creative = ""
 
-            results[country_code][key] = {
+            # 计算达成率和判断是否满足
+            if target == 0:
+                achievement_rate = 0.0 if actual == 0 else "null"
+                achieved = actual == 0
+                min_required = 0
+            else:
+                # 计算达成率
+                raw_achievement_rate = (actual / target) * 100
+                achievement_rate = round(raw_achievement_rate)
+
+                # 根据 completion 判断：
+                # completion = 1: actual >= target
+                # completion = 0: actual >= target * totalBudgetFlexibility / 100
+                if completion == 1:
+                    min_required = target
+                    achieved = actual >= target
+                else:
+                    min_required = target * total_budget_flexibility / 100
+                    achieved = actual >= min_required
+
+            # 构建结果键（包含 country_code，与 KPI 检查保持一致）
+            result_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+
+            results[result_key] = {
+                "country": country_code,
+                "media": media_name,
+                "platform": platform,
+                "funnel": funnel_name,
+                "adformat": adformat_name,
+                "creative": creative,
                 "target": target,
                 "actual": actual,
-                "error_percentage": error_percentage,
-                "satisfied": satisfied,
-                "target_percentage": target_info["target_percentage"],
-                "actual_percentage": actual_info["actual_percentage"],
+                "achievement_rate": achievement_rate,
+                "target_rate": total_budget_flexibility,
+                "achieved": achieved,
+                "completion": completion,
+                "min_required": min_required,
+                "total_budget_flexibility": total_budget_flexibility,
             }
 
     return results
@@ -1104,8 +1160,8 @@ def main():
     # 提取 uuid 和 job_id（Xiaomi版本：从result.briefInfo.basicInfo中提取）
     brief_info = result_json.get("result", {}).get("briefInfo", {})
     basic_info = brief_info.get("basicInfo", {})
-    uuid = basic_info.get("uuid")
-    job_id = basic_info.get("jobId")
+    uuid = result_json.get("uuid")
+    job_id = result_json.get("job_id")
 
     # 提取 ai 数据
     ai_data_list = extract_ai_data(result_json)
@@ -1218,8 +1274,8 @@ def main():
 
     # 自动生成测试报告
     try:
-        # 从 core 模块导入（Xiaomi版本）
-        from core.generate_test_report_xiaomi import (
+        # 从 core 模块导入（使用通用报告生成器，支持 xiaomi 结构）
+        from core.generate_test_report import (
             generate_markdown_report,
             generate_html_report,
         )
@@ -1239,7 +1295,7 @@ def main():
     except Exception as e:
         print(f"警告: 生成测试报告时出错: {e}")
         print(
-            "可以手动运行: python core/generate_test_report_xiaomi.py --result-file <json文件>"
+            "可以手动运行: python core/generate_test_report.py --result-file <json文件>"
         )
 
     return 0

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>测试报告 - 测试-mediaMarketingFunnelFormatBudgetConfig_must_achieve-True</title>
+  <style>
+    body { font-family: 'Microsoft YaHei', Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    h1 { color: #333; border-bottom: 3px solid #4CAF50; padding-bottom: 10px; }
+    h2 { color: #555; margin-top: 30px; border-left: 4px solid #4CAF50; padding-left: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+    th { background-color: #4CAF50; color: white; font-weight: bold; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    .status-ok { color: #4CAF50; font-weight: bold; }
+    .status-fail { color: #f44336; font-weight: bold; }
+    .summary { background: #e8f5e9; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    .config-table { background: #fff3e0; }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <h1>测试报告</h1>
+    <p><strong>测试用例</strong>: 测试-mediaMarketingFunnelFormatBudgetConfig_must_achieve-True</p>
+    <p><strong>UUID</strong>: c0a2c98c-4066-4881-8f02-449d78ce</p>
+    <p><strong>Job ID</strong>: 1767171785_1_3aa1f903</p>
+    <p><strong>生成时间</strong>: 2025-12-31 18:36:06</p>
+    <h2>测试配置</h2>
+    <table class='config-table'>
+      <tr><th>配置项</th><th>值</th></tr>
+      <tr><td>KPI目标达成率</td><td>80%</td></tr>
+      <tr><td>区域预算目标达成率</td><td>90%</td></tr>
+      <tr><td>区域KPI目标达成率</td><td>80%</td></tr>
+      <tr><td>广告类型KPI目标达成率</td><td>80%</td></tr>
+      <tr><td>阶段预算误差范围</td><td>20%</td></tr>
+      <tr><td>营销漏斗预算误差范围</td><td>15%</td></tr>
+      <tr><td>媒体预算误差范围</td><td>5%</td></tr>
+    </table>
+    <h3>KPI优先级</h3>
+    <table class='config-table'>
+      <tr><th>优先级</th><th>KPI</th></tr>
+      <tr><td>1</td><td>Impression</td></tr>
+      <tr><td>2</td><td>VideoViews</td></tr>
+      <tr><td>3</td><td>Engagement</td></tr>
+      <tr><td>4</td><td>Clicks</td></tr>
+    </table>
+    <h3>模块优先级</h3>
+    <table class='config-table'>
+      <tr><th>优先级</th><th>模块</th></tr>
+      <tr><td>1</td><td>mediaMarketingFunnelFormatBudgetConfig</td></tr>
+      <tr><td>2</td><td>kpiInfo</td></tr>
+      <tr><td>3</td><td>media</td></tr>
+      <tr><td>4</td><td>marketingFunnel</td></tr>
+      <tr><td>5</td><td>stage</td></tr>
+      <tr><td>6</td><td>mediaMarketingFunnelFormat</td></tr>
+    </table>
+    <h2>全局 KPI 达成情况</h2>
+    <div class='summary'><strong>达成率</strong>: 1/3 (33.3%)</div>
+    <div class='summary'><strong>判断逻辑</strong>: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。</div>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>384,180,237</td><td>367,908,213</td><td>104.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>VideoViews</td><td>2</td><td>否</td><td>2,609,722</td><td>3,499,408</td><td>75.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Clicks</td><td>4</td><td>否</td><td>351,672</td><td>662,977</td><td>53.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+    </table>
+    <h2>区域预算达成情况</h2>
+    <div class='summary'><strong>匹配类型</strong>: None | <strong>达成率</strong>: 0/0 (N/A)</div>
+    <h2>区域 KPI满足情况</h2>
+    <div class='summary'><strong>判断逻辑</strong>: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。</div>
+    <h3>汇总</h3>
+    <table>
+      <tr><th>区域</th><th>达成数/总数</th><th>达成率</th></tr>
+    </table>
+    <h3>详细信息</h3>
+    <h2>阶段预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 0/2 (0.0%)</div>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>ES</td><td>0/2</td><td>0.0%</td></tr>
+    </table>
+    <h2>营销漏斗预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 4/4 (100.0%)</div>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>ES</td><td>4/4</td><td>100.0%</td></tr>
+    </table>
+    <h2>媒体预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 1/3 (33.3%)</div>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>ES</td><td>1/3</td><td>33.3%</td></tr>
+    </table>
+    <h2>总体结论</h2>
+    <h3>各维度达成情况汇总</h3>
+    <table>
+      <tr><th>维度</th><th>达成情况</th><th>达成率</th></tr>
+      <tr><td>全局 KPI</td><td>1/3</td><td class='status-fail'>33.3%</td></tr>
+      <tr><td>区域预算</td><td>0/0</td><td class='status-fail'>0.0%</td></tr>
+      <tr><td>区域 KPI</td><td>0/0</td><td class='status-fail'>0.0%</td></tr>
+      <tr><td>阶段预算</td><td>0/2</td><td class='status-fail'>0.0%</td></tr>
+      <tr><td>营销漏斗预算</td><td>4/4</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>媒体预算</td><td>1/3</td><td class='status-fail'>33.3%</td></tr>
+      <tr><td>MediaMarketingFunnelFormat KPI</td><td>19/39</td><td class='status-fail'>48.7%</td></tr>
+      <tr><td>MediaMarketingFunnelFormatBudgetConfig 预算</td><td>0/35</td><td class='status-fail'>0.0%</td></tr>
+      <tr><td>AdFormat 预算分配</td><td>15/15</td><td class='status-ok'>100.0%</td></tr>
+    </table>
+  </div>
+</body>
+</html>
