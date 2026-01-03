@@ -597,7 +597,21 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
                         "completion": kpi.get("completion", 0),
                     }
 
-    # 计算实际 KPI 值
+    # 从 ai 数据建立 (media, platform, objective, adformat) -> marketingFunnel 的映射
+    funnel_mapping = {}  # (media, platform, objective, adformat) -> marketingFunnel
+    for ai_item in ai_data_list:
+        media = ai_item.get("media", "")
+        platform = ai_item.get("mediaChannel", "")
+        objective = ai_item.get("objective", "")
+        adformat = ai_item.get("adFormat", "")
+        funnel = ai_item.get("marketingFunnel", "")
+
+        if media and platform and objective and adformat and funnel:
+            mapping_key = (media, platform, objective, adformat)
+            if mapping_key not in funnel_mapping:
+                funnel_mapping[mapping_key] = funnel
+
+    # 从 ai 数据聚合计算实际配置
     actual_formats = {}
     for ai_item in ai_data_list:
         country = ai_item.get("country", "")
@@ -607,28 +621,19 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
         adformat = ai_item.get("adFormat", "")
         creative = ai_item.get("creative", "")
 
-        # 尝试匹配键
-        match_keys = [
-            f"{country}|{media}|{platform}|{funnel}|{adformat}|{creative}",
-            f"{media}|{platform}|{funnel}|{adformat}|{creative}",
-            f"{adformat}|{funnel}",
-        ]
+        if not country:
+            continue
 
-        matched_key = None
-        for key in match_keys:
-            if key in target_formats:
-                matched_key = key
-                break
+        key = f"{country}|{media}|{platform}|{funnel}|{adformat}|{creative}"
 
-        if matched_key:
-            if matched_key not in actual_formats:
-                actual_formats[matched_key] = {}
+        if key not in actual_formats:
+            actual_formats[key] = {}
 
-            kpi_values = extract_kpi_from_ai(ai_item)
-            for kpi_name, kpi_value in kpi_values.items():
-                if kpi_name not in actual_formats[matched_key]:
-                    actual_formats[matched_key][kpi_name] = 0.0
-                actual_formats[matched_key][kpi_name] += kpi_value
+        kpi_values = extract_kpi_from_ai(ai_item)
+        for kpi_name, kpi_value in kpi_values.items():
+            if kpi_name not in actual_formats[key]:
+                actual_formats[key][kpi_name] = 0.0
+            actual_formats[key][kpi_name] += kpi_value
 
     # 判断是否达成
     format_target_rate = testcase_config.get(
@@ -639,18 +644,58 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
     )
     results = {}
 
-    for key, target_info in target_formats.items():
-        results[key] = {
-            "country": target_info["country"],
-            "media": target_info["media"],
-            "platform": target_info["platform"],
-            "funnel": target_info["funnel"],
-            "adformat": target_info["adformat"],
-            "creative": target_info["creative"],
+    # 为每个 target key 尝试匹配 actual key
+    for target_key, target_info in target_formats.items():
+        # 解析 target key
+        target_key_parts = target_key.split("|")
+        if len(target_key_parts) < 6:
+            continue
+
+        country_code = target_key_parts[0]
+        media_name = target_key_parts[1]
+        platform = target_key_parts[2]
+        funnel_name = target_key_parts[3]  # 可能为空
+        adformat_name = target_key_parts[4]
+        creative = target_key_parts[5]
+
+        # 如果 target 的 funnel 为空，需要通过 media, platform, objective, adformat 推导
+        if not funnel_name:
+            # 从 ai_data_list 中找到对应的 objective
+            objective = None
+            for ai_item in ai_data_list:
+                if (
+                    ai_item.get("country") == country_code
+                    and ai_item.get("media") == media_name
+                    and ai_item.get("mediaChannel") == platform
+                    and ai_item.get("adFormat") == adformat_name
+                ):
+                    objective = ai_item.get("objective", "")
+                    break
+
+            # 通过映射推导 marketingFunnel
+            if objective:
+                mapping_key = (media_name, platform, objective, adformat_name)
+                if mapping_key in funnel_mapping:
+                    funnel_name = funnel_mapping[mapping_key]
+
+        # 构建匹配的 actual key
+        actual_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+
+        # 获取 actual 数据
+        kpi_actual = actual_formats.get(actual_key, {})
+
+        # 构建结果
+        result_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+        results[result_key] = {
+            "country": country_code,
+            "media": media_name,
+            "platform": platform,
+            "funnel": funnel_name,
+            "adformat": adformat_name,
+            "creative": creative,
             "kpis": {},
         }
 
-        kpi_actual = actual_formats.get(key, {})
         for kpi_name, kpi_target_info in target_info["kpis"].items():
             target = kpi_target_info["target"]
             actual = kpi_actual.get(kpi_name, 0.0)
@@ -667,7 +712,7 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
                 else:
                     achieved = achievement_rate >= format_target_rate
 
-            results[key]["kpis"][kpi_name] = {
+            results[result_key]["kpis"][kpi_name] = {
                 "target": target,
                 "actual": actual,
                 "achievement_rate": achievement_rate,
@@ -729,6 +774,20 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
                     "completion": completion,
                 }
 
+    # 从 ai 数据建立 (media, platform, objective, adformat) -> marketingFunnel 的映射
+    funnel_mapping = {}  # (media, platform, objective, adformat) -> marketingFunnel
+    for ai_item in ai_data_list:
+        media = ai_item.get("media", "")
+        platform = ai_item.get("mediaChannel", "")
+        objective = ai_item.get("objective", "")
+        adformat = ai_item.get("adFormat", "")
+        funnel = ai_item.get("marketingFunnel", "")
+
+        if media and platform and objective and adformat and funnel:
+            mapping_key = (media, platform, objective, adformat)
+            if mapping_key not in funnel_mapping:
+                funnel_mapping[mapping_key] = funnel
+
     # 从 ai 数据聚合计算实际配置
     actual_configs = {}
     for ai_item in ai_data_list:
@@ -762,29 +821,52 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
         target_data = target_configs.get(country_code, {})
         actual_data = actual_configs.get(country_code, {})
 
-        all_keys = set(target_data.keys()) | set(actual_data.keys())
+        # 为每个 target key 尝试匹配 actual key
+        for target_key, target_info in target_data.items():
+            # 解析 target key
+            target_key_parts = target_key.split("|")
+            if len(target_key_parts) < 5:
+                continue
 
-        for key in all_keys:
-            target_info = target_data.get(key, {"target": 0, "completion": 0})
-            # actual_data[key] 是 float，不是字典
-            actual_amount = actual_data.get(key, 0.0)
+            media_name = target_key_parts[0]
+            platform = target_key_parts[1]
+            funnel_name = target_key_parts[2]  # 可能为空
+            adformat_name = target_key_parts[3]
+            creative = target_key_parts[4]
+
+            # 如果 target 的 funnel 为空，需要通过 media, platform, objective, adformat 推导
+            if not funnel_name:
+                # 从 ai_data_list 中找到对应的 objective
+                objective = None
+                for ai_item in ai_data_list:
+                    if (
+                        ai_item.get("country") == country_code
+                        and ai_item.get("media") == media_name
+                        and ai_item.get("mediaChannel") == platform
+                        and ai_item.get("adFormat") == adformat_name
+                    ):
+                        objective = ai_item.get("objective", "")
+                        break
+
+                # 通过映射推导 marketingFunnel
+                if objective:
+                    mapping_key = (media_name, platform, objective, adformat_name)
+                    if mapping_key in funnel_mapping:
+                        funnel_name = funnel_mapping[mapping_key]
+
+            # 构建匹配的 actual key
+            actual_key = (
+                f"{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+            )
+
+            # 获取 actual 数据
+            actual_amount = actual_data.get(actual_key, 0.0)
             if isinstance(actual_amount, dict):
                 actual_amount = actual_amount.get("actual", 0.0)
 
             target = target_info["target"]
             actual = actual_amount
             completion = target_info.get("completion", 0)
-
-            # 解析 key 获取维度信息
-            key_parts = key.split("|")
-            if len(key_parts) >= 5:
-                media_name = key_parts[0]
-                platform = key_parts[1]
-                funnel_name = key_parts[2]
-                adformat_name = key_parts[3]
-                creative = key_parts[4]
-            else:
-                media_name = platform = funnel_name = adformat_name = creative = ""
 
             # 计算达成率和判断是否满足
             if target == 0:
@@ -807,6 +889,7 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
                     achieved = actual >= min_required
 
             # 构建结果键（包含 country_code，与 KPI 检查保持一致）
+            # 使用推导出的 funnel_name（如果为空则保持为空）
             result_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
 
             results[result_key] = {
@@ -825,6 +908,40 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
                 "min_required": min_required,
                 "total_budget_flexibility": total_budget_flexibility,
             }
+
+        # 处理只有 actual 但没有 target 的情况（可选，根据需求决定是否保留）
+        for actual_key, actual_amount in actual_data.items():
+            # 检查是否已经在 results 中处理过
+            actual_key_parts = actual_key.split("|")
+            if len(actual_key_parts) >= 5:
+                media_name = actual_key_parts[0]
+                platform = actual_key_parts[1]
+                funnel_name = actual_key_parts[2]
+                adformat_name = actual_key_parts[3]
+                creative = actual_key_parts[4]
+
+                result_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+                if result_key not in results:
+                    # 没有对应的 target，标记为未达成
+                    if isinstance(actual_amount, dict):
+                        actual_amount = actual_amount.get("actual", 0.0)
+
+                    results[result_key] = {
+                        "country": country_code,
+                        "media": media_name,
+                        "platform": platform,
+                        "funnel": funnel_name,
+                        "adformat": adformat_name,
+                        "creative": creative,
+                        "target": 0,
+                        "actual": actual_amount,
+                        "achievement_rate": "null",
+                        "target_rate": total_budget_flexibility,
+                        "achieved": False,
+                        "completion": 0,
+                        "min_required": 0,
+                        "total_budget_flexibility": total_budget_flexibility,
+                    }
 
     return results
 
@@ -935,18 +1052,20 @@ def print_achievement_summary(results: Dict[str, Any], testcase_config: Dict[str
     )
     print(f"  媒体预算误差范围: {testcase_config.get('media_range_match', 5)}%")
     print(
-        f"  MediaMarketingFunnelFormat KPI目标达成率: {testcase_config.get('mediaMarketingFunnelFormat_target_rate', 80)}%"
+        f"  adformat KPI目标达成率: {testcase_config.get('mediaMarketingFunnelFormat_target_rate', 80)}%"
     )
     print(
-        f"  MediaMarketingFunnelFormatBudgetConfig 目标达成率: {testcase_config.get('mediaMarketingFunnelFormatBudgetConfig_target_rate', 80)}%"
+        f"  adformat预算目标达成率: {testcase_config.get('mediaMarketingFunnelFormatBudgetConfig_target_rate', 80)}%"
     )
 
     # 全局 KPI
     if "global_kpi" in results:
         print(f"\n【全局 KPI 达成情况】")
         global_kpi = results["global_kpi"]
-        achieved_count = sum(1 for v in global_kpi.values() if v.get("achieved", False))
-        total_count = len(global_kpi)
+        # 过滤掉target为0的KPI，不计入统计
+        valid_kpis = {k: v for k, v in global_kpi.items() if v.get("target", 0) != 0}
+        achieved_count = sum(1 for v in valid_kpis.values() if v.get("achieved", False))
+        total_count = len(valid_kpis)
         print(f"  达成: {achieved_count}/{total_count}")
         for kpi_name in sorted(
             global_kpi.keys(), key=lambda x: global_kpi[x].get("priority", 999)
@@ -1050,24 +1169,26 @@ def print_achievement_summary(results: Dict[str, Any], testcase_config: Dict[str
                 )
         print(f"\n  总体满足: {total_satisfied}/{total_count}")
 
-    # MediaMarketingFunnelFormat KPI（汇总）
+    # adformat kpi（汇总）
     if "mediaMarketingFunnelFormat_kpi" in results:
-        print(f"\n【MediaMarketingFunnelFormat KPI 达成情况（汇总）】")
+        print(f"\n【adformat KPI 达成情况（汇总）】")
         format_kpi = results["mediaMarketingFunnelFormat_kpi"]
         total_achieved = 0
         total_count = 0
         for key, format_data in format_kpi.items():
             kpis = format_data.get("kpis", {})
             for kpi_name, kpi_data in kpis.items():
-                total_count += 1
-                if kpi_data.get("achieved", False):
-                    total_achieved += 1
+                # 过滤掉target为0的KPI，不计入统计
+                if kpi_data.get("target", 0) != 0:
+                    total_count += 1
+                    if kpi_data.get("achieved", False):
+                        total_achieved += 1
         print(f"  总体达成: {total_achieved}/{total_count}")
         print(f"  (详细数据请查看输出 JSON 文件)")
 
-    # AdFormat 预算分配检查
+    # adformat预算非0检查
     if "adformat_budget_allocation" in results:
-        print(f"\n【AdFormat 预算分配检查】")
+        print(f"\n【adformat预算非0检查】")
         adformat_allocation = results["adformat_budget_allocation"]
         total_satisfied = 0
         total_count = 0

@@ -401,9 +401,9 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
         report_lines.append("\n(详细数据请查看 JSON 文件)\n")
         report_lines.append("\n---\n")
 
-    # MediaMarketingFunnelFormat KPI 达成情况
+    # adformat kpi 达成情况
     if "mediaMarketingFunnelFormat_kpi" in results:
-        report_lines.append("## MediaMarketingFunnelFormat KPI 达成情况\n")
+        report_lines.append("## adformat KPI 达成情况\n")
         format_kpi = results["mediaMarketingFunnelFormat_kpi"]
         total_achieved = 0
         total_count = 0
@@ -411,9 +411,12 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
         for key, format_data in format_kpi.items():
             kpis = format_data.get("kpis", {})
             for kpi_name, kpi_data in kpis.items():
-                total_count += 1
-                if kpi_data.get("achieved", False):
-                    total_achieved += 1
+                target = kpi_data.get("target")
+                # 过滤掉target为None/null或0的KPI，不计入统计
+                if target is not None and target != 0:
+                    total_count += 1
+                    if kpi_data.get("achieved", False):
+                        total_achieved += 1
 
         if total_count > 0:
             rate = total_achieved / total_count * 100
@@ -433,9 +436,11 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
                 country_summary[country] = {"achieved": 0, "total": 0}
             kpis = format_data.get("kpis", {})
             for kpi_name, kpi_data in kpis.items():
-                country_summary[country]["total"] += 1
-                if kpi_data.get("achieved", False):
-                    country_summary[country]["achieved"] += 1
+                # 过滤掉target为0的KPI，不计入统计
+                if kpi_data.get("target", 0) != 0:
+                    country_summary[country]["total"] += 1
+                    if kpi_data.get("achieved", False):
+                        country_summary[country]["achieved"] += 1
 
         if country_summary:
             report_lines.append("\n| 区域 | 达成数/总数 | 达成率 |\n")
@@ -452,11 +457,57 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
                         f"| {country_code} | {summary['achieved']}/{summary['total']} | N/A |\n"
                     )
 
+        # 详细列表展示
+        report_lines.append("\n### 详细信息\n")
+        for country_code in sorted(country_summary.keys()):
+            country_formats = [
+                (key, format_data)
+                for key, format_data in format_kpi.items()
+                if format_data.get("country") == country_code
+            ]
+            if country_formats:
+                report_lines.append(f"#### {country_code}\n")
+                report_lines.append(
+                    "| 媒体 | 平台 | 漏斗 | 广告格式 | 创意 | KPI | 优先级 | 必须达成 | 实际值 | 目标值 | 达成率 | 状态 |\n"
+                )
+                report_lines.append(
+                    "|------|------|------|----------|------|-----|--------|----------|--------|--------|--------|------|\n"
+                )
+                for key, format_data in sorted(country_formats, key=lambda x: x[0]):
+                    kpis = format_data.get("kpis", {})
+                    for kpi_name in sorted(
+                        kpis.keys(), key=lambda x: kpis[x].get("priority", 999)
+                    ):
+                        kpi_data = kpis[kpi_name]
+                        target = kpi_data.get("target")
+                        # 过滤掉target为None/null或0的KPI，不计入统计和显示
+                        if target is None or target == 0:
+                            continue
+                        status = (
+                            "✓ 达成" if kpi_data.get("achieved", False) else "✗ 未达成"
+                        )
+                        achievement_rate = kpi_data.get("achievement_rate", 0)
+                        if isinstance(achievement_rate, (int, float)):
+                            rate_str = f"{achievement_rate:.2f}%"
+                        else:
+                            rate_str = str(achievement_rate)
+                        completion = kpi_data.get("completion", 0)
+                        must_achieve = "是" if completion == 1 else "否"
+
+                        report_lines.append(
+                            f"| {format_data.get('media', '')} | {format_data.get('platform', '')} | "
+                            f"{format_data.get('funnel', '')} | {format_data.get('adformat', '')} | "
+                            f"{format_data.get('creative', '')} | {kpi_name} | "
+                            f"{kpi_data.get('priority', 999)} | {must_achieve} | "
+                            f"{kpi_data.get('actual', 0):,.0f} | {target:,.0f} | "
+                            f"{rate_str} | {status} |\n"
+                        )
+
         report_lines.append("\n---\n")
 
-    # MediaMarketingFunnelFormatBudgetConfig 预算满足情况
+    # adformat预算满足情况
     if "mediaMarketingFunnelFormatBudgetConfig_budget" in results:
-        report_lines.append("## MediaMarketingFunnelFormatBudgetConfig 预算满足情况\n")
+        report_lines.append("## adformat预算满足情况\n")
         format_budget = results["mediaMarketingFunnelFormatBudgetConfig_budget"]
         total_satisfied = 0
         total_count = 0
@@ -464,6 +515,10 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
         # 按国家分组统计
         country_stats = {}
         for key, format_data in format_budget.items():
+            target = format_data.get("target")
+            # 过滤掉target为None/null的配置，不计入统计
+            if target is None:
+                continue
             country_code = format_data.get("country", "")
             if country_code not in country_stats:
                 country_stats[country_code] = {"satisfied": 0, "total": 0}
@@ -498,46 +553,51 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
                     f"| {country_code} | {stats['satisfied']}/{stats['total']} | N/A |\n"
                 )
 
-        # 显示未满足的配置
-        unsatisfied_count = 0
+        # 详细列表展示
+        report_lines.append("\n### 详细信息\n")
         for country_code in sorted(country_stats.keys()):
-            unsatisfied = [
+            country_formats = [
                 (key, format_data)
                 for key, format_data in format_budget.items()
                 if format_data.get("country") == country_code
-                and not format_data.get("achieved", False)
             ]
-            if unsatisfied:
-                unsatisfied_count += len(unsatisfied)
-                report_lines.append(f"\n### {country_code} - 未满足的配置\n")
+            if country_formats:
+                report_lines.append(f"#### {country_code}\n")
                 report_lines.append(
-                    "| 媒体 | 平台 | 漏斗 | 广告格式 | 创意 | 目标预算 | 实际预算 | 达成率 | 最小要求 |\n"
+                    "| 媒体 | 平台 | 漏斗 | 广告格式 | 创意 | 目标预算 | 实际预算 | 达成率 | 最小要求 | 必须达成 | 状态 |\n"
                 )
                 report_lines.append(
-                    "|------|------|------|----------|------|----------|----------|--------|----------|\n"
+                    "|------|------|------|----------|------|----------|----------|--------|----------|----------|------|\n"
                 )
-                for key, format_data in sorted(unsatisfied, key=lambda x: x[0]):
+                for key, format_data in sorted(country_formats, key=lambda x: x[0]):
+                    target = format_data.get("target")
+                    # 过滤掉target为None/null的配置，不计入显示
+                    if target is None:
+                        continue
+                    status = (
+                        "✓ 达成" if format_data.get("achieved", False) else "✗ 未达成"
+                    )
                     achievement_rate = format_data.get("achievement_rate", "N/A")
                     if isinstance(achievement_rate, (int, float)):
                         achievement_rate_str = f"{achievement_rate}%"
                     else:
                         achievement_rate_str = str(achievement_rate)
+                    completion = format_data.get("completion", 0)
+                    must_achieve = "是" if completion == 1 else "否"
+
                     report_lines.append(
                         f"| {format_data.get('media', '')} | {format_data.get('platform', '')} | "
                         f"{format_data.get('funnel', '')} | {format_data.get('adformat', '')} | "
-                        f"{format_data.get('creative', '')} | {format_data.get('target', 0):,.0f} | "
+                        f"{format_data.get('creative', '')} | {target:,.0f} | "
                         f"{format_data.get('actual', 0):,.0f} | {achievement_rate_str} | "
-                        f"{format_data.get('min_required', 0):,.0f} |\n"
+                        f"{format_data.get('min_required', 0):,.0f} | {must_achieve} | {status} |\n"
                     )
-
-        if unsatisfied_count == 0:
-            report_lines.append("\n✓ 所有配置都已满足\n")
 
         report_lines.append("\n---\n")
 
-    # AdFormat 预算分配检查（Xiaomi版本）
+    # adformat预算非0检查（Xiaomi版本）
     if "adformat_budget_allocation" in results:
-        report_lines.append("## AdFormat 预算分配检查\n")
+        report_lines.append("## adformat预算非0检查\n")
         report_lines.append(
             "\n**说明**: 当 `allow_zero_budget=False` 时，检查每个推广区域下每个 AdFormat 是否都分配了预算。"
             "按 (媒体, 平台, 广告格式) 聚合求和预算，只要预算 > 0 即视为已分配。\n"
@@ -687,13 +747,13 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
         ("营销漏斗预算", "marketingfunnel_budget"),
         ("媒体预算", "media_budget"),
         ("广告类型 KPI", "adtype_kpi"),
-        ("MediaMarketingFunnelFormat KPI", "mediaMarketingFunnelFormat_kpi"),
+        ("adformat kpi", "mediaMarketingFunnelFormat_kpi"),
         (
-            "MediaMarketingFunnelFormatBudgetConfig 预算",
+            "adformat预算",
             "mediaMarketingFunnelFormatBudgetConfig_budget",
         ),
         ("Adtype 预算分配", "adtype_budget_allocation"),
-        ("AdFormat 预算分配", "adformat_budget_allocation"),
+        ("adformat预算非0", "adformat_budget_allocation"),
     ]
 
     for dim_name, dim_key in dimensions:
@@ -727,9 +787,11 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
                 for format_data in dim_data.values():
                     kpis = format_data.get("kpis", {})
                     for kpi_data in kpis.values():
-                        total_count += 1
-                        if kpi_data.get("achieved", False):
-                            total_achieved += 1
+                        # 过滤掉target为0的KPI，不计入统计
+                        if kpi_data.get("target", 0) != 0:
+                            total_count += 1
+                            if kpi_data.get("achieved", False):
+                                total_achieved += 1
                 achieved_str = f"{total_achieved}/{total_count}"
                 rate = (total_achieved / total_count * 100) if total_count > 0 else 0
             elif dim_key in [
@@ -752,6 +814,11 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
                     if isinstance(first_value, dict) and "country" in first_value:
                         # 新结构：直接遍历所有项目
                         for item_data in dim_data.values():
+                            # 对于 adformat预算，过滤掉target为None/null的配置
+                            if dim_key == "mediaMarketingFunnelFormatBudgetConfig_budget":
+                                target = item_data.get("target")
+                                if target is None:
+                                    continue
                             total_count += 1
                             if item_data.get("achieved", False) or item_data.get(
                                 "satisfied", False
@@ -767,12 +834,24 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
                 achieved_str = f"{total_satisfied}/{total_count}"
                 rate = (total_satisfied / total_count * 100) if total_count > 0 else 0
             else:
-                achieved_count = sum(
-                    1
-                    for v in dim_data.values()
-                    if v.get("achieved", False) or v.get("satisfied", False)
-                )
-                total_count = len(dim_data)
+                # 对于global_kpi等，过滤掉target为0的指标，不计入统计
+                if dim_key == "global_kpi":
+                    valid_items = {
+                        k: v for k, v in dim_data.items() if v.get("target", 0) != 0
+                    }
+                    achieved_count = sum(
+                        1
+                        for v in valid_items.values()
+                        if v.get("achieved", False) or v.get("satisfied", False)
+                    )
+                    total_count = len(valid_items)
+                else:
+                    achieved_count = sum(
+                        1
+                        for v in dim_data.values()
+                        if v.get("achieved", False) or v.get("satisfied", False)
+                    )
+                    total_count = len(dim_data)
                 achieved_str = f"{achieved_count}/{total_count}"
                 rate = (achieved_count / total_count * 100) if total_count > 0 else 0
 
@@ -1106,6 +1185,225 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
                 "    <div class='summary'><strong>✓ 所有 Adtype 都已分配预算</strong></div>\n"
             )
 
+    # adformat KPI 达成情况
+    if "mediaMarketingFunnelFormat_kpi" in results:
+        html_lines.append("    <h2>adformat KPI 达成情况</h2>\n")
+        format_kpi = results["mediaMarketingFunnelFormat_kpi"]
+        total_achieved = 0
+        total_count = 0
+
+        for key, format_data in format_kpi.items():
+            kpis = format_data.get("kpis", {})
+            for kpi_name, kpi_data in kpis.items():
+                target = kpi_data.get("target")
+                # 过滤掉target为None/null或0的KPI，不计入统计
+                if target is not None and target != 0:
+                    total_count += 1
+                    if kpi_data.get("achieved", False):
+                        total_achieved += 1
+
+        if total_count > 0:
+            rate = total_achieved / total_count * 100
+            html_lines.append(
+                f"    <div class='summary'><strong>总体达成率</strong>: {total_achieved}/{total_count} ({rate:.1f}%)</div>\n"
+            )
+        else:
+            html_lines.append(
+                f"    <div class='summary'><strong>总体达成率</strong>: {total_achieved}/{total_count} (N/A)</div>\n"
+            )
+
+        # 按国家汇总
+        country_summary = {}
+        for key, format_data in format_kpi.items():
+            country = format_data.get("country", "")
+            if country not in country_summary:
+                country_summary[country] = {"achieved": 0, "total": 0}
+            kpis = format_data.get("kpis", {})
+            for kpi_name, kpi_data in kpis.items():
+                target = kpi_data.get("target")
+                # 过滤掉target为None/null或0的KPI，不计入统计
+                if target is not None and target != 0:
+                    country_summary[country]["total"] += 1
+                    if kpi_data.get("achieved", False):
+                        country_summary[country]["achieved"] += 1
+
+        if country_summary:
+            html_lines.append("    <h3>汇总</h3>\n")
+            html_lines.append("    <table>\n")
+            html_lines.append(
+                "      <tr><th>区域</th><th>达成数/总数</th><th>达成率</th></tr>\n"
+            )
+            for country_code in sorted(country_summary.keys()):
+                summary = country_summary[country_code]
+                if summary["total"] > 0:
+                    rate = summary["achieved"] / summary["total"] * 100
+                    html_lines.append(
+                        f"      <tr><td>{country_code}</td><td>{summary['achieved']}/{summary['total']}</td><td>{rate:.1f}%</td></tr>\n"
+                    )
+                else:
+                    html_lines.append(
+                        f"      <tr><td>{country_code}</td><td>{summary['achieved']}/{summary['total']}</td><td>N/A</td></tr>\n"
+                    )
+            html_lines.append("    </table>\n")
+
+        # 详细列表展示
+        html_lines.append("    <h3>详细信息</h3>\n")
+        for country_code in sorted(country_summary.keys()):
+            country_formats = [
+                (key, format_data)
+                for key, format_data in format_kpi.items()
+                if format_data.get("country") == country_code
+            ]
+            if country_formats:
+                html_lines.append(f"    <h4>{country_code}</h4>\n")
+                html_lines.append("    <table>\n")
+                html_lines.append(
+                    "      <tr><th>媒体</th><th>平台</th><th>漏斗</th><th>广告格式</th><th>创意</th><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>\n"
+                )
+                for key, format_data in sorted(country_formats, key=lambda x: x[0]):
+                    kpis = format_data.get("kpis", {})
+                    for kpi_name in sorted(
+                        kpis.keys(), key=lambda x: kpis[x].get("priority", 999)
+                    ):
+                        kpi_data = kpis[kpi_name]
+                        target = kpi_data.get("target")
+                        # 过滤掉target为None/null或0的KPI，不计入统计和显示
+                        if target is None or target == 0:
+                            continue
+                        status_class = (
+                            "status-ok"
+                            if kpi_data.get("achieved", False)
+                            else "status-fail"
+                        )
+                        status_text = (
+                            "✓ 达成" if kpi_data.get("achieved", False) else "✗ 未达成"
+                        )
+                        achievement_rate = kpi_data.get("achievement_rate", 0)
+                        if isinstance(achievement_rate, (int, float)):
+                            rate_str = f"{achievement_rate:.2f}%"
+                        else:
+                            rate_str = str(achievement_rate)
+                        completion = kpi_data.get("completion", 0)
+                        must_achieve = "是" if completion == 1 else "否"
+
+                        html_lines.append(
+                            f"      <tr><td>{format_data.get('media', '')}</td>"
+                            f"<td>{format_data.get('platform', '')}</td>"
+                            f"<td>{format_data.get('funnel', '')}</td>"
+                            f"<td>{format_data.get('adformat', '')}</td>"
+                            f"<td>{format_data.get('creative', '')}</td>"
+                            f"<td>{kpi_name}</td>"
+                            f"<td>{kpi_data.get('priority', 999)}</td>"
+                            f"<td>{must_achieve}</td>"
+                            f"<td>{kpi_data.get('actual', 0):,.0f}</td>"
+                            f"<td>{target:,.0f}</td>"
+                            f"<td>{rate_str}</td>"
+                            f"<td class='{status_class}'>{status_text}</td></tr>\n"
+                        )
+                html_lines.append("    </table>\n")
+
+    # adformat预算满足情况
+    if "mediaMarketingFunnelFormatBudgetConfig_budget" in results:
+        html_lines.append("    <h2>adformat预算满足情况</h2>\n")
+        format_budget = results["mediaMarketingFunnelFormatBudgetConfig_budget"]
+        total_satisfied = 0
+        total_count = 0
+
+        # 按国家分组统计
+        country_stats = {}
+        for key, format_data in format_budget.items():
+            target = format_data.get("target")
+            # 过滤掉target为None/null的配置，不计入统计
+            if target is None:
+                continue
+            country_code = format_data.get("country", "")
+            if country_code not in country_stats:
+                country_stats[country_code] = {"satisfied": 0, "total": 0}
+            country_stats[country_code]["total"] += 1
+            if format_data.get("achieved", False):
+                country_stats[country_code]["satisfied"] += 1
+                total_satisfied += 1
+            total_count += 1
+
+        if total_count > 0:
+            rate = total_satisfied / total_count * 100
+            html_lines.append(
+                f"    <div class='summary'><strong>总体满足率</strong>: {total_satisfied}/{total_count} ({rate:.1f}%)</div>\n"
+            )
+        else:
+            html_lines.append(
+                f"    <div class='summary'><strong>总体满足率</strong>: {total_satisfied}/{total_count} (N/A)</div>\n"
+            )
+
+        html_lines.append("    <h3>汇总</h3>\n")
+        html_lines.append("    <table>\n")
+        html_lines.append(
+            "      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>\n"
+        )
+
+        for country_code in sorted(country_stats.keys()):
+            stats = country_stats[country_code]
+            if stats["total"] > 0:
+                rate = stats["satisfied"] / stats["total"] * 100
+                html_lines.append(
+                    f"      <tr><td>{country_code}</td><td>{stats['satisfied']}/{stats['total']}</td><td>{rate:.1f}%</td></tr>\n"
+                )
+            else:
+                html_lines.append(
+                    f"      <tr><td>{country_code}</td><td>{stats['satisfied']}/{stats['total']}</td><td>N/A</td></tr>\n"
+                )
+        html_lines.append("    </table>\n")
+
+        # 详细列表展示
+        html_lines.append("    <h3>详细信息</h3>\n")
+        for country_code in sorted(country_stats.keys()):
+            country_formats = [
+                (key, format_data)
+                for key, format_data in format_budget.items()
+                if format_data.get("country") == country_code
+            ]
+            if country_formats:
+                html_lines.append(f"    <h4>{country_code}</h4>\n")
+                html_lines.append("    <table>\n")
+                html_lines.append(
+                    "      <tr><th>媒体</th><th>平台</th><th>漏斗</th><th>广告格式</th><th>创意</th><th>目标预算</th><th>实际预算</th><th>达成率</th><th>最小要求</th><th>必须达成</th><th>状态</th></tr>\n"
+                )
+                for key, format_data in sorted(country_formats, key=lambda x: x[0]):
+                    target = format_data.get("target")
+                    # 过滤掉target为None/null的配置，不计入显示
+                    if target is None:
+                        continue
+                    status_class = (
+                        "status-ok"
+                        if format_data.get("achieved", False)
+                        else "status-fail"
+                    )
+                    status_text = (
+                        "✓ 达成" if format_data.get("achieved", False) else "✗ 未达成"
+                    )
+                    achievement_rate = format_data.get("achievement_rate", "N/A")
+                    if isinstance(achievement_rate, (int, float)):
+                        achievement_rate_str = f"{achievement_rate}%"
+                    else:
+                        achievement_rate_str = str(achievement_rate)
+                    completion = format_data.get("completion", 0)
+                    must_achieve = "是" if completion == 1 else "否"
+
+                    html_lines.append(
+                        f"      <tr><td>{format_data.get('media', '')}</td>"
+                        f"<td>{format_data.get('platform', '')}</td>"
+                        f"<td>{format_data.get('funnel', '')}</td>"
+                        f"<td>{format_data.get('adformat', '')}</td>"
+                        f"<td>{format_data.get('creative', '')}</td>"
+                        f"<td>{target:,.0f}</td>"
+                        f"<td>{format_data.get('actual', 0):,.0f}</td>"
+                        f"<td>{achievement_rate_str}</td>"
+                        f"<td>{format_data.get('min_required', 0):,.0f}</td>"
+                        f"<td>{must_achieve}</td>"
+                        f"<td class='{status_class}'>{status_text}</td></tr>\n"
+                    )
+                html_lines.append("    </table>\n")
+
     for dim_name, dim_key in dimensions_summary:
         if dim_key in results:
             html_lines.append(f"    <h2>{dim_name}满足情况</h2>\n")
@@ -1225,13 +1523,13 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
         ("营销漏斗预算", "marketingfunnel_budget"),
         ("媒体预算", "media_budget"),
         ("广告类型 KPI", "adtype_kpi"),
-        ("MediaMarketingFunnelFormat KPI", "mediaMarketingFunnelFormat_kpi"),
+        ("adformat kpi", "mediaMarketingFunnelFormat_kpi"),
         (
-            "MediaMarketingFunnelFormatBudgetConfig 预算",
+            "adformat预算",
             "mediaMarketingFunnelFormatBudgetConfig_budget",
         ),
         ("Adtype 预算分配", "adtype_budget_allocation"),
-        ("AdFormat 预算分配", "adformat_budget_allocation"),
+        ("adformat预算非0", "adformat_budget_allocation"),
     ]
 
     for dim_name, dim_key in dimensions:
@@ -1264,9 +1562,11 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
                 for format_data in dim_data.values():
                     kpis = format_data.get("kpis", {})
                     for kpi_data in kpis.values():
-                        total_count += 1
-                        if kpi_data.get("achieved", False):
-                            total_achieved += 1
+                        # 过滤掉target为0的KPI，不计入统计
+                        if kpi_data.get("target", 0) != 0:
+                            total_count += 1
+                            if kpi_data.get("achieved", False):
+                                total_achieved += 1
                 achieved_str = f"{total_achieved}/{total_count}"
                 rate = (total_achieved / total_count * 100) if total_count > 0 else 0
             elif dim_key in [
@@ -1289,6 +1589,11 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
                     if isinstance(first_value, dict) and "country" in first_value:
                         # 新结构：直接遍历所有项目
                         for item_data in dim_data.values():
+                            # 对于 adformat预算，过滤掉target为None/null的配置
+                            if dim_key == "mediaMarketingFunnelFormatBudgetConfig_budget":
+                                target = item_data.get("target")
+                                if target is None:
+                                    continue
                             total_count += 1
                             if item_data.get("achieved", False) or item_data.get(
                                 "satisfied", False
@@ -1304,12 +1609,24 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
                 achieved_str = f"{total_satisfied}/{total_count}"
                 rate = (total_satisfied / total_count * 100) if total_count > 0 else 0
             else:
-                achieved_count = sum(
-                    1
-                    for v in dim_data.values()
-                    if v.get("achieved", False) or v.get("satisfied", False)
-                )
-                total_count = len(dim_data)
+                # 对于global_kpi等，过滤掉target为0的指标，不计入统计
+                if dim_key == "global_kpi":
+                    valid_items = {
+                        k: v for k, v in dim_data.items() if v.get("target", 0) != 0
+                    }
+                    achieved_count = sum(
+                        1
+                        for v in valid_items.values()
+                        if v.get("achieved", False) or v.get("satisfied", False)
+                    )
+                    total_count = len(valid_items)
+                else:
+                    achieved_count = sum(
+                        1
+                        for v in dim_data.values()
+                        if v.get("achieved", False) or v.get("satisfied", False)
+                    )
+                    total_count = len(dim_data)
                 achieved_str = f"{achieved_count}/{total_count}"
                 rate = (achieved_count / total_count * 100) if total_count > 0 else 0
 
