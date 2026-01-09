@@ -23,8 +23,6 @@ sys.path.insert(0, str(project_root))
 
 from core import (
     create_client_from_config,
-    API_CONFIG,
-    API_CONFIG_XIAOMI,
     ENVIRONMENT_CONFIGS,
     get_api_config,
     get_strategy_config,
@@ -62,8 +60,8 @@ async def main(args):
         print(f"目录 {output_dir} 中未找到 json 文件")
         return
 
-    # 获取环境配置（默认使用 TEST）
-    environment = args.environment or "PRE"
+    # 获取环境配置（使用命令行参数，默认值为 PROD）
+    environment = args.environment
 
     # 从策略配置获取轮询参数
     strategy_config = get_strategy_config()
@@ -172,9 +170,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--environment",
         type=str,
-        choices=["TEST", "PRE", "PROD", "TESTING", "STAGING", "PRODUCTION"],
-        default=None,
-        help="指定环境（TEST、PRE 或 PROD，也支持 TESTING、STAGING、PRODUCTION），默认使用 TEST",
+        choices=["TEST", "PRE", "PROD"],
+        default="PRE",
+        help="指定环境（TEST、PRE 或 PROD，也支持 TESTING、STAGING、PRODUCTION），默认使用 PROD",
     )
 
     args = parser.parse_args()

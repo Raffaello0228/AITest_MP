@@ -3,10 +3,10 @@
 """
 根据 testcase 配置判断每个指标是否达成（Xiaomi版本）
 
+注意：testcase_config 和所有配置信息现在直接从 result_json 中提取，不再需要 testcase_file 和 request_file。
+
 用法:
     python core/check_kpi_achievement_xiaomi.py \
-        --testcase-file testcase_templatex_xiaomi.py \
-        --request-file output/xiaomi/requests/brief_case_基准用例-完全匹配默认配置.json \
         --result-file output/xiaomi/results/mp_result_基准用例-完全匹配默认配置.json \
         --case-name "基准用例-完全匹配默认配置"
 """
@@ -22,6 +22,112 @@ def load_json(filepath: Path) -> Any:
     """加载JSON文件"""
     with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def extract_testcase_config_from_result(result_json: Dict) -> Dict[str, Any]:
+    """从 result_json 中提取 testcase_config"""
+    # Xiaomi版本：result_json.data.result.briefInfo
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    basic_info = brief_info.get("basicInfo", {})
+    brief_multi_config = brief_info.get("briefMultiConfig", [])
+
+    # 从 basicInfo 中提取 KPI 配置
+    kpi_info_budget_config = basic_info.get("kpiInfoBudgetConfig", {})
+    kpi_target_rate = kpi_info_budget_config.get("rangeMatch", 80)
+
+    # 从 basicInfo 中提取 KPI 优先级列表（按 priority 排序）
+    kpi_info_list = basic_info.get("kpiInfo", [])
+    kpi_priority_list = []
+    if kpi_info_list:
+        # 按 priority 排序
+        sorted_kpis = sorted(kpi_info_list, key=lambda x: x.get("priority", 999))
+        for kpi in sorted_kpis:
+            kpi_key = kpi.get("key", "")
+            if kpi_key:
+                kpi_priority_list.append(kpi_key)
+
+    # 从 basicInfo 中提取模块优先级列表（按 priority 排序）
+    module_config_list = basic_info.get("moduleConfig", [])
+    module_priority_list = []
+    if module_config_list:
+        # 按 priority 排序
+        sorted_modules = sorted(
+            module_config_list, key=lambda x: x.get("priority", 999)
+        )
+        for module in sorted_modules:
+            module_name = module.get("moduleName", "")
+            if module_name:
+                module_priority_list.append(module_name)
+
+    # 从 briefMultiConfig 中提取配置（取第一个配置，通常所有国家配置相同）
+    if brief_multi_config:
+        config = brief_multi_config[0]
+
+        # Stage 配置
+        stage_budget_config = config.get("stageBudgetConfig", {})
+        stage_range_match = stage_budget_config.get("rangeMatch", 20)
+        stage_consistent_match = stage_budget_config.get("consistentMatch", 1)
+        stage_match_type = "完全匹配" if stage_consistent_match == 1 else "大小关系匹配"
+
+        # Marketing Funnel 配置
+        marketing_funnel_budget_config = config.get("marketingFunnelBudgetConfig", {})
+        marketingfunnel_range_match = marketing_funnel_budget_config.get(
+            "rangeMatch", 15
+        )
+        marketingfunnel_consistent_match = marketing_funnel_budget_config.get(
+            "consistentMatch", 1
+        )
+        marketingfunnel_match_type = (
+            "完全匹配" if marketingfunnel_consistent_match == 1 else "大小关系匹配"
+        )
+
+        # Media 配置
+        media_budget_config = config.get("mediaBudgetConfig", {})
+        media_range_match = media_budget_config.get("rangeMatch", 5)
+        media_consistent_match = media_budget_config.get("consistentMatch", 1)
+        media_match_type = "完全匹配" if media_consistent_match == 1 else "大小关系匹配"
+
+        # MediaMarketingFunnelFormatBudgetConfig 配置
+        media_marketing_funnel_format_budget_config = config.get(
+            "mediaMarketingFunnelFormatBudgetConfig", {}
+        )
+        media_marketing_funnel_format_target_rate = (
+            media_marketing_funnel_format_budget_config.get("kpiFlexibility", 80)
+        )
+        media_marketing_funnel_format_budget_config_target_rate = (
+            media_marketing_funnel_format_budget_config.get(
+                "totalBudgetFlexibility", 80
+            )
+        )
+    else:
+        # 默认值
+        stage_range_match = 20
+        stage_match_type = "完全匹配"
+        marketingfunnel_range_match = 15
+        marketingfunnel_match_type = "完全匹配"
+        media_range_match = 5
+        media_match_type = "完全匹配"
+        media_marketing_funnel_format_target_rate = 80
+        media_marketing_funnel_format_budget_config_target_rate = 80
+
+    return {
+        "kpi_target_rate": kpi_target_rate,
+        "region_budget_target_rate": 90,  # 默认值，Xiaomi版本不使用
+        "region_kpi_target_rate": 80,  # 默认值，Xiaomi版本不使用
+        "mediaMarketingFunnelAdtype_target_rate": media_marketing_funnel_format_target_rate,
+        "stage_range_match": stage_range_match,
+        "stage_match_type": stage_match_type,
+        "marketingfunnel_range_match": marketingfunnel_range_match,
+        "marketingfunnel_match_type": marketingfunnel_match_type,
+        "media_range_match": media_range_match,
+        "media_match_type": media_match_type,
+        "kpi_priority_list": kpi_priority_list,
+        "module_priority_list": module_priority_list,
+        "mediaMarketingFunnelFormat_target_rate": media_marketing_funnel_format_target_rate,
+        "mediaMarketingFunnelFormatBudgetConfig_target_rate": media_marketing_funnel_format_budget_config_target_rate,
+    }
 
 
 def load_testcase(testcase_file: Path, case_name: str) -> Optional[Dict[str, Any]]:
@@ -60,6 +166,7 @@ def extract_ai_data(result_json: Dict) -> List[Dict]:
 
     for region_key, region_data in dimension_result.items():
         ai_list = region_data.get("corporation", [])
+        # ai_list = region_data.get("ai", [])
         for ai_item in ai_list:
             # 过滤掉 media 列包含 TTL 的总计行
             media = ai_item.get("media", "")
@@ -129,7 +236,7 @@ def extract_kpi_from_ai(ai_item: Dict) -> Dict[str, float]:
 
 
 def check_region_budget_achievement(
-    request_json: Dict,
+    result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Any]:
@@ -139,7 +246,7 @@ def check_region_budget_achievement(
 
 
 def check_region_kpi_achievement(
-    request_json: Dict,
+    result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Dict[str, Any]]:
@@ -149,20 +256,39 @@ def check_region_kpi_achievement(
 
 
 def check_global_kpi_achievement(
-    request_json: Dict,
+    result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Any]:
     """检查全局 KPI 是否达成"""
-    basic_info = request_json.get("basicInfo", {})
+    # 从 result_json 中提取 basicInfo
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    basic_info = brief_info.get("basicInfo", {})
 
     # 提取全局 KPI 目标和 completion
     global_kpi_targets = {}
     global_kpi_completions = {}
     for kpi in basic_info.get("kpiInfo", []):
         kpi_key = kpi.get("key", "")
+        kpi_val = kpi.get("val")
+        # 区分 null 和 0：如果 val 是 None 或 "null"，则保留为 None；否则转换为 float
+        if (
+            kpi_val is None
+            or kpi_val == "null"
+            or (isinstance(kpi_val, str) and kpi_val.strip() == "")
+        ):
+            target_value = None
+        else:
+            try:
+                # 如果 val 是字符串 "0"，转换为 0.0；如果是数字 0，保持为 0.0
+                target_value = float(kpi_val)
+            except (ValueError, TypeError):
+                target_value = None
+
         global_kpi_targets[kpi_key] = {
-            "target": float(kpi.get("val", "0") or 0),
+            "target": target_value,
             "priority": kpi.get("priority", 999),
         }
         global_kpi_completions[kpi_key] = kpi.get("completion", 0)
@@ -186,7 +312,11 @@ def check_global_kpi_achievement(
         actual = global_kpi_actual.get(kpi_name, 0.0)
         completion = global_kpi_completions.get(kpi_name, 0)
 
-        if target == 0:
+        if target is None:
+            # target 为 null 时，不进行判断
+            achievement_rate = "null"
+            achieved = False
+        elif target == 0:
             achievement_rate = 0.0 if actual == 0 else "null"
             achieved = actual == 0
         else:
@@ -213,15 +343,19 @@ def check_global_kpi_achievement(
 
 
 def check_stage_budget_achievement(
-    request_json: Dict,
     result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Dict[str, Any]]:
     """检查各区域下的 stage 维度预算是否满足"""
-    # 提取目标配置（从请求文件）
+    # 从 result_json 中提取目标配置
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    brief_multi_config = brief_info.get("briefMultiConfig", [])
+
     target_stages = {}
-    for country_config in request_json.get("briefMultiConfig", []):
+    for country_config in brief_multi_config:
         country_code = country_config.get("countryInfo", {}).get("countryCode", "")
         target_stages[country_code] = {}
 
@@ -279,6 +413,82 @@ def check_stage_budget_achievement(
         # 合并所有 stage 名称
         all_stages = set(target_stage_data.keys()) | set(actual_stage_data.keys())
 
+        if stage_match_type == "大小关系匹配":
+            # 大小关系匹配：检查顺序是否一致
+            # 计算总预算用于判断"并列"阈值
+            total_target_budget = sum(
+                info.get("target", 0) for info in target_stage_data.values()
+            )
+            total_actual_budget = sum(
+                info.get("actual", 0) for info in actual_stage_data.values()
+            )
+            target_diff_threshold = (
+                total_target_budget / 10000.0 if total_target_budget > 0 else 0.0
+            )
+            actual_diff_threshold = (
+                total_actual_budget / 10000.0 if total_actual_budget > 0 else 0.0
+            )
+
+            # 构建目标大小顺序（按 target_percentage 降序）
+            target_order = sorted(
+                target_stage_data.items(),
+                key=lambda x: x[1].get("target_percentage", 0),
+                reverse=True,
+            )
+            target_rank = {
+                stage_name: rank for rank, (stage_name, _) in enumerate(target_order)
+            }
+
+            # 构建实际大小顺序（按 actual_percentage 降序）
+            actual_order = sorted(
+                actual_stage_data.items(),
+                key=lambda x: x[1].get("actual_percentage", 0),
+                reverse=True,
+            )
+            actual_rank = {
+                stage_name: rank for rank, (stage_name, _) in enumerate(actual_order)
+            }
+
+            # 判断顺序是否一致
+            order_consistent = True
+            stage_list = list(all_stages)
+            n = len(stage_list)
+            for i in range(n):
+                if not order_consistent:
+                    break
+                for j in range(i + 1, n):
+                    si = stage_list[i]
+                    sj = stage_list[j]
+                    ti = target_rank.get(si, -1)
+                    tj = target_rank.get(sj, -1)
+                    ai = actual_rank.get(si, -1)
+                    aj = actual_rank.get(sj, -1)
+                    if ti < 0 or tj < 0 or ai < 0 or aj < 0:
+                        continue
+
+                    # 是否存在"相对顺序相反"的情况
+                    inverted = (ti < tj and ai > aj) or (ti > tj and ai < aj)
+                    if not inverted:
+                        continue
+
+                    # 检查两个 stage 是否可视为"并列"
+                    target_i = target_stage_data.get(si, {}).get("target", 0)
+                    target_j = target_stage_data.get(sj, {}).get("target", 0)
+                    actual_i = actual_stage_data.get(si, {}).get("actual", 0)
+                    actual_j = actual_stage_data.get(sj, {}).get("actual", 0)
+                    target_diff = abs(target_i - target_j)
+                    actual_diff = abs(actual_i - actual_j)
+                    can_treat_as_tie = (
+                        total_target_budget > 0
+                        and total_actual_budget > 0
+                        and target_diff < target_diff_threshold
+                        and actual_diff < actual_diff_threshold
+                    )
+
+                    if not can_treat_as_tie:
+                        order_consistent = False
+                        break
+
         for stage_name in all_stages:
             target_info = target_stage_data.get(
                 stage_name, {"target": 0, "target_percentage": 0}
@@ -304,15 +514,15 @@ def check_stage_budget_achievement(
                     error_percentage = round(error_percentage)
                     satisfied = error_percentage <= stage_range_match
                 else:
-                    # 大小关系匹配：只检查顺序，不检查具体数值
-                    satisfied = True  # 暂时简化处理
+                    # 大小关系匹配：检查顺序是否一致
+                    satisfied = order_consistent
                     error_percentage = abs(
                         actual_info["actual_percentage"]
                         - target_info["target_percentage"]
                     )
                     error_percentage = round(error_percentage)
 
-            results[country_code][stage_name] = {
+            result_item = {
                 "target": target,
                 "actual": actual,
                 "error_percentage": error_percentage,
@@ -323,19 +533,31 @@ def check_stage_budget_achievement(
                 "match_type": stage_match_type,
             }
 
+            # 如果是大小关系匹配，添加排名信息
+            if stage_match_type == "大小关系匹配":
+                result_item["target_rank"] = target_rank.get(stage_name, -1)
+                result_item["actual_rank"] = actual_rank.get(stage_name, -1)
+                result_item["order_consistent"] = order_consistent
+
+            results[country_code][stage_name] = result_item
+
     return results
 
 
 def check_marketingfunnel_budget_achievement(
-    request_json: Dict,
     result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Dict[str, Any]]:
     """检查各区域下的 marketingFunnel 维度预算是否满足"""
-    # 提取目标配置（从请求文件）
+    # 从 result_json 中提取目标配置
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    brief_multi_config = brief_info.get("briefMultiConfig", [])
+
     target_funnels = {}
-    for country_config in request_json.get("briefMultiConfig", []):
+    for country_config in brief_multi_config:
         country_code = country_config.get("countryInfo", {}).get("countryCode", "")
         target_funnels[country_code] = {}
 
@@ -393,6 +615,82 @@ def check_marketingfunnel_budget_achievement(
         # 合并所有 funnel 名称
         all_funnels = set(target_funnel_data.keys()) | set(actual_funnel_data.keys())
 
+        if funnel_match_type == "大小关系匹配":
+            # 大小关系匹配：检查顺序是否一致
+            # 计算总预算用于判断"并列"阈值
+            total_target_budget = sum(
+                info.get("target", 0) for info in target_funnel_data.values()
+            )
+            total_actual_budget = sum(
+                info.get("actual", 0) for info in actual_funnel_data.values()
+            )
+            target_diff_threshold = (
+                total_target_budget / 10000.0 if total_target_budget > 0 else 0.0
+            )
+            actual_diff_threshold = (
+                total_actual_budget / 10000.0 if total_actual_budget > 0 else 0.0
+            )
+
+            # 构建目标大小顺序（按 target_percentage 降序）
+            target_order = sorted(
+                target_funnel_data.items(),
+                key=lambda x: x[1].get("target_percentage", 0),
+                reverse=True,
+            )
+            target_rank = {
+                funnel_name: rank for rank, (funnel_name, _) in enumerate(target_order)
+            }
+
+            # 构建实际大小顺序（按 actual_percentage 降序）
+            actual_order = sorted(
+                actual_funnel_data.items(),
+                key=lambda x: x[1].get("actual_percentage", 0),
+                reverse=True,
+            )
+            actual_rank = {
+                funnel_name: rank for rank, (funnel_name, _) in enumerate(actual_order)
+            }
+
+            # 判断顺序是否一致
+            order_consistent = True
+            funnel_list = list(all_funnels)
+            n = len(funnel_list)
+            for i in range(n):
+                if not order_consistent:
+                    break
+                for j in range(i + 1, n):
+                    fi = funnel_list[i]
+                    fj = funnel_list[j]
+                    ti = target_rank.get(fi, -1)
+                    tj = target_rank.get(fj, -1)
+                    ai = actual_rank.get(fi, -1)
+                    aj = actual_rank.get(fj, -1)
+                    if ti < 0 or tj < 0 or ai < 0 or aj < 0:
+                        continue
+
+                    # 是否存在"相对顺序相反"的情况
+                    inverted = (ti < tj and ai > aj) or (ti > tj and ai < aj)
+                    if not inverted:
+                        continue
+
+                    # 检查两个 funnel 是否可视为"并列"
+                    target_i = target_funnel_data.get(fi, {}).get("target", 0)
+                    target_j = target_funnel_data.get(fj, {}).get("target", 0)
+                    actual_i = actual_funnel_data.get(fi, {}).get("actual", 0)
+                    actual_j = actual_funnel_data.get(fj, {}).get("actual", 0)
+                    target_diff = abs(target_i - target_j)
+                    actual_diff = abs(actual_i - actual_j)
+                    can_treat_as_tie = (
+                        total_target_budget > 0
+                        and total_actual_budget > 0
+                        and target_diff < target_diff_threshold
+                        and actual_diff < actual_diff_threshold
+                    )
+
+                    if not can_treat_as_tie:
+                        order_consistent = False
+                        break
+
         for funnel_name in all_funnels:
             target_info = target_funnel_data.get(
                 funnel_name, {"target": 0, "target_percentage": 0}
@@ -418,15 +716,15 @@ def check_marketingfunnel_budget_achievement(
                     error_percentage = round(error_percentage)
                     satisfied = error_percentage <= funnel_range_match
                 else:
-                    # 大小关系匹配：只检查顺序
-                    satisfied = True  # 暂时简化处理
+                    # 大小关系匹配：检查顺序是否一致
+                    satisfied = order_consistent
                     error_percentage = abs(
                         actual_info["actual_percentage"]
                         - target_info["target_percentage"]
                     )
                     error_percentage = round(error_percentage)
 
-            results[country_code][funnel_name] = {
+            result_item = {
                 "target": target,
                 "actual": actual,
                 "error_percentage": error_percentage,
@@ -437,56 +735,82 @@ def check_marketingfunnel_budget_achievement(
                 "match_type": funnel_match_type,
             }
 
+            # 如果是大小关系匹配，添加排名信息
+            if funnel_match_type == "大小关系匹配":
+                result_item["target_rank"] = target_rank.get(funnel_name, -1)
+                result_item["actual_rank"] = actual_rank.get(funnel_name, -1)
+                result_item["order_consistent"] = order_consistent
+
+            results[country_code][funnel_name] = result_item
+
     return results
 
 
 def check_media_budget_achievement(
-    request_json: Dict,
     result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
-) -> Dict[str, Dict[str, Any]]:
-    """检查各区域下的 media 维度预算是否满足"""
-    # 提取目标配置（从请求文件）
+) -> Dict[str, Dict[str, Dict[str, Any]]]:
+    """检查各区域下的 media 维度预算是否满足（统计到 platform 层级）"""
+    # 从 result_json 中提取目标配置（platform 层级）
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    brief_multi_config = brief_info.get("briefMultiConfig", [])
+
     target_media = {}
-    for country_config in request_json.get("briefMultiConfig", []):
+    for country_config in brief_multi_config:
         country_code = country_config.get("countryInfo", {}).get("countryCode", "")
         target_media[country_code] = {}
 
         for media in country_config.get("media", []):
             media_name = media.get("name", "")
-            target_media[country_code][media_name] = {
-                "target": media.get("budgetAmount", 0),
-                "target_percentage": media.get("budgetPercentage", 0),
-            }
+            # 提取 platform 层级的预算配置
+            for platform in media.get("children", []):
+                platform_name = platform.get("name", "")
+                key = f"{media_name}|{platform_name}"
+                target_media[country_code][key] = {
+                    "media": media_name,
+                    "platform": platform_name,
+                    "target": platform.get("budgetAmount", 0),
+                    "target_percentage": platform.get("budgetPercentage", 0),
+                }
 
-    # 从 ai 数据聚合计算实际配置
+    # 从 ai 数据聚合计算实际配置（按 country、media、platform 聚合）
     actual_media = {}
     for ai_item in ai_data_list:
         country = ai_item.get("country", "")
         media_name = ai_item.get("media", "")
+        platform = ai_item.get("mediaChannel", "")
 
-        if not country or not media_name:
+        if not country or not media_name or not platform:
             continue
 
         if country not in actual_media:
             actual_media[country] = {}
 
-        if media_name not in actual_media[country]:
-            actual_media[country][media_name] = 0.0
+        key = f"{media_name}|{platform}"
+        if key not in actual_media[country]:
+            actual_media[country][key] = 0.0
 
         budget = parse_budget(ai_item.get("totalBudget", 0))
-        actual_media[country][media_name] += budget
+        actual_media[country][key] += budget
 
     # 计算百分比
     for country_code in actual_media.keys():
         total_budget = sum(actual_media[country_code].values())
-        for media_name in actual_media[country_code].keys():
-            actual_amount = actual_media[country_code][media_name]
+        for key in actual_media[country_code].keys():
+            actual_amount = actual_media[country_code][key]
             actual_percentage = (
                 (actual_amount / total_budget * 100) if total_budget > 0 else 0.0
             )
-            actual_media[country_code][media_name] = {
+            # 解析 media 和 platform
+            parts = key.split("|")
+            media_name = parts[0] if len(parts) > 0 else ""
+            platform_name = parts[1] if len(parts) > 1 else ""
+            actual_media[country_code][key] = {
+                "media": media_name,
+                "platform": platform_name,
                 "actual": actual_amount,
                 "actual_percentage": actual_percentage,
             }
@@ -504,15 +828,93 @@ def check_media_budget_achievement(
         target_media_data = target_media.get(country_code, {})
         actual_media_data = actual_media.get(country_code, {})
 
-        # 合并所有 media 名称
-        all_media = set(target_media_data.keys()) | set(actual_media_data.keys())
+        # 合并所有 media|platform 键
+        all_keys = set(target_media_data.keys()) | set(actual_media_data.keys())
 
-        for media_name in all_media:
+        if media_match_type == "大小关系匹配":
+            # 大小关系匹配：检查顺序是否一致
+            # 计算总预算用于判断"并列"阈值
+            total_target_budget = sum(
+                info.get("target", 0) for info in target_media_data.values()
+            )
+            total_actual_budget = sum(
+                info.get("actual", 0) for info in actual_media_data.values()
+            )
+            target_diff_threshold = (
+                total_target_budget / 10000.0 if total_target_budget > 0 else 0.0
+            )
+            actual_diff_threshold = (
+                total_actual_budget / 10000.0 if total_actual_budget > 0 else 0.0
+            )
+
+            # 构建目标大小顺序（按 target_percentage 降序）
+            target_order = sorted(
+                target_media_data.items(),
+                key=lambda x: x[1].get("target_percentage", 0),
+                reverse=True,
+            )
+            target_rank = {key: rank for rank, (key, _) in enumerate(target_order)}
+
+            # 构建实际大小顺序（按 actual_percentage 降序）
+            actual_order = sorted(
+                actual_media_data.items(),
+                key=lambda x: x[1].get("actual_percentage", 0),
+                reverse=True,
+            )
+            actual_rank = {key: rank for rank, (key, _) in enumerate(actual_order)}
+
+            # 判断顺序是否一致
+            order_consistent = True
+            key_list = list(all_keys)
+            n = len(key_list)
+            for i in range(n):
+                if not order_consistent:
+                    break
+                for j in range(i + 1, n):
+                    ki = key_list[i]
+                    kj = key_list[j]
+                    ti = target_rank.get(ki, -1)
+                    tj = target_rank.get(kj, -1)
+                    ai = actual_rank.get(ki, -1)
+                    aj = actual_rank.get(kj, -1)
+                    if ti < 0 or tj < 0 or ai < 0 or aj < 0:
+                        continue
+
+                    # 是否存在"相对顺序相反"的情况
+                    inverted = (ti < tj and ai > aj) or (ti > tj and ai < aj)
+                    if not inverted:
+                        continue
+
+                    # 检查两个 media|platform 是否可视为"并列"
+                    target_i = target_media_data.get(ki, {}).get("target", 0)
+                    target_j = target_media_data.get(kj, {}).get("target", 0)
+                    actual_i = actual_media_data.get(ki, {}).get("actual", 0)
+                    actual_j = actual_media_data.get(kj, {}).get("actual", 0)
+                    target_diff = abs(target_i - target_j)
+                    actual_diff = abs(actual_i - actual_j)
+                    can_treat_as_tie = (
+                        total_target_budget > 0
+                        and total_actual_budget > 0
+                        and target_diff < target_diff_threshold
+                        and actual_diff < actual_diff_threshold
+                    )
+
+                    if not can_treat_as_tie:
+                        order_consistent = False
+                        break
+
+        for key in all_keys:
             target_info = target_media_data.get(
-                media_name, {"target": 0, "target_percentage": 0}
+                key, {"media": "", "platform": "", "target": 0, "target_percentage": 0}
             )
             actual_info = actual_media_data.get(
-                media_name, {"actual": 0, "actual_percentage": 0}
+                key, {"media": "", "platform": "", "actual": 0, "actual_percentage": 0}
+            )
+
+            # 使用 target_info 中的 media 和 platform（如果存在），否则使用 actual_info
+            media_name = target_info.get("media") or actual_info.get("media", "")
+            platform_name = target_info.get("platform") or actual_info.get(
+                "platform", ""
             )
 
             target = target_info["target"]
@@ -532,15 +934,17 @@ def check_media_budget_achievement(
                     error_percentage = round(error_percentage)
                     satisfied = error_percentage <= media_range_match
                 else:
-                    # 大小关系匹配：只检查顺序
-                    satisfied = True  # 暂时简化处理
+                    # 大小关系匹配：检查顺序是否一致
+                    satisfied = order_consistent
                     error_percentage = abs(
                         actual_info["actual_percentage"]
                         - target_info["target_percentage"]
                     )
                     error_percentage = round(error_percentage)
 
-            results[country_code][media_name] = {
+            result_item = {
+                "media": media_name,
+                "platform": platform_name,
                 "target": target,
                 "actual": actual,
                 "error_percentage": error_percentage,
@@ -551,18 +955,31 @@ def check_media_budget_achievement(
                 "match_type": media_match_type,
             }
 
+            # 如果是大小关系匹配，添加排名信息
+            if media_match_type == "大小关系匹配":
+                result_item["target_rank"] = target_rank.get(key, -1)
+                result_item["actual_rank"] = actual_rank.get(key, -1)
+                result_item["order_consistent"] = order_consistent
+
+            results[country_code][key] = result_item
+
     return results
 
 
 def check_mediaMarketingFunnelFormat_kpi_achievement(
-    request_json: Dict,
+    result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Dict[str, Any]]:
     """检查 mediaMarketingFunnelFormat 维度 KPI 是否达成（Xiaomi版本）"""
-    # 提取目标配置
+    # 从 result_json 中提取目标配置
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    brief_multi_config = brief_info.get("briefMultiConfig", [])
+
     target_formats = {}
-    for country_config in request_json.get("briefMultiConfig", []):
+    for country_config in brief_multi_config:
         country_code = country_config.get("countryInfo", {}).get("countryCode", "")
 
         for media_config in country_config.get("mediaMarketingFunnelFormat", []):
@@ -572,13 +989,13 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
                 if media_config.get("platform")
                 else ""
             )
-            funnel_name = media_config.get("funnelName", "")
 
             for adformat in media_config.get("adFormatWithKPI", []):
+                funnel_name = adformat.get("funnelName", "")
                 adformat_name = adformat.get("adFormatName", "")
                 creative = adformat.get("creative", "")
 
-                key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+                key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}"
                 target_formats[key] = {
                     "country": country_code,
                     "media": media_name,
@@ -591,8 +1008,23 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
 
                 for kpi in adformat.get("kpiInfo", []):
                     kpi_key = kpi.get("key", "")
+                    kpi_val = kpi.get("val")
+                    # 区分 null 和 0：如果 val 是 None 或 "null"，则保留为 None；否则转换为 float
+                    if (
+                        kpi_val is None
+                        or kpi_val == "null"
+                        or (isinstance(kpi_val, str) and kpi_val.strip() == "")
+                    ):
+                        target_value = None
+                    else:
+                        try:
+                            # 如果 val 是字符串 "0"，转换为 0.0；如果是数字 0，保持为 0.0
+                            target_value = float(kpi_val)
+                        except (ValueError, TypeError):
+                            target_value = None
+
                     target_formats[key]["kpis"][kpi_key] = {
-                        "target": float(kpi.get("val", "0") or 0),
+                        "target": target_value,
                         "priority": kpi.get("priority", 999),
                         "completion": kpi.get("completion", 0),
                     }
@@ -624,7 +1056,7 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
         if not country:
             continue
 
-        key = f"{country}|{media}|{platform}|{funnel}|{adformat}|{creative}"
+        key = f"{country}|{media}|{platform}|{funnel}|{adformat}"
 
         if key not in actual_formats:
             actual_formats[key] = {}
@@ -648,7 +1080,7 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
     for target_key, target_info in target_formats.items():
         # 解析 target key
         target_key_parts = target_key.split("|")
-        if len(target_key_parts) < 6:
+        if len(target_key_parts) < 5:
             continue
 
         country_code = target_key_parts[0]
@@ -656,7 +1088,8 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
         platform = target_key_parts[2]
         funnel_name = target_key_parts[3]  # 可能为空
         adformat_name = target_key_parts[4]
-        creative = target_key_parts[5]
+        # creative 从 target_info 中获取
+        creative = target_info.get("creative", "")
 
         # 如果 target 的 funnel 为空，需要通过 media, platform, objective, adformat 推导
         if not funnel_name:
@@ -678,14 +1111,18 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
                 if mapping_key in funnel_mapping:
                     funnel_name = funnel_mapping[mapping_key]
 
-        # 构建匹配的 actual key
-        actual_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+        # 构建匹配的 actual key（不包含 creative）
+        actual_key = (
+            f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}"
+        )
 
         # 获取 actual 数据
         kpi_actual = actual_formats.get(actual_key, {})
 
-        # 构建结果
-        result_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+        # 构建结果（不包含 creative）
+        result_key = (
+            f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}"
+        )
         results[result_key] = {
             "country": country_code,
             "media": media_name,
@@ -701,7 +1138,11 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
             actual = kpi_actual.get(kpi_name, 0.0)
             completion = kpi_target_info.get("completion", 0)
 
-            if target == 0:
+            if target is None:
+                # target 为 null 时，不进行判断
+                achievement_rate = "null"
+                achieved = False
+            elif target == 0:
                 achievement_rate = 0.0 if actual == 0 else "null"
                 achieved = actual == 0
             else:
@@ -726,22 +1167,28 @@ def check_mediaMarketingFunnelFormat_kpi_achievement(
 
 
 def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
-    request_json: Dict,
+    result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Dict[str, Any]]:
     """检查 mediaMarketingFunnelFormatBudgetConfig 维度预算是否满足（Xiaomi版本）"""
-    # 从 request_json 中提取 totalBudgetFlexibility
+    # 从 result_json 中提取配置
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    brief_multi_config = brief_info.get("briefMultiConfig", [])
+
+    # 从 result_json 中提取 totalBudgetFlexibility
     total_budget_flexibility = 80  # 默认值
-    for country_config in request_json.get("briefMultiConfig", []):
+    for country_config in brief_multi_config:
         budget_config = country_config.get("mediaMarketingFunnelFormatBudgetConfig", {})
         if budget_config and "totalBudgetFlexibility" in budget_config:
             total_budget_flexibility = budget_config.get("totalBudgetFlexibility", 80)
             break
 
-    # 从 request_json 的 adFormatWithKPI 中提取目标配置
+    # 从 result_json 的 adFormatWithKPI 中提取目标配置
     target_configs = {}
-    for country_config in request_json.get("briefMultiConfig", []):
+    for country_config in brief_multi_config:
         country_code = country_config.get("countryInfo", {}).get("countryCode", "")
         target_configs[country_code] = {}
 
@@ -752,26 +1199,23 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
                 if media_config.get("platform")
                 else ""
             )
-            funnel_name = media_config.get("funnelName", "")
 
             for adformat in media_config.get("adFormatWithKPI", []):
+                funnel_name = adformat.get("funnelName", "")
                 adformat_name = adformat.get("adFormatName", "")
                 creative = adformat.get("creative", "")
                 ad_format_total_budget = adformat.get("adFormatTotalBudget")
                 completion = adformat.get("completion", 0)
 
-                # 只处理设置了 adFormatTotalBudget 的 adformat
-                if ad_format_total_budget is None:
-                    continue
-
-                key = (
-                    f"{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
-                )
+                key = f"{media_name}|{platform}|{funnel_name}|{adformat_name}"
                 target_configs[country_code][key] = {
                     "target": (
-                        float(ad_format_total_budget) if ad_format_total_budget else 0
+                        float(ad_format_total_budget)
+                        if ad_format_total_budget
+                        else None
                     ),
                     "completion": completion,
+                    "creative": creative,  # 保存 creative 以便后续使用
                 }
 
     # 从 ai 数据建立 (media, platform, objective, adformat) -> marketingFunnel 的映射
@@ -801,7 +1245,7 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
         if not country:
             continue
 
-        key = f"{media}|{platform}|{funnel}|{adformat}|{creative}"
+        key = f"{media}|{platform}|{funnel}|{adformat}"
 
         if country not in actual_configs:
             actual_configs[country] = {}
@@ -823,16 +1267,17 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
 
         # 为每个 target key 尝试匹配 actual key
         for target_key, target_info in target_data.items():
-            # 解析 target key
+            # 解析 target key（不包含 creative）
             target_key_parts = target_key.split("|")
-            if len(target_key_parts) < 5:
+            if len(target_key_parts) < 4:
                 continue
 
             media_name = target_key_parts[0]
             platform = target_key_parts[1]
             funnel_name = target_key_parts[2]  # 可能为空
             adformat_name = target_key_parts[3]
-            creative = target_key_parts[4]
+            # creative 从 target_info 中获取（不再作为 key 的一部分）
+            creative = target_info.get("creative", "")
 
             # 如果 target 的 funnel 为空，需要通过 media, platform, objective, adformat 推导
             if not funnel_name:
@@ -854,10 +1299,8 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
                     if mapping_key in funnel_mapping:
                         funnel_name = funnel_mapping[mapping_key]
 
-            # 构建匹配的 actual key
-            actual_key = (
-                f"{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
-            )
+            # 构建匹配的 actual key（不包含 creative）
+            actual_key = f"{media_name}|{platform}|{funnel_name}|{adformat_name}"
 
             # 获取 actual 数据
             actual_amount = actual_data.get(actual_key, 0.0)
@@ -869,7 +1312,11 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
             completion = target_info.get("completion", 0)
 
             # 计算达成率和判断是否满足
-            if target == 0:
+            if target is None:
+                achievement_rate = "null"
+                achieved = True
+                min_required = 0
+            elif target == 0:
                 achievement_rate = 0.0 if actual == 0 else "null"
                 achieved = actual == 0
                 min_required = 0
@@ -886,11 +1333,15 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
                     achieved = actual >= target
                 else:
                     min_required = target * total_budget_flexibility / 100
-                    achieved = actual >= min_required
+                    # 使用达成率判断，避免浮点数精度问题
+                    # 如果达成率 >= target_rate，则认为达成
+                    achieved = achievement_rate >= total_budget_flexibility
 
             # 构建结果键（包含 country_code，与 KPI 检查保持一致）
             # 使用推导出的 funnel_name（如果为空则保持为空）
-            result_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+            result_key = (
+                f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}"
+            )
 
             results[result_key] = {
                 "country": country_code,
@@ -920,7 +1371,7 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
                 adformat_name = actual_key_parts[3]
                 creative = actual_key_parts[4]
 
-                result_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}|{creative}"
+                result_key = f"{country_code}|{media_name}|{platform}|{funnel_name}|{adformat_name}"
                 if result_key not in results:
                     # 没有对应的 target，标记为未达成
                     if isinstance(actual_amount, dict):
@@ -933,7 +1384,7 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
                         "funnel": funnel_name,
                         "adformat": adformat_name,
                         "creative": creative,
-                        "target": 0,
+                        "target": None,
                         "actual": actual_amount,
                         "achievement_rate": "null",
                         "target_rate": total_budget_flexibility,
@@ -947,7 +1398,7 @@ def check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
 
 
 def check_adformat_budget_allocation(
-    request_json: Dict,
+    result_json: Dict,
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Dict[str, Any]]:
@@ -957,9 +1408,15 @@ def check_adformat_budget_allocation(
     if allow_zero_budget:
         return {}
 
+    # 从 result_json 中提取目标配置
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    brief_multi_config = brief_info.get("briefMultiConfig", [])
+
     # 提取目标 AdFormat 配置
     target_formats = {}
-    for country_config in request_json.get("briefMultiConfig", []):
+    for country_config in brief_multi_config:
         country_code = country_config.get("countryInfo", {}).get("countryCode", "")
         target_formats[country_code] = {}
 
@@ -972,11 +1429,13 @@ def check_adformat_budget_allocation(
             )
 
             for adformat in media_config.get("adFormatWithKPI", []):
+                funnel_name = adformat.get("funnelName", "")
                 adformat_name = adformat.get("adFormatName", "")
-                key = f"{media_name}|{platform}|{adformat_name}"
+                key = f"{media_name}|{platform}|{funnel_name}|{adformat_name}"
                 target_formats[country_code][key] = {
                     "media": media_name,
                     "platform": platform,
+                    "funnel": funnel_name,
                     "adformat": adformat_name,
                 }
 
@@ -986,12 +1445,13 @@ def check_adformat_budget_allocation(
         country = ai_item.get("country", "")
         media = ai_item.get("media", "")
         platform = ai_item.get("mediaChannel", "")
+        funnel = ai_item.get("marketingFunnel", "")
         adformat = ai_item.get("adFormat", "")
 
         if not country or not media or not platform or not adformat:
             continue
 
-        key = f"{media}|{platform}|{adformat}"
+        key = f"{media}|{platform}|{funnel}|{adformat}"
 
         if country not in actual_formats:
             actual_formats[country] = {}
@@ -1000,6 +1460,7 @@ def check_adformat_budget_allocation(
             actual_formats[country][key] = {
                 "media": media,
                 "platform": platform,
+                "funnel": funnel,
                 "adformat": adformat,
                 "budget": 0.0,
             }
@@ -1029,6 +1490,7 @@ def check_adformat_budget_allocation(
                 "media": target_info.get("media") or actual_info.get("media", ""),
                 "platform": target_info.get("platform")
                 or actual_info.get("platform", ""),
+                "funnel": target_info.get("funnel") or actual_info.get("funnel", ""),
                 "adformat": target_info.get("adformat")
                 or actual_info.get("adformat", ""),
                 "budget": budget,
@@ -1208,8 +1670,13 @@ def print_achievement_summary(results: Dict[str, Any], testcase_config: Dict[str
             ]
             if unsatisfied:
                 for key, format_data in sorted(unsatisfied, key=lambda x: x[0]):
+                    funnel_str = (
+                        f" | {format_data.get('funnel', '')}"
+                        if format_data.get("funnel")
+                        else ""
+                    )
                     print(
-                        f"    [FAIL] {format_data['media']} | {format_data['platform']} | {format_data['adformat']}: "
+                        f"    [FAIL] {format_data['media']} | {format_data['platform']}{funnel_str} | {format_data['adformat']}: "
                         f"预算={format_data['budget']:,.2f}"
                     )
         print(f"\n  总体满足: {total_satisfied}/{total_count}")
@@ -1222,14 +1689,14 @@ def main():
     parser.add_argument(
         "--testcase-file",
         type=str,
-        required=True,
-        help="测试用例文件路径（Python文件）",
+        required=False,
+        help="测试用例文件路径（Python文件，已废弃，将从 result_json 中提取）",
     )
     parser.add_argument(
         "--request-file",
         type=str,
-        required=True,
-        help="请求 JSON 文件路径",
+        required=False,
+        help="请求 JSON 文件路径（已废弃，将从 result_json 中提取）",
     )
     parser.add_argument(
         "--result-file",
@@ -1240,8 +1707,8 @@ def main():
     parser.add_argument(
         "--case-name",
         type=str,
-        required=True,
-        help="测试用例名称",
+        required=False,
+        help="测试用例名称（可选，将从文件名中提取）",
     )
     parser.add_argument(
         "--output",
@@ -1253,30 +1720,23 @@ def main():
     args = parser.parse_args()
 
     # 加载文件
-    testcase_file = Path(args.testcase_file)
-    request_file = Path(args.request_file)
     result_file = Path(args.result_file)
-
-    if not testcase_file.exists():
-        print(f"错误：测试用例文件不存在: {testcase_file}")
-        return 1
-
-    if not request_file.exists():
-        print(f"错误：请求文件不存在: {request_file}")
-        return 1
 
     if not result_file.exists():
         print(f"错误：结果文件不存在: {result_file}")
         return 1
 
-    # 加载测试用例配置
-    testcase_config = load_testcase(testcase_file, args.case_name)
-    if testcase_config is None:
-        return 1
-
-    # 加载请求和结果文件
-    request_json = load_json(request_file)
+    # 加载结果文件
     result_json = load_json(result_file)
+
+    # 从 result_json 中提取 testcase_config
+    testcase_config = extract_testcase_config_from_result(result_json)
+
+    # 从文件名中提取 case_name（如果未提供）
+    if not args.case_name:
+        case_name = result_file.stem.replace("mp_result_", "")
+    else:
+        case_name = args.case_name
 
     # 提取 uuid 和 job_id（Xiaomi版本：从result.briefInfo.basicInfo中提取）
     brief_info = result_json.get("result", {}).get("briefInfo", {})
@@ -1294,55 +1754,39 @@ def main():
 
     # 检查各项指标
     results = {
-        "case_name": args.case_name,
+        "case_name": case_name,
         "uuid": uuid,
         "job_id": job_id,
-        "testcase_config": {
-            "kpi_target_rate": testcase_config.get("kpi_target_rate", 80),
-            "region_budget_target_rate": testcase_config.get(
-                "region_budget_target_rate", 90
-            ),
-            "region_kpi_target_rate": testcase_config.get("region_kpi_target_rate", 80),
-            "mediaMarketingFunnelAdtype_target_rate": testcase_config.get(
-                "mediaMarketingFunnelAdtype_target_rate", 80
-            ),
-            "stage_range_match": testcase_config.get("stage_range_match", 20),
-            "marketingfunnel_range_match": testcase_config.get(
-                "marketingfunnel_range_match", 15
-            ),
-            "media_range_match": testcase_config.get("media_range_match", 5),
-            "kpi_priority_list": testcase_config.get("kpi_priority_list", []),
-            "module_priority_list": testcase_config.get("module_priority_list", []),
-        },
+        "testcase_config": testcase_config,
         "global_kpi": check_global_kpi_achievement(
-            request_json, ai_data_list, testcase_config
+            result_json, ai_data_list, testcase_config
         ),
         "region_budget": check_region_budget_achievement(
-            request_json, ai_data_list, testcase_config
+            result_json, ai_data_list, testcase_config
         ),
         "region_kpi": check_region_kpi_achievement(
-            request_json, ai_data_list, testcase_config
+            result_json, ai_data_list, testcase_config
         ),
         "stage_budget": check_stage_budget_achievement(
-            request_json, result_json, ai_data_list, testcase_config
+            result_json, ai_data_list, testcase_config
         ),
         "marketingfunnel_budget": check_marketingfunnel_budget_achievement(
-            request_json, result_json, ai_data_list, testcase_config
+            result_json, ai_data_list, testcase_config
         ),
         "media_budget": check_media_budget_achievement(
-            request_json, result_json, ai_data_list, testcase_config
+            result_json, ai_data_list, testcase_config
         ),
         "mediaMarketingFunnelFormat_kpi": check_mediaMarketingFunnelFormat_kpi_achievement(
-            request_json, ai_data_list, testcase_config
+            result_json, ai_data_list, testcase_config
         ),
         "mediaMarketingFunnelFormatBudgetConfig_budget": check_mediaMarketingFunnelFormatBudgetConfig_budget_achievement(
-            request_json, ai_data_list, testcase_config
+            result_json, ai_data_list, testcase_config
         ),
     }
 
     # 检查 AdFormat 预算分配（当 allow_zero_budget 为 False 时，Xiaomi版本）
     adformat_allocation = check_adformat_budget_allocation(
-        request_json, ai_data_list, testcase_config
+        result_json, ai_data_list, testcase_config
     )
     if adformat_allocation:
         results["adformat_budget_allocation"] = adformat_allocation

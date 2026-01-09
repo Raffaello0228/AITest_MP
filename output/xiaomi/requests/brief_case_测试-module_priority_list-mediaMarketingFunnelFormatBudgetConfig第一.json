@@ -9,12 +9,6 @@
         "completion": 0
       },
       {
-        "key": "VideoViews",
-        "val": "3499408",
-        "priority": 2,
-        "completion": 0
-      },
-      {
         "key": "Clicks",
         "val": "662977",
         "priority": 4,
@@ -68,7 +62,7 @@
       }
     ],
     "totalBudget": 689334,
-    "uuid": "d0c3f1db-ec58-48a9-9bd9-de1efcf217a9",
+    "uuid": "30d4079a-8cb1-4945-9bc9-3bc95ecfe9ec",
     "historyMpId": "e930c432-2526-4451-a34e-2f21b8b6",
     "mediaPlanName": "测试-module_priority_list-mediaMarketingFunnelFormatBudgetConfig第一",
     "corporationId": "18581",
@@ -264,12 +258,6 @@
                   "completion": 0
                 },
                 {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
                   "key": "Clicks",
                   "val": "95710",
                   "priority": 4,
@@ -291,12 +279,6 @@
                   "completion": 0
                 },
                 {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
                   "key": "Clicks",
                   "val": "184486",
                   "priority": 4,
@@ -315,18 +297,6 @@
                   "key": "Impression",
                   "val": "160280374",
                   "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
                   "completion": 0
                 }
               ]
@@ -363,18 +333,6 @@
                   "val": "8586449",
                   "priority": 1,
                   "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
-                  "completion": 0
                 }
               ]
             },
@@ -389,18 +347,6 @@
                   "key": "Impression",
                   "val": "4452233",
                   "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": "2003505",
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
                   "completion": 0
                 }
               ]
@@ -441,26 +387,7 @@
               "creative": "Image&Video",
               "adFormatTotalBudget": null,
               "completion": 0,
-              "kpiInfo": [
-                {
-                  "key": "Impression",
-                  "val": null,
-                  "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
-                  "completion": 0
-                }
-              ]
+              "kpiInfo": []
             },
             {
               "funnelName": "Consideration",
@@ -473,18 +400,6 @@
                   "key": "Impression",
                   "val": "1761792",
                   "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": "933750",
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
                   "completion": 0
                 }
               ]
@@ -503,12 +418,6 @@
                   "completion": 0
                 },
                 {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
                   "key": "Clicks",
                   "val": "14135",
                   "priority": 4,
@@ -522,26 +431,7 @@
               "creative": "Image&Video",
               "adFormatTotalBudget": null,
               "completion": 0,
-              "kpiInfo": [
-                {
-                  "key": "Impression",
-                  "val": null,
-                  "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
-                  "completion": 0
-                }
-              ]
+              "kpiInfo": []
             }
           ]
         },
@@ -585,18 +475,6 @@
                   "val": "35619231",
                   "priority": 1,
                   "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
-                  "completion": 0
                 }
               ]
             },
@@ -612,18 +490,6 @@
                   "val": "1187308",
                   "priority": 1,
                   "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": "59365",
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
-                  "completion": 0
                 }
               ]
             },
@@ -638,12 +504,6 @@
                   "key": "Impression",
                   "val": "43975367",
                   "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
                   "completion": 0
                 },
                 {
@@ -665,12 +525,6 @@
                   "key": "Impression",
                   "val": "11873077",
                   "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
                   "completion": 0
                 },
                 {
@@ -717,26 +571,7 @@
               "creative": "Image&Video",
               "adFormatTotalBudget": null,
               "completion": 0,
-              "kpiInfo": [
-                {
-                  "key": "Impression",
-                  "val": null,
-                  "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
-                  "completion": 0
-                }
-              ]
+              "kpiInfo": []
             },
             {
               "funnelName": "Consideration",
@@ -749,18 +584,6 @@
                   "key": "Impression",
                   "val": "2146048",
                   "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": "502788",
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
                   "completion": 0
                 }
               ]
@@ -779,12 +602,6 @@
                   "completion": 0
                 },
                 {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
                   "key": "Clicks",
                   "val": "7909",
                   "priority": 4,
@@ -798,26 +615,7 @@
               "creative": "Image&Video",
               "adFormatTotalBudget": null,
               "completion": 0,
-              "kpiInfo": [
-                {
-                  "key": "Impression",
-                  "val": null,
-                  "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
-                  "completion": 0
-                }
-              ]
+              "kpiInfo": []
             }
           ]
         },
@@ -851,18 +649,6 @@
                   "val": "23266857",
                   "priority": 1,
                   "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
-                  "completion": 0
-                },
-                {
-                  "key": "Clicks",
-                  "val": null,
-                  "priority": 4,
-                  "completion": 0
                 }
               ]
             },
@@ -877,12 +663,6 @@
                   "key": "Impression",
                   "val": "42832167",
                   "priority": 1,
-                  "completion": 0
-                },
-                {
-                  "key": "VideoViews",
-                  "val": null,
-                  "priority": 2,
                   "completion": 0
                 },
                 {

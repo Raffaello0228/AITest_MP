@@ -487,12 +487,13 @@ def build_country_media_marketing_format(
                 for key in kpi_keys_to_process:
                     val = kpi_vals.get(key, 0.0)
                     int_val = int(val)
+                    # 如果值为0，则不添加该KPI（不传该KPI）
+                    if int_val == 0:
+                        continue
                     kpi_list.append(
                         {
                             "key": key,
-                            "val": (
-                                None if int_val == 0 else str(int_val)
-                            ),  # 如果值为0则改成null
+                            "val": str(int_val),
                             "priority": KPI_KEYS.index(key) + 1,
                             "completion": 0,
                         }
@@ -744,11 +745,25 @@ def apply_testcase_template_config(
                 adformat["kpiInfo"] = kpi_list_filtered
 
         # 如果 mediaMarketingFunnelFormatBudgetConfig_must_achieve 为 True，随机设置 completion
+        # 只对 adFormatTotalBudget 不为 null 的项设置 completion
         # 不能全部为必须达成，也不能全部不为必须达成
         if mediaMarketingFunnelFormatBudgetConfig_must_achieve:
-            budget_completion_flags = choose_completion_flags(len(all_adformats))
-            for idx, adformat in enumerate(all_adformats):
-                adformat["completion"] = budget_completion_flags[idx]
+            # 只收集有 adFormatTotalBudget 的项
+            adformats_with_budget = [
+                adformat
+                for adformat in all_adformats
+                if adformat.get("adFormatTotalBudget") is not None
+            ]
+            if adformats_with_budget:
+                budget_completion_flags = choose_completion_flags(
+                    len(adformats_with_budget)
+                )
+                for idx, adformat in enumerate(adformats_with_budget):
+                    adformat["completion"] = budget_completion_flags[idx]
+            # 对于没有预算的项，completion 保持为 0
+            for adformat in all_adformats:
+                if adformat.get("adFormatTotalBudget") is None:
+                    adformat["completion"] = 0
         else:
             for adformat in all_adformats:
                 adformat["completion"] = 0

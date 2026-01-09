@@ -66,7 +66,9 @@ class APIClient:
 
     async def __aenter__(self):
         """异步上下文管理器入口"""
-        self.session = aiohttp.ClientSession()
+        # 设置超时：总超时 5 分钟，连接超时 30 秒
+        timeout = aiohttp.ClientTimeout(total=300, connect=30)
+        self.session = aiohttp.ClientSession(timeout=timeout)
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
@@ -224,10 +226,36 @@ class APIClient:
                     "body_snippet": response_text[:500] if response_text else "",
                 }
 
+        except asyncio.TimeoutError:
+            save_time = int((time.time() - start_time) * 1000)
+            error_msg = f"Save timeout: 请求超时（耗时 {save_time}ms）"
+            self.logger.error(f"[SAVE] {error_msg}")
+            return {
+                "ok": False,
+                "status": 0,
+                "ms": save_time,
+                "uuid": uuid,
+                "job_id": None,
+                "error": error_msg,
+            }
+        except aiohttp.ClientError as e:
+            save_time = int((time.time() - start_time) * 1000)
+            error_msg = f"Save client error: {type(e).__name__} - {str(e) or '未知错误'}"
+            self.logger.error(f"[SAVE] {error_msg}, 耗时: {save_time}ms")
+            return {
+                "ok": False,
+                "status": 0,
+                "ms": save_time,
+                "uuid": uuid,
+                "job_id": None,
+                "error": error_msg,
+            }
         except Exception as e:
             save_time = int((time.time() - start_time) * 1000)
-            error_msg = f"Save exception: {str(e)}"
-            self.logger.error(f"[SAVE] {error_msg}, 耗时: {save_time}ms")
+            error_type = type(e).__name__
+            error_msg = str(e) or "未知错误"
+            full_error_msg = f"Save exception: {error_type} - {error_msg}"
+            self.logger.error(f"[SAVE] {full_error_msg}, 耗时: {save_time}ms")
             return {
                 "ok": False,
                 "status": 0,

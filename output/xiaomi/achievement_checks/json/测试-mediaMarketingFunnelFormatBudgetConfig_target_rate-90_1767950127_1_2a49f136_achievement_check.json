@@ -1,0 +1,1069 @@
+{
+  "case_name": "测试-mediaMarketingFunnelFormatBudgetConfig_target_rate-90",
+  "uuid": "05243172-8884-4773-a8fc-51965597",
+  "job_id": "1767950127_1_2a49f136",
+  "testcase_config": {
+    "kpi_target_rate": 80,
+    "region_budget_target_rate": 90,
+    "region_kpi_target_rate": 80,
+    "mediaMarketingFunnelAdtype_target_rate": 80,
+    "stage_range_match": 20,
+    "stage_match_type": "完全匹配",
+    "marketingfunnel_range_match": 15,
+    "marketingfunnel_match_type": "完全匹配",
+    "media_range_match": 5,
+    "media_match_type": "完全匹配",
+    "kpi_priority_list": [
+      "Impression",
+      "Clicks"
+    ],
+    "module_priority_list": [
+      "mediaMarketingFunnelFormatBudgetConfig",
+      "kpiInfo",
+      "media",
+      "marketingFunnel",
+      "stage",
+      "mediaMarketingFunnelFormat"
+    ],
+    "mediaMarketingFunnelFormat_target_rate": 80,
+    "mediaMarketingFunnelFormatBudgetConfig_target_rate": 90
+  },
+  "global_kpi": {
+    "Impression": {
+      "target": 367908213.0,
+      "actual": 473988737.0,
+      "achievement_rate": 129,
+      "target_rate": 80,
+      "achieved": true,
+      "priority": 1,
+      "completion": 0
+    },
+    "Clicks": {
+      "target": 662977.0,
+      "actual": 865820.0,
+      "achievement_rate": 131,
+      "target_rate": 80,
+      "achieved": true,
+      "priority": 4,
+      "completion": 0
+    }
+  },
+  "region_budget": {},
+  "region_kpi": {},
+  "stage_budget": {
+    "ES": {
+      "Early Bird": {
+        "target": 330185,
+        "actual": 330190.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 47.9,
+        "actual_percentage": 47.89999593809659,
+        "match_type": "完全匹配"
+      },
+      "Open Sale": {
+        "target": 359149,
+        "actual": 359142.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 52.1,
+        "actual_percentage": 52.100004061903405,
+        "match_type": "完全匹配"
+      }
+    }
+  },
+  "marketingfunnel_budget": {
+    "ES": {
+      "Consideration": {
+        "target": 48013,
+        "actual": 43769.0,
+        "error_percentage": 1,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 6.97,
+        "actual_percentage": 6.349480366499742,
+        "match_type": "完全匹配"
+      },
+      "Conversion": {
+        "target": 401944,
+        "actual": 382429.0,
+        "error_percentage": 3,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 58.31,
+        "actual_percentage": 55.478202085497266,
+        "match_type": "完全匹配"
+      },
+      "Awareness": {
+        "target": 127036,
+        "actual": 128119.0,
+        "error_percentage": 0,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 18.43,
+        "actual_percentage": 18.585964382909832,
+        "match_type": "完全匹配"
+      },
+      "Traffic": {
+        "target": 112341,
+        "actual": 135015.0,
+        "error_percentage": 3,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 16.3,
+        "actual_percentage": 19.58635316509316,
+        "match_type": "完全匹配"
+      }
+    }
+  },
+  "media_budget": {
+    "ES": {
+      "Google|YTB": {
+        "media": "Google",
+        "platform": "YTB",
+        "target": 40070,
+        "actual": 36063.0,
+        "error_percentage": 1,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 5.81,
+        "actual_percentage": 5.2315865214439485,
+        "match_type": "完全匹配"
+      },
+      "Meta|FB": {
+        "media": "Meta",
+        "platform": "FB",
+        "target": 26302,
+        "actual": 44351.0,
+        "error_percentage": 3,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 3.82,
+        "actual_percentage": 6.433909930193289,
+        "match_type": "完全匹配"
+      },
+      "Meta|FB&IG": {
+        "media": "Meta",
+        "platform": "FB&IG",
+        "target": 236735,
+        "actual": 219954.0,
+        "error_percentage": 2,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 34.34,
+        "actual_percentage": 31.908282221048783,
+        "match_type": "完全匹配"
+      },
+      "TikTok|TT": {
+        "media": "TikTok",
+        "platform": "TT",
+        "target": 94231,
+        "actual": 84807.0,
+        "error_percentage": 1,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 13.67,
+        "actual_percentage": 12.302780082746775,
+        "match_type": "完全匹配"
+      },
+      "Google|GG": {
+        "media": "Google",
+        "platform": "GG",
+        "target": 266687,
+        "actual": 260142.0,
+        "error_percentage": 1,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 38.69,
+        "actual_percentage": 37.73827415526916,
+        "match_type": "完全匹配"
+      },
+      "Meta|IG": {
+        "media": "Meta",
+        "platform": "IG",
+        "target": 25309,
+        "actual": 44015.0,
+        "error_percentage": 3,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 3.67,
+        "actual_percentage": 6.385167089298045,
+        "match_type": "完全匹配"
+      }
+    }
+  },
+  "mediaMarketingFunnelFormat_kpi": {
+    "ES|Google|GG|Conversion|Performance Max": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Conversion",
+      "adformat": "Performance Max",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": 17091121.0,
+          "actual": 28553239.0,
+          "achievement_rate": 167,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": 95710.0,
+          "actual": 159898.0,
+          "achievement_rate": 167,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Google|GG|Conversion|Search": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Conversion",
+      "adformat": "Search",
+      "creative": "Text",
+      "kpis": {
+        "Impression": {
+          "target": 3498910.0,
+          "actual": 2751830.0,
+          "achievement_rate": 79,
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": 184486.0,
+          "actual": 165110.0,
+          "achievement_rate": 89,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Google|GG|Traffic|Demand Gen": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adformat": "Demand Gen",
+      "creative": "Image",
+      "kpis": {
+        "Impression": {
+          "target": 160280374.0,
+          "actual": 226731500.0,
+          "achievement_rate": 141,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Google|YTB|Awareness|VRC 2.0": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adformat": "VRC 2.0",
+      "creative": "Video",
+      "kpis": {
+        "Impression": {
+          "target": 8586449.0,
+          "actual": 7155425.0,
+          "achievement_rate": 83,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Google|YTB|Consideration|VVC": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adformat": "VVC",
+      "creative": "Video",
+      "kpis": {
+        "Impression": {
+          "target": 4452233.0,
+          "actual": 3710133.0,
+          "achievement_rate": 83,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|FB|Awareness|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {}
+    },
+    "ES|Meta|FB|Consideration|Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adformat": "Video Link Ads",
+      "creative": "Video",
+      "kpis": {
+        "Impression": {
+          "target": 1761792.0,
+          "actual": 1524596.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|FB|Conversion|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Conversion",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": 3324121.0,
+          "actual": 2876643.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": 14135.0,
+          "actual": 12180.0,
+          "achievement_rate": 86,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|FB|Traffic|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {}
+    },
+    "ES|Meta|FB&IG|Awareness|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB&IG",
+      "funnel": "Awareness",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": 35619231.0,
+          "actual": 56511540.0,
+          "achievement_rate": 159,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|FB&IG|Consideration|Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB&IG",
+      "funnel": "Consideration",
+      "adformat": "Video Link Ads",
+      "creative": "Video",
+      "kpis": {
+        "Impression": {
+          "target": 1187308.0,
+          "actual": 1027500.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|FB&IG|Conversion|ASC": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB&IG",
+      "funnel": "Conversion",
+      "adformat": "ASC",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": 43975367.0,
+          "actual": 39176923.0,
+          "achievement_rate": 89,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": 193242.0,
+          "actual": 293827.0,
+          "achievement_rate": 152,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|FB&IG|Traffic|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB&IG",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": 11873077.0,
+          "actual": 10274520.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": 79154.0,
+          "actual": 68497.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|IG|Awareness|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Awareness",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {}
+    },
+    "ES|Meta|IG|Consideration|Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adformat": "Video Link Ads",
+      "creative": "Video",
+      "kpis": {
+        "Impression": {
+          "target": 2146048.0,
+          "actual": 2020695.0,
+          "achievement_rate": 94,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|IG|Conversion|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Conversion",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": 8013158.0,
+          "actual": 6934465.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": 7909.0,
+          "actual": 6844.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "ES|Meta|IG|Traffic|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {}
+    },
+    "ES|TikTok|TT|Awareness|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": 23266857.0,
+          "actual": 20330216.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        }
+      }
+    },
+    "ES|TikTok|TT|Traffic|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": 42832167.0,
+          "actual": 37425712.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": 88341.0,
+          "actual": 77191.0,
+          "achievement_rate": 87,
+          "target_rate": 80,
+          "achieved": true,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    }
+  },
+  "mediaMarketingFunnelFormatBudgetConfig_budget": {
+    "ES|Google|GG|Conversion|Performance Max": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Conversion",
+      "adformat": "Performance Max",
+      "creative": "Image&Video",
+      "target": 95939.0,
+      "actual": 86345.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 86345.1,
+      "total_budget_flexibility": 90
+    },
+    "ES|Google|GG|Conversion|Search": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Conversion",
+      "adformat": "Search",
+      "creative": "Text",
+      "target": 138692.0,
+      "actual": 124823.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 124822.8,
+      "total_budget_flexibility": 90
+    },
+    "ES|Google|GG|Traffic|Demand Gen": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adformat": "Demand Gen",
+      "creative": "Image",
+      "target": 32056.0,
+      "actual": 48974.0,
+      "achievement_rate": 153,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 28850.4,
+      "total_budget_flexibility": 90
+    },
+    "ES|Google|YTB|Awareness|VRC 2.0": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adformat": "VRC 2.0",
+      "creative": "Video",
+      "target": 24042.0,
+      "actual": 21638.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 21637.8,
+      "total_budget_flexibility": 90
+    },
+    "ES|Google|YTB|Consideration|VVC": {
+      "country": "ES",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Consideration",
+      "adformat": "VVC",
+      "creative": "Video",
+      "target": 16028.0,
+      "actual": 14425.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 14425.2,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|FB|Awareness|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Awareness",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": null,
+      "actual": 6893.0,
+      "achievement_rate": "null",
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 0,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|FB|Consideration|Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Consideration",
+      "adformat": "Video Link Ads",
+      "creative": "Video",
+      "target": 13072.0,
+      "actual": 11765.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 11764.8,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|FB|Conversion|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Conversion",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": 13230.0,
+      "actual": 11907.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 11907.0,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|FB|Traffic|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": null,
+      "actual": 6893.0,
+      "achievement_rate": "null",
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 0,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|FB&IG|Awareness|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB&IG",
+      "funnel": "Awareness",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": 65302.0,
+      "actual": 58772.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 58771.8,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|FB&IG|Consideration|Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB&IG",
+      "funnel": "Consideration",
+      "adformat": "Video Link Ads",
+      "creative": "Video",
+      "target": 11873.0,
+      "actual": 10686.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 10685.7,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|FB&IG|Conversion|ASC": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB&IG",
+      "funnel": "Conversion",
+      "adformat": "ASC",
+      "creative": "Image&Video",
+      "target": 135813.0,
+      "actual": 122232.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 122231.7,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|FB&IG|Traffic|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "FB&IG",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": 23746.0,
+      "actual": 21371.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 21371.4,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|IG|Awareness|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Awareness",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": null,
+      "actual": 6893.0,
+      "achievement_rate": "null",
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 0,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|IG|Consideration|Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Consideration",
+      "adformat": "Video Link Ads",
+      "creative": "Video",
+      "target": 7039.0,
+      "actual": 6893.0,
+      "achievement_rate": 98,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 6335.1,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|IG|Conversion|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Conversion",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": 18270.0,
+      "actual": 16443.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 16443.0,
+      "total_budget_flexibility": 90
+    },
+    "ES|Meta|IG|Traffic|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "Meta",
+      "platform": "IG",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": null,
+      "actual": 6893.0,
+      "achievement_rate": "null",
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 0,
+      "total_budget_flexibility": 90
+    },
+    "ES|TikTok|TT|Awareness|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Awareness",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": 37692.0,
+      "actual": 33923.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 33922.8,
+      "total_budget_flexibility": 90
+    },
+    "ES|TikTok|TT|Traffic|Image&Video Link Ads": {
+      "country": "ES",
+      "media": "TikTok",
+      "platform": "TT",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": 56538.0,
+      "actual": 50884.0,
+      "achievement_rate": 90,
+      "target_rate": 90,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 50884.2,
+      "total_budget_flexibility": 90
+    }
+  },
+  "adformat_budget_allocation": {
+    "ES": {
+      "TikTok|TT|Awareness|Image&Video Link Ads": {
+        "media": "TikTok",
+        "platform": "TT",
+        "funnel": "Awareness",
+        "adformat": "Image&Video Link Ads",
+        "budget": 33923.0,
+        "satisfied": true
+      },
+      "Meta|IG|Traffic|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "IG",
+        "funnel": "Traffic",
+        "adformat": "Image&Video Link Ads",
+        "budget": 6893.0,
+        "satisfied": true
+      },
+      "TikTok|TT|Traffic|Image&Video Link Ads": {
+        "media": "TikTok",
+        "platform": "TT",
+        "funnel": "Traffic",
+        "adformat": "Image&Video Link Ads",
+        "budget": 50884.0,
+        "satisfied": true
+      },
+      "Meta|FB|Conversion|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "FB",
+        "funnel": "Conversion",
+        "adformat": "Image&Video Link Ads",
+        "budget": 11907.0,
+        "satisfied": true
+      },
+      "Meta|FB|Awareness|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "FB",
+        "funnel": "Awareness",
+        "adformat": "Image&Video Link Ads",
+        "budget": 6893.0,
+        "satisfied": true
+      },
+      "Meta|FB&IG|Consideration|Video Link Ads": {
+        "media": "Meta",
+        "platform": "FB&IG",
+        "funnel": "Consideration",
+        "adformat": "Video Link Ads",
+        "budget": 10686.0,
+        "satisfied": true
+      },
+      "Meta|IG|Awareness|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "IG",
+        "funnel": "Awareness",
+        "adformat": "Image&Video Link Ads",
+        "budget": 6893.0,
+        "satisfied": true
+      },
+      "Meta|IG|Consideration|Video Link Ads": {
+        "media": "Meta",
+        "platform": "IG",
+        "funnel": "Consideration",
+        "adformat": "Video Link Ads",
+        "budget": 6893.0,
+        "satisfied": true
+      },
+      "Meta|IG|Conversion|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "IG",
+        "funnel": "Conversion",
+        "adformat": "Image&Video Link Ads",
+        "budget": 16443.0,
+        "satisfied": true
+      },
+      "Meta|FB|Consideration|Video Link Ads": {
+        "media": "Meta",
+        "platform": "FB",
+        "funnel": "Consideration",
+        "adformat": "Video Link Ads",
+        "budget": 11765.0,
+        "satisfied": true
+      },
+      "Meta|IG|Conversion|ASC": {
+        "media": "Meta",
+        "platform": "IG",
+        "funnel": "Conversion",
+        "adformat": "ASC",
+        "budget": 6893.0,
+        "satisfied": true
+      },
+      "Meta|FB|Traffic|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "FB",
+        "funnel": "Traffic",
+        "adformat": "Image&Video Link Ads",
+        "budget": 6893.0,
+        "satisfied": true
+      },
+      "Meta|FB&IG|Awareness|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "FB&IG",
+        "funnel": "Awareness",
+        "adformat": "Image&Video Link Ads",
+        "budget": 58772.0,
+        "satisfied": true
+      },
+      "Meta|FB&IG|Traffic|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "FB&IG",
+        "funnel": "Traffic",
+        "adformat": "Image&Video Link Ads",
+        "budget": 21371.0,
+        "satisfied": true
+      },
+      "Google|GG|Conversion|Search": {
+        "media": "Google",
+        "platform": "GG",
+        "funnel": "Conversion",
+        "adformat": "Search",
+        "budget": 124823.0,
+        "satisfied": true
+      },
+      "Meta|FB&IG|Conversion|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "FB&IG",
+        "funnel": "Conversion",
+        "adformat": "Image&Video Link Ads",
+        "budget": 6893.0,
+        "satisfied": true
+      },
+      "Google|YTB|Awareness|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "funnel": "Awareness",
+        "adformat": "VRC 2.0",
+        "budget": 21638.0,
+        "satisfied": true
+      },
+      "Google|YTB|Consideration|VVC": {
+        "media": "Google",
+        "platform": "YTB",
+        "funnel": "Consideration",
+        "adformat": "VVC",
+        "budget": 14425.0,
+        "satisfied": true
+      },
+      "Meta|FB|Conversion|ASC": {
+        "media": "Meta",
+        "platform": "FB",
+        "funnel": "Conversion",
+        "adformat": "ASC",
+        "budget": 6893.0,
+        "satisfied": true
+      },
+      "Google|GG|Conversion|Performance Max": {
+        "media": "Google",
+        "platform": "GG",
+        "funnel": "Conversion",
+        "adformat": "Performance Max",
+        "budget": 86345.0,
+        "satisfied": true
+      },
+      "Meta|FB&IG|Conversion|ASC": {
+        "media": "Meta",
+        "platform": "FB&IG",
+        "funnel": "Conversion",
+        "adformat": "ASC",
+        "budget": 122232.0,
+        "satisfied": true
+      },
+      "Google|GG|Traffic|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "funnel": "Traffic",
+        "adformat": "Demand Gen",
+        "budget": 48974.0,
+        "satisfied": true
+      }
+    }
+  }
+}

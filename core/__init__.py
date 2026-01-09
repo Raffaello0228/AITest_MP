@@ -17,8 +17,6 @@ from core.utils import (
 )
 from core.api_client import APIClient, create_client_from_config
 from core.api_config import (
-    API_CONFIG,
-    API_CONFIG_XIAOMI,
     ENVIRONMENT_CONFIGS,
     get_api_config,
     get_strategy_config,
@@ -26,6 +24,12 @@ from core.api_config import (
 from core.generate_test_report import (
     generate_markdown_report,
     generate_html_report,
+)
+from core.performance_tester import (
+    PerformanceTester,
+    TaskResult,
+    BatchResult,
+    APILogger,
 )
 
 __all__ = [
@@ -48,6 +52,10 @@ __all__ = [
     "get_strategy_config",
     "generate_markdown_report",
     "generate_html_report",
+    "PerformanceTester",
+    "TaskResult",
+    "BatchResult",
+    "APILogger",
 ]
 
 # 注意：其他函数（如 attach_mapping, build_* 等）由于版本差异较大，

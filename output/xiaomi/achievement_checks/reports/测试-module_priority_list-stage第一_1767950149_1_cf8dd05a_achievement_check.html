@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>测试报告 - 测试-module_priority_list-stage第一</title>
+  <style>
+    body { font-family: 'Microsoft YaHei', Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    h1 { color: #333; border-bottom: 3px solid #4CAF50; padding-bottom: 10px; }
+    h2 { color: #555; margin-top: 30px; border-left: 4px solid #4CAF50; padding-left: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+    th { background-color: #4CAF50; color: white; font-weight: bold; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    .status-ok { color: #4CAF50; font-weight: bold; }
+    .status-fail { color: #f44336; font-weight: bold; }
+    .summary { background: #e8f5e9; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    .config-table { background: #fff3e0; }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <h1>测试报告</h1>
+    <p><strong>测试用例</strong>: 测试-module_priority_list-stage第一</p>
+    <p><strong>UUID</strong>: ff776123-e611-4b5d-a684-cd70d77f</p>
+    <p><strong>Job ID</strong>: 1767950149_1_cf8dd05a</p>
+    <p><strong>生成时间</strong>: 2026-01-09 17:17:22</p>
+    <h2>测试配置</h2>
+    <table class='config-table'>
+      <tr><th>配置项</th><th>值</th></tr>
+      <tr><td>KPI目标达成率</td><td>80%</td></tr>
+      <tr><td>区域预算目标达成率</td><td>90%</td></tr>
+      <tr><td>区域KPI目标达成率</td><td>80%</td></tr>
+      <tr><td>阶段预算误差范围</td><td>20%</td></tr>
+      <tr><td>营销漏斗预算误差范围</td><td>15%</td></tr>
+      <tr><td>媒体预算误差范围</td><td>5%</td></tr>
+      <tr><td>AdFormatKPI目标达成率</td><td>80%</td></tr>
+      <tr><td>AdFormat预算目标达成率</td><td>80%</td></tr>
+    </table>
+    <h3>KPI优先级</h3>
+    <table class='config-table'>
+      <tr><th>优先级</th><th>KPI</th></tr>
+      <tr><td>1</td><td>Impression</td></tr>
+      <tr><td>2</td><td>Clicks</td></tr>
+    </table>
+    <h3>模块优先级</h3>
+    <table class='config-table'>
+      <tr><th>优先级</th><th>模块</th></tr>
+      <tr><td>1</td><td>stage</td></tr>
+      <tr><td>2</td><td>kpiInfo</td></tr>
+      <tr><td>3</td><td>media</td></tr>
+      <tr><td>4</td><td>marketingFunnel</td></tr>
+      <tr><td>5</td><td>mediaMarketingFunnelFormat</td></tr>
+      <tr><td>6</td><td>mediaMarketingFunnelFormatBudgetConfig</td></tr>
+    </table>
+    <h2>全局 KPI 达成情况</h2>
+    <div class='summary'><strong>达成率</strong>: 2/2 (100.0%)</div>
+    <div class='summary'><strong>判断逻辑</strong>: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。</div>
+    <table>
+      <tr><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Impression</td><td>1</td><td>否</td><td>558,998,742</td><td>367,908,213</td><td>152.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Clicks</td><td>4</td><td>否</td><td>833,833</td><td>662,977</td><td>126.00%</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h2>区域预算达成情况</h2>
+    <div class='summary'><strong>匹配类型</strong>: None | <strong>达成率</strong>: 0/0 (N/A)</div>
+    <h2>adformat KPI 达成情况</h2>
+    <div class='summary'><strong>总体达成率</strong>: 10/22 (45.5%)</div>
+    <h3>汇总</h3>
+    <table>
+      <tr><th>区域</th><th>达成数/总数</th><th>达成率</th></tr>
+      <tr><td>ES</td><td>10/22</td><td>45.5%</td></tr>
+    </table>
+    <h3>详细信息</h3>
+    <h4>ES</h4>
+    <table>
+      <tr><th>媒体</th><th>平台</th><th>漏斗</th><th>广告格式</th><th>创意</th><th>KPI</th><th>优先级</th><th>必须达成</th><th>实际值</th><th>目标值</th><th>达成率</th><th>状态</th></tr>
+      <tr><td>Google</td><td>GG</td><td>Conversion</td><td>Performance Max</td><td>Image&Video</td><td>Impression</td><td>1</td><td>否</td><td>28,748,346</td><td>17,091,121</td><td>168.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Google</td><td>GG</td><td>Conversion</td><td>Performance Max</td><td>Image&Video</td><td>Clicks</td><td>4</td><td>否</td><td>160,991</td><td>95,710</td><td>168.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Google</td><td>GG</td><td>Conversion</td><td>Search</td><td>Text</td><td>Impression</td><td>1</td><td>否</td><td>2,446,076</td><td>3,498,910</td><td>70.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Google</td><td>GG</td><td>Conversion</td><td>Search</td><td>Text</td><td>Clicks</td><td>4</td><td>否</td><td>146,765</td><td>184,486</td><td>80.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Google</td><td>GG</td><td>Traffic</td><td>Demand Gen</td><td>Image</td><td>Impression</td><td>1</td><td>否</td><td>318,583,350</td><td>160,280,374</td><td>199.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Google</td><td>YTB</td><td>Awareness</td><td>VRC 2.0</td><td>Video</td><td>Impression</td><td>1</td><td>否</td><td>6,360,450</td><td>8,586,449</td><td>74.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Google</td><td>YTB</td><td>Consideration</td><td>VVC</td><td>Video</td><td>Impression</td><td>1</td><td>否</td><td>5,354,167</td><td>4,452,233</td><td>120.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Awareness</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Impression</td><td>1</td><td>否</td><td>50,232,690</td><td>35,619,231</td><td>141.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Consideration</td><td>Video Link Ads</td><td>Video</td><td>Impression</td><td>1</td><td>否</td><td>913,269</td><td>1,187,308</td><td>77.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Conversion</td><td>ASC</td><td>Image&Video</td><td>Impression</td><td>1</td><td>否</td><td>39,652,243</td><td>43,975,367</td><td>90.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Conversion</td><td>ASC</td><td>Image&Video</td><td>Clicks</td><td>4</td><td>否</td><td>297,392</td><td>193,242</td><td>154.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Traffic</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Impression</td><td>1</td><td>否</td><td>9,133,175</td><td>11,873,077</td><td>77.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Traffic</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Clicks</td><td>4</td><td>否</td><td>60,888</td><td>79,154</td><td>77.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Meta</td><td>FB</td><td>Consideration</td><td>Video Link Ads</td><td>Video</td><td>Impression</td><td>1</td><td>否</td><td>1,355,225</td><td>1,761,792</td><td>77.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Meta</td><td>FB</td><td>Conversion</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Impression</td><td>1</td><td>否</td><td>2,557,015</td><td>3,324,121</td><td>77.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Meta</td><td>FB</td><td>Conversion</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Clicks</td><td>4</td><td>否</td><td>10,827</td><td>14,135</td><td>77.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Meta</td><td>IG</td><td>Consideration</td><td>Video Link Ads</td><td>Video</td><td>Impression</td><td>1</td><td>否</td><td>2,020,695</td><td>2,146,048</td><td>94.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>IG</td><td>Conversion</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Impression</td><td>1</td><td>否</td><td>6,163,969</td><td>8,013,158</td><td>77.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>Meta</td><td>IG</td><td>Conversion</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Clicks</td><td>4</td><td>否</td><td>6,084</td><td>7,909</td><td>77.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>TikTok</td><td>TT</td><td>Awareness</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Impression</td><td>1</td><td>否</td><td>25,227,136</td><td>23,266,857</td><td>108.00%</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>TikTok</td><td>TT</td><td>Traffic</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Impression</td><td>1</td><td>否</td><td>33,267,136</td><td>42,832,167</td><td>78.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+      <tr><td>TikTok</td><td>TT</td><td>Traffic</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>Clicks</td><td>4</td><td>否</td><td>68,613</td><td>88,341</td><td>78.00%</td><td class='status-fail'>✗ 未达成</td></tr>
+    </table>
+    <h2>adformat预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 15/15 (100.0%)</div>
+    <h3>汇总</h3>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>ES</td><td>15/15</td><td>100.0%</td></tr>
+    </table>
+    <h3>详细信息</h3>
+    <h4>ES</h4>
+    <table>
+      <tr><th>媒体</th><th>平台</th><th>漏斗</th><th>广告格式</th><th>创意</th><th>实际预算</th><th>目标预算</th><th>达成率</th><th>最小要求</th><th>必须达成</th><th>状态</th></tr>
+      <tr><td>Google</td><td>GG</td><td>Conversion</td><td>Performance Max</td><td>Image&Video</td><td>86,935</td><td>95,939</td><td>91%</td><td>76,751</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Google</td><td>GG</td><td>Conversion</td><td>Search</td><td>Text</td><td>110,954</td><td>138,692</td><td>80%</td><td>110,954</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Google</td><td>GG</td><td>Traffic</td><td>Demand Gen</td><td>Image</td><td>68,814</td><td>32,056</td><td>215%</td><td>25,645</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Google</td><td>YTB</td><td>Awareness</td><td>VRC 2.0</td><td>Video</td><td>19,234</td><td>24,042</td><td>80%</td><td>19,234</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Google</td><td>YTB</td><td>Consideration</td><td>VVC</td><td>Video</td><td>20,817</td><td>16,028</td><td>130%</td><td>12,822</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Awareness</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>52,242</td><td>65,302</td><td>80%</td><td>52,242</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Consideration</td><td>Video Link Ads</td><td>Video</td><td>9,498</td><td>11,873</td><td>80%</td><td>9,498</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Conversion</td><td>ASC</td><td>Image&Video</td><td>123,715</td><td>135,813</td><td>91%</td><td>108,650</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>Traffic</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>18,997</td><td>23,746</td><td>80%</td><td>18,997</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB</td><td>Consideration</td><td>Video Link Ads</td><td>Video</td><td>10,458</td><td>13,072</td><td>80%</td><td>10,458</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>FB</td><td>Conversion</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>10,584</td><td>13,230</td><td>80%</td><td>10,584</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>IG</td><td>Consideration</td><td>Video Link Ads</td><td>Video</td><td>6,893</td><td>7,039</td><td>98%</td><td>5,631</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>Meta</td><td>IG</td><td>Conversion</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>14,616</td><td>18,270</td><td>80%</td><td>14,616</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>TikTok</td><td>TT</td><td>Awareness</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>42,094</td><td>37,692</td><td>112%</td><td>30,154</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+      <tr><td>TikTok</td><td>TT</td><td>Traffic</td><td>Image&Video Link Ads</td><td>Image&Video</td><td>45,230</td><td>56,538</td><td>80%</td><td>45,230</td><td>否</td><td class='status-ok'>✓ 达成</td></tr>
+    </table>
+    <h2>区域 KPI满足情况</h2>
+    <div class='summary'><strong>判断逻辑</strong>: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。</div>
+    <h3>汇总</h3>
+    <table>
+      <tr><th>区域</th><th>达成数/总数</th><th>达成率</th></tr>
+    </table>
+    <h3>详细信息</h3>
+    <h2>阶段预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 2/2 (100.0%)</div>
+    <h3>汇总</h3>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>ES</td><td>2/2</td><td>100.0%</td></tr>
+    </table>
+    <h2>营销漏斗预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 4/4 (100.0%)</div>
+    <h3>汇总</h3>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>ES</td><td>4/4</td><td>100.0%</td></tr>
+    </table>
+    <h2>媒体预算满足情况</h2>
+    <div class='summary'><strong>总体满足率</strong>: 6/6 (100.0%)</div>
+    <h3>汇总</h3>
+    <table>
+      <tr><th>区域</th><th>满足数/总数</th><th>满足率</th></tr>
+      <tr><td>ES</td><td>6/6</td><td>100.0%</td></tr>
+    </table>
+    <h3>详细信息</h3>
+    <h4>ES</h4>
+    <table>
+      <tr><th>媒体</th><th>平台</th><th>目标预算</th><th>实际预算</th><th>目标比例</th><th>实际比例</th><th>误差</th><th>状态</th></tr>
+      <tr><td>Google</td><td>GG</td><td>266,687</td><td>266,703</td><td>38.69%</td><td>38.69%</td><td>0%</td><td class='status-ok'>✓ 满足</td></tr>
+      <tr><td>Google</td><td>YTB</td><td>40,070</td><td>40,051</td><td>5.81%</td><td>5.81%</td><td>0%</td><td class='status-ok'>✓ 满足</td></tr>
+      <tr><td>Meta</td><td>FB</td><td>26,302</td><td>41,721</td><td>3.82%</td><td>6.05%</td><td>2%</td><td class='status-ok'>✓ 满足</td></tr>
+      <tr><td>Meta</td><td>FB&IG</td><td>236,735</td><td>211,345</td><td>34.34%</td><td>30.66%</td><td>4%</td><td class='status-ok'>✓ 满足</td></tr>
+      <tr><td>Meta</td><td>IG</td><td>25,309</td><td>42,188</td><td>3.67%</td><td>6.12%</td><td>2%</td><td class='status-ok'>✓ 满足</td></tr>
+      <tr><td>TikTok</td><td>TT</td><td>94,231</td><td>87,324</td><td>13.67%</td><td>12.67%</td><td>1%</td><td class='status-ok'>✓ 满足</td></tr>
+    </table>
+    <h2>总体结论</h2>
+    <h3>各维度达成情况汇总</h3>
+    <table>
+      <tr><th>维度</th><th>达成情况</th><th>达成率</th></tr>
+      <tr><td>全局 KPI</td><td>2/2</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>区域预算</td><td>0/0</td><td class='status-fail'>0.0%</td></tr>
+      <tr><td>区域 KPI</td><td>0/0</td><td class='status-fail'>0.0%</td></tr>
+      <tr><td>阶段预算</td><td>2/2</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>营销漏斗预算</td><td>4/4</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>媒体预算</td><td>6/6</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>adformat kpi</td><td>10/22</td><td class='status-fail'>45.5%</td></tr>
+      <tr><td>adformat预算</td><td>15/15</td><td class='status-ok'>100.0%</td></tr>
+      <tr><td>adformat预算非0</td><td>22/22</td><td class='status-ok'>100.0%</td></tr>
+    </table>
+  </div>
+</body>
+</html>
