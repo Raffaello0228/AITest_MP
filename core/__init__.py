@@ -2,35 +2,24 @@
 Core 模块：提供底层数据处理、JSON 构建和 API 客户端功能
 """
 
-from core.constants import KPI_KEYS, MAX_REGION_COUNT
-from core.data_loader import (
+from core.config import (
+    KPI_KEYS,
+    MAX_REGION_COUNT,
+    ENVIRONMENT_CONFIGS,
+    get_api_config,
+    get_strategy_config,
+)
+from core.data import (
     load_data,
     load_data_xiaomi,
     load_mapping,
     load_country_dict,
     load_adformat_dict,
 )
-from core.utils import (
-    normalize_percentage_sum,
-    reorder_priorities,
-    safe_sum,
-)
-from core.api_client import APIClient, create_client_from_config
-from core.api_config import (
-    ENVIRONMENT_CONFIGS,
-    get_api_config,
-    get_strategy_config,
-)
-from core.generate_test_report import (
-    generate_markdown_report,
-    generate_html_report,
-)
-from core.performance_tester import (
-    PerformanceTester,
-    TaskResult,
-    BatchResult,
-    APILogger,
-)
+from core.utils import normalize_percentage_sum, reorder_priorities, safe_sum
+from core.api import APIClient, create_client_from_config
+from core.report import generate_markdown_report, generate_html_report
+from core.performance import PerformanceTester, TaskResult, BatchResult, APILogger
 
 __all__ = [
     "KPI_KEYS",
@@ -45,8 +34,6 @@ __all__ = [
     "safe_sum",
     "APIClient",
     "create_client_from_config",
-    "API_CONFIG",
-    "API_CONFIG_XIAOMI",
     "ENVIRONMENT_CONFIGS",
     "get_api_config",
     "get_strategy_config",

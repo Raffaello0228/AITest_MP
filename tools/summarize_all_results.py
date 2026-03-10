@@ -6,9 +6,16 @@
 
 import json
 import argparse
+import sys
 from pathlib import Path
 from typing import Dict, Any, List
 from datetime import datetime
+
+# 项目根目录
+_project_root = Path(__file__).resolve().parent.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+from core.config.version_config import get_algo_version, resolve_achievement_json_dir
 
 
 def load_json(filepath: Path) -> Any:
@@ -622,8 +629,14 @@ def main():
     parser.add_argument(
         "--input-dir",
         type=Path,
-        default="output/xiaomi/achievement_checks/json",
-        help="输入目录（包含所有 achievement_check.json 文件）",
+        default=None,
+        help="输入目录（包含所有 achievement_check.json 的目录）。不指定时与 --algo-version 配合使用",
+    )
+    parser.add_argument(
+        "--algo-version",
+        type=str,
+        default=None,
+        help="算法版本（如 latest、20250226_v1）。不指定时使用配置默认 latest。与 --input-dir 二选一或配合使用",
     )
     parser.add_argument(
         "--output",
@@ -641,20 +654,18 @@ def main():
 
     args = parser.parse_args()
 
-    # 自动检测输入目录（优先检查 xiaomi，如果不存在则使用 common）
-    if args.input_dir:
-        input_dir = args.input_dir
+    if args.input_dir is not None and str(args.input_dir).strip():
+        input_dir = Path(args.input_dir)
     else:
-        xiaomi_dir = Path("output/xiaomi/achievement_checks/json")
-        common_dir = Path("output/common/achievement_checks/json")
-        if xiaomi_dir.exists():
-            input_dir = xiaomi_dir
-        elif common_dir.exists():
-            input_dir = common_dir
-        else:
-            print(f"错误：未找到 achievement_checks/json 目录")
-            print(f"  请检查: {xiaomi_dir} 或 {common_dir}")
+        algo_version = get_algo_version(args.algo_version)
+        # 优先 xiaomi，再 common
+        input_dir = resolve_achievement_json_dir(_project_root, "xiaomi", algo_version)
+        if not input_dir.exists():
+            input_dir = resolve_achievement_json_dir(_project_root, "common", algo_version)
+        if not input_dir.exists():
+            print(f"错误：未找到 achievement_checks/json/{algo_version} 目录")
             return 1
+        print(f"使用算法版本: {algo_version}")
 
     if not input_dir.exists():
         print(f"错误：输入目录不存在: {input_dir}")
@@ -698,10 +709,12 @@ def main():
 
     # 确定输出路径
     if args.output:
-        output_base = args.output
+        output_base = Path(args.output)
     else:
-        # 默认输出到与输入目录同级的 reports 目录
-        if input_dir.name == "json":
+        # 默认：achievement_checks/json/<version> -> achievement_checks/reports/<version>/summary_all_results
+        if input_dir.parent.name == "json":
+            reports_dir = input_dir.parent.parent / "reports" / input_dir.name
+        elif input_dir.name == "json":
             reports_dir = input_dir.parent / "reports"
         else:
             reports_dir = input_dir / "reports"

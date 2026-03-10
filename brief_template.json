@@ -54,10 +54,6 @@
         "priority": 7
       }
     ],
-    "country": {
-      "code": "TH",
-      "groupName": "CountrySimpleCode"
-    },
     "totalBudget": 1614894,
     "uuid": "850769ca-ec61-4e7d-9bfa-43ca0efe",
     "regionBudget": [
@@ -487,7 +483,7 @@
         "completion": 0
       }
     ],
-    "historyMpId": "850769ca-ec61-4e7d-9bfa-43ca0efe",
+    "historyMpId": "68edda46-d6fc-4fda-acc7-3e574657",
     "isModified": 0,
     "mediaPlanName": "test_haier_upload",
     "corporationId": "118101",

@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-根据 testcase 配置判断每个指标是否达成
+根据 testcase 配置判断每个指标是否达成（Common 版本）
 
-用法:
+配置信息从 result_json 中提取，不需要单独传入 testcase 和 request 文件，以适配 batch_check_and_report.py。
+
+用法（仅 result + case-name，推荐）:
+    python core/check_kpi_achievement.py \
+        --result-file output/common/results/mp_result_xxx.json \
+        --case-name "用例名"
+
+用法（兼容旧版，可选 testcase/request）:
     python core/check_kpi_achievement.py \
         --testcase-file testcase_template.py \
-        --request-file single/brief_case_全部填写-完全匹配-5%-区域第一-KPI第二.json \
-        --result-file single/batch_query_results/batch_query_全部填写-完全匹配-5%-区域第一-KPI第二.json \
-        --case-name "全部填写-完全匹配-5%-区域第一-KPI第二"
+        --request-file single/brief_case_xxx.json \
+        --result-file single/batch_query_results/batch_query_xxx.json \
+        --case-name "用例名"
 """
 
 import argparse
@@ -17,6 +24,19 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 
+# 被 batch_check_and_report 等以子进程调用时，需将项目根目录加入 path，才能正确 import core
+_project_root = Path(__file__).resolve().parent.parent
+if _project_root not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
+from core.config.version_config import (
+    get_algo_version,
+    resolve_achievement_json_dir,
+    resolve_achievement_reports_dir,
+    infer_algo_version_from_result_path,
+    infer_variant_from_result_path,
+)
+
 
 def load_json(filepath: Path) -> Any:
     """加载JSON文件"""
@@ -24,9 +44,113 @@ def load_json(filepath: Path) -> Any:
         return json.load(f)
 
 
+def extract_request_from_result(result_json: Dict) -> Dict[str, Any]:
+    """从 result_json 中提取 request（briefInfo），供各 check 函数使用 basicInfo / briefMultiConfig。"""
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    return brief_info
+
+
+def extract_testcase_config_from_result(result_json: Dict) -> Dict[str, Any]:
+    """从 result_json 中提取 testcase_config（Common 版本：data.result.briefInfo）。"""
+    data = result_json.get("data", {})
+    result = data.get("result", {})
+    brief_info = result.get("briefInfo", {})
+    basic_info = brief_info.get("basicInfo", {})
+    brief_multi_config = brief_info.get("briefMultiConfig", [])
+
+    kpi_info_budget_config = basic_info.get("kpiInfoBudgetConfig", {})
+    kpi_target_rate = kpi_info_budget_config.get("rangeMatch", 80)
+
+    region_budget_config = basic_info.get("regionBudgetConfig", {})
+    region_budget_target_rate = int(
+        region_budget_config.get("budgetCompletionRule", 90)
+    )
+    region_kpi_target_rate = int(region_budget_config.get("kpiCompletionRule", 80))
+    region_consistent_match = region_budget_config.get("consistentMatch", 1)
+    region_match_type = "完全匹配" if region_consistent_match == 1 else "大小关系匹配"
+    region_budget_range_match = region_budget_config.get("rangeMatch")
+
+    kpi_info_list = basic_info.get("kpiInfo", [])
+    kpi_priority_list = []
+    if kpi_info_list:
+        sorted_kpis = sorted(kpi_info_list, key=lambda x: x.get("priority", 999))
+        for kpi in sorted_kpis:
+            kpi_key = kpi.get("key", "")
+            if kpi_key:
+                kpi_priority_list.append(kpi_key)
+
+    module_config_list = basic_info.get("moduleConfig", [])
+    module_priority_list = []
+    if module_config_list:
+        sorted_modules = sorted(
+            module_config_list, key=lambda x: x.get("priority", 999)
+        )
+        for module in sorted_modules:
+            module_name = module.get("moduleName", "")
+            if module_name:
+                module_priority_list.append(module_name)
+
+    if brief_multi_config:
+        config = brief_multi_config[0]
+        stage_budget_config = config.get("stageBudgetConfig", {})
+        stage_range_match = stage_budget_config.get("rangeMatch", 20)
+        stage_consistent_match = stage_budget_config.get("consistentMatch", 1)
+        stage_match_type = "完全匹配" if stage_consistent_match == 1 else "大小关系匹配"
+
+        marketing_funnel_budget_config = config.get("marketingFunnelBudgetConfig", {})
+        marketingfunnel_range_match = marketing_funnel_budget_config.get(
+            "rangeMatch", 15
+        )
+        marketingfunnel_consistent_match = marketing_funnel_budget_config.get(
+            "consistentMatch", 1
+        )
+        marketingfunnel_match_type = (
+            "完全匹配" if marketingfunnel_consistent_match == 1 else "大小关系匹配"
+        )
+
+        media_budget_config = config.get("mediaBudgetConfig", {})
+        media_range_match = media_budget_config.get("rangeMatch", 5)
+        media_consistent_match = media_budget_config.get("consistentMatch", 1)
+        media_match_type = "完全匹配" if media_consistent_match == 1 else "大小关系匹配"
+
+        media_marketing_funnel_adtype_config = config.get(
+            "mediaMarketingFunnelAdtypeBudgetConfig", {}
+        )
+        mediaMarketingFunnelAdtype_target_rate = (
+            media_marketing_funnel_adtype_config.get("rangeMatch", 80)
+        )
+    else:
+        stage_range_match = 20
+        stage_match_type = "完全匹配"
+        marketingfunnel_range_match = 15
+        marketingfunnel_match_type = "完全匹配"
+        media_range_match = 5
+        media_match_type = "完全匹配"
+        mediaMarketingFunnelAdtype_target_rate = 80
+
+    return {
+        "kpi_target_rate": kpi_target_rate,
+        "region_budget_target_rate": region_budget_target_rate,
+        "region_kpi_target_rate": region_kpi_target_rate,
+        "region_match_type": region_match_type,
+        "region_budget_range_match": region_budget_range_match,
+        "mediaMarketingFunnelAdtype_target_rate": mediaMarketingFunnelAdtype_target_rate,
+        "stage_range_match": stage_range_match,
+        "stage_match_type": stage_match_type,
+        "marketingfunnel_range_match": marketingfunnel_range_match,
+        "marketingfunnel_match_type": marketingfunnel_match_type,
+        "media_range_match": media_range_match,
+        "media_match_type": media_match_type,
+        "kpi_priority_list": kpi_priority_list,
+        "module_priority_list": module_priority_list,
+        "allow_zero_budget": False,
+    }
+
+
 def load_testcase(testcase_file: Path, case_name: str) -> Optional[Dict[str, Any]]:
-    """加载测试用例配置"""
-    # 动态导入测试用例文件
+    """加载测试用例配置（可选，未传 testcase 时从 result 提取）"""
     import importlib.util
 
     spec = importlib.util.spec_from_file_location("testcase", testcase_file)
@@ -712,8 +836,8 @@ def check_media_budget_achievement(
     ai_data_list: List[Dict],
     testcase_config: Dict[str, Any],
 ) -> Dict[str, Dict[str, Any]]:
-    """检查各区域下的 media 维度预算是否满足"""
-    # 提取目标配置（从请求文件）
+    """检查各区域下的 media 维度预算是否满足（统计到媒体|平台层级，与 xiaomi 一致）"""
+    # 提取目标配置（从请求文件，按 media.children 即平台层级）
     target_media = {}
     for country_config in request_json.get("briefMultiConfig", []):
         country_code = country_config.get("country", {}).get("code", "")
@@ -721,48 +845,60 @@ def check_media_budget_achievement(
 
         for media in country_config.get("media", []):
             media_name = media.get("name", "")
-            target_media[country_code][media_name] = {
-                "target": media.get("budgetAmount", 0),
-                "target_percentage": media.get("budgetPercentage", 0),
-            }
+            for platform in media.get("children", []):
+                platform_name = platform.get("name", "")
+                key = f"{media_name}|{platform_name}"
+                target_media[country_code][key] = {
+                    "media": media_name,
+                    "platform": platform_name,
+                    "target": platform.get("budgetAmount", 0),
+                    "target_percentage": platform.get("budgetPercentage", 0),
+                }
 
-    # 从 ai 数据聚合计算实际配置
+    # 从 ai 数据聚合计算实际配置（按 country、media、platform 聚合）
     actual_media = {}
     for ai_item in ai_data_list:
         region = ai_item.get("region", "")
         country_code = region.split("_")[0] if "_" in region else region
         media_name = ai_item.get("media", "")
+        platform = ai_item.get("mediaChannel", "")
 
-        if not country_code or not media_name:
+        if not country_code or not media_name or not platform:
             continue
 
         if country_code not in actual_media:
             actual_media[country_code] = {}
 
-        if media_name not in actual_media[country_code]:
-            actual_media[country_code][media_name] = 0.0
+        key = f"{media_name}|{platform}"
+        if key not in actual_media[country_code]:
+            actual_media[country_code][key] = 0.0
 
         budget = parse_budget(ai_item.get("adTypeBudget", "0"))
-        actual_media[country_code][media_name] += budget
+        actual_media[country_code][key] += budget
 
     # 计算百分比
     for country_code in actual_media.keys():
         total_budget = sum(actual_media[country_code].values())
-        for media_name in actual_media[country_code].keys():
-            actual_amount = actual_media[country_code][media_name]
+        for key in list(actual_media[country_code].keys()):
+            actual_amount = actual_media[country_code][key]
             actual_percentage = (
                 (actual_amount / total_budget * 100) if total_budget > 0 else 0.0
             )
-            actual_media[country_code][media_name] = {
+            parts = key.split("|")
+            media_name = parts[0] if len(parts) > 0 else ""
+            platform_name = parts[1] if len(parts) > 1 else ""
+            actual_media[country_code][key] = {
+                "media": media_name,
+                "platform": platform_name,
                 "actual": actual_amount,
                 "actual_percentage": actual_percentage,
             }
 
     # 判断是否满足
+    media_match_type = testcase_config.get("media_match_type", "完全匹配")
     media_range_match = testcase_config.get("media_range_match", 5)
     results = {}
 
-    # 合并所有国家代码
     all_countries = set(target_media.keys()) | set(actual_media.keys())
 
     for country_code in all_countries:
@@ -770,15 +906,86 @@ def check_media_budget_achievement(
         target_media_data = target_media.get(country_code, {})
         actual_media_data = actual_media.get(country_code, {})
 
-        # 合并所有 media 名称
-        all_media = set(target_media_data.keys()) | set(actual_media_data.keys())
+        all_keys = set(target_media_data.keys()) | set(actual_media_data.keys())
 
-        for media_name in all_media:
+        order_consistent = True
+        target_rank = {}
+        actual_rank = {}
+
+        if media_match_type == "大小关系匹配" and all_keys:
+            total_target_budget = sum(
+                info.get("target", 0) for info in target_media_data.values()
+            )
+            total_actual_budget = sum(
+                info.get("actual", 0) for info in actual_media_data.values()
+            )
+            target_diff_threshold = (
+                total_target_budget / 10000.0 if total_target_budget > 0 else 0.0
+            )
+            actual_diff_threshold = (
+                total_actual_budget / 10000.0 if total_actual_budget > 0 else 0.0
+            )
+
+            target_order = sorted(
+                target_media_data.items(),
+                key=lambda x: x[1].get("target_percentage", 0),
+                reverse=True,
+            )
+            target_rank = {key: rank for rank, (key, _) in enumerate(target_order)}
+
+            actual_order = sorted(
+                actual_media_data.items(),
+                key=lambda x: x[1].get("actual_percentage", 0),
+                reverse=True,
+            )
+            actual_rank = {key: rank for rank, (key, _) in enumerate(actual_order)}
+
+            key_list = list(all_keys)
+            n = len(key_list)
+            for i in range(n):
+                if not order_consistent:
+                    break
+                for j in range(i + 1, n):
+                    ki = key_list[i]
+                    kj = key_list[j]
+                    ti = target_rank.get(ki, -1)
+                    tj = target_rank.get(kj, -1)
+                    ai = actual_rank.get(ki, -1)
+                    aj = actual_rank.get(kj, -1)
+                    if ti < 0 or tj < 0 or ai < 0 or aj < 0:
+                        continue
+                    inverted = (ti < tj and ai > aj) or (ti > tj and ai < aj)
+                    if not inverted:
+                        continue
+                    target_i = target_media_data.get(ki, {}).get("target", 0)
+                    target_j = target_media_data.get(kj, {}).get("target", 0)
+                    actual_i = actual_media_data.get(ki, {}).get("actual", 0)
+                    actual_j = actual_media_data.get(kj, {}).get("actual", 0)
+                    target_diff = abs(target_i - target_j)
+                    actual_diff = abs(actual_i - actual_j)
+                    can_treat_as_tie = (
+                        total_target_budget > 0
+                        and total_actual_budget > 0
+                        and target_diff < target_diff_threshold
+                        and actual_diff < actual_diff_threshold
+                    )
+                    if not can_treat_as_tie:
+                        order_consistent = False
+                        break
+
+        for key in all_keys:
             target_info = target_media_data.get(
-                media_name, {"target": 0, "target_percentage": 0}
+                key,
+                {"media": "", "platform": "", "target": 0, "target_percentage": 0},
             )
             actual_info = actual_media_data.get(
-                media_name, {"actual": 0, "actual_percentage": 0}
+                key,
+                {"media": "", "platform": "", "actual": 0, "actual_percentage": 0},
+            )
+
+            media_name = target_info.get("media") or actual_info.get("media", "")
+            platform_name = target_info.get("platform") or actual_info.get(
+                "platform", ""
             )
 
             target = target_info["target"]
@@ -790,14 +997,24 @@ def check_media_budget_achievement(
                 )
                 satisfied = actual_info["actual_percentage"] == 0
             else:
-                # 以预算占比浮动范围判定，统一使用整数百分比
-                error_percentage = abs(
-                    actual_info["actual_percentage"] - target_info["target_percentage"]
-                )
-                error_percentage = round(error_percentage)
-                satisfied = error_percentage <= media_range_match
+                if media_match_type == "完全匹配":
+                    error_percentage = abs(
+                        actual_info["actual_percentage"]
+                        - target_info["target_percentage"]
+                    )
+                    error_percentage = round(error_percentage)
+                    satisfied = error_percentage <= media_range_match
+                else:
+                    satisfied = order_consistent
+                    error_percentage = abs(
+                        actual_info["actual_percentage"]
+                        - target_info["target_percentage"]
+                    )
+                    error_percentage = round(error_percentage)
 
-            results[country_code][media_name] = {
+            result_item = {
+                "media": media_name,
+                "platform": platform_name,
                 "target": target,
                 "actual": actual,
                 "error_percentage": error_percentage,
@@ -805,7 +1022,14 @@ def check_media_budget_achievement(
                 "satisfied": satisfied,
                 "target_percentage": target_info["target_percentage"],
                 "actual_percentage": actual_info["actual_percentage"],
+                "match_type": media_match_type,
             }
+            if media_match_type == "大小关系匹配":
+                result_item["target_rank"] = target_rank.get(key, -1)
+                result_item["actual_rank"] = actual_rank.get(key, -1)
+                result_item["order_consistent"] = order_consistent
+
+            results[country_code][key] = result_item
 
     return results
 
@@ -1312,31 +1536,31 @@ def print_achievement_summary(results: Dict[str, Any], testcase_config: Dict[str
 
 def main():
     parser = argparse.ArgumentParser(
-        description="根据 testcase 配置判断每个指标是否达成"
+        description="根据 testcase 配置判断每个指标是否达成（Common 版本，可从 result 提取配置）"
     )
     parser.add_argument(
         "--testcase-file",
         type=str,
-        required=True,
-        help="测试用例文件路径（Python文件）",
+        required=False,
+        help="测试用例文件路径（可选，不传则从 result 提取配置）",
     )
     parser.add_argument(
         "--request-file",
         type=str,
-        required=True,
-        help="请求 JSON 文件路径",
+        required=False,
+        help="请求 JSON 文件路径（可选，不传则从 result 提取）",
     )
     parser.add_argument(
         "--result-file",
         type=str,
         required=True,
-        help="batch_query 结果 JSON 文件路径",
+        help="batch_query 结果 JSON 文件路径（mp_result_*.json）",
     )
     parser.add_argument(
         "--case-name",
         type=str,
-        required=True,
-        help="测试用例名称",
+        required=False,
+        help="测试用例名称（可选，不传则从结果文件名提取）",
     )
     parser.add_argument(
         "--output",
@@ -1344,34 +1568,45 @@ def main():
         default=None,
         help="输出文件路径（可选）",
     )
+    parser.add_argument(
+        "--algo-version",
+        type=str,
+        default=None,
+        help="算法版本标识，与 results/<algo_version>/ 对应。不指定时从 result-file 路径推断或使用配置默认（如 latest）",
+    )
 
     args = parser.parse_args()
 
-    # 加载文件
-    testcase_file = Path(args.testcase_file)
-    request_file = Path(args.request_file)
     result_file = Path(args.result_file)
-
-    if not testcase_file.exists():
-        print(f"错误：测试用例文件不存在: {testcase_file}")
-        return 1
-
-    if not request_file.exists():
-        print(f"错误：请求文件不存在: {request_file}")
-        return 1
-
     if not result_file.exists():
         print(f"错误：结果文件不存在: {result_file}")
         return 1
 
-    # 加载测试用例配置
-    testcase_config = load_testcase(testcase_file, args.case_name)
-    if testcase_config is None:
-        return 1
-
-    # 加载请求和结果文件
-    request_json = load_json(request_file)
     result_json = load_json(result_file)
+
+    # 仅 result 模式：从 result 提取 request 与 testcase_config（适配 batch_check_and_report.py）
+    if not args.testcase_file and not args.request_file:
+        request_json = extract_request_from_result(result_json)
+        testcase_config = extract_testcase_config_from_result(result_json)
+        case_name = args.case_name or result_file.stem.replace("mp_result_", "")
+    else:
+        # 兼容旧版：显式传入 testcase 与 request
+        testcase_file = Path(args.testcase_file)
+        request_file = Path(args.request_file)
+        if not testcase_file.exists():
+            print(f"错误：测试用例文件不存在: {testcase_file}")
+            return 1
+        if not request_file.exists():
+            print(f"错误：请求文件不存在: {request_file}")
+            return 1
+        if not args.case_name:
+            print("错误：使用 testcase/request 时必须提供 --case-name")
+            return 1
+        testcase_config = load_testcase(testcase_file, args.case_name)
+        if testcase_config is None:
+            return 1
+        request_json = load_json(request_file)
+        case_name = args.case_name
 
     # 提取 uuid 和 job_id
     uuid = result_json.get("uuid")
@@ -1387,7 +1622,7 @@ def main():
 
     # 检查各项指标
     results = {
-        "case_name": args.case_name,
+        "case_name": case_name,
         "uuid": uuid,
         "job_id": job_id,
         "testcase_config": {
@@ -1457,22 +1692,14 @@ def main():
             output_base.parent.mkdir(parents=True, exist_ok=True)
             output_file = output_base
     else:
-        # 默认输出到 output/{common|xiaomi}/achievement_checks/json/ 目录
-        # 根据结果文件路径判断是 common 还是 xiaomi
-        result_parent = result_file.parent
-        if result_parent.name == "results":
-            # 新结构：output/common/results 或 output/xiaomi/results
-            output_base = result_parent.parent  # output/common 或 output/xiaomi
-        elif result_parent.name == "batch_query_results":
-            # 旧结构兼容
-            output_base = result_parent.parent
-        else:
-            output_base = result_parent
-
-        achievement_checks_dir = output_base / "achievement_checks"
-        json_dir = achievement_checks_dir / "json"
+        # 默认输出到 output/{common|xiaomi}/achievement_checks/json/<algo_version>/
+        project_root = Path(__file__).resolve().parent.parent
+        variant = infer_variant_from_result_path(result_file)
+        algo_version = infer_algo_version_from_result_path(result_file)
+        if algo_version is None:
+            algo_version = get_algo_version(args.algo_version)
+        json_dir = resolve_achievement_json_dir(project_root, variant=variant, algo_version=algo_version)
         json_dir.mkdir(parents=True, exist_ok=True)
-        # 构建文件名，如果存在 job_id 则包含在文件名中
         base_name = result_file.stem.replace("mp_result_", "")
         if job_id:
             output_file = json_dir / f"{base_name}_{job_id}_achievement_check.json"
@@ -1485,17 +1712,19 @@ def main():
 
     # 自动生成测试报告
     try:
-        # 从 core 模块导入
-        from core.generate_test_report import (
+        from core.report.generator import (
             generate_markdown_report,
             generate_html_report,
         )
 
-        # 报告文件输出到 achievement_checks/reports/ 目录
-        achievement_checks_dir = output_file.parent.parent
-        reports_dir = achievement_checks_dir / "reports"
+        # 报告文件输出到 achievement_checks/reports/<algo_version>/（与 json 同版本）
+        if args.output:
+            reports_dir = output_file.parent.parent / "reports"
+        else:
+            reports_dir = resolve_achievement_reports_dir(
+                project_root, variant=variant, algo_version=algo_version
+            )
         reports_dir.mkdir(parents=True, exist_ok=True)
-
         md_path = reports_dir / f"{output_file.stem}.md"
         html_path = reports_dir / f"{output_file.stem}.html"
         generate_markdown_report(results, md_path)

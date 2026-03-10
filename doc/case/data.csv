@@ -1,0 +1,33 @@
+﻿Region,Country,Project,Media,Smartphone Type,Media Channel,Budget Source,Stage,Objective,Ad format,BLS Eligibility,Start date,End date,Duration(D),"Budget
+Allocation",Budget,Daily Budget,"Buying Model
+Key Measurement",Estimated CPM,Estimated CPV,Estimated CPC,Estimated CPA,Estimated ROI,Estimated Impressions,Estimated Views,Estimated Clicks,Estimated Click Through Rate,Estimated Paid User,"Estimated 
+Purchase Value"
+WE,ES,O12UO12A,Meta,O12UO12A,FB&IG,Local,Early Bird,Awareness,Image&Video Link Ads,FALSE,2025/9/24,2025/10/11,18,17.25%,"37,091","$2,061 ",CPM,$0.77 ,-,-,-,-,"48,024,174",-,-,-,-,-
+WE,ES,,Meta,,FB&IG,Local,Early Bird,Video Views,Video Link Ads,FALSE,2025/9/24,2025/10/11,18,9.82%,"21,117","$1,173 ",CPV,$7.47 ,$0.01 ,-,-,-,"2,828,605","1,624,383",-,-,-,-
+WE,ES,,Meta,,FB&IG,Local,Early Bird,Traffic,Image&Video Link Ads,FALSE,2025/9/24,2025/10/11,18,7.48%,"16,076",$893 ,CPC,$4.35 ,-,$0.29 ,-,-,"3,695,391",-,"56,368",0.98%,-,-
+WE,ES,,Meta,,FB&IG,Local,Early Bird,,ASC,FALSE,2025/9/24,2025/10/11,18,31.60%,"67,949","$3,775 ",CPA,$4.52 ,-,$0.85 ,$13.52 ,22,"15,039,171",-,"80,097",0.38%,"5,026","$1,507,864 "
+WE,ES,,Meta,,FB&IG,Local,First sales,Awareness,Image&Video Link Ads,FALSE,2025/10/12,2025/10/16,5,0.79%,"1,700",$340 ,CPM,$0.77 ,-,-,-,-,"2,201,094",-,-,-,-,-
+WE,ES,,Meta,,FB&IG,Local,First sales,Video Views,Video Link Ads,FALSE,2025/10/12,2025/10/16,5,0.23%,500,$100 ,CPV,$7.47 ,$0.01 ,-,-,-,"66,975","38,462",-,-,-,-
+WE,ES,,Meta,,FB&IG,Local,First sales,Traffic,Image&Video Link Ads,FALSE,2025/10/12,2025/10/16,5,0.28%,600,$120 ,CPC,$4.35 ,-,$0.29 ,-,-,"137,918",-,"2,104",0.98%,-,-
+WE,ES,,Meta,,FB&IG,Local,First sales,,ASC,FALSE,2025/10/12,2025/11/2,22,4.59%,"9,862",$448 ,CPA,$4.52 ,-,$0.85 ,$13.52 ,22,"2,182,747",-,"11,625",0.38%,729,"$218,848 "
+WE,ES,,Meta,,FB&IG,Local,Black Friday,Traffic,Image&Video Link Ads,FALSE,2025/11/3,2025/11/30,28,10.89%,"23,423",$837 ,CPC,$4.35 ,-,$0.29 ,-,-,"5,384,110",-,"82,128",0.98%,-,-
+WE,ES,,Meta,,FB&IG,Local,Black Friday,,ASC,FALSE,2025/11/3,2025/11/30,28,17.07%,"36,696","$1,311 ",CPA,$4.52 ,-,$0.85 ,$13.52 ,22,"8,121,923",-,"43,257",0.38%,"2,714","$814,324 "
+WE,ES,,Meta,,FB&IG,CO-MKT,Open sales,Awareness,Image&Video Link Ads,FALSE,2025/10/12,2025/10/31,20,26%,"$10,000 ",$500.00 ,CPM,$0.77 ,-,-,-,-,"12,947,610",-,-,-,-,-
+WE,ES,,Meta,,FB&IG,CO-MKT,Open sales,,ASC,FALSE,2025/11/1,2025/12/31,61,74%,"$28,558 ",$468.20 ,CPA,$4.52 ,-,$0.85 ,$13.52 ,22,"6,320,714",-,"33,664",0.38%,"2,112","$633,730 "
+WE,ES,,Google,O12UO12A,YTB,Local,Early Bird,Awareness,VRC 2.0,FALSE,2025/9/24,2025/10/11,18,9.50%,"36,934.75","$2,052 ",CPM,$2.91 ,-,-,-,-,"12,703,026",-,-,-,-,-
+WE,ES,,Google,,YTB,Local,Early Bird,Video Views,VVC,FALSE,2025/9/24,2025/10/11,18,5.50%,"14,778.42",$821 ,CPV,$5.45 ,$0.01 ,-,-,-,"2,714,127","1,555,623",-,-,-,-
+WE,ES,,Google,,GG,Local,Early Bird,Traffic,Demand Gen,FALSE,2025/9/24,2025/10/11,18,8.57%,"33,220.60","$1,846 ",CPC,$6.02 ,-,$0.34 ,-,-,"5,520,283",-,"99,143",2%,-,-
+WE,ES,,Google,,GG,Local,Early Bird,Conversion,Search,FALSE,2025/9/24,2025/10/11,18,10.00%,"43,842.04","$2,436 ",CPC,$50.03 ,-,$0.49 ,$13.40 ,22,"876,372",-,"89,315",10%,"3,272","$981,685 "
+WE,ES,,Google,,GG,Local,Early Bird,Conversion,Performance Max,FALSE,2025/9/24,2025/10/11,18,15.64%,"61,231.37","$3,402 ",CPA,$8.90 ,-,$0.46 ,$9.19 ,33,"6,878,147",-,"132,195",2%,"6,666","$1,999,936 "
+WE,ES,,Google,,YTB,Local,First sales,Awareness,VRC 2.0,FALSE,2025/10/12,2025/10/16,5,4.00%,"$2,600 ",$520 ,CPM,$2.91 ,-,-,-,-,"894,222",-,-,-,-,-
+WE,ES,,Google,,YTB,Local,First sales,Video Views,VVC,FALSE,2025/10/12,2025/10/16,5,0.97%,"$1,050 ",$210 ,CPV,$5.45 ,$0.01 ,-,-,-,"192,837","110,526",-,-,-,-
+WE,ES,,Google,,GG,Local,First sales,Traffic,Demand Gen,FALSE,2025/10/12,2025/11/2,22,0.91%,"$6,403 ",$291 ,CPC,$6.02 ,-,$0.34 ,-,-,"1,063,916",-,"19,108",2%,-,-
+WE,ES,,Google,,GG,Local,First sales,Conversion,Search,FALSE,2025/10/12,2025/11/2,22,3.00%,"$89,826 ","$4,083 ",CPC,$50.03 ,-,$0.49 ,$13.40 ,22,"1,795,560",-,"182,993",10%,"6,704","$2,011,329 "
+WE,ES,,Google,,GG,Local,First sales,Conversion,Performance Max,FALSE,2025/10/12,2025/11/2,22,1.11%,"$59,018 ","$2,683 ",CPA,$8.90 ,-,$0.46 ,$9.19 ,33,"6,629,479",-,"127,416",2%,"6,425","$1,927,632 "
+WE,ES,,Google,,GG,Local,Black Friday,Traffic,Demand Gen,FALSE,2025/11/3,2025/11/30,28,9.09%,"$20,503 ",$732 ,CPC,$6.02 ,,$0.34 ,-,-,"3,406,993",,"61,189",2%,-,-
+WE,ES,,Google,,GG,Local,Black Friday,Conversion,Search,FALSE,2025/11/3,2025/11/30,28,10.02%,"$22,660 ",$809 ,CPA,$50.03 ,-,$0.49 ,$13.40 ,22,"452,958",-,"46,163",10%,"1,691","$507,389 "
+WE,ES,,Google,,GG,Local,Black Friday,Conversion,Performance Max,FALSE,2025/11/3,2025/11/30,28,21.68%,"$49,030 ","$1,751 ",CPA,$8.90 ,-,$0.46 ,$9.19 ,33,"5,507,562",-,"105,853",2%,"5,338","$1,601,415 "
+WE,ES,,Google,,GG,CO-MKT,Open sales,Traffic,Demand Gen,FALSE,2025/10/12,2025/10/31,20,11%,"49,770","$2,489 ",CPC,$6.02 ,-,$0.34 ,-,-,"8,270,305",-,"148,533",2%,-,-
+WE,ES,,Google,,GG,CO-MKT,Open sales,Conversion,Performance Max,FALSE,2025/10/12,2025/10/31,20,25%,"116,136","$5,807 ",CPC,$50.03 ,-,$0.49 ,$13.40 ,22,"2,321,469",-,"236,591",10%,"8,668","$2,600,437 "
+WE,ES,,Google,,GG,CO-MKT,Open sales,Traffic,Demand Gen,FALSE,2025/11/1,2025/12/31,61,19%,"88,534","$1,451 ",CPC,$6.02 ,-,$0.34 ,-,-,"14,711,737",-,"264,219",2%,-,-
+WE,ES,,Google,,GG,CO-MKT,Open sales,Conversion,Performance Max,FALSE,2025/11/1,2025/12/31,61,45%,"206,579","$3,386.54 ",CPA,$8.90 ,-,$0.46 ,$9.19 ,33,"23,205,110",-,"445,992",2%,"22,491","$6,747,273 "

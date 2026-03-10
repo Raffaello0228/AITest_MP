@@ -171,7 +171,7 @@ def build_basic_info(template_basic: dict, df: pd.DataFrame) -> dict:
         kpi_info.append(
             {
                 "key": key,
-                "val": str(int(val)),
+                "val": None if val == 0 else str(int(val)),
                 "priority": tmpl_priority_map.get(key, KPI_KEYS.index(key) + 1),
                 "completion": 0,  # 初始值为0，后续在 apply_testcase_template_config 中根据 kpi_must_achieve 随机勾选
             }
@@ -202,10 +202,11 @@ def build_basic_info(template_basic: dict, df: pd.DataFrame) -> dict:
 
         kpi_list = []
         for key in KPI_KEYS:
+            v = kpi_country.get(key, 0.0)
             kpi_list.append(
                 {
                     "key": key,
-                    "val": str(int(kpi_country.get(key, 0.0))),
+                    "val": None if v == 0 else str(int(v)),
                     "completion": 0,
                     "priority": tmpl_priority_map.get(key, KPI_KEYS.index(key) + 1),
                 }
@@ -300,12 +301,12 @@ def build_country_media(country_df: pd.DataFrame) -> list[dict]:
 
 def build_country_stage(country_df: pd.DataFrame) -> list[dict]:
     """
-    使用 month_ 作为 stage 维度：
-    - 每个国家按 month_ 分组
-    - 每个 month_ 生成一个阶段
+    使用 stage 作为 stage 维度：
+    - 每个国家按 stage 分组
+    - 每个 stage 生成一个阶段
     """
-    # 如果没有 month_ 列，则退化为单一汇总阶段
-    if "month_" not in country_df.columns:
+    # 如果没有 stage 列，则退化为单一汇总阶段
+    if "stage" not in country_df.columns:
         total = float(country_df["spend"].sum())
         if total <= 0:
             return []
@@ -320,24 +321,24 @@ def build_country_stage(country_df: pd.DataFrame) -> list[dict]:
             }
         ]
 
-    # 过滤掉无效 month_
+    # 过滤掉无效 stage
     df = country_df.copy()
-    df["month_"] = df["month_"].astype(str).str.strip()
-    df = df[df["month_"] != ""]
+    df["stage"] = df["stage"].astype(str).str.strip()
+    df = df[df["stage"] != ""]
 
     total = float(df["spend"].sum())
     if total <= 0:
         return []
 
     stages: list[dict] = []
-    for month, g in df.groupby("month_"):
+    for month, g in df.groupby("stage"):
         budget = float(g["spend"].sum())
         if budget <= 0:
             continue
         pct = budget / total * 100 if total > 0 else 0.0
         stages.append(
             {
-                "name": month,  # 直接用 month_ 作为阶段名，例如 "202503"
+                "name": month,  # 直接用 stage 作为阶段名，例如 "202503"
                 "budgetPercentage": round(pct, 2),
                 "budgetAmount": round(budget, 2),
                 "dates": None,
@@ -394,12 +395,15 @@ def build_country_media_marketing_adtype(country_df: pd.DataFrame) -> list[dict]
             )
 
         # adTypeWithKPI：按 (funnel, ad_type) 聚合（platform 已在对象层级）
+        # 过滤预算(spend)为0的 adtype，不写入结果
         key_cols = ["Funnel_final", "ad_type"]
         g_valid = g_media_platform.dropna(subset=["Funnel_final", "ad_type"])
         if not g_valid.empty:
             grouped = g_valid.groupby(key_cols)
             for (funnel, ad_type), g_combo in grouped:
                 spend = float(g_combo["spend"].sum())
+                if spend <= 0:
+                    continue  # 过滤预算为0的 adtype(ad format)
                 # KPI 聚合（如果列不存在则视为0）
                 kpi_vals = {
                     "Impression": safe_sum(g_combo, "impressions"),
@@ -413,11 +417,11 @@ def build_country_media_marketing_adtype(country_df: pd.DataFrame) -> list[dict]
                 }
                 kpi_list = []
                 for key in KPI_KEYS:
+                    v = kpi_vals.get(key, 0.0)
                     kpi_list.append(
                         {
                             "key": key,
-                            "val": str(int(kpi_vals.get(key, 0.0))),
-                            # "val": None,
+                            "val": None if v == 0 else str(int(v)),
                             "priority": KPI_KEYS.index(key) + 1,
                             "completion": 0,
                         }
@@ -727,7 +731,7 @@ def build_brief_multi_config(
 
 def convert(
     data_path: str = "data.csv",
-    adtype_path: str = "adtype_dict.csv",
+    adtype_path: str = "adtype.csv",
     template_path: str = "brief_template.json",
     output_path: str = "cases/brief_from_data.json",
     max_regions: int | None = None,
@@ -822,7 +826,7 @@ def convert(
 
 def batch_generate(
     data_path: str = "data_haier.csv",
-    adtype_path: str = "doc/common/adtype_dict.csv",
+    adtype_path: str = "doc/common/adtype.csv",
     template_path: str = "brief_template.json",
     output_dir: str = "output/common/requests",
     max_regions: int | None = None,
@@ -895,7 +899,7 @@ if __name__ == "__main__":
 
     # 解析命令行参数
     test_case_id = None
-    max_regions = 10
+    max_regions = 30
     batch_mode = True
     use_testcase_template = False
     testcase_template_path = "testcase_template.py"

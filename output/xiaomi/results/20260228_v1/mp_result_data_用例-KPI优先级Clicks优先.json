@@ -1,0 +1,4378 @@
+{
+  "success": true,
+  "status": 201,
+  "ms": 236,
+  "data": {
+    "message": "success",
+    "code": 0,
+    "result": {
+      "briefInfo": {
+        "basicInfo": {
+          "isHistoryMp": 1,
+          "kpiInfo": [
+            {
+              "key": "Clicks",
+              "val": "2267953",
+              "priority": 1,
+              "completion": 0
+            },
+            {
+              "key": "Impression",
+              "val": "204094535",
+              "priority": 2,
+              "completion": 0
+            },
+            {
+              "key": "VideoViews",
+              "val": "3328994",
+              "priority": 3,
+              "completion": 0
+            }
+          ],
+          "kpiInfoBudgetConfig": {
+            "rangeMatch": 80
+          },
+          "dimension": [
+            "corporation",
+            "ai"
+          ],
+          "usedHistoryMp": 1,
+          "moduleConfig": [
+            {
+              "moduleName": "kpiInfo",
+              "priority": 1
+            },
+            {
+              "moduleName": "media",
+              "priority": 2
+            },
+            {
+              "moduleName": "marketingFunnel",
+              "priority": 3
+            },
+            {
+              "moduleName": "stage",
+              "priority": 4
+            },
+            {
+              "moduleName": "mediaMarketingFunnelFormat",
+              "priority": 5
+            },
+            {
+              "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+              "priority": 6
+            }
+          ],
+          "regionBudget": [
+            {
+              "countryInfo": {
+                "countryCode": "ES",
+                "countryNameCN": "西班牙",
+                "countryNameEn": "Spain",
+                "regionCode": "WE",
+                "regionNameCN": "西欧",
+                "mpCode": "ES"
+              }
+            }
+          ],
+          "totalBudget": 1155688,
+          "uuid": "b98136d7-9809-4833-9214-490e662b",
+          "historyMpId": "0d75eab9-fc39-4409-bf10-aee91cfb",
+          "mediaPlanName": "用例-KPI优先级Clicks优先",
+          "corporationId": "18581",
+          "projectName": "Project",
+          "productName": "Product",
+          "brandName": "Mi",
+          "briefCode": "Brief Code",
+          "currency": "USD",
+          "corporationName": "北京小米移动软件有限公司",
+          "accountId": "1000263097025266",
+          "categoryLevel1Id": "7",
+          "categoryLevel2Id": "7003",
+          "categoryLevel3Id": "7003001",
+          "competitorCorporationId": "10866",
+          "campaignId": null,
+          "jobId": "1772246001_1_d75eb620",
+          "isModified": 0
+        },
+        "briefMultiConfig": [
+          {
+            "stage": [
+              {
+                "name": "Black Friday",
+                "budgetPercentage": 13.18,
+                "budgetAmount": 152312,
+                "dates": [
+                  "2025-11-03",
+                  "2025-11-30"
+                ],
+                "marketingFunnel": [
+                  "Awareness",
+                  "Conversion",
+                  "Traffic"
+                ],
+                "mediaPlatform": [
+                  [
+                    "Google",
+                    "GG"
+                  ],
+                  [
+                    "Meta",
+                    "FB&IG"
+                  ]
+                ]
+              },
+              {
+                "name": "Early Bird",
+                "budgetPercentage": 28.75,
+                "budgetAmount": 332240,
+                "dates": [
+                  "2025-09-24",
+                  "2025-10-11"
+                ],
+                "marketingFunnel": [
+                  "Awareness",
+                  "Consideration",
+                  "Conversion",
+                  "Traffic"
+                ],
+                "mediaPlatform": [
+                  [
+                    "Google",
+                    "GG"
+                  ],
+                  [
+                    "Google",
+                    "YTB"
+                  ],
+                  [
+                    "Meta",
+                    "FB&IG"
+                  ]
+                ]
+              },
+              {
+                "name": "First sales",
+                "budgetPercentage": 14.84,
+                "budgetAmount": 171559,
+                "dates": [
+                  "2025-10-12",
+                  "2025-11-02"
+                ],
+                "marketingFunnel": [
+                  "Awareness",
+                  "Consideration",
+                  "Conversion",
+                  "Traffic"
+                ],
+                "mediaPlatform": [
+                  [
+                    "Google",
+                    "GG"
+                  ],
+                  [
+                    "Google",
+                    "YTB"
+                  ],
+                  [
+                    "Meta",
+                    "FB&IG"
+                  ]
+                ]
+              },
+              {
+                "name": "Open sales",
+                "budgetPercentage": 43.23,
+                "budgetAmount": 499577,
+                "dates": [
+                  "2025-10-12",
+                  "2025-12-31"
+                ],
+                "marketingFunnel": [
+                  "Awareness",
+                  "Conversion",
+                  "Traffic"
+                ],
+                "mediaPlatform": [
+                  [
+                    "Google",
+                    "GG"
+                  ],
+                  [
+                    "Meta",
+                    "FB&IG"
+                  ]
+                ]
+              }
+            ],
+            "marketingFunnel": [
+              {
+                "name": "Awareness",
+                "budgetPercentage": 20.02,
+                "budgetAmount": 231391
+              },
+              {
+                "name": "Consideration",
+                "budgetPercentage": 3.24,
+                "budgetAmount": 37445
+              },
+              {
+                "name": "Conversion",
+                "budgetPercentage": 56.1,
+                "budgetAmount": 648322
+              },
+              {
+                "name": "Traffic",
+                "budgetPercentage": 20.64,
+                "budgetAmount": 238530
+              }
+            ],
+            "mediaMarketingFunnelFormat": [
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Conversion",
+                    "funnelNameKey": "Conversion",
+                    "adFormat": []
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "funnelNameKey": "Traffic",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "GG"
+                ],
+                "mediaName": "Google",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Conversion",
+                    "adFormatName": "Performance Max",
+                    "creative": "Image",
+                    "adFormatTotalBudget": 491994,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Clicks",
+                        "val": "1048047",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Impression",
+                        "val": "44541767",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "funnelName": "Conversion",
+                    "adFormatName": "Search",
+                    "creative": "Text",
+                    "adFormatTotalBudget": 156328,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Clicks",
+                        "val": "318471",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Impression",
+                        "val": "3124890",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "adFormatName": "Demand Gen",
+                    "creative": "Image",
+                    "adFormatTotalBudget": 198431,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Clicks",
+                        "val": "592192",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Impression",
+                        "val": "32973234",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Awareness",
+                    "funnelNameKey": "Awareness",
+                    "adFormat": []
+                  },
+                  {
+                    "funnelName": "Consideration",
+                    "funnelNameKey": "Consideration",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "YTB"
+                ],
+                "mediaName": "Google",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Awareness",
+                    "adFormatName": "VRC 2.0",
+                    "creative": "Video",
+                    "adFormatTotalBudget": 39535,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "13597248",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "funnelName": "Consideration",
+                    "adFormatName": "VVC",
+                    "creative": "Video",
+                    "adFormatTotalBudget": 15828,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "2906964",
+                        "priority": 2,
+                        "completion": 0
+                      },
+                      {
+                        "key": "VideoViews",
+                        "val": "1666149",
+                        "priority": 3,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Awareness",
+                    "funnelNameKey": "Awareness",
+                    "adFormat": []
+                  },
+                  {
+                    "funnelName": "Consideration",
+                    "funnelNameKey": "Consideration",
+                    "adFormat": []
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "funnelNameKey": "Traffic",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "FB&IG"
+                ],
+                "mediaName": "Meta",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Awareness",
+                    "adFormatName": "ASC",
+                    "creative": "",
+                    "adFormatTotalBudget": 143065,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Clicks",
+                        "val": "168643",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Impression",
+                        "val": "31664555",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "funnelName": "Awareness",
+                    "adFormatName": "Image&Video Link Ads",
+                    "creative": "Image&Video",
+                    "adFormatTotalBudget": 48791,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "63172878",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "funnelName": "Consideration",
+                    "adFormatName": "Video Link Ads",
+                    "creative": "Video",
+                    "adFormatTotalBudget": 21617,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "2895580",
+                        "priority": 2,
+                        "completion": 0
+                      },
+                      {
+                        "key": "VideoViews",
+                        "val": "1662845",
+                        "priority": 3,
+                        "completion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "adFormatName": "Image&Video Link Ads",
+                    "creative": "Image&Video",
+                    "adFormatTotalBudget": 40099,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Clicks",
+                        "val": "140600",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Impression",
+                        "val": "9217419",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "name": "Google",
+                "budgetPercentage": 78.06,
+                "budgetAmount": 902116,
+                "children": [
+                  {
+                    "name": "GG",
+                    "budgetPercentage": 73.27,
+                    "budgetAmount": 846753
+                  },
+                  {
+                    "name": "YTB",
+                    "budgetPercentage": 4.79,
+                    "budgetAmount": 55363
+                  }
+                ]
+              },
+              {
+                "name": "Meta",
+                "budgetPercentage": 21.94,
+                "budgetAmount": 253572,
+                "children": [
+                  {
+                    "name": "FB&IG",
+                    "budgetPercentage": 21.94,
+                    "budgetAmount": 253572
+                  }
+                ]
+              }
+            ],
+            "stageBudgetConfig": {
+              "consistentMatch": 1,
+              "rangeMatch": 20,
+              "priority": 4
+            },
+            "marketingFunnelBudgetConfig": {
+              "consistentMatch": 1,
+              "rangeMatch": 15,
+              "priority": 3
+            },
+            "mediaBudgetConfig": {
+              "consistentMatch": 1,
+              "rangeMatch": 5,
+              "priority": 2
+            },
+            "mediaMarketingFunnelFormatBudgetConfig": {
+              "precision": 2,
+              "kpiFlexibility": 80,
+              "totalBudgetFlexibility": 80,
+              "priority": 5
+            },
+            "moduleConfig": [
+              {
+                "moduleName": "kpiInfo",
+                "priority": 1
+              },
+              {
+                "moduleName": "media",
+                "priority": 2
+              },
+              {
+                "moduleName": "marketingFunnel",
+                "priority": 3
+              },
+              {
+                "moduleName": "stage",
+                "priority": 4
+              },
+              {
+                "moduleName": "mediaMarketingFunnelFormat",
+                "priority": 5
+              },
+              {
+                "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+                "priority": 6
+              }
+            ],
+            "jobId": "1772246001_1_d75eb620",
+            "countryInfo": {
+              "countryCode": "ES",
+              "countryNameCN": "西班牙",
+              "countryNameEn": "Spain",
+              "regionCode": "WE",
+              "regionNameCN": "西欧",
+              "mpCode": "ES"
+            },
+            "warn": []
+          }
+        ]
+      },
+      "dimensionMultiCountryResult": {
+        "WE_ES": {
+          "corporation": [
+            {
+              "estCPM": {
+                "value": "5.6800",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "619752",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10854",
+              "uid": "10854",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Black Friday",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Image&Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3661,
+              "adBudget": 3520.19,
+              "serviceFee": 140.81,
+              "dstFee": 0,
+              "dailyBudget": 39.11,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "3.8000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "926366",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10862",
+              "uid": "10862",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Black Friday",
+              "dimension": "corporation",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3661,
+              "adBudget": 3520.19,
+              "serviceFee": 140.81,
+              "dstFee": 0,
+              "dailyBudget": 39.11,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": {
+                "value": "6.5000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "541568",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10855",
+              "uid": "10855",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Black Friday",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3661,
+              "adBudget": 3520.19,
+              "serviceFee": 140.81,
+              "dstFee": 0,
+              "dailyBudget": 39.11,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "5.6800",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "619752",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10856",
+              "uid": "10856",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Early Bird",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Image&Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3661,
+              "adBudget": 3520.19,
+              "serviceFee": 140.81,
+              "dstFee": 0,
+              "dailyBudget": 39.11,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "3.8000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "926874",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10863",
+              "uid": "10863",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Early Bird",
+              "dimension": "corporation",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3663,
+              "adBudget": 3522.12,
+              "serviceFee": 140.88,
+              "dstFee": 0,
+              "dailyBudget": 39.13,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": {
+                "value": "6.5000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "541568",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10857",
+              "uid": "10857",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Early Bird",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3661,
+              "adBudget": 3520.19,
+              "serviceFee": 140.81,
+              "dstFee": 0,
+              "dailyBudget": 39.11,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "5.6800",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "619752",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10858",
+              "uid": "10858",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "First sales",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Image&Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3661,
+              "adBudget": 3520.19,
+              "serviceFee": 140.81,
+              "dstFee": 0,
+              "dailyBudget": 39.11,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "3.8000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "926874",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10864",
+              "uid": "10864",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "First sales",
+              "dimension": "corporation",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3663,
+              "adBudget": 3522.12,
+              "serviceFee": 140.88,
+              "dstFee": 0,
+              "dailyBudget": 39.13,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": {
+                "value": "6.5000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "748965",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10859",
+              "uid": "10859",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "First sales",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "6.04%",
+              "totalBudget": 5063,
+              "adBudget": 4868.27,
+              "serviceFee": 194.73,
+              "dstFee": 0,
+              "dailyBudget": 54.09,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "5.6800",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "3873746",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10860",
+              "uid": "10860",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Open sales",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Image&Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "27.31%",
+              "totalBudget": 22883,
+              "adBudget": 22002.88,
+              "serviceFee": 880.12,
+              "dstFee": 0,
+              "dailyBudget": 244.48,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "3.8000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "926874",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10865",
+              "uid": "10865",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Open sales",
+              "dimension": "corporation",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.37%",
+              "totalBudget": 3663,
+              "adBudget": 3522.12,
+              "serviceFee": 140.88,
+              "dstFee": 0,
+              "dailyBudget": 39.13,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": {
+                "value": "6.5000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "3385058",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10861",
+              "uid": "10861",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Open sales",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "27.31%",
+              "totalBudget": 22883,
+              "adBudget": 22002.88,
+              "serviceFee": 880.12,
+              "dstFee": 0,
+              "dailyBudget": 244.48,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "14657149",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Meta-TTL:",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 83784,
+              "adBudget": 80561.53,
+              "serviceFee": 3222.47,
+              "dstFee": 0,
+              "dailyBudget": 895.1,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": {
+                "value": "80.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "647639",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "32382",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10834",
+              "uid": "10834",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Black Friday",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "5.22%",
+              "totalBudget": 55956,
+              "adBudget": 51811.11,
+              "serviceFee": 2590.56,
+              "dstFee": 1554.33,
+              "dailyBudget": 575.68,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "4.8000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.40",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "44417246",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "533007",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.20%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10838",
+              "uid": "10838",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Black Friday",
+              "dimension": "corporation",
+              "objective": "Conversion",
+              "creative": "Image",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Performance Max",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "21.48%",
+              "totalBudget": 230259,
+              "adBudget": 213202.78,
+              "serviceFee": 10660.14,
+              "dstFee": 6396.08,
+              "dailyBudget": 2368.92,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "80.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "264850",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "13242",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10842",
+              "uid": "10842",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Black Friday",
+              "dimension": "corporation",
+              "objective": "Conversion",
+              "creative": "Text",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "2.13%",
+              "totalBudget": 22883,
+              "adBudget": 21187.96,
+              "serviceFee": 1059.4,
+              "dstFee": 635.64,
+              "dailyBudget": 235.42,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "80.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "738021",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "36901",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10835",
+              "uid": "10835",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Early Bird",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "5.95%",
+              "totalBudget": 63765,
+              "adBudget": 59041.67,
+              "serviceFee": 2952.08,
+              "dstFee": 1771.25,
+              "dailyBudget": 656.02,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "4.8000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.40",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "17910300",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "214924",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.20%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10839",
+              "uid": "10839",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Early Bird",
+              "dimension": "corporation",
+              "objective": "Conversion",
+              "creative": "Image",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Performance Max",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "8.66%",
+              "totalBudget": 92847,
+              "adBudget": 85969.44,
+              "serviceFee": 4298.48,
+              "dstFee": 2579.08,
+              "dailyBudget": 955.22,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "80.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "264850",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "13242",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10843",
+              "uid": "10843",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Early Bird",
+              "dimension": "corporation",
+              "objective": "Conversion",
+              "creative": "Text",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "2.13%",
+              "totalBudget": 22883,
+              "adBudget": 21187.96,
+              "serviceFee": 1059.4,
+              "dstFee": 635.64,
+              "dailyBudget": 235.42,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "80.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "500324",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "25016",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10836",
+              "uid": "10836",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "First sales",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.03%",
+              "totalBudget": 43228,
+              "adBudget": 40025.93,
+              "serviceFee": 2001.29,
+              "dstFee": 1200.78,
+              "dailyBudget": 444.73,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "4.8000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.40",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "8338735",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "100065",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.20%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10840",
+              "uid": "10840",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "First sales",
+              "dimension": "corporation",
+              "objective": "Conversion",
+              "creative": "Image",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Performance Max",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.03%",
+              "totalBudget": 43228,
+              "adBudget": 40025.93,
+              "serviceFee": 2001.29,
+              "dstFee": 1200.78,
+              "dailyBudget": 444.73,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "80.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "264850",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "13242",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10844",
+              "uid": "10844",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "First sales",
+              "dimension": "corporation",
+              "objective": "Conversion",
+              "creative": "Text",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "2.13%",
+              "totalBudget": 22883,
+              "adBudget": 21187.96,
+              "serviceFee": 1059.4,
+              "dstFee": 635.64,
+              "dailyBudget": 235.42,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "80.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "1105590",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "55280",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10837",
+              "uid": "10837",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Open sales",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "8.91%",
+              "totalBudget": 95523,
+              "adBudget": 88447.22,
+              "serviceFee": 4422.36,
+              "dstFee": 2653.42,
+              "dailyBudget": 982.75,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "4.8000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.40",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "41285108",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "495421",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.20%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10841",
+              "uid": "10841",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Open sales",
+              "dimension": "corporation",
+              "objective": "Conversion",
+              "creative": "Image",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Performance Max",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "19.97%",
+              "totalBudget": 214022,
+              "adBudget": 198168.52,
+              "serviceFee": 9908.42,
+              "dstFee": 5945.06,
+              "dailyBudget": 2201.87,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "80.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "264850",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "13242",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10845",
+              "uid": "10845",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Open sales",
+              "dimension": "corporation",
+              "objective": "Conversion",
+              "creative": "Text",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "2.13%",
+              "totalBudget": 22883,
+              "adBudget": 21187.96,
+              "serviceFee": 1059.4,
+              "dstFee": 635.64,
+              "dailyBudget": 235.42,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "6.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "564968",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "5650",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10846",
+              "uid": "10846",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Black Friday",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "0.34%",
+              "totalBudget": 3661,
+              "adBudget": 3389.81,
+              "serviceFee": 169.5,
+              "dstFee": 101.69,
+              "dailyBudget": 37.66,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "6.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "564968",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10850",
+              "uid": "10850",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Black Friday",
+              "dimension": "corporation",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "VVC",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "0.34%",
+              "totalBudget": 3661,
+              "adBudget": 3389.81,
+              "serviceFee": 169.5,
+              "dstFee": 101.69,
+              "dailyBudget": 37.66,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": {
+                "value": "6.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "14845217",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "148452",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10847",
+              "uid": "10847",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Early Bird",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "8.97%",
+              "totalBudget": 96197,
+              "adBudget": 89071.3,
+              "serviceFee": 4453.56,
+              "dstFee": 2672.14,
+              "dailyBudget": 989.68,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "6.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "564968",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10851",
+              "uid": "10851",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Early Bird",
+              "dimension": "corporation",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "VVC",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "0.34%",
+              "totalBudget": 3661,
+              "adBudget": 3389.81,
+              "serviceFee": 169.5,
+              "dstFee": 101.69,
+              "dailyBudget": 37.66,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": {
+                "value": "6.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "2086728",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "20867",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10848",
+              "uid": "10848",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "First sales",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "1.26%",
+              "totalBudget": 13522,
+              "adBudget": 12520.37,
+              "serviceFee": 626.02,
+              "dstFee": 375.61,
+              "dailyBudget": 139.12,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "6.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "564968",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10852",
+              "uid": "10852",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "First sales",
+              "dimension": "corporation",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "VVC",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "0.34%",
+              "totalBudget": 3661,
+              "adBudget": 3389.81,
+              "serviceFee": 169.5,
+              "dstFee": 101.69,
+              "dailyBudget": 37.66,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": {
+                "value": "6.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.60",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "2086728",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "20867",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.00%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10849",
+              "uid": "10849",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Open sales",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "1.26%",
+              "totalBudget": 13522,
+              "adBudget": 12520.37,
+              "serviceFee": 626.02,
+              "dstFee": 375.61,
+              "dailyBudget": 139.12,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "6.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "565123",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10853",
+              "uid": "10853",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Open sales",
+              "dimension": "corporation",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "VVC",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "0.34%",
+              "totalBudget": 3662,
+              "adBudget": 3390.74,
+              "serviceFee": 169.54,
+              "dstFee": 101.72,
+              "dailyBudget": 37.67,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "137846031",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "1741800",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Google-TTL:",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 1071907,
+              "adBudget": 992506.46,
+              "serviceFee": 49625.36,
+              "dstFee": 29775.18,
+              "dailyBudget": 11027.83,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "152503180",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "1741800",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "All Media TTL",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 1155691,
+              "adBudget": 1073067.99,
+              "serviceFee": 52847.83,
+              "dstFee": 29775.18,
+              "dailyBudget": 11922.93,
+              "budgetAllocation": "100.00%"
+            }
+          ],
+          "ai": [
+            {
+              "estCPM": {
+                "value": "3.2520",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.32",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "11541122",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "117287",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.02%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10831",
+              "uid": "10831",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Black Friday",
+              "dimension": "ai",
+              "objective": "Awareness",
+              "creative": "Image&Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "8.99%",
+              "totalBudget": 39033,
+              "adBudget": 37531.73,
+              "serviceFee": 1501.27,
+              "dstFee": 0,
+              "dailyBudget": 417.02,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "3.5880",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "0.0137",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.21",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "0.0137",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "12092124",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "3166901",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "26.19%",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "206603",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.71%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10833",
+              "uid": "10833",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Black Friday",
+              "dimension": "ai",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "10.40%",
+              "totalBudget": 45122,
+              "adBudget": 43386.54,
+              "serviceFee": 1735.46,
+              "dstFee": 0,
+              "dailyBudget": 482.07,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": {
+                "value": "4.2820",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.16",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "78557828",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "2102404",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "2.68%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10832",
+              "uid": "10832",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Meta",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "FB&IG",
+              "stage": "Early Bird",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "80.61%",
+              "totalBudget": 349840,
+              "adBudget": 336384.62,
+              "serviceFee": 13455.38,
+              "dstFee": 0,
+              "dailyBudget": 3737.61,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "102191074",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "3166901",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "2426294",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Meta-TTL:",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 433995,
+              "adBudget": 417302.89,
+              "serviceFee": 16692.11,
+              "dstFee": 0,
+              "dailyBudget": 4636.7,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": {
+                "value": "51.6680",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.95",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "963846",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "52421",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.44%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10826",
+              "uid": "10826",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Black Friday",
+              "dimension": "ai",
+              "objective": "Conversion",
+              "creative": "Text",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "7.45%",
+              "totalBudget": 53784,
+              "adBudget": 49800,
+              "serviceFee": 2490,
+              "dstFee": 1494,
+              "dailyBudget": 553.33,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "41.7960",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.92",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "3516751",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "159768",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "4.54%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10824",
+              "uid": "10824",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Early Bird",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "22.00%",
+              "totalBudget": 158745,
+              "adBudget": 146986.11,
+              "serviceFee": 7349.31,
+              "dstFee": 4409.58,
+              "dailyBudget": 1633.18,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "4.2520",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.34",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "85710209",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "1071882",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.25%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10825",
+              "uid": "10825",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Early Bird",
+              "dimension": "ai",
+              "objective": "Conversion",
+              "creative": "Image",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Performance Max",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "54.54%",
+              "totalBudget": 393595,
+              "adBudget": 364439.81,
+              "serviceFee": 18222,
+              "dstFee": 10933.19,
+              "dailyBudget": 4049.33,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "51.6680",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.95",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "468733",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "25493",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.44%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10827",
+              "uid": "10827",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "First sales",
+              "dimension": "ai",
+              "objective": "Conversion",
+              "creative": "Text",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "3.62%",
+              "totalBudget": 26156,
+              "adBudget": 24218.52,
+              "serviceFee": 1210.92,
+              "dstFee": 726.56,
+              "dailyBudget": 269.09,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "51.6680",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.95",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "808617",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "43979",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "5.44%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10828",
+              "uid": "10828",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Open sales",
+              "dimension": "ai",
+              "objective": "Conversion",
+              "creative": "Text",
+              "marketingFunnel": "Conversion",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "6.25%",
+              "totalBudget": 45122,
+              "adBudget": 41779.63,
+              "serviceFee": 2088.98,
+              "dstFee": 1253.39,
+              "dailyBudget": 464.22,
+              "buyingModelKeyMeasurement": "CPA"
+            },
+            {
+              "estCPM": {
+                "value": "6.6530",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.42",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "4401802",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "69727",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.58%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10829",
+              "uid": "10829",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "First sales",
+              "dimension": "ai",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "4.38%",
+              "totalBudget": 31628,
+              "adBudget": 29285.19,
+              "serviceFee": 1464.25,
+              "dstFee": 878.56,
+              "dailyBudget": 325.39,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "4.2620",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "0.0433",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.43",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "0.0433",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "2750838",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "270764",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "9.84%",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "27265",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "0.99%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "10830",
+              "uid": "10830",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Open sales",
+              "dimension": "ai",
+              "objective": "Video Views",
+              "creative": "Video",
+              "marketingFunnel": "Consideration",
+              "adFormat": "VVC",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-03-01",
+              "endDate": "2026-05-29",
+              "durationDays": 90,
+              "budgetAllocation": "1.75%",
+              "totalBudget": 12662,
+              "adBudget": 11724.07,
+              "serviceFee": 586.21,
+              "dstFee": 351.72,
+              "dailyBudget": 130.27,
+              "buyingModelKeyMeasurement": "CPV"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "98620796",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "270764",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "1450535",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Google-TTL:",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 721692,
+              "adBudget": 668233.33,
+              "serviceFee": 33411.67,
+              "dstFee": 20047,
+              "dailyBudget": 7424.81,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "200811870",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "270764",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "3166901",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "3876829",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "All Media TTL",
+              "region": "WE",
+              "country": "ES",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 1155687,
+              "adBudget": 1085536.22,
+              "serviceFee": 50103.78,
+              "dstFee": 20047,
+              "dailyBudget": 12061.51,
+              "budgetAllocation": "100.00%"
+            }
+          ]
+        }
+      }
+    },
+    "traceId": "b7e6df7cce7d4ebe960bf541d7f6859b",
+    "appTrace": "sino-adtech-mediaplan"
+  },
+  "body_snippet": "{\"message\":\"success\",\"code\":0,\"result\":{\"briefInfo\":{\"basicInfo\":{\"isHistoryMp\":1,\"kpiInfo\":[{\"key\":\"Clicks\",\"val\":\"2267953\",\"priority\":1,\"completion\":0},{\"key\":\"Impression\",\"val\":\"204094535\",\"priority\":2,\"completion\":0},{\"key\":\"VideoViews\",\"val\":\"3328994\",\"priority\":3,\"completion\":0}],\"kpiInfoBudgetConfig\":{\"rangeMatch\":80},\"dimension\":[\"corporation\",\"ai\"],\"usedHistoryMp\":1,\"moduleConfig\":[{\"moduleName\":\"kpiInfo\",\"priority\":1},{\"moduleName\":\"media\",\"priority\":2},{\"moduleName\":\"marketingFunnel\",",
+  "uuid": "b98136d7-9809-4833-9214-490e662b",
+  "job_id": "1772246001_1_d75eb620"
+}

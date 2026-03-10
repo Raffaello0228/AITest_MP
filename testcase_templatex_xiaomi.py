@@ -33,7 +33,7 @@ TEST_CASES = {
     },
     # ========== 测试 mediaMarketingFunnelFormatBudgetConfig 相关字段 ==========
     # 用例13：mediaMarketingFunnelFormatBudgetConfig必须达成
-    "测试-mediaMarketingFunnelFormatBudgetConfig_must_achieve-True": {
+    "用例-AdformatBudget必须达成": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -58,7 +58,7 @@ TEST_CASES = {
         ],
     },
     # 用例14：mediaMarketingFunnelFormatBudgetConfig目标达成率改为90%
-    "测试-mediaMarketingFunnelFormatBudgetConfig_target_rate-90": {
+    "用例-AdformatBudget目标达成率90%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -83,7 +83,7 @@ TEST_CASES = {
         ],
     },
     # 用例14a：mediaMarketingFunnelFormatBudgetConfig目标达成率改为70%（宽松）
-    "测试-mediaMarketingFunnelFormatBudgetConfig_target_rate-70": {
+    "用例-AdformatBudget目标达成率70%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -108,7 +108,7 @@ TEST_CASES = {
         ],
     },
     # 用例14c：mediaMarketingFunnelFormatBudgetConfig必须达成 + 目标达成率90%（组合）
-    "测试-mediaMarketingFunnelFormatBudgetConfig-must_achieve-True_target_rate-90": {
+    "用例-AdformatBudget必须达成 + 目标达成率90%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -133,7 +133,7 @@ TEST_CASES = {
         ],
     },
     # 用例14d：mediaMarketingFunnelFormatBudgetConfig必须达成 + 目标达成率70%（宽松组合）
-    "测试-mediaMarketingFunnelFormatBudgetConfig-must_achieve-True_target_rate-70": {
+    "用例-AdformatBudget必须达成 + 目标达成率70%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -159,7 +159,7 @@ TEST_CASES = {
     },
     # ========== 测试 KPI 相关字段 ==========
     # 用例1：KPI必须达成
-    "测试-kpi_must_achieve-True": {
+    "用例-KPI必须达成": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": True,  # 改变
         "kpi_target_rate": 80,
@@ -184,7 +184,7 @@ TEST_CASES = {
         ],
     },
     # 用例2：KPI目标达成率改为90%
-    "测试-kpi_target_rate-90": {
+    "用例-KPI目标达成率90%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 90,  # 改变
@@ -209,7 +209,7 @@ TEST_CASES = {
         ],
     },
     # 用例3：KPI优先级改为Clicks第一
-    "测试-kpi_priority_list-Clicks优先": {
+    "用例-KPI优先级Clicks优先": {
         "kpi_priority_list": [
             "Clicks",
             "Impression",
@@ -240,7 +240,7 @@ TEST_CASES = {
     },
     # ========== 测试 Stage 相关字段 ==========
     # 用例4：Stage匹配类型改为大小关系匹配
-    "测试-stage_match_type-大小关系匹配": {
+    "用例-Stage匹配类型大小关系匹配": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -265,7 +265,7 @@ TEST_CASES = {
         ],
     },
     # 用例5：Stage误差范围改为10%
-    "测试-stage_range_match-10": {
+    "用例-Stage误差范围10%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -291,7 +291,7 @@ TEST_CASES = {
     },
     # ========== 测试 MarketingFunnel 相关字段 ==========
     # 用例6：MarketingFunnel匹配类型改为大小关系匹配
-    "测试-marketingfunnel_match_type-大小关系匹配": {
+    "用例-MarketingFunnel匹配类型大小关系匹配": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -316,7 +316,7 @@ TEST_CASES = {
         ],
     },
     # 用例7：MarketingFunnel误差范围改为10%
-    "测试-marketingfunnel_range_match-10": {
+    "用例-MarketingFunnel误差范围10%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -342,7 +342,7 @@ TEST_CASES = {
     },
     # ========== 测试 Media 相关字段 ==========
     # 用例8：Media匹配类型改为大小关系匹配
-    "测试-media_match_type-大小关系匹配": {
+    "用例-Media匹配类型大小关系匹配": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -367,7 +367,7 @@ TEST_CASES = {
         ],
     },
     # 用例9：Media误差范围改为10%
-    "测试-media_range_match-10": {
+    "用例-Media误差范围10%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -393,7 +393,7 @@ TEST_CASES = {
     },
     # ========== 测试 allow_zero_budget ==========
     # 用例10：允许0预算
-    "测试-allow_zero_budget-True": {
+    "用例-允许0预算": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -419,7 +419,7 @@ TEST_CASES = {
     },
     # ========== 测试 mediaMarketingFunnelFormat 相关字段 ==========
     # 用例11：mediaMarketingFunnelFormat必须达成
-    "测试-mediaMarketingFunnelFormat_must_achieve-True": {
+    "用例-AdformatKPI必须达成": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -444,7 +444,7 @@ TEST_CASES = {
         ],
     },
     # 用例12：mediaMarketingFunnelFormat目标达成率改为90%
-    "测试-mediaMarketingFunnelFormat_target_rate-90": {
+    "用例-AdformatKPI目标达成率90%": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -470,7 +470,7 @@ TEST_CASES = {
     },
     # ========== 测试 module_priority_list ==========
     # 用例15：模块优先级改为media第一
-    "测试-module_priority_list-media第一": {
+    "用例-模块优先级Media优先": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -495,7 +495,7 @@ TEST_CASES = {
         ],
     },
     # 用例16：模块优先级改为stage第一
-    "测试-module_priority_list-stage第一": {
+    "用例-模块优先级Stage优先": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -520,7 +520,7 @@ TEST_CASES = {
         ],
     },
     # 用例17：模块优先级改为mediaMarketingFunnelFormatBudgetConfig第一
-    "测试-module_priority_list-mediaMarketingFunnelFormatBudgetConfig第一": {
+    "用例-模块优先级AdformatBudget优先": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -546,7 +546,7 @@ TEST_CASES = {
     },
     # ========== 组合测试用例 ==========
     # 用例18：所有匹配类型都改为大小关系匹配
-    "组合测试-所有匹配类型-大小关系匹配": {
+    "组合用例-所有匹配类型-大小关系匹配": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 80,
@@ -571,7 +571,7 @@ TEST_CASES = {
         ],
     },
     # 用例19：所有must_achieve都设为True
-    "组合测试-所有must_achieve-True": {
+    "组合用例-所有must_achieve-True": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": True,  # 改变
         "kpi_target_rate": 80,
@@ -596,7 +596,7 @@ TEST_CASES = {
         ],
     },
     # 用例20：所有target_rate都设为90%
-    "组合测试-所有target_rate-90": {
+    "组合用例-所有target_rate-90": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 90,  # 改变
@@ -621,7 +621,7 @@ TEST_CASES = {
         ],
     },
     # 用例21：严格模式：所有must_achieve=True，所有target_rate=90%，所有误差范围=5%
-    "组合测试-严格模式": {
+    "组合用例-严格模式": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": True,  # 改变
         "kpi_target_rate": 90,  # 改变
@@ -646,7 +646,7 @@ TEST_CASES = {
         ],
     },
     # 用例22：宽松模式：所有must_achieve=False，所有target_rate=70%，所有误差范围=20%
-    "组合测试-宽松模式": {
+    "组合用例-宽松模式": {
         "kpi_priority_list": ["Impression", "VideoViews", "Engagement", "Clicks"],
         "kpi_must_achieve": False,
         "kpi_target_rate": 70,  # 改变

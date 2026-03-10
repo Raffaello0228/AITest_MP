@@ -17,6 +17,19 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 
+# 被 batch_check_and_report 等以子进程调用时，需将项目根目录加入 path，才能正确 import core
+_project_root = Path(__file__).resolve().parent.parent
+if _project_root not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
+from core.config.version_config import (
+    get_algo_version,
+    resolve_achievement_json_dir,
+    resolve_achievement_reports_dir,
+    infer_algo_version_from_result_path,
+    infer_variant_from_result_path,
+)
+
 
 def load_json(filepath: Path) -> Any:
     """加载JSON文件"""
@@ -1716,6 +1729,12 @@ def main():
         default=None,
         help="输出文件路径（可选）",
     )
+    parser.add_argument(
+        "--algo-version",
+        type=str,
+        default=None,
+        help="算法版本标识，与 results/<algo_version>/ 对应。不指定时从 result-file 路径推断或使用配置默认（如 latest）",
+    )
 
     args = parser.parse_args()
 
@@ -1811,22 +1830,20 @@ def main():
             output_base.parent.mkdir(parents=True, exist_ok=True)
             output_file = output_base
     else:
-        # 默认输出到 output/{common|xiaomi}/achievement_checks/json/ 目录
-        # 根据结果文件路径判断是 common 还是 xiaomi
-        result_parent = result_file.parent
-        if result_parent.name == "results":
-            # 新结构：output/common/results 或 output/xiaomi/results
-            output_base = result_parent.parent  # output/common 或 output/xiaomi
-        elif result_parent.name == "batch_query_results":
-            # 旧结构兼容
-            output_base = result_parent.parent
-        else:
-            output_base = result_parent
-
-        achievement_checks_dir = output_base / "achievement_checks"
-        json_dir = achievement_checks_dir / "json"
+        # 默认输出到 output/{common|xiaomi}/achievement_checks/json/<algo_version>/
+        project_root = result_file.resolve()
+        for _ in range(10):
+            if project_root.name == "output" or (project_root.parent / "output").exists():
+                break
+            project_root = project_root.parent
+        if "output" not in str(project_root):
+            project_root = Path(__file__).resolve().parent.parent
+        variant = infer_variant_from_result_path(result_file)
+        algo_version = infer_algo_version_from_result_path(result_file)
+        if algo_version is None:
+            algo_version = get_algo_version(args.algo_version)
+        json_dir = resolve_achievement_json_dir(project_root, variant=variant, algo_version=algo_version)
         json_dir.mkdir(parents=True, exist_ok=True)
-        # 构建文件名，如果存在 job_id 则包含在文件名中
         base_name = result_file.stem.replace("mp_result_", "")
         if job_id:
             output_file = json_dir / f"{base_name}_{job_id}_achievement_check.json"
@@ -1839,17 +1856,18 @@ def main():
 
     # 自动生成测试报告
     try:
-        # 从 core 模块导入（使用通用报告生成器，支持 xiaomi 结构）
-        from core.generate_test_report import (
+        from core.report.generator import (
             generate_markdown_report,
             generate_html_report,
         )
 
-        # 报告文件输出到 achievement_checks/reports/ 目录
-        achievement_checks_dir = output_file.parent.parent
-        reports_dir = achievement_checks_dir / "reports"
+        if args.output:
+            reports_dir = output_file.parent.parent / "reports"
+        else:
+            reports_dir = resolve_achievement_reports_dir(
+                project_root, variant=variant, algo_version=algo_version
+            )
         reports_dir.mkdir(parents=True, exist_ok=True)
-
         md_path = reports_dir / f"{output_file.stem}.md"
         html_path = reports_dir / f"{output_file.stem}.html"
         generate_markdown_report(results, md_path)

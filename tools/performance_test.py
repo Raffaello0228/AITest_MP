@@ -19,8 +19,8 @@ from typing import List, Optional, Dict, Any
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from core.performance_tester import PerformanceTester
-from core.api_config import get_api_config, get_strategy_config, StrategyConfig
+from core.performance import PerformanceTester
+from core.config import get_api_config, get_strategy_config, StrategyConfig
 
 
 def load_request_bodies_from_dir(directory: Path) -> Optional[List[Dict[str, Any]]]:

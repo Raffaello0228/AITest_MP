@@ -27,7 +27,7 @@ from core import (
     reorder_priorities,
     safe_sum,
 )
-from core.data_loader import load_data_xiaomi
+from core.data import load_data_xiaomi
 
 # 为了保持代码兼容性，创建别名
 load_data = load_data_xiaomi
@@ -364,53 +364,166 @@ def build_country_media(country_df: pd.DataFrame) -> list[dict]:
 
 def build_country_stage(country_df: pd.DataFrame) -> list[dict]:
     """
-    使用 month_ 作为 stage 维度：
-    - 每个国家按 month_ 分组
-    - 每个 month_ 生成一个阶段
+    使用 month_ 或 stage 作为 stage 维度：
+    - 每个国家按 month_ 或 stage 分组
+    - 每个阶段生成一个 stage 对象
+    - 从数据中提取 dates、marketingFunnel 和 mediaPlatform
     """
-    # 如果没有 month_ 列，则退化为单一汇总阶段
-    if "month_" not in country_df.columns:
-        total = float(country_df["spend"].sum())
-        if total <= 0:
-            return []
-        return [
-            {
-                "name": "All",
-                "budgetPercentage": 100.0,  # 预算比例保留2位小数
-                "budgetAmount": int(round(total)),  # 预算金额保留整数
-                "dates": None,
-                "marketingFunnel": None,
-                "mediaPlatform": None,
-            }
-        ]
+    from datetime import datetime
 
-    # 过滤掉无效 month_
+    # 如果没有 month_ 列，使用 stage 列
+    if "month_" not in country_df.columns:
+        if "stage" not in country_df.columns:
+            # 既没有 month_ 也没有 stage，退化为单一汇总阶段
+            total = float(country_df["spend"].sum())
+            if total <= 0:
+                return []
+            return [
+                {
+                    "name": "All",
+                    "budgetPercentage": 100.0,
+                    "budgetAmount": int(round(total)),
+                    "dates": None,
+                    "marketingFunnel": None,
+                    "mediaPlatform": None,
+                }
+            ]
+        # 使用 stage 作为分组键
+        group_key = "stage"
+    else:
+        group_key = "month_"
+
+    # 过滤掉无效值
     df = country_df.copy()
-    df["month_"] = df["month_"].astype(str).str.strip()
-    df = df[df["month_"] != ""]
+    df[group_key] = df[group_key].astype(str).str.strip()
+    df = df[df[group_key] != ""]
 
     total = float(df["spend"].sum())
     if total <= 0:
         return []
 
     stages: list[dict] = []
-    for month, g in df.groupby("month_"):
+    for stage_name, g in df.groupby(group_key):
         budget = float(g["spend"].sum())
         if budget <= 0:
             continue
         pct = budget / total * 100 if total > 0 else 0.0
+
+        # 提取 dates（从 start_date 和 end_date）
+        dates = None
+        if "start_date" in g.columns and "end_date" in g.columns:
+            # 获取该 stage 下的所有日期范围
+            start_dates = g["start_date"].dropna().astype(str).str.strip()
+            end_dates = g["end_date"].dropna().astype(str).str.strip()
+
+            if not start_dates.empty and not end_dates.empty:
+                # 找到最早的开始日期和最晚的结束日期
+                valid_starts = []
+                valid_ends = []
+
+                for start_str, end_str in zip(start_dates, end_dates):
+                    if (
+                        start_str
+                        and end_str
+                        and start_str != "nan"
+                        and end_str != "nan"
+                    ):
+                        try:
+                            # 处理多种日期格式：2025/9/24, 2025/09/24, 2025-09-24 等
+                            def parse_date(date_str):
+                                """解析日期字符串，支持多种格式"""
+                                # 先尝试标准格式
+                                formats = [
+                                    "%Y/%m/%d",  # 2025/09/24
+                                    "%Y-%m-%d",  # 2025-09-24
+                                ]
+                                for fmt in formats:
+                                    try:
+                                        return datetime.strptime(date_str, fmt)
+                                    except ValueError:
+                                        continue
+
+                                # 如果标准格式失败，手动解析（处理没有前导零的情况）
+                                # 处理 2025/9/24 格式
+                                if "/" in date_str:
+                                    parts = date_str.split("/")
+                                    if len(parts) == 3:
+                                        try:
+                                            year = int(parts[0])
+                                            month = int(parts[1])
+                                            day = int(parts[2])
+                                            return datetime(year, month, day)
+                                        except (ValueError, IndexError):
+                                            pass
+
+                                # 处理 2025-9-24 格式
+                                if "-" in date_str:
+                                    parts = date_str.split("-")
+                                    if len(parts) == 3:
+                                        try:
+                                            year = int(parts[0])
+                                            month = int(parts[1])
+                                            day = int(parts[2])
+                                            return datetime(year, month, day)
+                                        except (ValueError, IndexError):
+                                            pass
+
+                                raise ValueError(f"无法解析日期: {date_str}")
+
+                            start_dt = parse_date(start_str)
+                            end_dt = parse_date(end_str)
+                            valid_starts.append(start_dt)
+                            valid_ends.append(end_dt)
+                        except Exception:
+                            continue
+
+                if valid_starts and valid_ends:
+                    min_start = min(valid_starts)
+                    max_end = max(valid_ends)
+                    dates = [
+                        min_start.strftime("%Y-%m-%d"),
+                        max_end.strftime("%Y-%m-%d"),
+                    ]
+
+        # 提取 marketingFunnel（从 Funnel_final）
+        marketing_funnels = None
+        if "Funnel_final" in g.columns:
+            funnels = (
+                g["Funnel_final"].dropna().astype(str).str.strip().unique().tolist()
+            )
+            funnels = [f for f in funnels if f and f != "nan"]
+            if funnels:
+                marketing_funnels = sorted(list(set(funnels)))
+
+        # 提取 mediaPlatform（从 Media_final 和 Platform_final 的组合）
+        media_platforms = None
+        if "Media_final" in g.columns and "Platform_final" in g.columns:
+            # 获取所有 (Media, Platform) 组合
+            platform_combos = set()
+            for _, row in g.iterrows():
+                media = str(row.get("Media_final", "")).strip()
+                platform = str(row.get("Platform_final", "")).strip()
+                if media and platform and media != "nan" and platform != "nan":
+                    platform_combos.add((media, platform))
+
+            if platform_combos:
+                # 转换为二维数组格式：[[Media, Platform], ...]
+                media_platforms = sorted(
+                    [[media, platform] for media, platform in platform_combos]
+                )
+
         stages.append(
             {
-                "name": month,  # 直接用 month_ 作为阶段名，例如 "202503"
-                "budgetPercentage": round(pct, 2),  # 预算比例保留2位小数
-                "budgetAmount": int(round(budget)),  # 预算金额保留整数
-                "dates": None,
-                "marketingFunnel": None,
-                "mediaPlatform": None,
+                "name": stage_name,
+                "budgetPercentage": round(pct, 2),
+                "budgetAmount": int(round(budget)),
+                "dates": dates,
+                "marketingFunnel": marketing_funnels,
+                "mediaPlatform": media_platforms,
             }
         )
 
-    # 按时间排序（字符串排序即可，因为是 YYYYMM）
+    # 按时间排序（如果是 month_ 格式，字符串排序即可；否则按名称排序）
     stages.sort(key=lambda x: x["name"])
     return stages
 
@@ -857,17 +970,24 @@ def convert(
     test_case_id: str | None = None,  # 测试用例编号或名称
     use_testcase_template: bool = False,  # 是否使用测试用例模板
     testcase_template_path: str = "testcase_templatex_xiaomi.py",  # 测试用例模板路径
+    sheet_name: (
+        str | None
+    ) = None,  # xlsx 文件的 sheet 名称（如果 data_path 是 xlsx 文件）
 ) -> dict:
     """
-    主入口：将 data_xiaomi.csv 转成符合新版本 format.json 结构的 JSON。
+    主入口：将数据文件（CSV 或 xlsx）转成符合新版本 format.json 结构的 JSON。
 
     Args:
-        data_path: 数据CSV文件路径
+        data_path: 数据文件路径（CSV 或 xlsx）
         template_path: 模板JSON文件路径
         output_path: 输出JSON文件路径
         max_regions: 最大区域数量限制
         country_path: 国家字典路径
         adformat_path: 广告格式字典路径
+        test_case_id: 测试用例编号或名称
+        use_testcase_template: 是否使用测试用例模板
+        testcase_template_path: 测试用例模板文件路径
+        sheet_name: xlsx 文件的 sheet 名称（如果 data_path 是 xlsx 文件，且需要读取指定 sheet）
 
     Returns:
         生成的JSON数据字典
@@ -890,7 +1010,16 @@ def convert(
         if adformat_path:
             adformat_df = load_adformat_dict(adformat_path)
 
-        data_df = load_data(data_path)
+        # 判断文件类型并读取数据
+        data_path_obj = Path(data_path)
+        if data_path_obj.suffix.lower() in [".xlsx", ".xls"]:
+            # 读取 xlsx 文件
+            if sheet_name is None:
+                raise ValueError(f"xlsx 文件需要指定 sheet_name 参数")
+            data_df = _load_data_from_xlsx_sheet(data_path, sheet_name)
+        else:
+            # 读取 CSV 文件
+            data_df = load_data(data_path)
 
         # 创建空的 map_df（Marketing Funnel 将从 Objective 推断）
         map_df = pd.DataFrame()
@@ -958,32 +1087,150 @@ def convert(
         raise
 
 
-def batch_generate(
+def _load_data_from_xlsx_sheet(xlsx_path: str, sheet_name: str) -> pd.DataFrame:
+    """
+    从 xlsx 文件的指定 sheet 读取数据。
+
+    Args:
+        xlsx_path: xlsx 文件路径
+        sheet_name: sheet 名称
+
+    Returns:
+        DataFrame，格式与 load_data_xiaomi 返回的格式相同
+    """
+    try:
+        # 读取指定 sheet
+        df = pd.read_excel(xlsx_path, sheet_name=sheet_name, engine="openpyxl")
+
+        # 统一列名（去掉前后空格，处理换行符）
+        df.columns = [
+            c.strip().replace("\n", " ").replace("\r", "") for c in df.columns
+        ]
+
+        # 将 \N 等视为缺失
+        with warnings.catch_warnings():
+            warnings.filterwarnings(
+                "ignore", category=FutureWarning, message=".*Downcasting behavior.*"
+            )
+            df = df.replace({"\\N": np.nan, "-": np.nan, "": np.nan})
+        df = df.infer_objects(copy=False)
+
+        # 映射字段名（与 load_data_xiaomi 保持一致）
+        df = df.rename(
+            columns={
+                "Country": "country_code",
+                "Ad format": "ad_type",
+                "Media Channel": "media_channel",
+                "Stage": "stage",
+                "Objective": "objective",
+                "Creative": "creative",
+                "Start date": "start_date",
+                "End date": "end_date",
+            }
+        )
+
+        # 处理日期字段（xlsx 中的日期可能是 datetime 类型，需要转换为字符串）
+        if "start_date" in df.columns:
+            df["start_date"] = df["start_date"].apply(
+                lambda x: (
+                    x.strftime("%Y/%m/%d")
+                    if pd.notna(x) and isinstance(x, pd.Timestamp)
+                    else str(x) if pd.notna(x) else None
+                )
+            )
+        if "end_date" in df.columns:
+            df["end_date"] = df["end_date"].apply(
+                lambda x: (
+                    x.strftime("%Y/%m/%d")
+                    if pd.notna(x) and isinstance(x, pd.Timestamp)
+                    else str(x) if pd.notna(x) else None
+                )
+            )
+
+        # 处理 Budget 字段
+        if "Budget" in df.columns:
+            df["spend"] = (
+                df["Budget"]
+                .astype(str)
+                .str.replace("$", "")
+                .str.replace(",", "")
+                .str.strip()
+            )
+            df["spend"] = pd.to_numeric(df["spend"], errors="coerce").fillna(0.0)
+        else:
+            df["spend"] = 0.0
+
+        # 处理 KPI 字段
+        kpi_mapping = {
+            "Estimated Impressions": "impressions",
+            "Estimated Views": "video_views",
+            "Estimated Engagements": "engagements",
+            "Estimated Clicks": "clicks",
+        }
+
+        for old_col, new_col in kpi_mapping.items():
+            if old_col in df.columns:
+                df[new_col] = df[old_col].astype(str).str.replace(",", "").str.strip()
+                df[new_col] = pd.to_numeric(df[new_col], errors="coerce").fillna(0.0)
+            else:
+                df[new_col] = 0.0
+
+        # 其他 KPI 字段设为 0
+        for col in ["link_clicks", "likes", "purchases", "leads", "follows"]:
+            if col not in df.columns:
+                df[col] = 0.0
+
+        # 如果没有 month_ 字段，使用 stage 作为阶段标识
+        if "month_" not in df.columns:
+            df["month_"] = df.get("stage", "").astype(str)
+
+        # 确保 Media 字段存在
+        if "Media" in df.columns:
+            df["Media"] = df["Media"].astype(str).str.strip()
+
+        return df
+    except Exception as e:
+        print(f"错误：读取 xlsx sheet '{sheet_name}' 失败: {e}")
+        raise
+
+
+def generate(
     data_path: str = "data_xiaomi.csv",
     template_path: str = "format.json",
-    output_dir: str = "output/xiaomi/requests",
+    output_path: str = "output/xiaomi/requests",
     max_regions: int | None = None,
     country_path: str = None,
     adformat_path: str = None,
+    use_testcase_template: bool = True,
     testcase_template_path: str = "testcase_templatex_xiaomi.py",
+    sheet_name: str | None = None,
     test_case_ids: list[str] | None = None,
 ) -> list[dict]:
     """
-    批量生成多个测试用例的JSON文件。
+    统一的生成入口，简化逻辑：
+    - 根据 data_path 区分 xlsx 和 csv
+    - sheet_name 可以指定单独解析某个 sheet（仅 xlsx）
+    - 每个数据源生成全量测试用例（除非 test_case_ids 指定）
 
     Args:
-        data_path: 数据CSV文件路径
+        data_path: 数据文件路径（CSV 或 xlsx）
         template_path: 模板JSON文件路径
-        output_dir: 输出目录
+        output_path: 输出目录路径
         max_regions: 最大区域数量限制
         country_path: 国家字典路径
         adformat_path: 广告格式字典路径
-        testcase_template_path: testcase_templatex_xiaomi.py 文件路径
-        test_case_ids: 要生成的测试用例名称列表，如果为None则生成所有用例
+        use_testcase_template: 是否使用测试用例模板
+        testcase_template_path: 测试用例模板文件路径
+        sheet_name: xlsx 文件的 sheet 名称（如果指定，则只处理该 sheet；None 表示处理所有 sheet）
+        test_case_ids: 要生成的测试用例名称列表（None 表示生成所有用例）
 
     Returns:
         生成的JSON数据字典列表
     """
+    data_path_obj = Path(data_path)
+    output_path_obj = Path(output_path)
+    is_xlsx = data_path_obj.suffix.lower() in [".xlsx", ".xls"]
+
     # 加载测试用例模板
     test_cases = load_testcase_template(testcase_template_path)
     if test_cases is None:
@@ -994,38 +1241,85 @@ def batch_generate(
         test_case_ids = sorted(test_cases.keys())
 
     # 创建输出目录
-    output_path = Path(output_dir)
-    output_path.mkdir(parents=True, exist_ok=True)
+    output_dir = output_path_obj
+    output_dir.mkdir(parents=True, exist_ok=True)
 
+    # 确定要处理的数据源列表
+    data_sources = []  # [(data_path, sheet_name, display_name), ...]
+
+    if is_xlsx:
+        # xlsx 文件：根据 sheet_name 决定处理哪些 sheet
+        if sheet_name:
+            # 只处理指定的 sheet
+            data_sources.append((data_path, sheet_name, sheet_name))
+        else:
+            # 处理所有 sheet
+            xlsx_file = pd.ExcelFile(data_path, engine="openpyxl")
+            sheet_names = xlsx_file.sheet_names
+            xlsx_file.close()
+
+            if not sheet_names:
+                print(f"警告：xlsx 文件 {data_path} 中没有找到任何 sheet")
+                return []
+
+            print(f"找到 {len(sheet_names)} 个 sheet: {sheet_names}")
+            for sn in sheet_names:
+                data_sources.append((data_path, sn, sn))
+    else:
+        # CSV 文件：只有一个数据源
+        data_sources.append((data_path, None, Path(data_path).stem))
+
+    # 生成所有组合（数据源 × 测试用例）
     results = []
-    for case_id in test_case_ids:
-        if case_id not in test_cases:
-            print(f"警告：跳过不存在的测试用例 {case_id}")
-            continue
+    for data_path_item, sheet_name_item, display_name in data_sources:
+        print(f"\n处理数据源: {display_name}")
 
-        print(f"正在生成测试用例 {case_id}...")
-        # 使用用例名称作为文件名（替换特殊字符）
-        safe_filename = case_id.replace("/", "_").replace("\\", "_").replace(":", "_")
-        output_file = output_path / f"brief_case_{safe_filename}.json"
+        for case_id in test_case_ids:
+            if case_id not in test_cases:
+                print(f"警告：跳过不存在的测试用例 {case_id}")
+                continue
 
-        try:
-            result = convert(
-                data_path=data_path,
-                template_path=template_path,
-                output_path=str(output_file),
-                max_regions=max_regions,
-                country_path=country_path,
-                adformat_path=adformat_path,
-                test_case_id=case_id,
-                use_testcase_template=True,
-                testcase_template_path=testcase_template_path,
+            print(f"  正在生成测试用例 {case_id}...")
+
+            # 生成输出文件名
+            safe_display_name = (
+                display_name.replace("/", "_")
+                .replace("\\", "_")
+                .replace(":", "_")
+                .replace("*", "_")
+                .replace("?", "_")
+                .replace('"', "_")
+                .replace("<", "_")
+                .replace(">", "_")
+                .replace("|", "_")
             )
-            results.append(result)
-            print(f"[OK] 已生成测试用例 {case_id}: {output_file}")
-        except Exception as e:
-            print(f"✗ 生成测试用例 {case_id} 失败: {e}")
-            print(f"详细错误信息:")
-            traceback.print_exc()
+            safe_case_name = (
+                case_id.replace("/", "_").replace("\\", "_").replace(":", "_")
+            )
+            output_file = (
+                output_dir / f"brief_case_{safe_display_name}_{safe_case_name}.json"
+            )
+
+            try:
+                result = convert(
+                    data_path=data_path_item,
+                    template_path=template_path,
+                    output_path=str(output_file),
+                    max_regions=max_regions,
+                    country_path=country_path,
+                    adformat_path=adformat_path,
+                    test_case_id=case_id,
+                    use_testcase_template=use_testcase_template,
+                    testcase_template_path=testcase_template_path,
+                    sheet_name=sheet_name_item,
+                )
+                results.append(result)
+                print(f"  [OK] 已生成: {output_file}")
+            except Exception as e:
+                print(f"  ✗ 生成失败: {e}")
+                print(f"  详细错误信息:")
+                traceback.print_exc()
+                continue
 
     print(f"\n批量生成完成，共生成 {len(results)} 个文件")
     return results
@@ -1036,44 +1330,29 @@ if __name__ == "__main__":
 
     # 解析命令行参数
     max_regions = 1
-    data_path = "data_xiaomi.csv"  # 默认使用新格式数据文件
-    template_path = "format.json"
-    output_path = "cases/brief_from_data_v2.json"
+    data_path = "doc/case/data.csv"  # 默认使用新格式数据文件
+    template_path = "brief_templete_xiaomi.json"
     output_dir = "output/xiaomi/requests"
     country_path = "doc/xiaomi/country.csv"
     adformat_path = "doc/xiaomi/adformat.csv"
-    test_case_id = None
+    # test_case_ids = ["基准用例-完全匹配默认配置"]  # none 表示生成所有用例
+    test_case_ids = None
     use_testcase_template = True
     testcase_template_path = "testcase_templatex_xiaomi.py"
-    batch_mode = True
 
     try:
-        if batch_mode:
-            # 批量生成所有测试用例
-            batch_generate(
-                data_path=data_path,
-                template_path=template_path,
-                output_dir=output_dir,
-                max_regions=max_regions,
-                country_path=country_path,
-                adformat_path=adformat_path,
-                testcase_template_path=testcase_template_path,
-                test_case_ids=None,  # None 表示生成所有用例
-            )
-        else:
-            # 单个生成
-            convert(
-                data_path=data_path,
-                template_path=template_path,
-                output_path=output_path,
-                max_regions=max_regions,
-                country_path=country_path,
-                adformat_path=adformat_path,
-                test_case_id=test_case_id,
-                use_testcase_template=use_testcase_template,
-                testcase_template_path=testcase_template_path,
-            )
-            print("转换完成！")
+        generate(
+            data_path=data_path,
+            template_path=template_path,
+            output_path=output_dir,
+            max_regions=max_regions,
+            country_path=country_path,
+            adformat_path=adformat_path,
+            test_case_ids=test_case_ids,
+            testcase_template_path=testcase_template_path,
+            use_testcase_template=True,
+        )
+        print("转换完成！")
     except Exception as e:
         print(f"转换失败: {e}")
         print("\n详细错误堆栈:")
