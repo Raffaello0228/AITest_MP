@@ -1,0 +1,3267 @@
+{
+  "success": true,
+  "status": 201,
+  "ms": 175,
+  "data": {
+    "message": "success",
+    "code": 0,
+    "result": {
+      "briefInfo": {
+        "basicInfo": {
+          "isHistoryMp": 0,
+          "kpiInfo": [
+            {
+              "key": "Impression",
+              "val": "2006293250",
+              "priority": 1,
+              "completion": 1
+            },
+            {
+              "key": "Clicks",
+              "val": "50541208",
+              "priority": 2,
+              "completion": 1
+            },
+            {
+              "key": "VideoViews",
+              "val": "0",
+              "priority": 3,
+              "completion": 0
+            }
+          ],
+          "kpiInfoBudgetConfig": {
+            "rangeMatch": 95
+          },
+          "dimension": [
+            "corporation",
+            "category",
+            "ai"
+          ],
+          "usedHistoryMp": 0,
+          "moduleConfig": [
+            {
+              "moduleName": "kpiInfo",
+              "priority": 1
+            },
+            {
+              "moduleName": "media",
+              "priority": 2
+            },
+            {
+              "moduleName": "marketingFunnel",
+              "priority": 999
+            },
+            {
+              "moduleName": "stage",
+              "priority": 4
+            },
+            {
+              "moduleName": "mediaMarketingFunnelFormat",
+              "priority": 5
+            },
+            {
+              "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+              "priority": 6
+            }
+          ],
+          "mediaPlanName": "小米-台湾_副本_副本_副本",
+          "corporationId": "18581",
+          "projectName": "P1P3",
+          "productName": "Xiaomi 17 Ultra / Xiaomi 17",
+          "brandName": "Mi",
+          "briefCode": "B26001",
+          "currency": "USD",
+          "totalBudget": 6000000,
+          "regionBudget": [
+            {
+              "countryInfo": {
+                "countryCode": "SG",
+                "countryNameCN": "新加坡",
+                "countryNameEn": "Singapore",
+                "regionCode": "SEA",
+                "regionNameCN": "东南亚",
+                "mpCode": "SG"
+              },
+              "kpiInfo": []
+            }
+          ],
+          "corporationName": "北京小米移动软件有限公司",
+          "accountId": "8568157388,643767694507793,7440499749315988",
+          "categoryLevel1Id": "7",
+          "categoryLevel2Id": "7003",
+          "categoryLevel3Id": "7003001",
+          "campaignId": null,
+          "uuid": "87735e6c-f58c-498b-a46a-c84b340a",
+          "usedModified": 0,
+          "parentBriefId": "de65015b-d49c-4cbb-a4f1-b1f99021",
+          "jobId": "1774606920_1_de137103",
+          "isModified": 0
+        },
+        "briefMultiConfig": [
+          {
+            "stage": [
+              {
+                "name": "PREHEAT FOR LOCAL LAUNCH",
+                "budgetPercentage": 20,
+                "budgetAmount": 1200000,
+                "dates": [
+                  "20260223",
+                  "20260306"
+                ],
+                "marketingFunnel": null,
+                "mediaPlatform": null
+              },
+              {
+                "name": "OPEN SALE",
+                "budgetPercentage": 50,
+                "budgetAmount": 3000000,
+                "dates": [
+                  "20260306",
+                  "20260323"
+                ],
+                "marketingFunnel": null,
+                "mediaPlatform": null
+              },
+              {
+                "name": "SUSTAIN",
+                "budgetPercentage": 30,
+                "budgetAmount": 1800000,
+                "dates": [
+                  "20260325",
+                  "20260531"
+                ],
+                "marketingFunnel": null,
+                "mediaPlatform": null
+              }
+            ],
+            "marketingFunnel": [
+              {
+                "name": "Awareness",
+                "budgetPercentage": 3.74,
+                "budgetAmount": 224400
+              },
+              {
+                "name": "Traffic",
+                "budgetPercentage": 96.26,
+                "budgetAmount": 5775600
+              }
+            ],
+            "mediaMarketingFunnelFormat": [
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Awareness",
+                    "funnelNameKey": "Awareness",
+                    "adFormat": []
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "funnelNameKey": "Traffic",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "平均值"
+                ],
+                "mediaName": "Meta",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Traffic",
+                    "adFormatName": "Image&Video Link Ads",
+                    "creative": "Image&Video",
+                    "adFormatTotalBudget": 1800000,
+                    "completion": 1,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "985842208",
+                        "priority": 1,
+                        "completion": 1
+                      },
+                      {
+                        "key": "Clicks",
+                        "val": "15384615",
+                        "priority": 2,
+                        "completion": 1
+                      },
+                      {
+                        "key": "VideoViews",
+                        "val": "0",
+                        "priority": 3,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Awareness",
+                    "funnelNameKey": "Awareness",
+                    "adFormat": []
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "funnelNameKey": "Traffic",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "GG"
+                ],
+                "mediaName": "Google",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Traffic",
+                    "adFormatName": "Search",
+                    "creative": "Text",
+                    "adFormatTotalBudget": 2400000,
+                    "completion": 1,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "0",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Clicks",
+                        "val": "0",
+                        "priority": 2,
+                        "completion": 0
+                      },
+                      {
+                        "key": "VideoViews",
+                        "val": "0",
+                        "priority": 3,
+                        "completion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "adFormatName": "Demand Gen",
+                    "creative": "Image",
+                    "adFormatTotalBudget": 720000,
+                    "completion": 1,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "915261822",
+                        "priority": 1,
+                        "completion": 1
+                      },
+                      {
+                        "key": "Clicks",
+                        "val": "32148572",
+                        "priority": 2,
+                        "completion": 1
+                      },
+                      {
+                        "key": "VideoViews",
+                        "val": "0",
+                        "priority": 3,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Awareness",
+                    "funnelNameKey": "Awareness",
+                    "adFormat": []
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "funnelNameKey": "Traffic",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "YTB"
+                ],
+                "mediaName": "Google",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Awareness",
+                    "adFormatName": "VRC 2.0",
+                    "creative": "Video",
+                    "adFormatTotalBudget": 1080000,
+                    "completion": 1,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "24937491",
+                        "priority": 1,
+                        "completion": 1
+                      },
+                      {
+                        "key": "Clicks",
+                        "val": "986374",
+                        "priority": 2,
+                        "completion": 1
+                      },
+                      {
+                        "key": "VideoViews",
+                        "val": "0",
+                        "priority": 3,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "name": "Meta",
+                "budgetPercentage": 40,
+                "budgetAmount": 2400000,
+                "children": [
+                  {
+                    "name": "平均值",
+                    "budgetPercentage": 40,
+                    "budgetAmount": 2400000
+                  }
+                ]
+              },
+              {
+                "name": "Google",
+                "budgetPercentage": 60,
+                "budgetAmount": 3600000,
+                "children": [
+                  {
+                    "name": "GG",
+                    "budgetPercentage": 52,
+                    "budgetAmount": 3120000
+                  },
+                  {
+                    "name": "YTB",
+                    "budgetPercentage": 8,
+                    "budgetAmount": 480000
+                  }
+                ]
+              }
+            ],
+            "stageBudgetConfig": {
+              "consistentMatch": 1,
+              "rangeMatch": 20,
+              "priority": 4
+            },
+            "marketingFunnelBudgetConfig": {
+              "consistentMatch": 0,
+              "priority": 999
+            },
+            "mediaBudgetConfig": {
+              "consistentMatch": 1,
+              "rangeMatch": 5,
+              "priority": 2
+            },
+            "mediaMarketingFunnelFormatBudgetConfig": {
+              "precision": 2,
+              "totalBudgetFlexibility": 95,
+              "kpiFlexibility": 95,
+              "priority": 5
+            },
+            "moduleConfig": [
+              {
+                "moduleName": "kpiInfo",
+                "priority": 1
+              },
+              {
+                "moduleName": "media",
+                "priority": 2
+              },
+              {
+                "moduleName": "marketingFunnel",
+                "priority": 999
+              },
+              {
+                "moduleName": "stage",
+                "priority": 4
+              },
+              {
+                "moduleName": "mediaMarketingFunnelFormat",
+                "priority": 5
+              },
+              {
+                "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+                "priority": 6
+              }
+            ],
+            "jobId": "1774606920_1_de137103",
+            "countryInfo": {
+              "countryCode": "SG",
+              "countryNameCN": "新加坡",
+              "countryNameEn": "Singapore",
+              "regionCode": "SEA",
+              "regionNameCN": "东南亚",
+              "mpCode": "SG"
+            },
+            "warn": []
+          }
+        ]
+      },
+      "dimensionMultiCountryResult": {
+        "SEA_SG": {
+          "ai": [
+            {
+              "estCPM": {
+                "value": "2.8090",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.18",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "309519883",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "4830230",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.56%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12049",
+              "uid": "12049",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Meta",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "平均值",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "33.54%",
+              "totalBudget": 904219,
+              "adBudget": 869441.35,
+              "serviceFee": 34777.65,
+              "dstFee": 0,
+              "dailyBudget": 72453.45,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "2.8090",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.18",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "457768298",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "7143729",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.56%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12050",
+              "uid": "12050",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Meta",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "平均值",
+              "stage": "OPEN SALE",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "49.60%",
+              "totalBudget": 1337306,
+              "adBudget": 1285871.15,
+              "serviceFee": 51434.85,
+              "dstFee": 0,
+              "dailyBudget": 71437.29,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "2.8090",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.18",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "155592257",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "2428104",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.56%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12051",
+              "uid": "12051",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Meta",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "平均值",
+              "stage": "SUSTAIN",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "16.86%",
+              "totalBudget": 454541,
+              "adBudget": 437058.65,
+              "serviceFee": 17482.35,
+              "dstFee": 0,
+              "dailyBudget": 6427.33,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "922880438",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "14402063",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Meta-TTL:",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 2696066,
+              "adBudget": 2592371.15,
+              "serviceFee": 103694.85,
+              "dstFee": 0,
+              "dailyBudget": 150318.07,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": {
+                "value": "4.2150",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.12",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "147753713",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "5189849",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.51%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12040",
+              "uid": "12040",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "19.79%",
+              "totalBudget": 653921,
+              "adBudget": 622781.9,
+              "serviceFee": 31139.1,
+              "dstFee": 0,
+              "dailyBudget": 51898.49,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "51.1150",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.52",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "399734",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "39293",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "9.83%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12043",
+              "uid": "12043",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "0.65%",
+              "totalBudget": 21454,
+              "adBudget": 20432.38,
+              "serviceFee": 1021.62,
+              "dstFee": 0,
+              "dailyBudget": 1702.7,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "4.2150",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.12",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "293374683",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "10304786",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.51%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12041",
+              "uid": "12041",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "OPEN SALE",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "39.30%",
+              "totalBudget": 1298403,
+              "adBudget": 1236574.29,
+              "serviceFee": 61828.71,
+              "dstFee": 0,
+              "dailyBudget": 68698.57,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "51.1150",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.52",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "6662269",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "654888",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "9.83%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12044",
+              "uid": "12044",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "OPEN SALE",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "10.82%",
+              "totalBudget": 357569,
+              "adBudget": 340541.9,
+              "serviceFee": 17027.1,
+              "dstFee": 0,
+              "dailyBudget": 18918.99,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "4.2150",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.12",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "102703722",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "3607468",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.51%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12042",
+              "uid": "12042",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "SUSTAIN",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "13.76%",
+              "totalBudget": 454541,
+              "adBudget": 432896.19,
+              "serviceFee": 21644.81,
+              "dstFee": 0,
+              "dailyBudget": 6366.12,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "51.1150",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.52",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "6662269",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "654888",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "9.83%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12045",
+              "uid": "12045",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "SUSTAIN",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "10.82%",
+              "totalBudget": 357569,
+              "adBudget": 340541.9,
+              "serviceFee": 17027.1,
+              "dstFee": 0,
+              "dailyBudget": 5007.97,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "10.2840",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.26",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "1986813",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "78586",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.96%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12046",
+              "uid": "12046",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "ai",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "0.65%",
+              "totalBudget": 21454,
+              "adBudget": 20432.38,
+              "serviceFee": 1021.62,
+              "dstFee": 0,
+              "dailyBudget": 1702.7,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "10.2840",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.26",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "1986813",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "78586",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.96%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12047",
+              "uid": "12047",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "OPEN SALE",
+              "dimension": "ai",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "0.65%",
+              "totalBudget": 21454,
+              "adBudget": 20432.38,
+              "serviceFee": 1021.62,
+              "dstFee": 0,
+              "dailyBudget": 1135.13,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "10.2840",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.26",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "10887834",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "430656",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.96%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12048",
+              "uid": "12048",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "SUSTAIN",
+              "dimension": "ai",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "3.56%",
+              "totalBudget": 117569,
+              "adBudget": 111970.48,
+              "serviceFee": 5598.52,
+              "dstFee": 0,
+              "dailyBudget": 1646.62,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "572417850",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "21039000",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Google-TTL:",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 3303934,
+              "adBudget": 3146603.8,
+              "serviceFee": 157330.2,
+              "dstFee": 0,
+              "dailyBudget": 157077.29,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "1495298288",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "35441063",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "All Media TTL",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 6000000,
+              "adBudget": 5738974.95,
+              "serviceFee": 261025.05,
+              "dstFee": 0,
+              "dailyBudget": 307395.36,
+              "budgetAllocation": "100.00%"
+            }
+          ],
+          "category": [
+            {
+              "estCPM": {
+                "value": "3.2720",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.30",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "265721684",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "2898138",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.09%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12037",
+              "uid": "12037",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Meta",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "平均值",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "33.54%",
+              "totalBudget": 904219,
+              "adBudget": 869441.35,
+              "serviceFee": 34777.65,
+              "dstFee": 0,
+              "dailyBudget": 72453.45,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "3.2720",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.30",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "392992405",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "4286237",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.09%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12038",
+              "uid": "12038",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Meta",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "平均值",
+              "stage": "OPEN SALE",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "49.60%",
+              "totalBudget": 1337306,
+              "adBudget": 1285871.15,
+              "serviceFee": 51434.85,
+              "dstFee": 0,
+              "dailyBudget": 71437.29,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "3.2720",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.30",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "133575382",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "1456862",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.09%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12039",
+              "uid": "12039",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Meta",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "平均值",
+              "stage": "SUSTAIN",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "16.86%",
+              "totalBudget": 454541,
+              "adBudget": 437058.65,
+              "serviceFee": 17482.35,
+              "dstFee": 0,
+              "dailyBudget": 6427.33,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "792289471",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "8641237",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Meta-TTL:",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 2696066,
+              "adBudget": 2592371.15,
+              "serviceFee": 103694.85,
+              "dstFee": 0,
+              "dailyBudget": 150318.07,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12028",
+              "uid": "12028",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "19.79%",
+              "totalBudget": 653921,
+              "adBudget": 622781.9,
+              "serviceFee": 31139.1,
+              "dstFee": 0,
+              "dailyBudget": 51898.49,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "118.0180",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.01",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "173129",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "20230",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "11.68%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12031",
+              "uid": "12031",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "0.65%",
+              "totalBudget": 21454,
+              "adBudget": 20432.38,
+              "serviceFee": 1021.62,
+              "dstFee": 0,
+              "dailyBudget": 1702.7,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12029",
+              "uid": "12029",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "OPEN SALE",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "39.30%",
+              "totalBudget": 1298403,
+              "adBudget": 1236574.29,
+              "serviceFee": 61828.71,
+              "dstFee": 0,
+              "dailyBudget": 68698.57,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "118.0180",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.01",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "2885508",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "337170",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "11.68%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12032",
+              "uid": "12032",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "OPEN SALE",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "10.82%",
+              "totalBudget": 357569,
+              "adBudget": 340541.9,
+              "serviceFee": 17027.1,
+              "dstFee": 0,
+              "dailyBudget": 18918.99,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12030",
+              "uid": "12030",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "SUSTAIN",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "13.76%",
+              "totalBudget": 454541,
+              "adBudget": 432896.19,
+              "serviceFee": 21644.81,
+              "dstFee": 0,
+              "dailyBudget": 6366.12,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "118.0180",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "1.01",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "2885508",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "337170",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "11.68%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12033",
+              "uid": "12033",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "SUSTAIN",
+              "dimension": "category",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "10.82%",
+              "totalBudget": 357569,
+              "adBudget": 340541.9,
+              "serviceFee": 17027.1,
+              "dstFee": 0,
+              "dailyBudget": 5007.97,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12034",
+              "uid": "12034",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "category",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "0.65%",
+              "totalBudget": 21454,
+              "adBudget": 20432.38,
+              "serviceFee": 1021.62,
+              "dstFee": 0,
+              "dailyBudget": 1702.7,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12035",
+              "uid": "12035",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "OPEN SALE",
+              "dimension": "category",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "0.65%",
+              "totalBudget": 21454,
+              "adBudget": 20432.38,
+              "serviceFee": 1021.62,
+              "dstFee": 0,
+              "dailyBudget": 1135.13,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12036",
+              "uid": "12036",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "SUSTAIN",
+              "dimension": "category",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "3.56%",
+              "totalBudget": 117569,
+              "adBudget": 111970.48,
+              "serviceFee": 5598.52,
+              "dstFee": 0,
+              "dailyBudget": 1646.62,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "5944145",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "694570",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Google-TTL:",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 3303934,
+              "adBudget": 3146603.8,
+              "serviceFee": 157330.2,
+              "dstFee": 0,
+              "dailyBudget": 157077.29,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "798233616",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "9335807",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "All Media TTL",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 6000000,
+              "adBudget": 5738974.95,
+              "serviceFee": 261025.05,
+              "dstFee": 0,
+              "dailyBudget": 307395.36,
+              "budgetAllocation": "100.00%"
+            }
+          ],
+          "corporation": [
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12027",
+              "uid": "12027",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Meta",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "平均值",
+              "stage": "OPEN SALE",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image&Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Image&Video Link Ads",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "100.00%",
+              "totalBudget": 2400000,
+              "adBudget": 2307692.31,
+              "serviceFee": 92307.69,
+              "dstFee": 0,
+              "dailyBudget": 128205.13,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Meta-TTL:",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 2400000,
+              "adBudget": 2307692.31,
+              "serviceFee": 92307.69,
+              "dstFee": 0,
+              "dailyBudget": 128205.13,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12023",
+              "uid": "12023",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "27.10%",
+              "totalBudget": 975600,
+              "adBudget": 929142.86,
+              "serviceFee": 46457.14,
+              "dstFee": 0,
+              "dailyBudget": 77428.57,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12025",
+              "uid": "12025",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "OPEN SALE",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-14",
+              "durationDays": 18,
+              "budgetAllocation": "16.67%",
+              "totalBudget": 600000,
+              "adBudget": 571428.57,
+              "serviceFee": 28571.43,
+              "dstFee": 0,
+              "dailyBudget": 31746.03,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12024",
+              "uid": "12024",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "SUSTAIN",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-06-03",
+              "durationDays": 68,
+              "budgetAllocation": "50.00%",
+              "totalBudget": 1800000,
+              "adBudget": 1714285.71,
+              "serviceFee": 85714.29,
+              "dstFee": 0,
+              "dailyBudget": 25210.08,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12026",
+              "uid": "12026",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "media": "Google",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "PREHEAT FOR LOCAL LAUNCH",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "B26001",
+              "blsEligibility": "",
+              "startDate": "2026-03-28",
+              "endDate": "2026-04-08",
+              "durationDays": 12,
+              "budgetAllocation": "6.23%",
+              "totalBudget": 224400,
+              "adBudget": 213714.29,
+              "serviceFee": 10685.71,
+              "dstFee": 0,
+              "dailyBudget": 17809.52,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Google-TTL:",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 3600000,
+              "adBudget": 3428571.43,
+              "serviceFee": 171428.57,
+              "dstFee": 0,
+              "dailyBudget": 152194.2,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "All Media TTL",
+              "region": "SEA",
+              "country": "SG",
+              "project": "P1P3",
+              "product": "Xiaomi 17 Ultra / Xiaomi 17",
+              "brand": "Mi",
+              "totalBudget": 6000000,
+              "adBudget": 5736263.74,
+              "serviceFee": 263736.26,
+              "dstFee": 0,
+              "dailyBudget": 280399.33,
+              "budgetAllocation": "100.00%"
+            }
+          ]
+        }
+      }
+    },
+    "traceId": "335596d2d4904faea6f00666e29704ce",
+    "appTrace": "sino-adtech-mediaplan"
+  },
+  "body_snippet": "{\"message\":\"success\",\"code\":0,\"result\":{\"briefInfo\":{\"basicInfo\":{\"isHistoryMp\":0,\"kpiInfo\":[{\"key\":\"Impression\",\"val\":\"2006293250\",\"priority\":1,\"completion\":1},{\"key\":\"Clicks\",\"val\":\"50541208\",\"priority\":2,\"completion\":1},{\"key\":\"VideoViews\",\"val\":\"0\",\"priority\":3,\"completion\":0}],\"kpiInfoBudgetConfig\":{\"rangeMatch\":95},\"dimension\":[\"corporation\",\"category\",\"ai\"],\"usedHistoryMp\":0,\"moduleConfig\":[{\"moduleName\":\"kpiInfo\",\"priority\":1},{\"moduleName\":\"media\",\"priority\":2},{\"moduleName\":\"marketingF",
+  "uuid": "87735e6c-f58c-498b-a46a-c84b340a",
+  "job_id": "1774606920_1_de137103"
+}
