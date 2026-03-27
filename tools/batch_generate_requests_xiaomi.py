@@ -1087,6 +1087,44 @@ def convert(
         raise
 
 
+def convert_from_brief(
+    base_brief_path: str,
+    output_path: str,
+    test_case_id: str | None = None,
+    use_testcase_template: bool = False,
+    testcase_template_path: str = "testcase_templatex_xiaomi.py",
+) -> dict:
+    """
+    从已有 brief JSON 直接生成测试请求。
+
+    适用于用户已经准备好一个完整 brief，希望仅套用 testcase 模板批量改配置。
+    """
+    try:
+        with open(base_brief_path, "r", encoding="utf-8") as f:
+            result = json.load(f)
+
+        if test_case_id is not None and use_testcase_template:
+            test_cases = load_testcase_template(testcase_template_path)
+            if test_cases is None:
+                raise ValueError(f"无法加载测试用例模板: {testcase_template_path}")
+            if test_case_id not in test_cases:
+                raise ValueError(f"测试用例编号 {test_case_id} 不存在于模板中")
+            result = apply_testcase_template_config(
+                result, test_cases[test_case_id], case_name=str(test_case_id)
+            )
+
+        reorder_priorities(result)
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+
+        return result
+    except Exception as e:
+        print(f"[ERROR] 从 brief 生成测试请求失败: {e}")
+        traceback.print_exc()
+        raise
+
+
 def _load_data_from_xlsx_sheet(xlsx_path: str, sheet_name: str) -> pd.DataFrame:
     """
     从 xlsx 文件的指定 sheet 读取数据。
@@ -1205,12 +1243,29 @@ def generate(
     testcase_template_path: str = "testcase_templatex_xiaomi.py",
     sheet_name: str | None = None,
     test_case_ids: list[str] | None = None,
+    base_brief_path: str | None = None,
 ) -> list[dict]:
     """
-    统一的生成入口，简化逻辑：
-    - 根据 data_path 区分 xlsx 和 csv
-    - sheet_name 可以指定单独解析某个 sheet（仅 xlsx）
-    - 每个数据源生成全量测试用例（除非 test_case_ids 指定）
+    统一生成入口（兼容 data 模式与 brief 模式）。
+
+    入参分组：
+    1) 公共参数（两种模式都需要）
+       - output_path
+       - testcase_template_path
+       - test_case_ids
+       - use_testcase_template
+
+    2) data 模式参数（base_brief_path 为空时生效）
+       - data_path / template_path
+       - max_regions / country_path / adformat_path
+       - sheet_name（仅 xlsx）
+
+    3) brief 模式参数（base_brief_path 非空时生效）
+       - base_brief_path
+
+    模式规则：
+    - base_brief_path 有值：走 brief 模式，忽略 data_path/template_path/sheet_name/max_regions/country_path/adformat_path
+    - base_brief_path 为空：走 data 模式，按 data_path 自动识别 csv/xlsx
 
     Args:
         data_path: 数据文件路径（CSV 或 xlsx）
@@ -1223,13 +1278,20 @@ def generate(
         testcase_template_path: 测试用例模板文件路径
         sheet_name: xlsx 文件的 sheet 名称（如果指定，则只处理该 sheet；None 表示处理所有 sheet）
         test_case_ids: 要生成的测试用例名称列表（None 表示生成所有用例）
+        base_brief_path: 已有 brief JSON 路径（如果传入，则基于该 brief 套用测试模板生成）
 
     Returns:
         生成的JSON数据字典列表
     """
-    data_path_obj = Path(data_path)
+    # 参数校验：模板必须启用
+    if not use_testcase_template:
+        raise ValueError("当前脚本仅支持 use_testcase_template=True")
+
+    # 参数校验：data 模式至少需要 data_path
+    if not base_brief_path and not data_path:
+        raise ValueError("data 模式下必须提供 data_path")
+
     output_path_obj = Path(output_path)
-    is_xlsx = data_path_obj.suffix.lower() in [".xlsx", ".xls"]
 
     # 加载测试用例模板
     test_cases = load_testcase_template(testcase_template_path)
@@ -1245,33 +1307,40 @@ def generate(
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # 确定要处理的数据源列表
-    data_sources = []  # [(data_path, sheet_name, display_name), ...]
+    data_sources = []  # [(source_path, sheet_name, display_name, source_type), ...]
 
-    if is_xlsx:
-        # xlsx 文件：根据 sheet_name 决定处理哪些 sheet
-        if sheet_name:
-            # 只处理指定的 sheet
-            data_sources.append((data_path, sheet_name, sheet_name))
-        else:
-            # 处理所有 sheet
-            xlsx_file = pd.ExcelFile(data_path, engine="openpyxl")
-            sheet_names = xlsx_file.sheet_names
-            xlsx_file.close()
-
-            if not sheet_names:
-                print(f"警告：xlsx 文件 {data_path} 中没有找到任何 sheet")
-                return []
-
-            print(f"找到 {len(sheet_names)} 个 sheet: {sheet_names}")
-            for sn in sheet_names:
-                data_sources.append((data_path, sn, sn))
+    if base_brief_path:
+        base_brief_obj = Path(base_brief_path)
+        data_sources.append((str(base_brief_obj), None, base_brief_obj.stem, "brief"))
     else:
-        # CSV 文件：只有一个数据源
-        data_sources.append((data_path, None, Path(data_path).stem))
+        data_path_obj = Path(data_path)
+        is_xlsx = data_path_obj.suffix.lower() in [".xlsx", ".xls"]
+
+        if is_xlsx:
+            # xlsx 文件：根据 sheet_name 决定处理哪些 sheet
+            if sheet_name:
+                # 只处理指定的 sheet
+                data_sources.append((data_path, sheet_name, sheet_name, "data"))
+            else:
+                # 处理所有 sheet
+                xlsx_file = pd.ExcelFile(data_path, engine="openpyxl")
+                sheet_names = xlsx_file.sheet_names
+                xlsx_file.close()
+
+                if not sheet_names:
+                    print(f"警告：xlsx 文件 {data_path} 中没有找到任何 sheet")
+                    return []
+
+                print(f"找到 {len(sheet_names)} 个 sheet: {sheet_names}")
+                for sn in sheet_names:
+                    data_sources.append((data_path, sn, sn, "data"))
+        else:
+            # CSV 文件：只有一个数据源
+            data_sources.append((data_path, None, Path(data_path).stem, "data"))
 
     # 生成所有组合（数据源 × 测试用例）
     results = []
-    for data_path_item, sheet_name_item, display_name in data_sources:
+    for source_path_item, sheet_name_item, display_name, source_type in data_sources:
         print(f"\n处理数据源: {display_name}")
 
         for case_id in test_case_ids:
@@ -1301,18 +1370,27 @@ def generate(
             )
 
             try:
-                result = convert(
-                    data_path=data_path_item,
-                    template_path=template_path,
-                    output_path=str(output_file),
-                    max_regions=max_regions,
-                    country_path=country_path,
-                    adformat_path=adformat_path,
-                    test_case_id=case_id,
-                    use_testcase_template=use_testcase_template,
-                    testcase_template_path=testcase_template_path,
-                    sheet_name=sheet_name_item,
-                )
+                if source_type == "brief":
+                    result = convert_from_brief(
+                        base_brief_path=source_path_item,
+                        output_path=str(output_file),
+                        test_case_id=case_id,
+                        use_testcase_template=use_testcase_template,
+                        testcase_template_path=testcase_template_path,
+                    )
+                else:
+                    result = convert(
+                        data_path=source_path_item,
+                        template_path=template_path,
+                        output_path=str(output_file),
+                        max_regions=max_regions,
+                        country_path=country_path,
+                        adformat_path=adformat_path,
+                        test_case_id=case_id,
+                        use_testcase_template=use_testcase_template,
+                        testcase_template_path=testcase_template_path,
+                        sheet_name=sheet_name_item,
+                    )
                 results.append(result)
                 print(f"  [OK] 已生成: {output_file}")
             except Exception as e:
@@ -1328,30 +1406,54 @@ def generate(
 if __name__ == "__main__":
     import sys
 
-    # 解析命令行参数
-    max_regions = 1
-    data_path = "doc/case/data.csv"  # 默认使用新格式数据文件
-    template_path = "brief_templete_xiaomi.json"
+    # =========================
+    # 运行模式： "data" | "brief"
+    # - data: 从 csv/xlsx 生成基准 brief 后套 testcase
+    # - brief: 基于现有 brief JSON 直接套 testcase
+    # =========================
+    RUN_MODE = "brief"
+
+    # ===== 公共参数（两种模式都需要）=====
     output_dir = "output/xiaomi/requests"
+    testcase_template_path = "testcase_templatex_xiaomi.py"
+    test_case_ids = None  # None 表示生成模板里的所有用例
+
+    # ===== data 模式参数 =====
+    data_path = "doc/case/data.csv"
+    template_path = "brief_templete_xiaomi.json"
+    max_regions = 1
     country_path = "doc/xiaomi/country.csv"
     adformat_path = "doc/xiaomi/adformat.csv"
-    # test_case_ids = ["基准用例-完全匹配默认配置"]  # none 表示生成所有用例
-    test_case_ids = None
-    use_testcase_template = True
-    testcase_template_path = "testcase_templatex_xiaomi.py"
+    sheet_name = None  # xlsx 时可指定 sheet；None 表示全量
+
+    # ===== brief 模式参数 =====
+    base_brief_path = "brief_stage_media_stablility.json"
 
     try:
-        generate(
-            data_path=data_path,
-            template_path=template_path,
-            output_path=output_dir,
-            max_regions=max_regions,
-            country_path=country_path,
-            adformat_path=adformat_path,
-            test_case_ids=test_case_ids,
-            testcase_template_path=testcase_template_path,
-            use_testcase_template=True,
-        )
+        if RUN_MODE == "brief":
+            generate(
+                output_path=output_dir,
+                testcase_template_path=testcase_template_path,
+                test_case_ids=test_case_ids,
+                use_testcase_template=True,
+                base_brief_path=base_brief_path,
+            )
+        elif RUN_MODE == "data":
+            generate(
+                data_path=data_path,
+                template_path=template_path,
+                output_path=output_dir,
+                max_regions=max_regions,
+                country_path=country_path,
+                adformat_path=adformat_path,
+                testcase_template_path=testcase_template_path,
+                test_case_ids=test_case_ids,
+                use_testcase_template=True,
+                sheet_name=sheet_name,
+                base_brief_path=None,
+            )
+        else:
+            raise ValueError(f"未知 RUN_MODE: {RUN_MODE}，仅支持 'data' 或 'brief'")
         print("转换完成！")
     except Exception as e:
         print(f"转换失败: {e}")

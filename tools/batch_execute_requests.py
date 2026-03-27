@@ -189,7 +189,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="批量调用 output 目录中的请求 JSON")
     parser.add_argument(
         "--dir",
-        default="output/xiaomi/requests",
+        default="output/xiaomi/requests_stage_media_stability_from_brief",
         help="请求 JSON 所在目录（例如：output/common/requests 或 output/xiaomi/requests）",
     )
     parser.add_argument(
@@ -214,13 +214,13 @@ if __name__ == "__main__":
         "--version",
         type=str,
         choices=["common", "xiaomi"],
-        default=None,
+        default="xiaomi",
         help="指定 API 版本（common 或 xiaomi），如果不指定则根据目录路径自动判断",
     )
     parser.add_argument(
         "--algo-version",
         type=str,
-        default="20260228_v1",
+        default="20260326_v1",
         help="算法版本标识（如 20250226_v1、v2.0）。不指定时使用配置或环境变量 MEDIAPLAN_ALGO_VERSION，默认 latest。结果将保存到 output/<common|xiaomi>/results/<algo_version>/",
     )
     parser.add_argument(

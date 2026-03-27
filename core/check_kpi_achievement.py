@@ -202,6 +202,71 @@ def parse_budget(budget_str: str) -> float:
         return 0.0
 
 
+def build_stage_media_budget_share(
+    ai_data_list: List[Dict[str, Any]],
+) -> Dict[str, Dict[str, Any]]:
+    """
+    统计各国家下，不同 stage 的 media/platform 预算占比（Common 版本）。
+    """
+    agg: Dict[str, Dict[str, Dict[str, float]]] = {}
+
+    for ai_item in ai_data_list:
+        region = str(ai_item.get("region", "")).strip()
+        country_code = region.split("_")[0] if "_" in region else region
+        stage_name = str(ai_item.get("stage", "")).strip()
+        media = str(ai_item.get("media", "")).strip()
+        platform = str(ai_item.get("mediaChannel", "")).strip()
+
+        if not country_code or not stage_name or not media:
+            continue
+
+        budget = parse_budget(str(ai_item.get("adTypeBudget", "0")))
+        key = f"{media}|{platform}"
+
+        if country_code not in agg:
+            agg[country_code] = {}
+        if stage_name not in agg[country_code]:
+            agg[country_code][stage_name] = {}
+        if key not in agg[country_code][stage_name]:
+            agg[country_code][stage_name][key] = 0.0
+
+        agg[country_code][stage_name][key] += budget
+
+    results: Dict[str, Dict[str, Any]] = {}
+    for country_code, stage_map in agg.items():
+        results[country_code] = {}
+        for stage_name, media_map in stage_map.items():
+            stage_total_budget = sum(media_map.values())
+            media_platforms = []
+
+            for media_platform_key, budget in sorted(
+                media_map.items(), key=lambda x: x[1], reverse=True
+            ):
+                media_name, platform_name = (
+                    media_platform_key.split("|", 1)
+                    if "|" in media_platform_key
+                    else (media_platform_key, "")
+                )
+                share_percentage = (
+                    (budget / stage_total_budget * 100) if stage_total_budget > 0 else 0.0
+                )
+                media_platforms.append(
+                    {
+                        "media": media_name,
+                        "platform": platform_name,
+                        "budget": round(budget, 2),
+                        "share_percentage": round(share_percentage, 2),
+                    }
+                )
+
+            results[country_code][stage_name] = {
+                "stage_total_budget": round(stage_total_budget, 2),
+                "media_platforms": media_platforms,
+            }
+
+    return results
+
+
 def parse_kpi_value(kpi_obj: Dict) -> float:
     """解析 KPI 值"""
     if isinstance(kpi_obj, dict):
@@ -1642,6 +1707,7 @@ def main():
             "kpi_priority_list": testcase_config.get("kpi_priority_list", []),
             "module_priority_list": testcase_config.get("module_priority_list", []),
         },
+        "stage_media_budget_share": build_stage_media_budget_share(ai_data_list),
         "global_kpi": check_global_kpi_achievement(
             request_json, ai_data_list, testcase_config
         ),

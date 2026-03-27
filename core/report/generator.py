@@ -9,6 +9,17 @@ import argparse
 from pathlib import Path
 from typing import Dict, Any, List
 from datetime import datetime
+import re
+
+try:
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    HAS_MATPLOTLIB = True
+except ImportError:
+    HAS_MATPLOTLIB = False
 
 
 def load_json(filepath: Path) -> Any:
@@ -17,10 +28,213 @@ def load_json(filepath: Path) -> Any:
         return json.load(f)
 
 
+def _safe_filename_component(value: str) -> str:
+    """将任意字符串转换为安全文件名片段。"""
+    safe = re.sub(r"[^0-9A-Za-z_\-\u4e00-\u9fff]+", "_", str(value))
+    return safe.strip("_") or "unknown"
+
+
+def _generate_stage_media_share_charts(
+    stage_media_data: Dict[str, Dict[str, Any]], output_path: Path
+) -> Dict[str, str]:
+    """
+    为每个国家生成「不同 stage 下 media 占比」堆叠柱状图。
+    返回: {country_code: image_filename}
+    """
+    if not HAS_MATPLOTLIB or not stage_media_data:
+        return {}
+
+    plt.rcParams["font.sans-serif"] = ["SimHei", "Microsoft YaHei", "Arial Unicode MS"]
+    plt.rcParams["axes.unicode_minus"] = False
+
+    chart_files: Dict[str, str] = {}
+    output_dir = output_path.parent
+
+    for country_code, country_stage_data in stage_media_data.items():
+        if not country_stage_data:
+            continue
+
+        stages = sorted(country_stage_data.keys())
+
+        # 收集所有媒体平台组合，并按总预算占比排序
+        label_total_share: Dict[str, float] = {}
+        stage_label_share_map: Dict[str, Dict[str, float]] = {}
+
+        for stage_name in stages:
+            stage_info = country_stage_data.get(stage_name, {})
+            media_platforms = stage_info.get("media_platforms", [])
+            stage_label_share_map[stage_name] = {}
+            for item in media_platforms:
+                media = item.get("media", "")
+                platform = item.get("platform", "")
+                label = f"{media}|{platform}" if platform else media
+                share = float(item.get("share_percentage", 0.0) or 0.0)
+                stage_label_share_map[stage_name][label] = share
+                label_total_share[label] = label_total_share.get(label, 0.0) + share
+
+        if not label_total_share:
+            continue
+
+        sorted_labels = sorted(
+            label_total_share.keys(),
+            key=lambda x: label_total_share.get(x, 0.0),
+            reverse=True,
+        )
+        # 标签太多时做聚合，保证图表可读
+        max_labels = 9
+        display_labels = sorted_labels[:max_labels]
+        has_other = len(sorted_labels) > max_labels
+        if has_other:
+            display_labels.append("其他")
+
+        fig, ax = plt.subplots(figsize=(12, 6))
+        x = list(range(len(stages)))
+        bottoms = [0.0] * len(stages)
+
+        for label in display_labels:
+            values = []
+            for stage_name in stages:
+                stage_share_map = stage_label_share_map.get(stage_name, {})
+                if label == "其他":
+                    other_sum = 0.0
+                    for original_label, share in stage_share_map.items():
+                        if original_label not in sorted_labels[:max_labels]:
+                            other_sum += share
+                    values.append(other_sum)
+                else:
+                    values.append(stage_share_map.get(label, 0.0))
+
+            ax.bar(x, values, bottom=bottoms, label=label, alpha=0.85)
+            bottoms = [b + v for b, v in zip(bottoms, values)]
+
+        ax.set_title(f"{country_code} - 不同Stage下Media占比", fontsize=14, fontweight="bold")
+        ax.set_xlabel("Stage", fontsize=11)
+        ax.set_ylabel("占比 (%)", fontsize=11)
+        ax.set_xticks(x)
+        ax.set_xticklabels(stages, rotation=20, ha="right")
+        ax.set_ylim(0, 100)
+        ax.grid(True, axis="y", alpha=0.25)
+        ax.legend(
+            title="Media|Platform",
+            bbox_to_anchor=(1.02, 1),
+            loc="upper left",
+            fontsize=8,
+        )
+        plt.tight_layout()
+
+        file_name = (
+            f"{output_path.stem}_stage_media_share_{_safe_filename_component(country_code)}.png"
+        )
+        file_path = output_dir / file_name
+        plt.savefig(file_path, dpi=160, bbox_inches="tight")
+        plt.close(fig)
+        chart_files[country_code] = file_name
+
+    return chart_files
+
+
+def _build_stage_media_share_markdown(
+    stage_media_data: Dict[str, Dict[str, Any]], chart_files: Dict[str, str]
+) -> List[str]:
+    """构建 markdown 的 stage-media 占比统计段落。"""
+    if not stage_media_data:
+        return []
+
+    lines: List[str] = []
+    lines.append("## 不同Stage下Media占比统计\n")
+    lines.append(
+        "说明：按 `国家 -> stage -> media|platform` 聚合预算，并计算每个 stage 内的占比。\n"
+    )
+
+    for country_code in sorted(stage_media_data.keys()):
+        lines.append(f"\n### {country_code}\n")
+        if country_code in chart_files:
+            lines.append(
+                f"![{country_code} 不同Stage下Media占比]({chart_files[country_code]})\n"
+            )
+        elif not HAS_MATPLOTLIB:
+            lines.append("> 未安装 matplotlib，跳过图表绘制，仅展示表格。\n")
+
+        lines.append("| Stage | Media | Platform | 预算 | 占比 |\n")
+        lines.append("|-------|-------|----------|------|------|\n")
+
+        country_stage_data = stage_media_data[country_code]
+        for stage_name in sorted(country_stage_data.keys()):
+            stage_info = country_stage_data.get(stage_name, {})
+            media_platforms = stage_info.get("media_platforms", [])
+            if not media_platforms:
+                lines.append(f"| {stage_name} | - | - | 0.00 | 0.00% |\n")
+                continue
+            for item in media_platforms:
+                lines.append(
+                    f"| {stage_name} | {item.get('media', '')} | {item.get('platform', '') or '-'} | "
+                    f"{float(item.get('budget', 0.0)):,.2f} | {float(item.get('share_percentage', 0.0)):.2f}% |\n"
+                )
+
+    lines.append("\n---\n")
+    return lines
+
+
+def _build_stage_media_share_html(
+    stage_media_data: Dict[str, Dict[str, Any]], chart_files: Dict[str, str]
+) -> List[str]:
+    """构建 HTML 的 stage-media 占比统计段落。"""
+    if not stage_media_data:
+        return []
+
+    lines: List[str] = []
+    lines.append("    <h2>不同Stage下Media占比统计</h2>\n")
+    lines.append(
+        "    <div class='summary'><strong>说明</strong>: 按 国家 -> stage -> media|platform 聚合预算，并计算每个 stage 内占比。</div>\n"
+    )
+
+    for country_code in sorted(stage_media_data.keys()):
+        lines.append(f"    <h3>{country_code}</h3>\n")
+        if country_code in chart_files:
+            lines.append(
+                f"    <div style='margin: 12px 0 18px 0;'><img src='{chart_files[country_code]}' alt='{country_code} 不同Stage下Media占比图' style='max-width: 100%; border: 1px solid #ddd; border-radius: 6px;'></div>\n"
+            )
+        elif not HAS_MATPLOTLIB:
+            lines.append(
+                "    <div class='summary'><strong>提示</strong>: 未安装 matplotlib，已跳过图表绘制，仅展示表格。</div>\n"
+            )
+
+        lines.append("    <table>\n")
+        lines.append(
+            "      <tr><th>Stage</th><th>Media</th><th>Platform</th><th>预算</th><th>占比</th></tr>\n"
+        )
+
+        country_stage_data = stage_media_data[country_code]
+        for stage_name in sorted(country_stage_data.keys()):
+            stage_info = country_stage_data.get(stage_name, {})
+            media_platforms = stage_info.get("media_platforms", [])
+            if not media_platforms:
+                lines.append(
+                    f"      <tr><td>{stage_name}</td><td>-</td><td>-</td><td>0.00</td><td>0.00%</td></tr>\n"
+                )
+                continue
+
+            for item in media_platforms:
+                lines.append(
+                    f"      <tr><td>{stage_name}</td><td>{item.get('media', '')}</td>"
+                    f"<td>{item.get('platform', '') or '-'}</td>"
+                    f"<td>{float(item.get('budget', 0.0)):,.2f}</td>"
+                    f"<td>{float(item.get('share_percentage', 0.0)):.2f}%</td></tr>\n"
+                )
+
+        lines.append("    </table>\n")
+
+    return lines
+
+
 def generate_markdown_report(results: Dict[str, Any], output_path: Path):
     """生成 Markdown 格式的测试报告"""
     case_name = results.get("case_name", "未知用例")
     testcase_config = results.get("testcase_config", {})
+    stage_media_data = results.get("stage_media_budget_share", {})
+    stage_media_chart_files = _generate_stage_media_share_charts(
+        stage_media_data, output_path
+    )
 
     report_lines = []
     report_lines.append("# 测试报告\n")
@@ -586,6 +800,12 @@ def generate_markdown_report(results: Dict[str, Any], output_path: Path):
 
         report_lines.append("\n---\n")
 
+    # Stage 下 Media 占比统计（新增）
+    if stage_media_data:
+        report_lines.extend(
+            _build_stage_media_share_markdown(stage_media_data, stage_media_chart_files)
+        )
+
     # 广告类型 KPI 汇总
     if "adtype_kpi" in results:
         report_lines.append("## 广告类型 KPI 达成情况\n")
@@ -1082,6 +1302,10 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
     """生成 HTML 格式的测试报告"""
     case_name = results.get("case_name", "未知用例")
     testcase_config = results.get("testcase_config", {})
+    stage_media_data = results.get("stage_media_budget_share", {})
+    stage_media_chart_files = _generate_stage_media_share_charts(
+        stage_media_data, output_path
+    )
 
     html_lines = []
     html_lines.append("<!DOCTYPE html>\n")
@@ -1324,6 +1548,12 @@ def generate_html_report(results: Dict[str, Any], output_path: Path):
                     f"<td class='{status_class}'>{status_text}</td></tr>\n"
                 )
             html_lines.append("    </table>\n")
+
+    # Stage 下 Media 占比统计（新增）
+    if stage_media_data:
+        html_lines.extend(
+            _build_stage_media_share_html(stage_media_data, stage_media_chart_files)
+        )
 
     # 其他维度汇总表格
     dimensions_summary = [

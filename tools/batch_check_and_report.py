@@ -40,7 +40,7 @@ VARIANT_CONFIG = [
 
 
 def batch_check_results(
-    project_root: Path, algo_version: str
+    project_root: Path, algo_version: str, check_dimension: str = "corporation"
 ) -> tuple[int, int]:
     """批量检查指定算法版本的结果文件，同时检测 xiaomi 和 common 两条路径。"""
     total_success = 0
@@ -83,6 +83,9 @@ def batch_check_results(
                 "--case-name",
                 case_name,
             ]
+            # Xiaomi 检查支持选择 dimensionMultiCountryResult 下的维度
+            if variant == "xiaomi":
+                cmd.extend(["--check-dimension", check_dimension])
             try:
                 result = subprocess.run(
                     cmd,
@@ -132,7 +135,9 @@ def batch_generate_reports(
     for variant in ["xiaomi", "common"]:
         input_dir = resolve_achievement_json_dir(project_root, variant, algo_version)
         if not input_dir.exists():
-            print(f"\n[{variant}] 跳过：未找到 achievement_checks/json/{algo_version} 目录")
+            print(
+                f"\n[{variant}] 跳过：未找到 achievement_checks/json/{algo_version} 目录"
+            )
             print(f"  请检查: {input_dir}")
             continue
 
@@ -143,7 +148,9 @@ def batch_generate_reports(
 
         any_generated = True
         print(f"\n{'=' * 80}")
-        print(f"[{variant}] 找到 {len(json_files)} 个检查结果文件（版本: {algo_version}），开始生成报告...")
+        print(
+            f"[{variant}] 找到 {len(json_files)} 个检查结果文件（版本: {algo_version}），开始生成报告..."
+        )
         print("=" * 80)
 
         reports_dir = resolve_achievement_reports_dir(
@@ -185,11 +192,15 @@ def batch_generate_reports(
                 fail_this += 1
                 total_fail += 1
 
-        print(f"\n[{variant}] 本路径报告生成完成: 成功 {success_this}，失败 {fail_this}")
+        print(
+            f"\n[{variant}] 本路径报告生成完成: 成功 {success_this}，失败 {fail_this}"
+        )
         print(f"  报告输出目录: {reports_dir}")
 
     if not any_generated:
-        print("\n错误：xiaomi 与 common 下均未找到可生成报告的 achievement_checks/json 目录")
+        print(
+            "\n错误：xiaomi 与 common 下均未找到可生成报告的 achievement_checks/json 目录"
+        )
         return 0, 1
 
     print("\n" + "=" * 80)
@@ -223,8 +234,15 @@ def main():
     parser.add_argument(
         "--algo-version",
         type=str,
-        default=None,
+        default="20260326_v1",
         help="算法版本（如 latest、20250226_v1）。不指定时使用配置或环境变量 MEDIAPLAN_ALGO_VERSION，默认 latest",
+    )
+    parser.add_argument(
+        "--check-dimension",
+        type=str,
+        choices=["corporation", "category", "ai"],
+        default="ai",
+        help="Xiaomi 检查使用的维度（默认: corporation）",
     )
 
     args = parser.parse_args()
@@ -236,7 +254,9 @@ def main():
     total_fail = 0
 
     if not args.skip_check:
-        check_success, check_fail = batch_check_results(project_root, algo_version)
+        check_success, check_fail = batch_check_results(
+            project_root, algo_version, args.check_dimension
+        )
         total_success += check_success
         total_fail += check_fail
     else:

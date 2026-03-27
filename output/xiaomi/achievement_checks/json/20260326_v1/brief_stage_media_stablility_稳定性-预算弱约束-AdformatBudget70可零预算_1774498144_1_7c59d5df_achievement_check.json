@@ -1,0 +1,486 @@
+{
+  "case_name": "brief_stage_media_stablility_稳定性-预算弱约束-AdformatBudget70可零预算",
+  "uuid": "6a77b45a-a448-4ee5-83a7-bb12f2b5",
+  "job_id": "1774498144_1_7c59d5df",
+  "testcase_config": {
+    "kpi_target_rate": 70,
+    "region_budget_target_rate": 90,
+    "region_kpi_target_rate": 80,
+    "mediaMarketingFunnelAdtype_target_rate": 70,
+    "stage_range_match": 20,
+    "stage_match_type": "完全匹配",
+    "marketingfunnel_range_match": 15,
+    "marketingfunnel_match_type": "完全匹配",
+    "media_range_match": 5,
+    "media_match_type": "完全匹配",
+    "kpi_priority_list": [
+      "Impression",
+      "VideoViews",
+      "Clicks"
+    ],
+    "module_priority_list": [
+      "stage",
+      "media",
+      "kpiInfo",
+      "marketingFunnel",
+      "mediaMarketingFunnelFormat",
+      "mediaMarketingFunnelFormatBudgetConfig"
+    ],
+    "mediaMarketingFunnelFormat_target_rate": 70,
+    "mediaMarketingFunnelFormatBudgetConfig_target_rate": 70
+  },
+  "stage_media_budget_share": {
+    "SG": {
+      "PREHEAT FOR LOCAL LAUNCH": {
+        "stage_total_budget": 1393800.0,
+        "media_platforms": [
+          {
+            "media": "Meta",
+            "platform": "平均值",
+            "budget": 1333800.0,
+            "share_percentage": 95.7
+          },
+          {
+            "media": "Google",
+            "platform": "YTB",
+            "budget": 60000.0,
+            "share_percentage": 4.3
+          },
+          {
+            "media": "Google",
+            "platform": "GG",
+            "budget": 0.0,
+            "share_percentage": 0.0
+          }
+        ]
+      },
+      "OPEN SALE": {
+        "stage_total_budget": 2593800.0,
+        "media_platforms": [
+          {
+            "media": "Google",
+            "platform": "GG",
+            "budget": 2593800.0,
+            "share_percentage": 100.0
+          },
+          {
+            "media": "Meta",
+            "platform": "平均值",
+            "budget": 0.0,
+            "share_percentage": 0.0
+          },
+          {
+            "media": "Google",
+            "platform": "YTB",
+            "budget": 0.0,
+            "share_percentage": 0.0
+          }
+        ]
+      },
+      "SUSTAIN": {
+        "stage_total_budget": 2012400.0,
+        "media_platforms": [
+          {
+            "media": "Google",
+            "platform": "GG",
+            "budget": 1835400.0,
+            "share_percentage": 91.2
+          },
+          {
+            "media": "Meta",
+            "platform": "平均值",
+            "budget": 177000.0,
+            "share_percentage": 8.8
+          },
+          {
+            "media": "Google",
+            "platform": "YTB",
+            "budget": 0.0,
+            "share_percentage": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "global_kpi": {
+    "Impression": {
+      "target": 60941850.0,
+      "actual": 1523492404.0,
+      "achievement_rate": 2500,
+      "target_rate": 70,
+      "achieved": true,
+      "priority": 1,
+      "completion": 0
+    },
+    "VideoViews": {
+      "target": 881914.0,
+      "actual": 0.0,
+      "achievement_rate": 0,
+      "target_rate": 70,
+      "achieved": false,
+      "priority": 2,
+      "completion": 0
+    },
+    "Clicks": {
+      "target": 655130.0,
+      "actual": 43442674.0,
+      "achievement_rate": 6631,
+      "target_rate": 70,
+      "achieved": true,
+      "priority": 4,
+      "completion": 0
+    }
+  },
+  "region_budget": {},
+  "region_kpi": {},
+  "stage_budget": {
+    "SG": {
+      "PREHEAT FOR LOCAL LAUNCH": {
+        "target": 1393800,
+        "actual": 1393800.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 23.23,
+        "actual_percentage": 23.23,
+        "match_type": "完全匹配"
+      },
+      "OPEN SALE": {
+        "target": 2593800,
+        "actual": 2593800.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 43.23,
+        "actual_percentage": 43.230000000000004,
+        "match_type": "完全匹配"
+      },
+      "SUSTAIN": {
+        "target": 2012400,
+        "actual": 2012400.0,
+        "error_percentage": 0,
+        "range_match": 20,
+        "satisfied": true,
+        "target_percentage": 33.54,
+        "actual_percentage": 33.54,
+        "match_type": "完全匹配"
+      }
+    }
+  },
+  "marketingfunnel_budget": {
+    "SG": {
+      "Traffic": {
+        "target": 5775600,
+        "actual": 5940000.0,
+        "error_percentage": 3,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 96.26,
+        "actual_percentage": 99.0,
+        "match_type": "完全匹配"
+      },
+      "Awareness": {
+        "target": 224400,
+        "actual": 60000.0,
+        "error_percentage": 3,
+        "range_match": 15,
+        "satisfied": true,
+        "target_percentage": 3.74,
+        "actual_percentage": 1.0,
+        "match_type": "完全匹配"
+      }
+    }
+  },
+  "media_budget": {
+    "SG": {
+      "Google|GG": {
+        "media": "Google",
+        "platform": "GG",
+        "target": 4189200,
+        "actual": 4429200.0,
+        "error_percentage": 4,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 69.82,
+        "actual_percentage": 73.82,
+        "match_type": "完全匹配"
+      },
+      "Google|YTB": {
+        "media": "Google",
+        "platform": "YTB",
+        "target": 300000,
+        "actual": 60000.0,
+        "error_percentage": 4,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 5,
+        "actual_percentage": 1.0,
+        "match_type": "完全匹配"
+      },
+      "Meta|平均值": {
+        "media": "Meta",
+        "platform": "平均值",
+        "target": 1510800,
+        "actual": 1510800.0,
+        "error_percentage": 0,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 25.18,
+        "actual_percentage": 25.180000000000003,
+        "match_type": "完全匹配"
+      }
+    }
+  },
+  "mediaMarketingFunnelFormat_kpi": {
+    "SG|Meta|平均值|Traffic|Image&Video Link Ads": {
+      "country": "SG",
+      "media": "Meta",
+      "platform": "平均值",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "kpis": {
+        "Impression": {
+          "target": null,
+          "actual": 517156394.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": null,
+          "actual": 0.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": null,
+          "actual": 8070513.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "SG|Google|GG|Traffic|Search": {
+      "country": "SG",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adformat": "Search",
+      "creative": "Text",
+      "kpis": {
+        "Impression": {
+          "target": null,
+          "actual": 0.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": null,
+          "actual": 0.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": null,
+          "actual": 0.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "SG|Google|GG|Traffic|Demand Gen": {
+      "country": "SG",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adformat": "Demand Gen",
+      "creative": "Image",
+      "kpis": {
+        "Impression": {
+          "target": null,
+          "actual": 1000779528.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": null,
+          "actual": 0.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": null,
+          "actual": 35152381.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    },
+    "SG|Google|YTB|Awareness|VRC 2.0": {
+      "country": "SG",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adformat": "VRC 2.0",
+      "creative": "Video",
+      "kpis": {
+        "Impression": {
+          "target": null,
+          "actual": 5556482.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 1,
+          "completion": 0
+        },
+        "VideoViews": {
+          "target": null,
+          "actual": 0.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 2,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": null,
+          "actual": 219780.0,
+          "achievement_rate": "null",
+          "target_rate": 70,
+          "achieved": false,
+          "priority": 4,
+          "completion": 0
+        }
+      }
+    }
+  },
+  "mediaMarketingFunnelFormatBudgetConfig_budget": {
+    "SG|Meta|平均值|Traffic|Image&Video Link Ads": {
+      "country": "SG",
+      "media": "Meta",
+      "platform": "平均值",
+      "funnel": "Traffic",
+      "adformat": "Image&Video Link Ads",
+      "creative": "Image&Video",
+      "target": null,
+      "actual": 1510800.0,
+      "achievement_rate": "null",
+      "target_rate": 70,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 0,
+      "total_budget_flexibility": 70
+    },
+    "SG|Google|GG|Traffic|Search": {
+      "country": "SG",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adformat": "Search",
+      "creative": "Text",
+      "target": null,
+      "actual": 0.0,
+      "achievement_rate": "null",
+      "target_rate": 70,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 0,
+      "total_budget_flexibility": 70
+    },
+    "SG|Google|GG|Traffic|Demand Gen": {
+      "country": "SG",
+      "media": "Google",
+      "platform": "GG",
+      "funnel": "Traffic",
+      "adformat": "Demand Gen",
+      "creative": "Image",
+      "target": null,
+      "actual": 4429200.0,
+      "achievement_rate": "null",
+      "target_rate": 70,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 0,
+      "total_budget_flexibility": 70
+    },
+    "SG|Google|YTB|Awareness|VRC 2.0": {
+      "country": "SG",
+      "media": "Google",
+      "platform": "YTB",
+      "funnel": "Awareness",
+      "adformat": "VRC 2.0",
+      "creative": "Video",
+      "target": null,
+      "actual": 60000.0,
+      "achievement_rate": "null",
+      "target_rate": 70,
+      "achieved": true,
+      "completion": 0,
+      "min_required": 0,
+      "total_budget_flexibility": 70
+    }
+  },
+  "adformat_budget_allocation": {
+    "SG": {
+      "Google|GG|Traffic|Search": {
+        "media": "Google",
+        "platform": "GG",
+        "funnel": "Traffic",
+        "adformat": "Search",
+        "budget": 0.0,
+        "satisfied": false
+      },
+      "Google|GG|Traffic|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "funnel": "Traffic",
+        "adformat": "Demand Gen",
+        "budget": 4429200.0,
+        "satisfied": true
+      },
+      "Meta|平均值|Traffic|Image&Video Link Ads": {
+        "media": "Meta",
+        "platform": "平均值",
+        "funnel": "Traffic",
+        "adformat": "Image&Video Link Ads",
+        "budget": 1510800.0,
+        "satisfied": true
+      },
+      "Google|YTB|Awareness|VRC 2.0": {
+        "media": "Google",
+        "platform": "YTB",
+        "funnel": "Awareness",
+        "adformat": "VRC 2.0",
+        "budget": 60000.0,
+        "satisfied": true
+      }
+    }
+  }
+}

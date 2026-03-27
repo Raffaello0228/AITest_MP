@@ -169,17 +169,24 @@ def load_testcase(testcase_file: Path, case_name: str) -> Optional[Dict[str, Any
     return test_cases[case_name]
 
 
-def extract_ai_data(result_json: Dict) -> List[Dict]:
-    """从 batch_query 结果中提取所有推广区域的 ai 维度数据（Xiaomi版本）"""
+def extract_ai_data(
+    result_json: Dict, check_dimension: str = "corporation"
+) -> List[Dict]:
+    """从 batch_query 结果中提取所有推广区域的指定维度数据（Xiaomi版本）"""
     ai_data_list = []
 
     # Xiaomi版本：result.result.dimensionMultiCountryResult
     result = result_json.get("data", {}).get("result", {})
     dimension_result = result.get("dimensionMultiCountryResult", {})
 
+    # 允许的维度：corporation/category/ai
+    # 若传入无效值，回退到 corporation
+    valid_dimensions = {"corporation", "category", "ai"}
+    if check_dimension not in valid_dimensions:
+        check_dimension = "corporation"
+
     for region_key, region_data in dimension_result.items():
-        ai_list = region_data.get("corporation", [])
-        # ai_list = region_data.get("ai", [])
+        ai_list = region_data.get(check_dimension, [])
         for ai_item in ai_list:
             # 过滤掉 media 列包含 TTL 的总计行
             media = ai_item.get("media", "")
@@ -207,6 +214,87 @@ def parse_budget(budget_str: Any) -> float:
         except (ValueError, TypeError):
             return 0.0
     return 0.0
+
+
+def build_stage_media_budget_share(
+    ai_data_list: List[Dict[str, Any]],
+) -> Dict[str, Dict[str, Any]]:
+    """
+    统计各国家下，不同 stage 的 media/platform 预算占比。
+
+    返回结构：
+    {
+      country: {
+        stage: {
+          "stage_total_budget": float,
+          "media_platforms": [
+            {
+              "media": str,
+              "platform": str,
+              "budget": float,
+              "share_percentage": float
+            }, ...
+          ]
+        }
+      }
+    }
+    """
+    agg: Dict[str, Dict[str, Dict[str, float]]] = {}
+
+    for ai_item in ai_data_list:
+        country = str(ai_item.get("country", "")).strip()
+        stage_name = str(ai_item.get("stage", "")).strip()
+        media = str(ai_item.get("media", "")).strip()
+        platform = str(ai_item.get("mediaChannel", "")).strip()
+
+        if not country or not stage_name or not media:
+            continue
+
+        budget = parse_budget(ai_item.get("totalBudget", 0))
+        key = f"{media}|{platform}"
+
+        if country not in agg:
+            agg[country] = {}
+        if stage_name not in agg[country]:
+            agg[country][stage_name] = {}
+        if key not in agg[country][stage_name]:
+            agg[country][stage_name][key] = 0.0
+
+        agg[country][stage_name][key] += budget
+
+    results: Dict[str, Dict[str, Any]] = {}
+    for country, stage_map in agg.items():
+        results[country] = {}
+        for stage_name, media_map in stage_map.items():
+            stage_total_budget = sum(media_map.values())
+            media_platforms = []
+
+            for media_platform_key, budget in sorted(
+                media_map.items(), key=lambda x: x[1], reverse=True
+            ):
+                media_name, platform_name = (
+                    media_platform_key.split("|", 1)
+                    if "|" in media_platform_key
+                    else (media_platform_key, "")
+                )
+                share_percentage = (
+                    (budget / stage_total_budget * 100) if stage_total_budget > 0 else 0.0
+                )
+                media_platforms.append(
+                    {
+                        "media": media_name,
+                        "platform": platform_name,
+                        "budget": round(budget, 2),
+                        "share_percentage": round(share_percentage, 2),
+                    }
+                )
+
+            results[country][stage_name] = {
+                "stage_total_budget": round(stage_total_budget, 2),
+                "media_platforms": media_platforms,
+            }
+
+    return results
 
 
 def parse_kpi_value(kpi_obj: Any) -> float:
@@ -1735,6 +1823,13 @@ def main():
         default=None,
         help="算法版本标识，与 results/<algo_version>/ 对应。不指定时从 result-file 路径推断或使用配置默认（如 latest）",
     )
+    parser.add_argument(
+        "--check-dimension",
+        type=str,
+        choices=["corporation", "category", "ai"],
+        default="corporation",
+        help="检查使用的维度（dimensionMultiCountryResult 下的键，默认: corporation）",
+    )
 
     args = parser.parse_args()
 
@@ -1764,8 +1859,8 @@ def main():
     job_id = result_json.get("job_id")
 
     # 提取 ai 数据
-    ai_data_list = extract_ai_data(result_json)
-    print(f"提取到 {len(ai_data_list)} 条 ai 维度数据")
+    ai_data_list = extract_ai_data(result_json, args.check_dimension)
+    print(f"提取到 {len(ai_data_list)} 条 {args.check_dimension} 维度数据")
     if uuid:
         print(f"UUID: {uuid}")
     if job_id:
@@ -1777,6 +1872,7 @@ def main():
         "uuid": uuid,
         "job_id": job_id,
         "testcase_config": testcase_config,
+        "stage_media_budget_share": build_stage_media_budget_share(ai_data_list),
         "global_kpi": check_global_kpi_achievement(
             result_json, ai_data_list, testcase_config
         ),
@@ -1831,13 +1927,8 @@ def main():
             output_file = output_base
     else:
         # 默认输出到 output/{common|xiaomi}/achievement_checks/json/<algo_version>/
-        project_root = result_file.resolve()
-        for _ in range(10):
-            if project_root.name == "output" or (project_root.parent / "output").exists():
-                break
-            project_root = project_root.parent
-        if "output" not in str(project_root):
-            project_root = Path(__file__).resolve().parent.parent
+        # 使用固定项目根目录，避免把 result_file 文件路径误识别为根目录
+        project_root = _project_root
         variant = infer_variant_from_result_path(result_file)
         algo_version = infer_algo_version_from_result_path(result_file)
         if algo_version is None:
