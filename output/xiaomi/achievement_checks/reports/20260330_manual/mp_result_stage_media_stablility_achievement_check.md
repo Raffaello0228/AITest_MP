@@ -1,8 +1,6 @@
 # 测试报告
-**测试用例**: brief_stage_media_stablility_稳定性-Media宽松-误差10
-**UUID**: 894945fb-3ea2-47ff-b380-c38a6e9f
-**Job ID**: 1774498008_1_c0b67dbd
-**生成时间**: 2026-03-26 14:32:31
+**测试用例**: stage_media_stablility
+**生成时间**: 2026-03-30 16:35:52
 
 ---
 ## 测试配置
@@ -13,7 +11,7 @@
 | 区域KPI目标达成率 | 80% |
 | 阶段预算误差范围 | 20% |
 | 营销漏斗预算误差范围 | 15% |
-| 媒体预算误差范围 | 10% |
+| 媒体预算误差范围 | 5% |
 | AdFormatKPI目标达成率 | 80% |
 | AdFormat预算目标达成率 | 80% |
 
@@ -22,31 +20,31 @@
 | 优先级 | KPI |
 |--------|-----|
 | 1 | Impression |
-| 2 | VideoViews |
-| 3 | Clicks |
+| 2 | Clicks |
+| 3 | VideoViews |
 
 ---
 ### 模块优先级
 | 优先级 | 模块 |
 |--------|-----|
-| 1 | media |
-| 2 | stage |
-| 3 | kpiInfo |
-| 4 | marketingFunnel |
+| 1 | kpiInfo |
+| 2 | media |
+| 3 | marketingFunnel |
+| 4 | stage |
 | 5 | mediaMarketingFunnelFormat |
 | 6 | mediaMarketingFunnelFormatBudgetConfig |
 
 ---
 ## 全局 KPI 达成情况
-**达成率**: 0/3 (0.00%)
+**达成率**: 2/3 (66.67%)
 
 **判断逻辑**: 当"必须达成"为"是"时，要求实际值 ≥ 目标值；当"必须达成"为"否"时，满足达成率条件即可。
 
 | KPI | 优先级 | 必须达成 | 实际值 | 目标值 | 达成率 | 状态 |
 |-----|--------|----------|--------|--------|--------|------|
-| Impression | 1 | 否 | 0 | 60,941,850 | 0.00% | ✗ 未达成 |
-| VideoViews | 2 | 否 | 0 | 881,914 | 0.00% | ✗ 未达成 |
-| Clicks | 4 | 否 | 0 | 655,130 | 0.00% | ✗ 未达成 |
+| Impression | 1 | 否 | 1,501,570,916 | 60,941,850 | 2464.00% | ✓ 达成 |
+| Clicks | 2 | 否 | 42,740,110 | 655,130 | 6524.00% | ✓ 达成 |
+| VideoViews | 3 | 否 | 0 | 881,914 | 0.00% | ✗ 未达成 |
 
 ---
 ## 区域预算达成情况
@@ -100,14 +98,18 @@
 说明：按 `国家 -> stage -> media|platform` 聚合预算，并计算每个 stage 内的占比。
 
 ### SG
-![SG 不同Stage下Media占比](brief_stage_media_stablility_稳定性-Media宽松-误差10_1774498008_1_c0b67dbd_achievement_check_stage_media_share_SG.png)
+![SG 不同Stage下Media占比](mp_result_stage_media_stablility_achievement_check_stage_media_share_SG.png)
 | Stage | Media | Platform | 预算 | 占比 |
 |-------|-------|----------|------|------|
-| OPEN SALE | Google | GG | 2,593,800.00 | 100.00% |
-| PREHEAT FOR LOCAL LAUNCH | Google | GG | 1,393,800.00 | 100.00% |
-| SUSTAIN | Meta | 平均值 | 1,510,800.00 | 75.07% |
-| SUSTAIN | Google | GG | 277,200.00 | 13.77% |
-| SUSTAIN | Google | YTB | 224,400.00 | 11.15% |
+| OPEN SALE | Google | GG | 1,940,681.00 | 74.82% |
+| OPEN SALE | Meta | 平均值 | 523,429.00 | 20.18% |
+| OPEN SALE | Google | YTB | 129,690.00 | 5.00% |
+| PREHEAT FOR LOCAL LAUNCH | Google | GG | 928,751.00 | 66.63% |
+| PREHEAT FOR LOCAL LAUNCH | Meta | 平均值 | 420,649.00 | 30.18% |
+| PREHEAT FOR LOCAL LAUNCH | Google | YTB | 44,400.00 | 3.19% |
+| SUSTAIN | Google | GG | 1,395,368.00 | 69.34% |
+| SUSTAIN | Meta | 平均值 | 566,722.00 | 28.16% |
+| SUSTAIN | Google | YTB | 50,310.00 | 2.50% |
 
 ---
 ## adformat KPI 达成情况
@@ -135,13 +137,16 @@
 ## adformat预算非0检查
 
 **说明**: 当 `allow_zero_budget=False` 时，检查每个推广区域下每个 AdFormat 是否都分配了预算。按 (媒体, 平台, 广告格式) 聚合求和预算，只要预算 > 0 即视为已分配。
-**总体满足率**: 4/4 (100.0%)
+**总体满足率**: 3/4 (75.0%)
 
 | 区域 | 满足数/总数 | 满足率 |
 |------|-------------|--------|
-| SG | 4/4 | 100.0% |
+| SG | 3/4 | 75.0% |
 
-✓ 所有 AdFormat 都已分配预算
+### SG - 未满足的 AdFormat
+| 媒体 | 平台 | 广告格式 | 预算 |
+|------|------|----------|------|
+| Google | GG | Search | 0.00 |
 
 ---
 ## 总体结论
@@ -150,7 +155,7 @@
 
 | 维度 | 达成情况 | 达成率 |
 |------|----------|--------|
-| 全局 KPI | 0/3 | 0.0% |
+| 全局 KPI | 2/3 | 66.7% |
 | 区域预算 | 0/0 | 0.0% |
 | 区域 KPI | 0/0 | 0.0% |
 | 阶段预算 | 3/3 | 100.0% |
@@ -158,4 +163,4 @@
 | 媒体预算 | 3/3 | 100.0% |
 | adformat kpi | 0/12 | 0.0% |
 | adformat预算 | 0/0 | 0.0% |
-| adformat预算非0 | 4/4 | 100.0% |
+| adformat预算非0 | 3/4 | 75.0% |

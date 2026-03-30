@@ -1,7 +1,7 @@
 {
-  "case_name": "brief_stage_media_stablility_稳定性-Media宽松-误差10",
-  "uuid": "894945fb-3ea2-47ff-b380-c38a6e9f",
-  "job_id": "1774498008_1_c0b67dbd",
+  "case_name": "stage_media_stablility",
+  "uuid": null,
+  "job_id": null,
   "testcase_config": {
     "kpi_target_rate": 80,
     "region_budget_target_rate": 90,
@@ -11,18 +11,18 @@
     "stage_match_type": "完全匹配",
     "marketingfunnel_range_match": 15,
     "marketingfunnel_match_type": "完全匹配",
-    "media_range_match": 10,
+    "media_range_match": 5,
     "media_match_type": "完全匹配",
     "kpi_priority_list": [
       "Impression",
-      "VideoViews",
-      "Clicks"
+      "Clicks",
+      "VideoViews"
     ],
     "module_priority_list": [
-      "media",
-      "stage",
       "kpiInfo",
+      "media",
       "marketingFunnel",
+      "stage",
       "mediaMarketingFunnelFormat",
       "mediaMarketingFunnelFormatBudgetConfig"
     ],
@@ -31,37 +31,26 @@
   },
   "stage_media_budget_share": {
     "SG": {
-      "SUSTAIN": {
-        "stage_total_budget": 2012400.0,
-        "media_platforms": [
-          {
-            "media": "Meta",
-            "platform": "平均值",
-            "budget": 1510800.0,
-            "share_percentage": 75.07
-          },
-          {
-            "media": "Google",
-            "platform": "GG",
-            "budget": 277200.0,
-            "share_percentage": 13.77
-          },
-          {
-            "media": "Google",
-            "platform": "YTB",
-            "budget": 224400.0,
-            "share_percentage": 11.15
-          }
-        ]
-      },
       "PREHEAT FOR LOCAL LAUNCH": {
         "stage_total_budget": 1393800.0,
         "media_platforms": [
           {
             "media": "Google",
             "platform": "GG",
-            "budget": 1393800.0,
-            "share_percentage": 100.0
+            "budget": 928751.0,
+            "share_percentage": 66.63
+          },
+          {
+            "media": "Meta",
+            "platform": "平均值",
+            "budget": 420649.0,
+            "share_percentage": 30.18
+          },
+          {
+            "media": "Google",
+            "platform": "YTB",
+            "budget": 44400.0,
+            "share_percentage": 3.19
           }
         ]
       },
@@ -71,8 +60,43 @@
           {
             "media": "Google",
             "platform": "GG",
-            "budget": 2593800.0,
-            "share_percentage": 100.0
+            "budget": 1940681.0,
+            "share_percentage": 74.82
+          },
+          {
+            "media": "Meta",
+            "platform": "平均值",
+            "budget": 523429.0,
+            "share_percentage": 20.18
+          },
+          {
+            "media": "Google",
+            "platform": "YTB",
+            "budget": 129690.0,
+            "share_percentage": 5.0
+          }
+        ]
+      },
+      "SUSTAIN": {
+        "stage_total_budget": 2012400.0,
+        "media_platforms": [
+          {
+            "media": "Google",
+            "platform": "GG",
+            "budget": 1395368.0,
+            "share_percentage": 69.34
+          },
+          {
+            "media": "Meta",
+            "platform": "平均值",
+            "budget": 566722.0,
+            "share_percentage": 28.16
+          },
+          {
+            "media": "Google",
+            "platform": "YTB",
+            "budget": 50310.0,
+            "share_percentage": 2.5
           }
         ]
       }
@@ -81,11 +105,20 @@
   "global_kpi": {
     "Impression": {
       "target": 60941850.0,
-      "actual": 0.0,
-      "achievement_rate": 0,
+      "actual": 1501570916.0,
+      "achievement_rate": 2464,
       "target_rate": 80,
-      "achieved": false,
+      "achieved": true,
       "priority": 1,
+      "completion": 0
+    },
+    "Clicks": {
+      "target": 655130.0,
+      "actual": 42740110.0,
+      "achievement_rate": 6524,
+      "target_rate": 80,
+      "achieved": true,
+      "priority": 2,
       "completion": 0
     },
     "VideoViews": {
@@ -94,16 +127,7 @@
       "achievement_rate": 0,
       "target_rate": 80,
       "achieved": false,
-      "priority": 2,
-      "completion": 0
-    },
-    "Clicks": {
-      "target": 655130.0,
-      "actual": 0.0,
-      "achievement_rate": 0,
-      "target_rate": 80,
-      "achieved": false,
-      "priority": 4,
+      "priority": 3,
       "completion": 0
     }
   },
@@ -111,14 +135,14 @@
   "region_kpi": {},
   "stage_budget": {
     "SG": {
-      "PREHEAT FOR LOCAL LAUNCH": {
-        "target": 1393800,
-        "actual": 1393800.0,
+      "OPEN SALE": {
+        "target": 2593800,
+        "actual": 2593800.0,
         "error_percentage": 0,
         "range_match": 20,
         "satisfied": true,
-        "target_percentage": 23.23,
-        "actual_percentage": 23.23,
+        "target_percentage": 43.23,
+        "actual_percentage": 43.230000000000004,
         "match_type": "完全匹配"
       },
       "SUSTAIN": {
@@ -131,14 +155,14 @@
         "actual_percentage": 33.54,
         "match_type": "完全匹配"
       },
-      "OPEN SALE": {
-        "target": 2593800,
-        "actual": 2593800.0,
+      "PREHEAT FOR LOCAL LAUNCH": {
+        "target": 1393800,
+        "actual": 1393800.0,
         "error_percentage": 0,
         "range_match": 20,
         "satisfied": true,
-        "target_percentage": 43.23,
-        "actual_percentage": 43.230000000000004,
+        "target_percentage": 23.23,
+        "actual_percentage": 23.23,
         "match_type": "完全匹配"
       }
     }
@@ -169,13 +193,25 @@
   },
   "media_budget": {
     "SG": {
+      "Google|YTB": {
+        "media": "Google",
+        "platform": "YTB",
+        "target": 300000,
+        "actual": 224400.0,
+        "error_percentage": 1,
+        "range_match": 5,
+        "satisfied": true,
+        "target_percentage": 5,
+        "actual_percentage": 3.74,
+        "match_type": "完全匹配"
+      },
       "Meta|平均值": {
         "media": "Meta",
         "platform": "平均值",
         "target": 1510800,
         "actual": 1510800.0,
         "error_percentage": 0,
-        "range_match": 10,
+        "range_match": 5,
         "satisfied": true,
         "target_percentage": 25.18,
         "actual_percentage": 25.180000000000003,
@@ -187,22 +223,10 @@
         "target": 4189200,
         "actual": 4264800.0,
         "error_percentage": 1,
-        "range_match": 10,
+        "range_match": 5,
         "satisfied": true,
         "target_percentage": 69.82,
         "actual_percentage": 71.08,
-        "match_type": "完全匹配"
-      },
-      "Google|YTB": {
-        "media": "Google",
-        "platform": "YTB",
-        "target": 300000,
-        "actual": 224400.0,
-        "error_percentage": 1,
-        "range_match": 10,
-        "satisfied": true,
-        "target_percentage": 5,
-        "actual_percentage": 3.74,
         "match_type": "完全匹配"
       }
     }
@@ -218,11 +242,20 @@
       "kpis": {
         "Impression": {
           "target": null,
-          "actual": 0.0,
+          "actual": 517156394.0,
           "achievement_rate": "null",
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": null,
+          "actual": 8070513.0,
+          "achievement_rate": "null",
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
           "completion": 0
         },
         "VideoViews": {
@@ -231,16 +264,7 @@
           "achievement_rate": "null",
           "target_rate": 80,
           "achieved": false,
-          "priority": 2,
-          "completion": 0
-        },
-        "Clicks": {
-          "target": null,
-          "actual": 0.0,
-          "achievement_rate": "null",
-          "target_rate": 80,
-          "achieved": false,
-          "priority": 4,
+          "priority": 3,
           "completion": 0
         }
       }
@@ -262,7 +286,7 @@
           "priority": 1,
           "completion": 0
         },
-        "VideoViews": {
+        "Clicks": {
           "target": null,
           "actual": 0.0,
           "achievement_rate": "null",
@@ -271,13 +295,13 @@
           "priority": 2,
           "completion": 0
         },
-        "Clicks": {
+        "VideoViews": {
           "target": null,
           "actual": 0.0,
           "achievement_rate": "null",
           "target_rate": 80,
           "achieved": false,
-          "priority": 4,
+          "priority": 3,
           "completion": 0
         }
       }
@@ -292,11 +316,20 @@
       "kpis": {
         "Impression": {
           "target": null,
-          "actual": 0.0,
+          "actual": 963633281.0,
           "achievement_rate": "null",
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": null,
+          "actual": 33847619.0,
+          "achievement_rate": "null",
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
           "completion": 0
         },
         "VideoViews": {
@@ -305,16 +338,7 @@
           "achievement_rate": "null",
           "target_rate": 80,
           "achieved": false,
-          "priority": 2,
-          "completion": 0
-        },
-        "Clicks": {
-          "target": null,
-          "actual": 0.0,
-          "achievement_rate": "null",
-          "target_rate": 80,
-          "achieved": false,
-          "priority": 4,
+          "priority": 3,
           "completion": 0
         }
       }
@@ -329,11 +353,20 @@
       "kpis": {
         "Impression": {
           "target": null,
-          "actual": 0.0,
+          "actual": 20781241.0,
           "achievement_rate": "null",
           "target_rate": 80,
           "achieved": false,
           "priority": 1,
+          "completion": 0
+        },
+        "Clicks": {
+          "target": null,
+          "actual": 821978.0,
+          "achievement_rate": "null",
+          "target_rate": 80,
+          "achieved": false,
+          "priority": 2,
           "completion": 0
         },
         "VideoViews": {
@@ -342,16 +375,7 @@
           "achievement_rate": "null",
           "target_rate": 80,
           "achieved": false,
-          "priority": 2,
-          "completion": 0
-        },
-        "Clicks": {
-          "target": null,
-          "actual": 0.0,
-          "achievement_rate": "null",
-          "target_rate": 80,
-          "achieved": false,
-          "priority": 4,
+          "priority": 3,
           "completion": 0
         }
       }
@@ -382,7 +406,7 @@
       "adformat": "Search",
       "creative": "Text",
       "target": null,
-      "actual": 277200.0,
+      "actual": 0.0,
       "achievement_rate": "null",
       "target_rate": 80,
       "achieved": true,
@@ -398,7 +422,7 @@
       "adformat": "Demand Gen",
       "creative": "Image",
       "target": null,
-      "actual": 3987600.0,
+      "actual": 4264800.0,
       "achievement_rate": "null",
       "target_rate": 80,
       "achieved": true,
@@ -433,22 +457,6 @@
         "budget": 1510800.0,
         "satisfied": true
       },
-      "Google|GG|Traffic|Search": {
-        "media": "Google",
-        "platform": "GG",
-        "funnel": "Traffic",
-        "adformat": "Search",
-        "budget": 277200.0,
-        "satisfied": true
-      },
-      "Google|GG|Traffic|Demand Gen": {
-        "media": "Google",
-        "platform": "GG",
-        "funnel": "Traffic",
-        "adformat": "Demand Gen",
-        "budget": 3987600.0,
-        "satisfied": true
-      },
       "Google|YTB|Awareness|VRC 2.0": {
         "media": "Google",
         "platform": "YTB",
@@ -456,6 +464,22 @@
         "adformat": "VRC 2.0",
         "budget": 224400.0,
         "satisfied": true
+      },
+      "Google|GG|Traffic|Demand Gen": {
+        "media": "Google",
+        "platform": "GG",
+        "funnel": "Traffic",
+        "adformat": "Demand Gen",
+        "budget": 4264800.0,
+        "satisfied": true
+      },
+      "Google|GG|Traffic|Search": {
+        "media": "Google",
+        "platform": "GG",
+        "funnel": "Traffic",
+        "adformat": "Search",
+        "budget": 0.0,
+        "satisfied": false
       }
     }
   }

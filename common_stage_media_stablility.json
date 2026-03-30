@@ -1,0 +1,413 @@
+{
+    "basicInfo": {
+        "isHistoryMp": 0,
+        "kpiInfo": [
+            {
+                "key": "Impression",
+                "val": "60941850",
+                "priority": 1,
+                "completion": 1
+            },
+            {
+                "completion": 1,
+                "priority": 2,
+                "key": "Clicks",
+                "val": "655130"
+            },
+            {
+                "completion": 1,
+                "priority": 3,
+                "key": "VideoViews",
+                "val": "881914"
+            }
+        ],
+        "kpiInfoBudgetConfig": {
+            "rangeMatch": 80
+        },
+        "regionBudgetConfig": {
+            "consistentMatch": 1,
+            "rangeMatch": 10,
+            "budgetCompletionRule": 90,
+            "kpiCompletionRule": 80
+        },
+        "dimension": [
+            "corporation",
+            "category",
+            "ai"
+        ],
+        "usedHistoryMp": 0,
+        "moduleConfig": [
+            {
+                "moduleName": "kpiInfo",
+                "priority": 1
+            },
+            {
+                "moduleName": "regionBudget",
+                "priority": 2
+            },
+            {
+                "moduleName": "media",
+                "priority": 3
+            },
+            {
+                "moduleName": "marketingFunnel",
+                "priority": 4
+            },
+            {
+                "moduleName": "stage",
+                "priority": 5
+            },
+            {
+                "moduleName": "regionKPI",
+                "priority": 6
+            },
+            {
+                "moduleName": "mediaMarketingFunnelAdtype",
+                "priority": 7
+            }
+        ],
+        "mediaPlanName": "小米-台湾_副本",
+        "corporationId": "18581",
+        "corporationName": "北京小米移动软件有限公司",
+        "accountId": "1585800155526884,643767694507793,7440499749315988,8568157388",
+        "campaignId": null,
+        "currency": "USD",
+        "totalBudget": 60000,
+        "regionBudget": [
+            {
+                "country": {
+                    "code": "Taiwan",
+                    "groupName": "CountryFullName"
+                },
+                "budgetPercentage": 100,
+                "budgetAmount": 60000,
+                "completion": 0,
+                "kpiInfo": [
+                    {
+                        "key": "Impression",
+                        "val": "",
+                        "priority": 1,
+                        "completion": 0
+                    },
+                    {
+                        "key": "Clicks",
+                        "val": "",
+                        "priority": 2,
+                        "completion": 0
+                    },
+                    {
+                        "key": "VideoViews",
+                        "val": "",
+                        "priority": 3,
+                        "completion": 0
+                    }
+                ]
+            }
+        ],
+        "categoryLevel1Id": "7",
+        "categoryLevel2Id": "7003",
+        "categoryLevel3Id": "7003001",
+        "uuid": "de425f7a-4e80-45ad-920c-8a44caa5",
+        "parentBriefId": "82889461-bde7-4509-b9b6-9f05985e",
+        "usedModified": 0,
+        "isModified": 0
+    },
+    "briefMultiConfig": [
+        {
+            "country": {
+                "code": "Taiwan",
+                "groupName": "CountryFullName"
+            },
+            "stage": [
+                {
+                    "name": "Preheat for local",
+                    "budgetPercentage": 23.23,
+                    "budgetAmount": 13938,
+                    "dates": [
+                        "20260223",
+                        "20260306"
+                    ],
+                    "marketingFunnel": null,
+                    "mediaPlatform": null
+                },
+                {
+                    "name": "Open Sale",
+                    "budgetPercentage": 43.23,
+                    "budgetAmount": 25938,
+                    "dates": [
+                        "20260306",
+                        "20260323"
+                    ],
+                    "marketingFunnel": null,
+                    "mediaPlatform": null
+                },
+                {
+                    "name": "Sustain",
+                    "budgetPercentage": 33.54,
+                    "budgetAmount": 20124,
+                    "dates": [
+                        "20260325",
+                        "20260531"
+                    ],
+                    "marketingFunnel": null,
+                    "mediaPlatform": null
+                }
+            ],
+            "moduleConfig": [
+                {
+                    "moduleName": "kpiInfo",
+                    "priority": 1
+                },
+                {
+                    "moduleName": "regionBudget",
+                    "priority": 2
+                },
+                {
+                    "moduleName": "media",
+                    "priority": 3
+                },
+                {
+                    "moduleName": "marketingFunnel",
+                    "priority": 4
+                },
+                {
+                    "moduleName": "stage",
+                    "priority": 5
+                },
+                {
+                    "moduleName": "regionKPI",
+                    "priority": 6
+                },
+                {
+                    "moduleName": "mediaMarketingFunnelAdtype",
+                    "priority": 7
+                }
+            ],
+            "stageBudgetConfig": {
+                "consistentMatch": 1,
+                "precision": 2,
+                "rangeMatch": 20,
+                "priority": 3
+            },
+            "marketingFunnel": [
+                {
+                    "name": "Awareness",
+                    "budgetPercentage": 3.74,
+                    "budgetAmount": 2244
+                },
+                {
+                    "name": "Traffic",
+                    "budgetPercentage": 96.26,
+                    "budgetAmount": 57756
+                }
+            ],
+            "marketingFunnelBudgetConfig": {
+                "consistentMatch": 1,
+                "precision": 2,
+                "rangeMatch": 15,
+                "priority": 4
+            },
+            "media": [
+                {
+                    "name": "Meta",
+                    "budgetPercentage": 25.18,
+                    "budgetAmount": 15108,
+                    "children": [
+                        {
+                            "name": "平均值",
+                            "budgetPercentage": 25.18,
+                            "budgetAmount": 15108
+                        }
+                    ]
+                },
+                {
+                    "name": "Google",
+                    "budgetPercentage": 74.82,
+                    "budgetAmount": 44892,
+                    "children": [
+                        {
+                            "name": "GG",
+                            "budgetPercentage": 69.82,
+                            "budgetAmount": 41892
+                        },
+                        {
+                            "name": "YTB",
+                            "budgetPercentage": 5,
+                            "budgetAmount": 3000
+                        }
+                    ]
+                }
+            ],
+            "mediaBudgetConfig": {
+                "consistentMatch": 1,
+                "precision": 2,
+                "rangeMatch": 5,
+                "priority": 2
+            },
+            "mediaMarketingFunnelAdtype": [
+                {
+                    "mediaName": "Meta",
+                    "platform": [
+                        "平均值"
+                    ],
+                    "marketingFunnels": [
+                        {
+                            "funnelName": "Awareness",
+                            "funnelNameKey": "Awareness",
+                            "adType": []
+                        },
+                        {
+                            "funnelName": "Traffic",
+                            "funnelNameKey": "Traffic",
+                            "adType": []
+                        }
+                    ],
+                    "adTypeWithKPI": [
+                        {
+                            "funnelName": "Traffic",
+                            "adTypeName": "Traffic",
+                            "kpiInfo": [
+                                {
+                                    "key": "Impression",
+                                    "priority": 1,
+                                    "val": "",
+                                    "completion": 0
+                                },
+                                {
+                                    "key": "Clicks",
+                                    "priority": 2,
+                                    "val": "",
+                                    "completion": 0
+                                },
+                                {
+                                    "key": "VideoViews",
+                                    "priority": 3,
+                                    "val": "",
+                                    "completion": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "mediaName": "Google",
+                    "platform": [
+                        "GG"
+                    ],
+                    "marketingFunnels": [
+                        {
+                            "funnelName": "Awareness",
+                            "funnelNameKey": "Awareness",
+                            "adType": []
+                        },
+                        {
+                            "funnelName": "Traffic",
+                            "funnelNameKey": "Traffic",
+                            "adType": []
+                        }
+                    ],
+                    "adTypeWithKPI": [
+                        {
+                            "funnelName": "Traffic",
+                            "adTypeName": "Demand Gen",
+                            "kpiInfo": [
+                                {
+                                    "key": "Impression",
+                                    "priority": 1,
+                                    "val": "",
+                                    "completion": 0
+                                },
+                                {
+                                    "key": "Clicks",
+                                    "priority": 2,
+                                    "val": "",
+                                    "completion": 0
+                                },
+                                {
+                                    "key": "VideoViews",
+                                    "priority": 3,
+                                    "val": "",
+                                    "completion": 0
+                                }
+                            ]
+                        },
+                        {
+                            "funnelName": "Traffic",
+                            "adTypeName": "Search",
+                            "kpiInfo": [
+                                {
+                                    "key": "Impression",
+                                    "priority": 1,
+                                    "val": "",
+                                    "completion": 0
+                                },
+                                {
+                                    "key": "Clicks",
+                                    "priority": 2,
+                                    "val": "",
+                                    "completion": 0
+                                },
+                                {
+                                    "key": "VideoViews",
+                                    "priority": 3,
+                                    "val": "",
+                                    "completion": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "mediaName": "Google",
+                    "platform": [
+                        "YTB"
+                    ],
+                    "marketingFunnels": [
+                        {
+                            "funnelName": "Awareness",
+                            "funnelNameKey": "Awareness",
+                            "adType": []
+                        },
+                        {
+                            "funnelName": "Traffic",
+                            "funnelNameKey": "Traffic",
+                            "adType": []
+                        }
+                    ],
+                    "adTypeWithKPI": [
+                        {
+                            "funnelName": "Awareness",
+                            "adTypeName": "VRC 2.0",
+                            "kpiInfo": [
+                                {
+                                    "key": "Impression",
+                                    "priority": 1,
+                                    "val": "",
+                                    "completion": 0
+                                },
+                                {
+                                    "key": "Clicks",
+                                    "priority": 2,
+                                    "val": "",
+                                    "completion": 0
+                                },
+                                {
+                                    "key": "VideoViews",
+                                    "priority": 3,
+                                    "val": "",
+                                    "completion": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "mediaMarketingFunnelAdtypeBudgetConfig": {
+                "consistentMatch": 1,
+                "precision": 2,
+                "rangeMatch": 80,
+                "priority": 5
+            }
+        }
+    ]
+}
