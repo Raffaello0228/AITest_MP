@@ -1,0 +1,384 @@
+{
+  "basicInfo": {
+    "isHistoryMp": 1,
+    "kpiInfo": [
+      {
+        "key": "Impression",
+        "val": "73509616",
+        "priority": 1,
+        "completion": 1
+      },
+      {
+        "key": "Clicks",
+        "val": "655130",
+        "priority": 2,
+        "completion": 0
+      }
+    ],
+    "kpiInfoBudgetConfig": {
+      "rangeMatch": 80
+    },
+    "dimension": [
+      "corporation",
+      "ai"
+    ],
+    "usedHistoryMp": 1,
+    "moduleConfig": [
+      {
+        "moduleName": "kpiInfo",
+        "priority": 1
+      },
+      {
+        "moduleName": "media",
+        "priority": 2
+      },
+      {
+        "moduleName": "marketingFunnel",
+        "priority": 3
+      },
+      {
+        "moduleName": "stage",
+        "priority": 4
+      },
+      {
+        "moduleName": "mediaMarketingFunnelFormat",
+        "priority": 5
+      },
+      {
+        "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+        "priority": 6
+      }
+    ],
+    "regionBudget": [
+      {
+        "countryInfo": {
+          "countryCode": "SG",
+          "countryNameCN": "新加坡",
+          "countryNameEn": "Singapore",
+          "regionCode": "SEA",
+          "regionNameCN": "东南亚",
+          "mpCode": "SG"
+        }
+      }
+    ],
+    "totalBudget": 57280,
+    "uuid": "35ef7faf-ee35-4d5f-95f5-14f26e1e8237",
+    "historyMpId": "0f25ac3c-d0e6-4340-995b-c795e766",
+    "mediaPlanName": "test_12_29_upload",
+    "corporationId": "18581",
+    "projectName": "Project",
+    "productName": "Product",
+    "brandName": "Mi",
+    "briefCode": "Brief Code",
+    "currency": "USD",
+    "corporationName": "北京小米移动软件有限公司",
+    "accountId": "1000263097025266",
+    "categoryLevel1Id": "7",
+    "categoryLevel2Id": "7003",
+    "categoryLevel3Id": "7003001",
+    "competitorCorporationId": "10866",
+    "campaignId": null
+  },
+  "briefMultiConfig": [
+    {
+      "countryInfo": {
+        "countryCode": "SG",
+        "countryNameCN": "新加坡",
+        "countryNameEn": "Singapore",
+        "regionCode": "SEA",
+        "regionNameCN": "东南亚",
+        "mpCode": "SG"
+      },
+      "moduleConfig": [
+        {
+          "moduleName": "kpiInfo",
+          "priority": 1
+        },
+        {
+          "moduleName": "media",
+          "priority": 3
+        },
+        {
+          "moduleName": "marketingFunnel",
+          "priority": 4
+        },
+        {
+          "moduleName": "stage",
+          "priority": 5
+        },
+        {
+          "moduleName": "mediaMarketingFunnelFormat",
+          "priority": 7
+        },
+        {
+          "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+          "priority": 8
+        }
+      ],
+      "stageBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 20
+      },
+      "marketingFunnelBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 15
+      },
+      "mediaBudgetConfig": {
+        "consistentMatch": 1,
+        "rangeMatch": 5
+      },
+      "mediaMarketingFunnelFormatBudgetConfig": {
+        "precision": 2,
+        "totalBudgetFlexibility": 100,
+        "kpiFlexibility": 100
+      },
+      "stage": [
+        {
+          "name": "Open Sale",
+          "budgetPercentage": 43.23,
+          "budgetAmount": 24762,
+          "dates": [
+            "2026-03-06",
+            "2026-03-23"
+          ],
+          "marketingFunnel": [
+            "Awareness",
+            "Traffic"
+          ],
+          "mediaPlatform": [
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Google",
+              "YTB"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ]
+          ]
+        },
+        {
+          "name": "Preheat for local",
+          "budgetPercentage": 23.23,
+          "budgetAmount": 13306,
+          "dates": [
+            "2026-02-23",
+            "2026-03-06"
+          ],
+          "marketingFunnel": [
+            "Traffic"
+          ],
+          "mediaPlatform": [
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ]
+          ]
+        },
+        {
+          "name": "Sustain",
+          "budgetPercentage": 33.54,
+          "budgetAmount": 19212,
+          "dates": [
+            "2026-03-25",
+            "2026-05-31"
+          ],
+          "marketingFunnel": [
+            "Traffic"
+          ],
+          "mediaPlatform": [
+            [
+              "Google",
+              "GG"
+            ],
+            [
+              "Meta",
+              "平均值"
+            ]
+          ]
+        }
+      ],
+      "marketingFunnel": [
+        {
+          "name": "Awareness",
+          "budgetPercentage": 3.74,
+          "budgetAmount": 2143
+        },
+        {
+          "name": "Traffic",
+          "budgetPercentage": 96.26,
+          "budgetAmount": 55137
+        }
+      ],
+      "media": [
+        {
+          "name": "Google",
+          "budgetPercentage": 50.0,
+          "budgetAmount": 28640,
+          "children": [
+            {
+              "name": "GG",
+              "budgetPercentage": 50.0,
+              "budgetAmount": 28640
+            },
+            {
+              "name": "YTB",
+              "budgetPercentage": 0.0,
+              "budgetAmount": 0
+            }
+          ]
+        },
+        {
+          "name": "Meta",
+          "budgetPercentage": 50.0,
+          "budgetAmount": 28640,
+          "children": [
+            {
+              "name": "平均值",
+              "budgetPercentage": 50.0,
+              "budgetAmount": 28640
+            }
+          ]
+        }
+      ],
+      "mediaMarketingFunnelFormat": [
+        {
+          "mediaName": "Google",
+          "platform": [
+            "GG"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adFormatName": "Demand Gen",
+              "creative": "Image/Video",
+              "adFormatTotalBudget": 29143,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "48571429",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "485714",
+                  "priority": 2,
+                  "completion": 0
+                }
+              ]
+            },
+            {
+              "funnelName": "Traffic",
+              "adFormatName": "Search",
+              "creative": "Text",
+              "adFormatTotalBudget": 11571,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "723214",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "57857",
+                  "priority": 2,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Google",
+          "platform": [
+            "YTB"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Awareness",
+              "funnelNameKey": "Awareness",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Awareness",
+              "adFormatName": "VRC 2.0",
+              "creative": "Video",
+              "adFormatTotalBudget": 2143,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "1190476",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "613",
+                  "priority": 2,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "mediaName": "Meta",
+          "platform": [
+            "平均值"
+          ],
+          "marketingFunnels": [
+            {
+              "funnelName": "Traffic",
+              "funnelNameKey": "Traffic",
+              "adFormat": []
+            }
+          ],
+          "adFormatWithKPI": [
+            {
+              "funnelName": "Traffic",
+              "adFormatName": "Traffic",
+              "creative": "Image/Video",
+              "adFormatTotalBudget": 14423,
+              "completion": 0,
+              "kpiInfo": [
+                {
+                  "key": "Impression",
+                  "val": "10456731",
+                  "priority": 1,
+                  "completion": 0
+                },
+                {
+                  "key": "Clicks",
+                  "val": "110946",
+                  "priority": 2,
+                  "completion": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

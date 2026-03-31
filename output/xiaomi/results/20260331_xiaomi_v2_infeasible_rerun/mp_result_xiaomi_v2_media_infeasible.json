@@ -1,0 +1,2108 @@
+{
+  "success": true,
+  "status": 201,
+  "ms": 198,
+  "data": {
+    "message": "success",
+    "code": 0,
+    "result": {
+      "briefInfo": {
+        "basicInfo": {
+          "isHistoryMp": 1,
+          "kpiInfo": [
+            {
+              "key": "Impression",
+              "val": "73509616",
+              "priority": 1,
+              "completion": 1
+            },
+            {
+              "key": "Clicks",
+              "val": "655130",
+              "priority": 2,
+              "completion": 0
+            }
+          ],
+          "kpiInfoBudgetConfig": {
+            "rangeMatch": 80
+          },
+          "dimension": [
+            "corporation",
+            "ai"
+          ],
+          "usedHistoryMp": 1,
+          "moduleConfig": [
+            {
+              "moduleName": "kpiInfo",
+              "priority": 1
+            },
+            {
+              "moduleName": "media",
+              "priority": 2
+            },
+            {
+              "moduleName": "marketingFunnel",
+              "priority": 3
+            },
+            {
+              "moduleName": "stage",
+              "priority": 4
+            },
+            {
+              "moduleName": "mediaMarketingFunnelFormat",
+              "priority": 5
+            },
+            {
+              "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+              "priority": 6
+            }
+          ],
+          "regionBudget": [
+            {
+              "countryInfo": {
+                "countryCode": "SG",
+                "countryNameCN": "新加坡",
+                "countryNameEn": "Singapore",
+                "regionCode": "SEA",
+                "regionNameCN": "东南亚",
+                "mpCode": "SG"
+              }
+            }
+          ],
+          "totalBudget": 57280,
+          "uuid": "f1ad1718-abee-411d-a4a4-13369c2d",
+          "historyMpId": "0f25ac3c-d0e6-4340-995b-c795e766",
+          "mediaPlanName": "test_12_29_upload",
+          "corporationId": "18581",
+          "projectName": "Project",
+          "productName": "Product",
+          "brandName": "Mi",
+          "briefCode": "Brief Code",
+          "currency": "USD",
+          "corporationName": "北京小米移动软件有限公司",
+          "accountId": "1000263097025266",
+          "categoryLevel1Id": "7",
+          "categoryLevel2Id": "7003",
+          "categoryLevel3Id": "7003001",
+          "competitorCorporationId": "10866",
+          "campaignId": null,
+          "jobId": "1774951846_1_6f9499b4",
+          "isModified": 0
+        },
+        "briefMultiConfig": [
+          {
+            "stage": [
+              {
+                "name": "Open Sale",
+                "budgetPercentage": 43.23,
+                "budgetAmount": 24762,
+                "dates": [
+                  "2026-03-06",
+                  "2026-03-23"
+                ],
+                "marketingFunnel": [
+                  "Awareness",
+                  "Traffic"
+                ],
+                "mediaPlatform": [
+                  [
+                    "Google",
+                    "GG"
+                  ],
+                  [
+                    "Google",
+                    "YTB"
+                  ],
+                  [
+                    "Meta",
+                    "平均值"
+                  ]
+                ]
+              },
+              {
+                "name": "Preheat for local",
+                "budgetPercentage": 23.23,
+                "budgetAmount": 13306,
+                "dates": [
+                  "2026-02-23",
+                  "2026-03-06"
+                ],
+                "marketingFunnel": [
+                  "Traffic"
+                ],
+                "mediaPlatform": [
+                  [
+                    "Google",
+                    "GG"
+                  ],
+                  [
+                    "Meta",
+                    "平均值"
+                  ]
+                ]
+              },
+              {
+                "name": "Sustain",
+                "budgetPercentage": 33.54,
+                "budgetAmount": 19212,
+                "dates": [
+                  "2026-03-25",
+                  "2026-05-31"
+                ],
+                "marketingFunnel": [
+                  "Traffic"
+                ],
+                "mediaPlatform": [
+                  [
+                    "Google",
+                    "GG"
+                  ],
+                  [
+                    "Meta",
+                    "平均值"
+                  ]
+                ]
+              }
+            ],
+            "marketingFunnel": [
+              {
+                "name": "Awareness",
+                "budgetPercentage": 3.74,
+                "budgetAmount": 2143
+              },
+              {
+                "name": "Traffic",
+                "budgetPercentage": 96.26,
+                "budgetAmount": 55137
+              }
+            ],
+            "mediaMarketingFunnelFormat": [
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Traffic",
+                    "funnelNameKey": "Traffic",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "GG"
+                ],
+                "mediaName": "Google",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Traffic",
+                    "adFormatName": "Demand Gen",
+                    "creative": "Image/Video",
+                    "adFormatTotalBudget": 29143,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "48571429",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Clicks",
+                        "val": "485714",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  },
+                  {
+                    "funnelName": "Traffic",
+                    "adFormatName": "Search",
+                    "creative": "Text",
+                    "adFormatTotalBudget": 11571,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "723214",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Clicks",
+                        "val": "57857",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Awareness",
+                    "funnelNameKey": "Awareness",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "YTB"
+                ],
+                "mediaName": "Google",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Awareness",
+                    "adFormatName": "VRC 2.0",
+                    "creative": "Video",
+                    "adFormatTotalBudget": 2143,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "1190476",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Clicks",
+                        "val": "613",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "marketingFunnels": [
+                  {
+                    "funnelName": "Traffic",
+                    "funnelNameKey": "Traffic",
+                    "adFormat": []
+                  }
+                ],
+                "platform": [
+                  "平均值"
+                ],
+                "mediaName": "Meta",
+                "adFormatWithKPI": [
+                  {
+                    "funnelName": "Traffic",
+                    "adFormatName": "Traffic",
+                    "creative": "Image/Video",
+                    "adFormatTotalBudget": 14423,
+                    "completion": 0,
+                    "kpiInfo": [
+                      {
+                        "key": "Impression",
+                        "val": "10456731",
+                        "priority": 1,
+                        "completion": 0
+                      },
+                      {
+                        "key": "Clicks",
+                        "val": "110946",
+                        "priority": 2,
+                        "completion": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "name": "Google",
+                "budgetPercentage": 50,
+                "budgetAmount": 28640,
+                "children": [
+                  {
+                    "name": "GG",
+                    "budgetPercentage": 50,
+                    "budgetAmount": 28640
+                  },
+                  {
+                    "name": "YTB",
+                    "budgetPercentage": 0,
+                    "budgetAmount": 0
+                  }
+                ]
+              },
+              {
+                "name": "Meta",
+                "budgetPercentage": 50,
+                "budgetAmount": 28640,
+                "children": [
+                  {
+                    "name": "平均值",
+                    "budgetPercentage": 50,
+                    "budgetAmount": 28640
+                  }
+                ]
+              }
+            ],
+            "stageBudgetConfig": {
+              "consistentMatch": 1,
+              "rangeMatch": 20,
+              "priority": 5
+            },
+            "marketingFunnelBudgetConfig": {
+              "consistentMatch": 1,
+              "rangeMatch": 15,
+              "priority": 4
+            },
+            "mediaBudgetConfig": {
+              "consistentMatch": 1,
+              "rangeMatch": 5,
+              "priority": 3
+            },
+            "mediaMarketingFunnelFormatBudgetConfig": {
+              "precision": 2,
+              "totalBudgetFlexibility": 100,
+              "kpiFlexibility": 100,
+              "priority": 7
+            },
+            "moduleConfig": [
+              {
+                "moduleName": "kpiInfo",
+                "priority": 1
+              },
+              {
+                "moduleName": "media",
+                "priority": 3
+              },
+              {
+                "moduleName": "marketingFunnel",
+                "priority": 4
+              },
+              {
+                "moduleName": "stage",
+                "priority": 5
+              },
+              {
+                "moduleName": "mediaMarketingFunnelFormat",
+                "priority": 7
+              },
+              {
+                "moduleName": "mediaMarketingFunnelFormatBudgetConfig",
+                "priority": 8
+              }
+            ],
+            "jobId": "1774951846_1_6f9499b4",
+            "countryInfo": {
+              "countryCode": "SG",
+              "countryNameCN": "新加坡",
+              "countryNameEn": "Singapore",
+              "regionCode": "SEA",
+              "regionNameCN": "东南亚",
+              "mpCode": "SG"
+            },
+            "warn": []
+          }
+        ]
+      },
+      "dimensionMultiCountryResult": {
+        "SEA_SG": {
+          "corporation": [
+            {
+              "estCPM": {
+                "value": "0.6000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "17268250",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12292",
+              "uid": "12292",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Open Sale",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image/Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "18.99%",
+              "totalBudget": 10879,
+              "adBudget": 10360.95,
+              "serviceFee": 518.05,
+              "dstFee": 0,
+              "dailyBudget": 115.12,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "16.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "685655",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12295",
+              "uid": "12295",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Open Sale",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "20.11%",
+              "totalBudget": 11519,
+              "adBudget": 10970.48,
+              "serviceFee": 548.52,
+              "dstFee": 0,
+              "dailyBudget": 121.89,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "0.6000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "12104767",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12293",
+              "uid": "12293",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Preheat for local",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image/Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "13.31%",
+              "totalBudget": 7626,
+              "adBudget": 7262.86,
+              "serviceFee": 363.14,
+              "dstFee": 0,
+              "dailyBudget": 80.7,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "16.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "368453",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12296",
+              "uid": "12296",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Preheat for local",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "10.81%",
+              "totalBudget": 6190,
+              "adBudget": 5895.24,
+              "serviceFee": 294.76,
+              "dstFee": 0,
+              "dailyBudget": 65.5,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "0.6000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "14833333",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12294",
+              "uid": "12294",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Sustain",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Image/Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "16.32%",
+              "totalBudget": 9345,
+              "adBudget": 8900,
+              "serviceFee": 445,
+              "dstFee": 0,
+              "dailyBudget": 98.89,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "16.0000",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "531964",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12297",
+              "uid": "12297",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Sustain",
+              "dimension": "corporation",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "15.60%",
+              "totalBudget": 8937,
+              "adBudget": 8511.43,
+              "serviceFee": 425.57,
+              "dstFee": 0,
+              "dailyBudget": 94.57,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12298",
+              "uid": "12298",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Open Sale",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "1.62%",
+              "totalBudget": 927,
+              "adBudget": 882.86,
+              "serviceFee": 44.14,
+              "dstFee": 0,
+              "dailyBudget": 9.81,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12299",
+              "uid": "12299",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Preheat for local",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "0.90%",
+              "totalBudget": 518,
+              "adBudget": 493.33,
+              "serviceFee": 24.67,
+              "dstFee": 0,
+              "dailyBudget": 5.48,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12300",
+              "uid": "12300",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Sustain",
+              "dimension": "corporation",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "2.33%",
+              "totalBudget": 1337,
+              "adBudget": 1273.33,
+              "serviceFee": 63.67,
+              "dstFee": 0,
+              "dailyBudget": 14.15,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "45792422",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Google-TTL:",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 57278,
+              "adBudget": 54550.48,
+              "serviceFee": 2727.52,
+              "dstFee": 0,
+              "dailyBudget": 606.11,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "45792422",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "All Media TTL",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 57278,
+              "adBudget": 54550.48,
+              "serviceFee": 2727.52,
+              "dstFee": 0,
+              "dailyBudget": 606.11,
+              "budgetAllocation": "100.00%"
+            }
+          ],
+          "ai": [
+            {
+              "estCPM": {
+                "value": "3.5670",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.29",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "5661688",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "69639",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.23%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12283",
+              "uid": "12283",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Open Sale",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image/Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "37.02%",
+              "totalBudget": 21205,
+              "adBudget": 20195.24,
+              "serviceFee": 1009.76,
+              "dstFee": 0,
+              "dailyBudget": 224.39,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "19.0370",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.39",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "293264",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "14315",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "4.88%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12286",
+              "uid": "12286",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Open Sale",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "10.23%",
+              "totalBudget": 5862,
+              "adBudget": 5582.86,
+              "serviceFee": 279.14,
+              "dstFee": 0,
+              "dailyBudget": 62.03,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "3.5670",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.29",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "1636428",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "20128",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.23%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12284",
+              "uid": "12284",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Preheat for local",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image/Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "10.70%",
+              "totalBudget": 6129,
+              "adBudget": 5837.14,
+              "serviceFee": 291.86,
+              "dstFee": 0,
+              "dailyBudget": 64.86,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "19.0370",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.39",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "293264",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "14315",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "4.88%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12287",
+              "uid": "12287",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Preheat for local",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "10.23%",
+              "totalBudget": 5862,
+              "adBudget": 5582.86,
+              "serviceFee": 279.14,
+              "dstFee": 0,
+              "dailyBudget": 62.03,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "3.5670",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.29",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "2773039",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "34108",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "1.23%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12285",
+              "uid": "12285",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Sustain",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Image/Video",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Demand Gen",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "18.13%",
+              "totalBudget": 10386,
+              "adBudget": 9891.43,
+              "serviceFee": 494.57,
+              "dstFee": 0,
+              "dailyBudget": 109.9,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "19.0370",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.39",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "293264",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "14315",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "4.88%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12288",
+              "uid": "12288",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "GG",
+              "stage": "Sustain",
+              "dimension": "ai",
+              "objective": "Traffic",
+              "creative": "Text",
+              "marketingFunnel": "Traffic",
+              "adFormat": "Search",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "10.23%",
+              "totalBudget": 5862,
+              "adBudget": 5582.86,
+              "serviceFee": 279.14,
+              "dstFee": 0,
+              "dailyBudget": 62.03,
+              "buyingModelKeyMeasurement": "CPC"
+            },
+            {
+              "estCPM": {
+                "value": "9.5190",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.31",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "26314",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "808",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.07%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12289",
+              "uid": "12289",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Open Sale",
+              "dimension": "ai",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "0.46%",
+              "totalBudget": 263,
+              "adBudget": 250.48,
+              "serviceFee": 12.52,
+              "dstFee": 0,
+              "dailyBudget": 2.78,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "9.5190",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.31",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "26413",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "811",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.07%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12290",
+              "uid": "12290",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Preheat for local",
+              "dimension": "ai",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "0.46%",
+              "totalBudget": 264,
+              "adBudget": 251.43,
+              "serviceFee": 12.57,
+              "dstFee": 0,
+              "dailyBudget": 2.79,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": {
+                "value": "9.5190",
+                "isModified": 0
+              },
+              "estCPVOrCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPC": {
+                "value": "0.31",
+                "isModified": 0
+              },
+              "estCPE": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estCPV": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estImpression": {
+                "value": "144673",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estViewRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagement": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estEngagementRate": {
+                "value": "-",
+                "isModified": 0
+              },
+              "estClicks": {
+                "value": "4442",
+                "isModified": 0
+              },
+              "estCTR": {
+                "value": "3.07%",
+                "isModified": 0
+              },
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "id": "12291",
+              "uid": "12291",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "media": "Google",
+              "product": "Product",
+              "brand": "Mi",
+              "mediaChannel": "YTB",
+              "stage": "Sustain",
+              "dimension": "ai",
+              "objective": "Awareness",
+              "creative": "Video",
+              "marketingFunnel": "Awareness",
+              "adFormat": "VRC 2.0",
+              "briefCode": "Brief Code",
+              "blsEligibility": "",
+              "startDate": "2026-04-01",
+              "endDate": "2026-06-29",
+              "durationDays": 90,
+              "budgetAllocation": "2.52%",
+              "totalBudget": 1446,
+              "adBudget": 1377.14,
+              "serviceFee": 68.86,
+              "dstFee": 0,
+              "dailyBudget": 15.3,
+              "buyingModelKeyMeasurement": "CPM"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "11148347",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "172881",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "Google-TTL:",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 57279,
+              "adBudget": 54551.44,
+              "serviceFee": 2727.56,
+              "dstFee": 0,
+              "dailyBudget": 606.11,
+              "budgetAllocation": "100.00%"
+            },
+            {
+              "estCPM": null,
+              "estCPVOrCPE": null,
+              "estCPC": null,
+              "estCPE": null,
+              "estCPV": null,
+              "estImpression": {
+                "value": "11148347",
+                "isModified": 0
+              },
+              "estViews": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estViewRate": null,
+              "estEngagement": {
+                "value": "0",
+                "isModified": 0
+              },
+              "estEngagementRate": null,
+              "estClicks": {
+                "value": "172881",
+                "isModified": 0
+              },
+              "estCTR": null,
+              "estUVPbi": null,
+              "estCPUVPbi": null,
+              "estAcceptCookieUVPbi": null,
+              "estCPUVAcceptCookiePbi": null,
+              "estPaidUserPbi": null,
+              "estCPAPbi": null,
+              "estCVRPbi": null,
+              "media": "All Media TTL",
+              "region": "SEA",
+              "country": "SG",
+              "project": "Project",
+              "product": "Product",
+              "brand": "Mi",
+              "totalBudget": 57279,
+              "adBudget": 54551.44,
+              "serviceFee": 2727.56,
+              "dstFee": 0,
+              "dailyBudget": 606.11,
+              "budgetAllocation": "100.00%"
+            }
+          ]
+        }
+      }
+    },
+    "traceId": "58ec59f0a3194c989bb30e97e7307f5c",
+    "appTrace": "sino-adtech-mediaplan"
+  },
+  "body_snippet": "{\"message\":\"success\",\"code\":0,\"result\":{\"briefInfo\":{\"basicInfo\":{\"isHistoryMp\":1,\"kpiInfo\":[{\"key\":\"Impression\",\"val\":\"73509616\",\"priority\":1,\"completion\":1},{\"key\":\"Clicks\",\"val\":\"655130\",\"priority\":2,\"completion\":0}],\"kpiInfoBudgetConfig\":{\"rangeMatch\":80},\"dimension\":[\"corporation\",\"ai\"],\"usedHistoryMp\":1,\"moduleConfig\":[{\"moduleName\":\"kpiInfo\",\"priority\":1},{\"moduleName\":\"media\",\"priority\":2},{\"moduleName\":\"marketingFunnel\",\"priority\":3},{\"moduleName\":\"stage\",\"priority\":4},{\"moduleName\":\"me",
+  "uuid": "f1ad1718-abee-411d-a4a4-13369c2d",
+  "job_id": "1774951846_1_6f9499b4"
+}

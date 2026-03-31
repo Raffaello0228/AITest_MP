@@ -1,24 +1,12 @@
 {
     "basicInfo": {
-        "isHistoryMp": 0,
+        "isHistoryMp": 1,
         "kpiInfo": [
             {
                 "key": "Impression",
-                "val": "60941850",
+                "val": "10000",
                 "priority": 1,
-                "completion": 0
-            },
-            {
-                "key": "Clicks",
-                "val": "655130",
-                "priority": 2,
-                "completion": 0
-            },
-            {
-                "key": "VideoViews",
-                "val": "881914",
-                "priority": 3,
-                "completion": 0
+                "completion": 1
             }
         ],
         "kpiInfoBudgetConfig": {
@@ -29,7 +17,7 @@
             "category",
             "ai"
         ],
-        "usedHistoryMp": 0,
+        "usedHistoryMp": 1,
         "moduleConfig": [
             {
                 "moduleName": "kpiInfo",
@@ -56,85 +44,115 @@
                 "priority": 6
             }
         ],
-        "mediaPlanName": "小米-台湾_badcase_review",
-        "corporationId": "18581",
-        "projectName": "P1P3",
-        "productName": "Xiaomi 17 Ultra / Xiaomi 17",
-        "brandName": "Mi",
-        "briefCode": "B26001",
-        "currency": "USD",
-        "totalBudget": 6000000,
+        "productName": "P1P3",
         "regionBudget": [
             {
                 "countryInfo": {
+                    "regionCode": "SEA",
+                    "regionNameCN": "东南亚",
                     "countryCode": "SG",
                     "countryNameCN": "新加坡",
                     "countryNameEn": "Singapore",
-                    "regionCode": "SEA",
-                    "regionNameCN": "东南亚",
                     "mpCode": "SG"
                 },
                 "kpiInfo": []
             }
         ],
+        "totalBudget": 57280,
+        "uuid": "0f25ac3c-d0e6-4340-995b-c795e766",
+        "historyMpId": "0f25ac3c-d0e6-4340-995b-c795e766",
+        "jobId": "",
+        "mediaPlanName": "小米上传",
+        "projectName": "1",
+        "brandName": "Mi",
+        "briefCode": "1",
+        "corporationId": "18581",
         "corporationName": "北京小米移动软件有限公司",
-        "accountId": "8568157388,643767694507793,7440499749315988",
+        "accountId": "1000263097025266,1000964340488881",
+        "campaignId": null,
+        "currency": "USD",
         "categoryLevel1Id": "7",
         "categoryLevel2Id": "7003",
-        "categoryLevel3Id": "7003001",
-        "campaignId": null,
-        "uuid": "909851a5-2579-41bc-8cb7-82a9150b",
-        "usedModified": 0,
-        "parentBriefId": "de65015b-d49c-4cbb-a4f1-b1f99021",
-        "jobId": "1773301531_19_a8198b0f"
+        "categoryLevel3Id": "7003001"
     },
     "briefMultiConfig": [
         {
             "stage": [
                 {
-                    "name": "PREHEAT FOR LOCAL LAUNCH",
+                    "name": "PREHEATFORLOCAL",
+                    "nameKey": "",
+                    "budgetAmount": 13306,
                     "budgetPercentage": 23.23,
-                    "budgetAmount": 1393800,
-                    "dates": [
-                        "20260223",
-                        "20260306"
+                    "marketingFunnel": [
+                        "Traffic"
                     ],
-                    "marketingFunnel": null,
-                    "mediaPlatform": null
+                    "mediaPlatform": [
+                        [
+                            "Meta",
+                            "平均值"
+                        ],
+                        [
+                            "Google",
+                            "GG"
+                        ]
+                    ]
                 },
                 {
-                    "name": "OPEN SALE",
+                    "name": "OPENSALE",
+                    "nameKey": "",
+                    "budgetAmount": 24762,
                     "budgetPercentage": 43.23,
-                    "budgetAmount": 2593800,
-                    "dates": [
-                        "20260306",
-                        "20260323"
+                    "marketingFunnel": [
+                        "Traffic",
+                        "Awareness"
                     ],
-                    "marketingFunnel": null,
-                    "mediaPlatform": null
+                    "mediaPlatform": [
+                        [
+                            "Meta",
+                            "平均值"
+                        ],
+                        [
+                            "Google",
+                            "GG"
+                        ],
+                        [
+                            "Google",
+                            "YTB"
+                        ]
+                    ]
                 },
                 {
                     "name": "SUSTAIN",
+                    "nameKey": "SUSTAIN",
+                    "budgetAmount": 19212,
                     "budgetPercentage": 33.54,
-                    "budgetAmount": 2012400,
-                    "dates": [
-                        "20260325",
-                        "20260531"
+                    "marketingFunnel": [
+                        "Traffic"
                     ],
-                    "marketingFunnel": null,
-                    "mediaPlatform": null
+                    "mediaPlatform": [
+                        [
+                            "Meta",
+                            "平均值"
+                        ],
+                        [
+                            "Google",
+                            "GG"
+                        ]
+                    ]
                 }
             ],
             "marketingFunnel": [
                 {
-                    "name": "Awareness",
-                    "budgetPercentage": 3.74,
-                    "budgetAmount": 224400
+                    "name": "Traffic",
+                    "nameKey": "TRAFFIC",
+                    "budgetAmount": 55138,
+                    "budgetPercentage": 96.26
                 },
                 {
-                    "name": "Traffic",
-                    "budgetPercentage": 96.26,
-                    "budgetAmount": 5775600
+                    "name": "Awareness",
+                    "nameKey": "AWARENESS",
+                    "budgetAmount": 2142,
+                    "budgetPercentage": 3.74
                 }
             ],
             "mediaMarketingFunnelFormat": [
@@ -145,40 +163,28 @@
                     ],
                     "marketingFunnels": [
                         {
-                            "funnelName": "Awareness",
-                            "funnelNameKey": "Awareness",
+                            "funnelName": "Traffic",
+                            "funnelNameKey": "Traffic",
                             "adFormat": []
                         },
                         {
-                            "funnelName": "Traffic",
-                            "funnelNameKey": "Traffic",
+                            "funnelName": "Awareness",
+                            "funnelNameKey": "Awareness",
                             "adFormat": []
                         }
                     ],
                     "adFormatWithKPI": [
                         {
-                            "funnelName": "Traffic",
                             "adFormatName": "Image&Video Link Ads",
+                            "funnelName": "Awareness",
                             "creative": "Image&Video",
                             "adFormatTotalBudget": null,
                             "completion": 0,
                             "kpiInfo": [
                                 {
                                     "key": "Impression",
-                                    "val": "",
                                     "priority": 1,
-                                    "completion": 0
-                                },
-                                {
-                                    "key": "Clicks",
                                     "val": "",
-                                    "priority": 2,
-                                    "completion": 0
-                                },
-                                {
-                                    "key": "VideoViews",
-                                    "val": "",
-                                    "priority": 3,
                                     "completion": 0
                                 }
                             ]
@@ -192,67 +198,39 @@
                     ],
                     "marketingFunnels": [
                         {
-                            "funnelName": "Awareness",
-                            "funnelNameKey": "Awareness",
+                            "funnelName": "Traffic",
+                            "funnelNameKey": "Traffic",
                             "adFormat": []
                         },
                         {
-                            "funnelName": "Traffic",
-                            "funnelNameKey": "Traffic",
+                            "funnelName": "Awareness",
+                            "funnelNameKey": "Awareness",
                             "adFormat": []
                         }
                     ],
                     "adFormatWithKPI": [
                         {
-                            "funnelName": "Traffic",
                             "adFormatName": "Search",
                             "creative": "Text",
-                            "adFormatTotalBudget": null,
-                            "completion": 0,
+                            "funnelName": "Traffic",
                             "kpiInfo": [
                                 {
                                     "key": "Impression",
                                     "val": "",
                                     "priority": 1,
-                                    "completion": 0
-                                },
-                                {
-                                    "key": "Clicks",
-                                    "val": "",
-                                    "priority": 2,
-                                    "completion": 0
-                                },
-                                {
-                                    "key": "VideoViews",
-                                    "val": "",
-                                    "priority": 3,
                                     "completion": 0
                                 }
                             ]
                         },
                         {
-                            "funnelName": "Traffic",
                             "adFormatName": "Demand Gen",
                             "creative": "Image",
-                            "adFormatTotalBudget": null,
-                            "completion": 0,
+                            "funnelName": "Traffic",
                             "kpiInfo": [
                                 {
                                     "key": "Impression",
                                     "val": "",
                                     "priority": 1,
-                                    "completion": 0
-                                },
-                                {
-                                    "key": "Clicks",
-                                    "val": "",
-                                    "priority": 2,
-                                    "completion": 0
-                                },
-                                {
-                                    "key": "VideoViews",
-                                    "val": "",
-                                    "priority": 3,
                                     "completion": 0
                                 }
                             ]
@@ -266,40 +244,26 @@
                     ],
                     "marketingFunnels": [
                         {
-                            "funnelName": "Awareness",
-                            "funnelNameKey": "Awareness",
+                            "funnelName": "Traffic",
+                            "funnelNameKey": "Traffic",
                             "adFormat": []
                         },
                         {
-                            "funnelName": "Traffic",
-                            "funnelNameKey": "Traffic",
+                            "funnelName": "Awareness",
+                            "funnelNameKey": "Awareness",
                             "adFormat": []
                         }
                     ],
                     "adFormatWithKPI": [
                         {
-                            "funnelName": "Awareness",
-                            "adFormatName": "VRC 2.0",
+                            "adFormatName": "VRC2.0",
                             "creative": "Video",
-                            "adFormatTotalBudget": null,
-                            "completion": 0,
+                            "funnelName": "Awareness",
                             "kpiInfo": [
                                 {
                                     "key": "Impression",
                                     "val": "",
                                     "priority": 1,
-                                    "completion": 0
-                                },
-                                {
-                                    "key": "Clicks",
-                                    "val": "",
-                                    "priority": 2,
-                                    "completion": 0
-                                },
-                                {
-                                    "key": "VideoViews",
-                                    "val": "",
-                                    "priority": 3,
                                     "completion": 0
                                 }
                             ]
@@ -311,53 +275,49 @@
                 {
                     "name": "Meta",
                     "budgetPercentage": 25.18,
-                    "budgetAmount": 1510800,
+                    "budgetAmount": 14423,
                     "children": [
                         {
                             "name": "平均值",
                             "budgetPercentage": 25.18,
-                            "budgetAmount": 1510800
+                            "budgetAmount": 14423
                         }
                     ]
                 },
                 {
                     "name": "Google",
                     "budgetPercentage": 74.82,
-                    "budgetAmount": 4489200,
+                    "budgetAmount": 42857,
                     "children": [
                         {
                             "name": "GG",
-                            "budgetPercentage": 69.82,
-                            "budgetAmount": 4189200
+                            "budgetPercentage": 71.08,
+                            "budgetAmount": 40715
                         },
                         {
                             "name": "YTB",
-                            "budgetPercentage": 5,
-                            "budgetAmount": 300000
+                            "budgetPercentage": 3.74,
+                            "budgetAmount": 2142
                         }
                     ]
                 }
             ],
             "stageBudgetConfig": {
                 "consistentMatch": 1,
-                "rangeMatch": 20,
-                "priority": 4
+                "rangeMatch": 20
             },
             "marketingFunnelBudgetConfig": {
                 "consistentMatch": 1,
-                "rangeMatch": 15,
-                "priority": 3
+                "rangeMatch": 15
             },
             "mediaBudgetConfig": {
                 "consistentMatch": 1,
-                "rangeMatch": 5,
-                "priority": 2
+                "rangeMatch": 5
             },
             "mediaMarketingFunnelFormatBudgetConfig": {
-                "precision": 1,
+                "precision": 2,
                 "totalBudgetFlexibility": 80,
-                "kpiFlexibility": 80,
-                "priority": 5
+                "kpiFlexibility": 80
             },
             "moduleConfig": [
                 {
@@ -385,13 +345,13 @@
                     "priority": 6
                 }
             ],
-            "jobId": "1773301531_19_a8198b0f",
+            "jobId": "",
             "countryInfo": {
+                "regionCode": "SEA",
+                "regionNameCN": "东南亚",
                 "countryCode": "SG",
                 "countryNameCN": "新加坡",
                 "countryNameEn": "Singapore",
-                "regionCode": "SEA",
-                "regionNameCN": "东南亚",
                 "mpCode": "SG"
             },
             "warn": []

@@ -1,0 +1,16 @@
+﻿Region,Country,Project,Media,Product,Stage,Objective,Landing Page,Creative,Ad format,Scheduled / Active,Start date,End date,Duration(D),"Budget
+Allocation",Budget,Daily Budget,"Buying Model
+Key Measurement",Estimated CPM,Estimated CPC,Estimated CPV
+,SG,,Meta,P1P3,Preheat for local,Traffic,mi.com,Image/Video,Traffic,FALSE,2026/2/23,2026/3/6,12,15.00%,"$2,163.46 ","$180.29 ",CPC,"$1.50 ","$0.13 ","$0.02 "
+,SG,,Meta,P1,Open Sale,Traffic,mi.com,Image/Video,Traffic,FALSE,2026/3/6,2026/3/23,18,24.50%,"$3,533.65 ","$196.31 ",CPC,$1.50,"$0.13 ","$0.02 "
+,SG,,Meta,P3,Open Sale,Traffic,mi.com,Image/Video,Traffic,FALSE,2026/3/6,2026/3/23,18,10.50%,"$1,514.42 ","$84.13 ",CPC,$1.50,"$0.13 ","$0.02 "
+,SG,,Meta,P1P3,Sustain,Traffic,mi.com,Image/Video,Traffic,FALSE,2026/3/25,2026/5/31,68,50.00%,"$7,211.54 ","$106.05 ",CPC,"$1.50 ","$0.13 ","$0.02 "
+,SG,,Google,P1P3,Preheat for local,Traffic,mi.com,Text,Search,FALSE,2026/2/23,2026/3/6,12,11.00%,"$4,714.29 ","$392.86 ",CPC,"$16.00 ","$0.20 ",-
+,SG,,Google,P1P3,Preheat for local,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/2/23,2026/3/6,12,15.00%,"$6,428.57 ","$535.71 ",CPC,"$0.60 ","$0.06 ","$0.18 "
+,SG,,Google,P1P3,Open Sale,Traffic,mi.com,Text,Search,FALSE,2026/3/6,2026/3/23,18,16.00%,"$6,857.14 ","$380.95 ",CPC,"$16.00 ","$0.20 ",-
+,SG,,Google,P1,Open Sale,Awareness,mi.com,Video,VRC2.0,FALSE,2026/3/6,2026/3/23,18,3.50%,"$1,500.00 ","$83.33 ",CPM,"$1.80 ","$3.50 ","$0.02 "
+,SG,,Google,P3,Open Sale,Awareness,mi.com,Video,VRC2.0,FALSE,2026/3/6,2026/3/23,18,1.50%,"$642.86 ","$35.71 ",CPM,"$1.80 ","$3.50 ","$0.02 "
+,SG,,Google,P1,Open Sale,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/3/6,2026/3/23,18,17.50%,"$7,500.00 ","$416.67 ",CPC,"$0.60 ","$0.06 ","$0.18 "
+,SG,,Google,P3,Open Sale,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/3/6,2026/3/23,18,7.50%,"$3,214.29 ","$178.57 ",CPC,"$0.60 ","$0.06 ","$0.18 "
+,SG,,Google,P1,Sustain,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/3/25,2026/5/31,68,19.60%,"$8,400.00 ","$123.53 ",CPC,"$0.60 ","$0.06 ","$0.18 "
+,SG,,Google,P3,Sustain,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/3/25,2026/5/31,68,8.40%,"$3,600.00 ","$52.94 ",CPC,"$0.60 ","$0.06 ","$0.18 "

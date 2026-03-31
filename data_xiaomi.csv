@@ -1,29 +1,16 @@
-﻿Country,Media,Media Channel,Stage,Objective,Creative,Ad format,BLS Eligibility,Start date,End date,Duration(D),Budget,Daily Budget,"Buying Model
-Key Measurement",Estimated CPM,Estimated CPC,Estimated Impressions,Estimated Clicks,Estimated Click Through Rate
-ES,Meta,FB&IG,Early Bird,Awareness,Image&Video,Image&Video Link Ads,TRUE,2025/9/24,2025/10/12,19,"$35,619.23 ","$1,874.70 ",CPM,$1.00 ,-,"35,619,231",-,-
-ES,Meta,FB&IG,Early Bird,Video Views,Video,Video Link Ads,TRUE,2025/9/24,2025/10/12,19,"$11,873.08 ",$624.90 ,CPV,$10.00 ,-,"1,187,308",-,-
-ES,Meta,FB&IG,Early Bird,Traffic,Image&Video,Image&Video Link Ads,TRUE,2025/9/24,2025/10/12,19,"$23,746.15 ","$1,249.80 ",CPC,$2.00 ,$0.30 ,"11,873,077","79,154",0.67%
-ES,Meta,FB&IG,Early Bird,Conversion,Image&Video,ASC,TRUE,2025/9/24,2025/10/12,19,"$47,492.31 ","$2,499.60 ",CPA,$3.00 ,$0.40 ,"15,830,769","118,731",0.75%
-ES,Meta,FB&IG,Open Sale,Awareness,Image&Video,Image&Video Link Ads,TRUE,2023/10/4,2023/12/31,89,"$29,682.69 ",$333.51 ,CPM,,-,,-,-
-ES,Meta,FB,Open Sale,Video Views,Video,Video Link Ads,TRUE,2023/10/4,2023/12/31,89,"$13,072.50 ",$146.88 ,CPV,$7.42 ,-,"1,761,792",-,-
-ES,Meta,IG,Open Sale,Video Views,Video,Video Link Ads,TRUE,2023/10/4,2023/12/31,89,"$7,039.04 ",$79.09 ,CPV,$3.28 ,-,"2,146,048",-,-
-ES,Meta,FB,Open Sale,Traffic,Image&Video,Image&Video Link Ads,TRUE,2023/10/6,2023/12/31,87,$0.00 ,$0.00 ,CPC,$2.22 ,$0.28 ,0,0,-
-ES,Meta,IG,Open Sale,Traffic,Image&Video,Image&Video Link Ads,TRUE,2023/10/6,2023/12/31,87,$0.00 ,$0.00 ,CPC,$2.16 ,$0.36 ,0,0,-
-ES,Meta,FB,Open Sale,Awareness,Image&Video,Image&Video Link Ads,TRUE,2023/10/5,2023/12/31,88,$0.00 ,$0.00 ,CPM,$0.98 ,-,0,-,-
-ES,Meta,IG,Open Sale,Awareness,Image&Video,Image&Video Link Ads,TRUE,2023/10/5,2023/12/31,88,$0.00 ,$0.00 ,CPM,$0.82 ,-,0,-,-
-ES,Meta,FB,Open Sale,Conversion,Image&Video,Image&Video Link Ads,TRUE,2023/10/4,2023/10/31,28,"$13,230.00 ",$472.50 ,CPC,$3.98 ,$0.94 ,"3,324,121","14,135",0.43%
-ES,Meta,IG,Open Sale,Conversion,Image&Video,Image&Video Link Ads,TRUE,2023/10/4,2023/10/31,28,"$18,270.00 ",$652.50 ,CPC,$2.28 ,$2.31 ,"8,013,158","7,909",0.10%
-ES,Meta,FB&IG,Open Sale,Conversion,Image&Video,ASC,TRUE,2023/11/1,2023/12/31,61,"$88,321.15 ","$1,447.89 ",CPC,$3.14 ,$1.19 ,"28,144,598","74,511",0.26%
-ES,Google,YTB,Early Bird,Awareness,Video,VRC 2.0,FALSE,2025/9/24,2025/10/12,19,"$24,042.06 ","$1,265.37 ",CPM,$2.80 ,-,"8,586,449",-,-
-ES,Google,YTB,Early Bird,Video Views,Video,VVC,FALSE,2025/9/24,2025/10/12,19,"$16,028.04 ",$843.58 ,CPV,$3.60 ,-,"4,452,233",-,-
-ES,Google,GG,Early Bird,Traffic,Image,Demand Gen,FALSE,2025/9/24,2025/10/12,19,"$32,056.07 ","$1,687.16 ",CPC,$0.20 ,-,"160,280,374",-,-
-ES,Google,GG,Early Bird,Conversion,Image&Video,Performance Max,FALSE,2025/9/24,2025/10/12,19,"$48,084.11 ","$2,530.74 ",CPA,,,0,,
-ES,Google,GG,Early Bird,Conversion,Text,Search,FALSE,2025/9/24,2025/10/12,19,"$40,070.09 ","$2,108.95 ",CPA,$42.00 ,$0.70 ,"954,050","57,243",6%
-ES,Google,YTB,Open Sale,Video Views,Video,VVC,FALSE,2023/10/5,2023/12/31,88,$0.00 ,$0.00 ,CPV,,-,0,-,-
-ES,Google,GG,Early Bird,Conversion,Text,Search,FALSE,2023/9/26,2023/10/3,8,"$19,135.51 ","$2,391.94 ",CPC,$45.00 ,$0.90 ,"425,234","21,262",5%
-ES,Google,GG,Open Sale,Conversion,Text,Search,FALSE,2023/10/4,2023/12/31,89,"$79,485.98 ",$893.10 ,CPC,$37.50 ,$0.75 ,"2,119,626","105,981",5%
-ES,Google,GG,Open Sale,Conversion,Image&Video,Performance Max,FALSE,2023/10/4,2023/12/31,89,"$47,855.14 ",$537.70 ,CPC,$2.80 ,$0.50 ,"17,091,121","95,710",3%
-ES,TikTok,TT,Early Bird,Reach,Image&Video,Image&Video Link Ads,TRUE,2023/9/26,2023/10/3,8,"$15,076.92 ","$1,884.62 ",CPM,$1.62 ,-,"9,306,743",-,-
-ES,TikTok,TT,Early Bird,Traffic,Image&Video,Image&Video Link Ads,TRUE,2023/9/26,2023/10/3,8,"$16,961.54 ","$2,120.19 ",CPC,$1.32 ,$0.64 ,"12,849,650","26,502",0.21%
-ES,TikTok,TT,Open Sale,Reach,Image&Video,Image&Video Link Ads,TRUE,2023/10/4,2023/12/31,89,"$22,615.38 ",$254.11 ,CPM,$1.62 ,-,"13,960,114",-,-
-ES,TikTok,TT,Open Sale,Traffic,Image&Video,Image&Video Link Ads,TRUE,2023/10/4,2023/12/31,89,"$39,576.92 ",$444.68 ,CPC,$1.32 ,$0.64 ,"29,982,517","61,839",0.21%
+﻿Region,Country,Project,Media,Product,Stage,Objective,Landing Page,Creative,Ad format,Scheduled / Active,Start date,End date,Duration(D),"Budget
+Allocation",Budget,Daily Budget,"Buying Model
+Key Measurement",Estimated CPM,Estimated CPC,Estimated CPV,Estimated Impressions,Estimated Clicks,Estimated Click Through Rate,Estimated Video Views
+,SG,,Meta,P1P3,Preheat for local,Traffic,mi.com,Image/Video,Traffic,FALSE,2026/2/23,2026/3/6,12,15.00%,"$2,163.46 ",$180.29 ,CPC,$1.50 ,$0.13 ,$0.02 ,"1,442,308","16,642",1.02%,"90,144"
+,,,Meta,P1,Open Sale,Traffic,mi.com,Image/Video,Traffic,FALSE,2026/3/6,2026/3/23,18,24.50%,"$3,533.65 ",$196.31 ,CPC,$1.20 ,$0.13 ,$0.02 ,"2,944,712","27,182",1.02%,"147,236"
+,,,Meta,P3,Open Sale,Traffic,mi.com,Image/Video,Traffic,FALSE,2026/3/6,2026/3/23,18,10.50%,"$1,514.42 ",$84.13 ,CPC,$1.20 ,$0.13 ,$0.02 ,"1,262,019","11,649",1.02%,"63,101"
+,,,Meta,P1P3,Sustain,Traffic,mi.com,Image/Video,Traffic,FALSE,2026/3/25,2026/5/31,68,50.00%,"$7,211.54 ",$106.05 ,CPC,$1.50 ,$0.13 ,$0.02 ,"4,807,692","55,473",1.02%,"300,481"
+,,,Google,P1P3,Preheat for local,Traffic,mi.com,Text,Search,FALSE,2026/2/23,2026/3/6,12,11.00%,"$4,714.29 ",$392.86 ,CPC,$16.00 ,$0.20 ,-,"294,643","23,571",8.00%,-
+,,,Google,P1P3,Preheat for local,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/2/23,2026/3/6,12,15.00%,"$6,428.57 ",$535.71 ,CPC,$0.60 ,$0.06 ,$0.18 ,"10,714,286","107,143",1.00%,"35,714"
+,,,Google,P1P3,Open Sale,Traffic,mi.com,Text,Search,FALSE,2026/3/6,2026/3/23,18,16.00%,"$6,857.14 ",$380.95 ,CPC,$16.00 ,$0.20 ,-,"428,571","34,286",8.00%,-
+,,,Google,P1,Open Sale,Awareness,mi.com,Video,VRC2.0,FALSE,2026/3/6,2026/3/23,18,3.50%,"$1,500.00 ",$83.33 ,CPM,$1.80 ,$3.50 ,$0.02 ,"833,333",429,0.05%,"83,333"
+,,,Google,P3,Open Sale,Awareness,mi.com,Video,VRC2.0,FALSE,2026/3/6,2026/3/23,18,1.50%,$642.86 ,$35.71 ,CPM,$1.80 ,$3.50 ,$0.02 ,"357,143",184,0.05%,"35,714"
+,,,Google,P1,Open Sale,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/3/6,2026/3/23,18,17.50%,"$7,500.00 ",$416.67 ,CPC,$0.60 ,$0.06 ,$0.18 ,"12,500,000","125,000",1.00%,"41,667"
+,,,Google,P3,Open Sale,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/3/6,2026/3/23,18,7.50%,"$3,214.29 ",$178.57 ,CPC,$0.60 ,$0.06 ,$0.18 ,"5,357,143","53,571",1.00%,"17,857"
+,,,Google,P1,Sustain,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/3/25,2026/5/31,68,19.60%,"$8,400.00 ",$123.53 ,CPC,$0.60 ,$0.06 ,$0.18 ,"14,000,000","140,000",1.00%,"46,667"
+,,,Google,P3,Sustain,Traffic,mi.com,Image/Video,Demand Gen,FALSE,2026/3/25,2026/5/31,68,8.40%,"$3,600.00 ",$52.94 ,CPC,$0.60 ,$0.06 ,$0.18 ,"6,000,000","60,000",1.00%,"20,000"
